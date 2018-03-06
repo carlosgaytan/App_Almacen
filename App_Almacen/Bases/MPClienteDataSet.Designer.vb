@@ -20,9 +20,9 @@ Option Explicit On
  Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
  Global.System.ComponentModel.ToolboxItem(true),  _
  Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema"),  _
- Global.System.Xml.Serialization.XmlRootAttribute("ENTRADAS_SALIDAS"),  _
+ Global.System.Xml.Serialization.XmlRootAttribute("MPClienteDataSet"),  _
  Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")>  _
-Partial Public Class ENTRADAS_SALIDAS
+Partial Public Class MPClienteDataSet
     Inherits Global.System.Data.DataSet
     
     Private tableENTRADAS As ENTRADASDataTable
@@ -145,7 +145,7 @@ Partial Public Class ENTRADAS_SALIDAS
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Public Overrides Function Clone() As Global.System.Data.DataSet
-        Dim cln As ENTRADAS_SALIDAS = CType(MyBase.Clone,ENTRADAS_SALIDAS)
+        Dim cln As MPClienteDataSet = CType(MyBase.Clone,MPClienteDataSet)
         cln.InitVars
         cln.SchemaSerializationMode = Me.SchemaSerializationMode
         Return cln
@@ -226,9 +226,9 @@ Partial Public Class ENTRADAS_SALIDAS
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Private Sub InitClass()
-        Me.DataSetName = "ENTRADAS_SALIDAS"
+        Me.DataSetName = "MPClienteDataSet"
         Me.Prefix = ""
-        Me.Namespace = "http://tempuri.org/ENTRADAS_SALIDAS.xsd"
+        Me.Namespace = "http://tempuri.org/MPClienteDataSet.xsd"
         Me.EnforceConstraints = true
         Me.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
         Me.tableENTRADAS = New ENTRADASDataTable()
@@ -236,12 +236,12 @@ Partial Public Class ENTRADAS_SALIDAS
         Me.tableSALIDAS = New SALIDASDataTable()
         MyBase.Tables.Add(Me.tableSALIDAS)
         Dim fkc As Global.System.Data.ForeignKeyConstraint
-        fkc = New Global.System.Data.ForeignKeyConstraint("FK_ENTRADAS_SALIDAS", New Global.System.Data.DataColumn() {Me.tableENTRADAS.FOLIO_ENTRADAColumn}, New Global.System.Data.DataColumn() {Me.tableSALIDAS.FOLIO_SALIDAColumn})
+        fkc = New Global.System.Data.ForeignKeyConstraint("FK_ENTRADAS_SALIDAS", New Global.System.Data.DataColumn() {Me.tableENTRADAS.FOLIO_ENTRADAColumn}, New Global.System.Data.DataColumn() {Me.tableSALIDAS.FOLIO_ENTRADAColumn})
         Me.tableSALIDAS.Constraints.Add(fkc)
         fkc.AcceptRejectRule = Global.System.Data.AcceptRejectRule.None
         fkc.DeleteRule = Global.System.Data.Rule.Cascade
         fkc.UpdateRule = Global.System.Data.Rule.Cascade
-        Me.relationFK_ENTRADAS_SALIDAS = New Global.System.Data.DataRelation("FK_ENTRADAS_SALIDAS", New Global.System.Data.DataColumn() {Me.tableENTRADAS.FOLIO_ENTRADAColumn}, New Global.System.Data.DataColumn() {Me.tableSALIDAS.FOLIO_SALIDAColumn}, false)
+        Me.relationFK_ENTRADAS_SALIDAS = New Global.System.Data.DataRelation("FK_ENTRADAS_SALIDAS", New Global.System.Data.DataColumn() {Me.tableENTRADAS.FOLIO_ENTRADAColumn}, New Global.System.Data.DataColumn() {Me.tableSALIDAS.FOLIO_ENTRADAColumn}, false)
         Me.Relations.Add(Me.relationFK_ENTRADAS_SALIDAS)
     End Sub
     
@@ -268,7 +268,7 @@ Partial Public Class ENTRADAS_SALIDAS
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Public Shared Function GetTypedDataSetSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
-        Dim ds As ENTRADAS_SALIDAS = New ENTRADAS_SALIDAS()
+        Dim ds As MPClienteDataSet = New MPClienteDataSet()
         Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
         Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
         Dim any As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
@@ -663,6 +663,12 @@ Partial Public Class ENTRADAS_SALIDAS
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function FindByFOLIO_ENTRADA(ByVal FOLIO_ENTRADA As Integer) As ENTRADASRow
+            Return CType(Me.Rows.Find(New Object() {FOLIO_ENTRADA}),ENTRADASRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
             Dim cln As ENTRADASDataTable = CType(MyBase.Clone,ENTRADASDataTable)
             cln.InitVars
@@ -752,10 +758,11 @@ Partial Public Class ENTRADAS_SALIDAS
             MyBase.Columns.Add(Me.columnLOTE_MATERIAL)
             Me.columnLOTE_FOLIO = New Global.System.Data.DataColumn("LOTE_FOLIO", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnLOTE_FOLIO)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnFOLIO_ENTRADA}, false))
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("ENTRADASKey1", New Global.System.Data.DataColumn() {Me.columnFOLIO_ENTRADA}, true))
             Me.columnFOLIO_ENTRADA.AutoIncrement = true
             Me.columnFOLIO_ENTRADA.AutoIncrementSeed = -1
             Me.columnFOLIO_ENTRADA.AutoIncrementStep = -1
+            Me.columnFOLIO_ENTRADA.AllowDBNull = false
             Me.columnFOLIO_ENTRADA.Unique = true
             Me.columnFECHA.MaxLength = 536870910
             Me.columnCLIENTE.MaxLength = 536870910
@@ -846,7 +853,7 @@ Partial Public Class ENTRADAS_SALIDAS
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As ENTRADAS_SALIDAS = New ENTRADAS_SALIDAS()
+            Dim ds As MPClienteDataSet = New MPClienteDataSet()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -1038,9 +1045,12 @@ Partial Public Class ENTRADAS_SALIDAS
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddSALIDASRow(ByVal FOLIO_ENTRADA As String, ByVal FECHA_SALIDA As String, ByVal AUTORIZACION As String, ByVal OBSERVACIONES_SALIDA As String) As SALIDASRow
+        Public Overloads Function AddSALIDASRow(ByVal parentENTRADASRowByFK_ENTRADAS_SALIDAS As ENTRADASRow, ByVal FECHA_SALIDA As String, ByVal AUTORIZACION As String, ByVal OBSERVACIONES_SALIDA As String) As SALIDASRow
             Dim rowSALIDASRow As SALIDASRow = CType(Me.NewRow,SALIDASRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, FOLIO_ENTRADA, FECHA_SALIDA, AUTORIZACION, OBSERVACIONES_SALIDA}
+            Dim columnValuesArray() As Object = New Object() {Nothing, Nothing, FECHA_SALIDA, AUTORIZACION, OBSERVACIONES_SALIDA}
+            If (Not (parentENTRADASRowByFK_ENTRADAS_SALIDAS) Is Nothing) Then
+                columnValuesArray(1) = parentENTRADASRowByFK_ENTRADAS_SALIDAS(0)
+            End If
             rowSALIDASRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowSALIDASRow)
             Return rowSALIDASRow
@@ -1075,7 +1085,7 @@ Partial Public Class ENTRADAS_SALIDAS
         Private Sub InitClass()
             Me.columnFOLIO_SALIDA = New Global.System.Data.DataColumn("FOLIO_SALIDA", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnFOLIO_SALIDA)
-            Me.columnFOLIO_ENTRADA = New Global.System.Data.DataColumn("FOLIO_ENTRADA", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnFOLIO_ENTRADA = New Global.System.Data.DataColumn("FOLIO_ENTRADA", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnFOLIO_ENTRADA)
             Me.columnFECHA_SALIDA = New Global.System.Data.DataColumn("FECHA_SALIDA", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnFECHA_SALIDA)
@@ -1086,7 +1096,6 @@ Partial Public Class ENTRADAS_SALIDAS
             Me.columnFOLIO_SALIDA.AutoIncrement = true
             Me.columnFOLIO_SALIDA.AutoIncrementSeed = -1
             Me.columnFOLIO_SALIDA.AutoIncrementStep = -1
-            Me.columnFOLIO_ENTRADA.MaxLength = 536870910
             Me.columnFECHA_SALIDA.MaxLength = 536870910
             Me.columnAUTORIZACION.MaxLength = 536870910
             Me.columnOBSERVACIONES_SALIDA.MaxLength = 536870910
@@ -1157,7 +1166,7 @@ Partial Public Class ENTRADAS_SALIDAS
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As ENTRADAS_SALIDAS = New ENTRADAS_SALIDAS()
+            Dim ds As MPClienteDataSet = New MPClienteDataSet()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -1238,11 +1247,7 @@ Partial Public Class ENTRADAS_SALIDAS
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property FOLIO_ENTRADA() As Integer
             Get
-                Try 
-                    Return CType(Me(Me.tableENTRADAS.FOLIO_ENTRADAColumn),Integer)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'FOLIO_ENTRADA' de la tabla 'ENTRADAS' es DBNull.", e)
-                End Try
+                Return CType(Me(Me.tableENTRADAS.FOLIO_ENTRADAColumn),Integer)
             End Get
             Set
                 Me(Me.tableENTRADAS.FOLIO_ENTRADAColumn) = value
@@ -1581,18 +1586,6 @@ Partial Public Class ENTRADAS_SALIDAS
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsFOLIO_ENTRADANull() As Boolean
-            Return Me.IsNull(Me.tableENTRADAS.FOLIO_ENTRADAColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetFOLIO_ENTRADANull()
-            Me(Me.tableENTRADAS.FOLIO_ENTRADAColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsFECHANull() As Boolean
             Return Me.IsNull(Me.tableENTRADAS.FECHAColumn)
         End Function
@@ -1898,10 +1891,10 @@ Partial Public Class ENTRADAS_SALIDAS
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property FOLIO_ENTRADA() As String
+        Public Property FOLIO_ENTRADA() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tableSALIDAS.FOLIO_ENTRADAColumn),String)
+                    Return CType(Me(Me.tableSALIDAS.FOLIO_ENTRADAColumn),Integer)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("El valor de la columna 'FOLIO_ENTRADA' de la tabla 'SALIDAS' es DBNull.", e)
                 End Try
@@ -2101,7 +2094,7 @@ Partial Public Class ENTRADAS_SALIDAS
     End Class
 End Class
 
-Namespace ENTRADAS_SALIDASTableAdapters
+Namespace MPClienteDataSetTableAdapters
     
     '''<summary>
     '''Represents the connection and commands used to retrieve and save data.
@@ -2254,6 +2247,11 @@ Namespace ENTRADAS_SALIDASTableAdapters
             tableMapping.ColumnMappings.Add("LOTE_MATERIAL", "LOTE_MATERIAL")
             tableMapping.ColumnMappings.Add("LOTE_FOLIO", "LOTE_FOLIO")
             Me._adapter.TableMappings.Add(tableMapping)
+            Me._adapter.DeleteCommand = New Global.System.Data.OleDb.OleDbCommand()
+            Me._adapter.DeleteCommand.Connection = Me.Connection
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM `ENTRADAS` WHERE ((`FOLIO_ENTRADA` = ?))"
+            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_FOLIO_ENTRADA", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "FOLIO_ENTRADA", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO `ENTRADAS` (`FECHA`, `CLIENTE`, `SOLICITANTE`, `FACTURA_REMISION`, `O"& _ 
@@ -2284,6 +2282,38 @@ Namespace ENTRADAS_SALIDASTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("LOTE_CLIENTE", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "LOTE_CLIENTE", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("LOTE_MATERIAL", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "LOTE_MATERIAL", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("LOTE_FOLIO", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "LOTE_FOLIO", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
+            Me._adapter.UpdateCommand.Connection = Me.Connection
+            Me._adapter.UpdateCommand.CommandText = "UPDATE `ENTRADAS` SET `FECHA` = ?, `CLIENTE` = ?, `SOLICITANTE` = ?, `FACTURA_REM"& _ 
+                "ISION` = ?, `OC` = ?, `CERTIFICADO_CALIDAD` = ?, `LARGO` = ?, `ANCHO` = ?, `ESPE"& _ 
+                "SOR` = ?, `MATERIAL` = ?, `COSTO` = ?, `COSTO_KG` = ?, `RACK` = ?, `NIVEL` = ?, "& _ 
+                "`FRACCION` = ?, `OBSERVACIONES_ENTRADA` = ?, `LOTE_DIA` = ?, `LOTE_MES` = ?, `LO"& _ 
+                "TE_AÑO` = ?, `LOTE_CLIENTE` = ?, `LOTE_MATERIAL` = ?, `LOTE_FOLIO` = ? WHERE ((`"& _ 
+                "FOLIO_ENTRADA` = ?))"
+            Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("FECHA", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "FECHA", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("CLIENTE", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CLIENTE", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("SOLICITANTE", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "SOLICITANTE", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("FACTURA_REMISION", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "FACTURA_REMISION", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("OC", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "OC", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("CERTIFICADO_CALIDAD", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CERTIFICADO_CALIDAD", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("LARGO", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "LARGO", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ANCHO", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ANCHO", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ESPESOR", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ESPESOR", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("MATERIAL", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MATERIAL", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("COSTO", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "COSTO", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("COSTO_KG", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "COSTO_KG", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("RACK", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RACK", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("NIVEL", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NIVEL", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("FRACCION", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "FRACCION", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("OBSERVACIONES_ENTRADA", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "OBSERVACIONES_ENTRADA", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("LOTE_DIA", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "LOTE_DIA", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("LOTE_MES", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "LOTE_MES", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("LOTE_AÑO", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "LOTE_AÑO", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("LOTE_CLIENTE", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "LOTE_CLIENTE", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("LOTE_MATERIAL", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "LOTE_MATERIAL", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("LOTE_FOLIO", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "LOTE_FOLIO", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_FOLIO_ENTRADA", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "FOLIO_ENTRADA", Global.System.Data.DataRowVersion.Original, false, Nothing))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2299,7 +2329,10 @@ Namespace ENTRADAS_SALIDASTableAdapters
             Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT        ENTRADAS.*"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            ENTRADAS"
+            Me._commandCollection(0).CommandText = "SELECT FOLIO_ENTRADA, FECHA, CLIENTE, SOLICITANTE, FACTURA_REMISION, OC, CERTIFIC"& _ 
+                "ADO_CALIDAD, LARGO, ANCHO, ESPESOR, MATERIAL, COSTO, COSTO_KG, RACK, NIVEL, FRAC"& _ 
+                "CION, OBSERVACIONES_ENTRADA, LOTE_DIA, LOTE_MES, LOTE_AÑO, LOTE_CLIENTE, LOTE_MA"& _ 
+                "TERIAL, LOTE_FOLIO FROM ENTRADAS"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -2307,7 +2340,7 @@ Namespace ENTRADAS_SALIDASTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function ENTRADASFill(ByVal dataTable As ENTRADAS_SALIDAS.ENTRADASDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As MPClienteDataSet.ENTRADASDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -2320,9 +2353,9 @@ Namespace ENTRADAS_SALIDASTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function ENTRADASGetData() As ENTRADAS_SALIDAS.ENTRADASDataTable
+        Public Overloads Overridable Function GetData() As MPClienteDataSet.ENTRADASDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As ENTRADAS_SALIDAS.ENTRADASDataTable = New ENTRADAS_SALIDAS.ENTRADASDataTable()
+            Dim dataTable As MPClienteDataSet.ENTRADASDataTable = New MPClienteDataSet.ENTRADASDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -2330,14 +2363,14 @@ Namespace ENTRADAS_SALIDASTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As ENTRADAS_SALIDAS.ENTRADASDataTable) As Integer
+        Public Overloads Overridable Function Update(ByVal dataTable As MPClienteDataSet.ENTRADASDataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As ENTRADAS_SALIDAS) As Integer
+        Public Overloads Overridable Function Update(ByVal dataSet As MPClienteDataSet) As Integer
             Return Me.Adapter.Update(dataSet, "ENTRADAS")
         End Function
         
@@ -2353,6 +2386,27 @@ Namespace ENTRADAS_SALIDASTableAdapters
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
         Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
             Return Me.Adapter.Update(dataRows)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
+        Public Overloads Overridable Function Delete(ByVal Original_FOLIO_ENTRADA As Integer) As Integer
+            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_FOLIO_ENTRADA,Integer)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
+            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.DeleteCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.DeleteCommand.Connection.Close
+                End If
+            End Try
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2506,6 +2560,160 @@ Namespace ENTRADAS_SALIDASTableAdapters
                 End If
             End Try
         End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+        Public Overloads Overridable Function Update( _
+                    ByVal FECHA As String,  _
+                    ByVal CLIENTE As String,  _
+                    ByVal SOLICITANTE As String,  _
+                    ByVal FACTURA_REMISION As String,  _
+                    ByVal OC As String,  _
+                    ByVal CERTIFICADO_CALIDAD As String,  _
+                    ByVal LARGO As String,  _
+                    ByVal ANCHO As String,  _
+                    ByVal ESPESOR As String,  _
+                    ByVal MATERIAL As String,  _
+                    ByVal COSTO As String,  _
+                    ByVal COSTO_KG As String,  _
+                    ByVal RACK As String,  _
+                    ByVal NIVEL As String,  _
+                    ByVal FRACCION As String,  _
+                    ByVal OBSERVACIONES_ENTRADA As String,  _
+                    ByVal LOTE_DIA As String,  _
+                    ByVal LOTE_MES As String,  _
+                    ByVal LOTE_AÑO As String,  _
+                    ByVal LOTE_CLIENTE As String,  _
+                    ByVal LOTE_MATERIAL As String,  _
+                    ByVal LOTE_FOLIO As String,  _
+                    ByVal Original_FOLIO_ENTRADA As Integer) As Integer
+            If (FECHA Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(FECHA,String)
+            End If
+            If (CLIENTE Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(CLIENTE,String)
+            End If
+            If (SOLICITANTE Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(SOLICITANTE,String)
+            End If
+            If (FACTURA_REMISION Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(FACTURA_REMISION,String)
+            End If
+            If (OC Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(OC,String)
+            End If
+            If (CERTIFICADO_CALIDAD Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(CERTIFICADO_CALIDAD,String)
+            End If
+            If (LARGO Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(LARGO,String)
+            End If
+            If (ANCHO Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(ANCHO,String)
+            End If
+            If (ESPESOR Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(ESPESOR,String)
+            End If
+            If (MATERIAL Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(MATERIAL,String)
+            End If
+            If (COSTO Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(COSTO,String)
+            End If
+            If (COSTO_KG Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(COSTO_KG,String)
+            End If
+            If (RACK Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(RACK,String)
+            End If
+            If (NIVEL Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(NIVEL,String)
+            End If
+            If (FRACCION Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(FRACCION,String)
+            End If
+            If (OBSERVACIONES_ENTRADA Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(OBSERVACIONES_ENTRADA,String)
+            End If
+            If (LOTE_DIA Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(16).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(LOTE_DIA,String)
+            End If
+            If (LOTE_MES Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(17).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(LOTE_MES,String)
+            End If
+            If (LOTE_AÑO Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(18).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(LOTE_AÑO,String)
+            End If
+            If (LOTE_CLIENTE Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(19).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(LOTE_CLIENTE,String)
+            End If
+            If (LOTE_MATERIAL Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(20).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(LOTE_MATERIAL,String)
+            End If
+            If (LOTE_FOLIO Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(21).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(LOTE_FOLIO,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(22).Value = CType(Original_FOLIO_ENTRADA,Integer)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
+            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.UpdateCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.UpdateCommand.Connection.Close
+                End If
+            End Try
+        End Function
     End Class
     
     '''<summary>
@@ -2646,7 +2854,7 @@ Namespace ENTRADAS_SALIDASTableAdapters
             Me._adapter.InsertCommand.CommandText = "INSERT INTO `SALIDAS` (`FOLIO_ENTRADA`, `FECHA_SALIDA`, `AUTORIZACION`, `OBSERVAC"& _ 
                 "IONES_SALIDA`) VALUES (?, ?, ?, ?)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("FOLIO_ENTRADA", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "FOLIO_ENTRADA", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("FOLIO_ENTRADA", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "FOLIO_ENTRADA", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("FECHA_SALIDA", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "FECHA_SALIDA", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("AUTORIZACION", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "AUTORIZACION", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("OBSERVACIONES_SALIDA", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "OBSERVACIONES_SALIDA", Global.System.Data.DataRowVersion.Current, false, Nothing))
@@ -2665,7 +2873,8 @@ Namespace ENTRADAS_SALIDASTableAdapters
             Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT        SALIDAS.*"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            SALIDAS"
+            Me._commandCollection(0).CommandText = "SELECT FOLIO_SALIDA, FOLIO_ENTRADA, FECHA_SALIDA, AUTORIZACION, OBSERVACIONES_SAL"& _ 
+                "IDA FROM SALIDAS"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -2673,7 +2882,7 @@ Namespace ENTRADAS_SALIDASTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function SALIDASFill(ByVal dataTable As ENTRADAS_SALIDAS.SALIDASDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As MPClienteDataSet.SALIDASDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -2686,9 +2895,9 @@ Namespace ENTRADAS_SALIDASTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function SALIDASGetData() As ENTRADAS_SALIDAS.SALIDASDataTable
+        Public Overloads Overridable Function GetData() As MPClienteDataSet.SALIDASDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As ENTRADAS_SALIDAS.SALIDASDataTable = New ENTRADAS_SALIDAS.SALIDASDataTable()
+            Dim dataTable As MPClienteDataSet.SALIDASDataTable = New MPClienteDataSet.SALIDASDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -2696,14 +2905,14 @@ Namespace ENTRADAS_SALIDASTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As ENTRADAS_SALIDAS.SALIDASDataTable) As Integer
+        Public Overloads Overridable Function Update(ByVal dataTable As MPClienteDataSet.SALIDASDataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As ENTRADAS_SALIDAS) As Integer
+        Public Overloads Overridable Function Update(ByVal dataSet As MPClienteDataSet) As Integer
             Return Me.Adapter.Update(dataSet, "SALIDAS")
         End Function
         
@@ -2725,11 +2934,11 @@ Namespace ENTRADAS_SALIDASTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal FOLIO_ENTRADA As String, ByVal FECHA_SALIDA As String, ByVal AUTORIZACION As String, ByVal OBSERVACIONES_SALIDA As String) As Integer
-            If (FOLIO_ENTRADA Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
+        Public Overloads Overridable Function Insert(ByVal FOLIO_ENTRADA As Global.System.Nullable(Of Integer), ByVal FECHA_SALIDA As String, ByVal AUTORIZACION As String, ByVal OBSERVACIONES_SALIDA As String) As Integer
+            If (FOLIO_ENTRADA.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(0).Value = CType(FOLIO_ENTRADA.Value,Integer)
             Else
-                Me.Adapter.InsertCommand.Parameters(0).Value = CType(FOLIO_ENTRADA,String)
+                Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
             End If
             If (FECHA_SALIDA Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
@@ -2877,7 +3086,7 @@ Namespace ENTRADAS_SALIDASTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Private Function UpdateUpdatedRows(ByVal dataSet As ENTRADAS_SALIDAS, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateUpdatedRows(ByVal dataSet As MPClienteDataSet, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
             If (Not (Me._eNTRADASTableAdapter) Is Nothing) Then
                 Dim updatedRows() As Global.System.Data.DataRow = dataSet.ENTRADAS.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
@@ -2905,7 +3114,7 @@ Namespace ENTRADAS_SALIDASTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Private Function UpdateInsertedRows(ByVal dataSet As ENTRADAS_SALIDAS, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateInsertedRows(ByVal dataSet As MPClienteDataSet, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
             If (Not (Me._eNTRADASTableAdapter) Is Nothing) Then
                 Dim addedRows() As Global.System.Data.DataRow = dataSet.ENTRADAS.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
@@ -2931,7 +3140,7 @@ Namespace ENTRADAS_SALIDASTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Private Function UpdateDeletedRows(ByVal dataSet As ENTRADAS_SALIDAS, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateDeletedRows(ByVal dataSet As MPClienteDataSet, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
             If (Not (Me._sALIDASTableAdapter) Is Nothing) Then
                 Dim deletedRows() As Global.System.Data.DataRow = dataSet.SALIDAS.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
@@ -2983,7 +3192,7 @@ Namespace ENTRADAS_SALIDASTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overridable Function UpdateAll(ByVal dataSet As ENTRADAS_SALIDAS) As Integer
+        Public Overridable Function UpdateAll(ByVal dataSet As MPClienteDataSet) As Integer
             If (dataSet Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("dataSet")
             End If
