@@ -29,8 +29,6 @@ Partial Public Class MPClienteDataSet
     
     Private tableSALIDAS As SALIDASDataTable
     
-    Private relationFK_ENTRADAS_SALIDAS As Global.System.Data.DataRelation
-    
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -220,7 +218,6 @@ Partial Public Class MPClienteDataSet
                 Me.tableSALIDAS.InitVars
             End If
         End If
-        Me.relationFK_ENTRADAS_SALIDAS = Me.Relations("FK_ENTRADAS_SALIDAS")
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -235,14 +232,6 @@ Partial Public Class MPClienteDataSet
         MyBase.Tables.Add(Me.tableENTRADAS)
         Me.tableSALIDAS = New SALIDASDataTable()
         MyBase.Tables.Add(Me.tableSALIDAS)
-        Dim fkc As Global.System.Data.ForeignKeyConstraint
-        fkc = New Global.System.Data.ForeignKeyConstraint("FK_ENTRADAS_SALIDAS", New Global.System.Data.DataColumn() {Me.tableENTRADAS.FOLIO_ENTRADAColumn}, New Global.System.Data.DataColumn() {Me.tableSALIDAS.FOLIO_ENTRADAColumn})
-        Me.tableSALIDAS.Constraints.Add(fkc)
-        fkc.AcceptRejectRule = Global.System.Data.AcceptRejectRule.None
-        fkc.DeleteRule = Global.System.Data.Rule.Cascade
-        fkc.UpdateRule = Global.System.Data.Rule.Cascade
-        Me.relationFK_ENTRADAS_SALIDAS = New Global.System.Data.DataRelation("FK_ENTRADAS_SALIDAS", New Global.System.Data.DataColumn() {Me.tableENTRADAS.FOLIO_ENTRADAColumn}, New Global.System.Data.DataColumn() {Me.tableSALIDAS.FOLIO_ENTRADAColumn}, false)
-        Me.Relations.Add(Me.relationFK_ENTRADAS_SALIDAS)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -663,12 +652,6 @@ Partial Public Class MPClienteDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function FindByFOLIO_ENTRADA(ByVal FOLIO_ENTRADA As Integer) As ENTRADASRow
-            Return CType(Me.Rows.Find(New Object() {FOLIO_ENTRADA}),ENTRADASRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
             Dim cln As ENTRADASDataTable = CType(MyBase.Clone,ENTRADASDataTable)
             cln.InitVars
@@ -758,12 +741,10 @@ Partial Public Class MPClienteDataSet
             MyBase.Columns.Add(Me.columnLOTE_MATERIAL)
             Me.columnLOTE_FOLIO = New Global.System.Data.DataColumn("LOTE_FOLIO", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnLOTE_FOLIO)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("ENTRADASKey1", New Global.System.Data.DataColumn() {Me.columnFOLIO_ENTRADA}, true))
             Me.columnFOLIO_ENTRADA.AutoIncrement = true
             Me.columnFOLIO_ENTRADA.AutoIncrementSeed = -1
             Me.columnFOLIO_ENTRADA.AutoIncrementStep = -1
             Me.columnFOLIO_ENTRADA.AllowDBNull = false
-            Me.columnFOLIO_ENTRADA.Unique = true
             Me.columnFECHA.MaxLength = 536870910
             Me.columnCLIENTE.MaxLength = 536870910
             Me.columnSOLICITANTE.MaxLength = 536870910
@@ -1045,12 +1026,9 @@ Partial Public Class MPClienteDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddSALIDASRow(ByVal parentENTRADASRowByFK_ENTRADAS_SALIDAS As ENTRADASRow, ByVal FECHA_SALIDA As String, ByVal AUTORIZACION As String, ByVal OBSERVACIONES_SALIDA As String) As SALIDASRow
+        Public Overloads Function AddSALIDASRow(ByVal FOLIO_ENTRADA As Integer, ByVal FECHA_SALIDA As String, ByVal AUTORIZACION As String, ByVal OBSERVACIONES_SALIDA As String) As SALIDASRow
             Dim rowSALIDASRow As SALIDASRow = CType(Me.NewRow,SALIDASRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Nothing, FECHA_SALIDA, AUTORIZACION, OBSERVACIONES_SALIDA}
-            If (Not (parentENTRADASRowByFK_ENTRADAS_SALIDAS) Is Nothing) Then
-                columnValuesArray(1) = parentENTRADASRowByFK_ENTRADAS_SALIDAS(0)
-            End If
+            Dim columnValuesArray() As Object = New Object() {Nothing, FOLIO_ENTRADA, FECHA_SALIDA, AUTORIZACION, OBSERVACIONES_SALIDA}
             rowSALIDASRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowSALIDASRow)
             Return rowSALIDASRow
@@ -1096,6 +1074,8 @@ Partial Public Class MPClienteDataSet
             Me.columnFOLIO_SALIDA.AutoIncrement = true
             Me.columnFOLIO_SALIDA.AutoIncrementSeed = -1
             Me.columnFOLIO_SALIDA.AutoIncrementStep = -1
+            Me.columnFOLIO_SALIDA.AllowDBNull = false
+            Me.columnFOLIO_ENTRADA.AllowDBNull = false
             Me.columnFECHA_SALIDA.MaxLength = 536870910
             Me.columnAUTORIZACION.MaxLength = 536870910
             Me.columnOBSERVACIONES_SALIDA.MaxLength = 536870910
@@ -1847,16 +1827,6 @@ Partial Public Class MPClienteDataSet
         Public Sub SetLOTE_FOLIONull()
             Me(Me.tableENTRADAS.LOTE_FOLIOColumn) = Global.System.Convert.DBNull
         End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function GetSALIDASRows() As SALIDASRow()
-            If (Me.Table.ChildRelations("FK_ENTRADAS_SALIDAS") Is Nothing) Then
-                Return New SALIDASRow(-1) {}
-            Else
-                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("FK_ENTRADAS_SALIDAS")),SALIDASRow())
-            End If
-        End Function
     End Class
     
     '''<summary>
@@ -1878,11 +1848,7 @@ Partial Public Class MPClienteDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property FOLIO_SALIDA() As Integer
             Get
-                Try 
-                    Return CType(Me(Me.tableSALIDAS.FOLIO_SALIDAColumn),Integer)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'FOLIO_SALIDA' de la tabla 'SALIDAS' es DBNull.", e)
-                End Try
+                Return CType(Me(Me.tableSALIDAS.FOLIO_SALIDAColumn),Integer)
             End Get
             Set
                 Me(Me.tableSALIDAS.FOLIO_SALIDAColumn) = value
@@ -1893,11 +1859,7 @@ Partial Public Class MPClienteDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property FOLIO_ENTRADA() As Integer
             Get
-                Try 
-                    Return CType(Me(Me.tableSALIDAS.FOLIO_ENTRADAColumn),Integer)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'FOLIO_ENTRADA' de la tabla 'SALIDAS' es DBNull.", e)
-                End Try
+                Return CType(Me(Me.tableSALIDAS.FOLIO_ENTRADAColumn),Integer)
             End Get
             Set
                 Me(Me.tableSALIDAS.FOLIO_ENTRADAColumn) = value
@@ -1948,41 +1910,6 @@ Partial Public Class MPClienteDataSet
                 Me(Me.tableSALIDAS.OBSERVACIONES_SALIDAColumn) = value
             End Set
         End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property ENTRADASRow() As ENTRADASRow
-            Get
-                Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK_ENTRADAS_SALIDAS")),ENTRADASRow)
-            End Get
-            Set
-                Me.SetParentRow(value, Me.Table.ParentRelations("FK_ENTRADAS_SALIDAS"))
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsFOLIO_SALIDANull() As Boolean
-            Return Me.IsNull(Me.tableSALIDAS.FOLIO_SALIDAColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetFOLIO_SALIDANull()
-            Me(Me.tableSALIDAS.FOLIO_SALIDAColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsFOLIO_ENTRADANull() As Boolean
-            Return Me.IsNull(Me.tableSALIDAS.FOLIO_ENTRADAColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetFOLIO_ENTRADANull()
-            Me(Me.tableSALIDAS.FOLIO_ENTRADAColumn) = Global.System.Convert.DBNull
-        End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -2934,12 +2861,8 @@ Namespace MPClienteDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal FOLIO_ENTRADA As Global.System.Nullable(Of Integer), ByVal FECHA_SALIDA As String, ByVal AUTORIZACION As String, ByVal OBSERVACIONES_SALIDA As String) As Integer
-            If (FOLIO_ENTRADA.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(0).Value = CType(FOLIO_ENTRADA.Value,Integer)
-            Else
-                Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
-            End If
+        Public Overloads Overridable Function Insert(ByVal FOLIO_ENTRADA As Integer, ByVal FECHA_SALIDA As String, ByVal AUTORIZACION As String, ByVal OBSERVACIONES_SALIDA As String) As Integer
+            Me.Adapter.InsertCommand.Parameters(0).Value = CType(FOLIO_ENTRADA,Integer)
             If (FECHA_SALIDA Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
             Else

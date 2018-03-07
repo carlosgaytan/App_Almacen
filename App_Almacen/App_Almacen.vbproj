@@ -112,6 +112,12 @@
     <Compile Include="PRUEBASALIDAS.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Registro_Entradas.Designer.vb">
+      <DependentUpon>Registro_Entradas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Registro_Entradas.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Principal.resx">
@@ -128,6 +134,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PRUEBASALIDAS.resx">
       <DependentUpon>PRUEBASALIDAS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registro_Entradas.resx">
+      <DependentUpon>Registro_Entradas.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
