@@ -23,64 +23,54 @@ Partial Class Registro_Entradas
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.MPClienteDataSet = New App_Almacen.MPClienteDataSet()
-        Me.ENTRADASBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ENTRADASTableAdapter = New App_Almacen.MPClienteDataSetTableAdapters.ENTRADASTableAdapter()
-        Me.TableAdapterManager = New App_Almacen.MPClienteDataSetTableAdapters.TableAdapterManager()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Registro_Entradas))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.FechaLBL = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.FolioLBL = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.FacturaTXT = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.CertificadoTXT = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.OCTXT = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.ClienteCBX = New System.Windows.Forms.ComboBox()
+        Me.CLIENTESBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ClientesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Clientes = New App_Almacen.Clientes()
+        Me.LargoTXT = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.AnchoTXT = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
+        Me.MaterialTXT = New System.Windows.Forms.ComboBox()
         Me.Label10 = New System.Windows.Forms.Label()
+        Me.EspesorTXT = New System.Windows.Forms.ComboBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.ComboBox4 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox5 = New System.Windows.Forms.ComboBox()
-        Me.Label11 = New System.Windows.Forms.Label()
+        Me.NivelTXT = New System.Windows.Forms.ComboBox()
         Me.Label12 = New System.Windows.Forms.Label()
-        CType(Me.MPClienteDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ENTRADASBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.RackTXT = New System.Windows.Forms.ComboBox()
+        Me.MPClienteDataSet = New App_Almacen.MPClienteDataSet()
+        Me.ENTRADASBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ENTRADASTableAdapter = New App_Almacen.MPClienteDataSetTableAdapters.ENTRADASTableAdapter()
+        Me.TableAdapterManager = New App_Almacen.MPClienteDataSetTableAdapters.TableAdapterManager()
+        Me.CLIENTESTableAdapter = New App_Almacen.ClientesTableAdapters.CLIENTESTableAdapter()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.ObservTXT = New System.Windows.Forms.TextBox()
+        CType(Me.CLIENTESBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ClientesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Clientes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
+        CType(Me.MPClienteDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ENTRADASBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox4.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'MPClienteDataSet
-        '
-        Me.MPClienteDataSet.DataSetName = "MPClienteDataSet"
-        Me.MPClienteDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'ENTRADASBindingSource
-        '
-        Me.ENTRADASBindingSource.DataMember = "ENTRADAS"
-        Me.ENTRADASBindingSource.DataSource = Me.MPClienteDataSet
-        '
-        'ENTRADASTableAdapter
-        '
-        Me.ENTRADASTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.ENTRADASTableAdapter = Me.ENTRADASTableAdapter
-        Me.TableAdapterManager.SALIDASTableAdapter = Nothing
-        Me.TableAdapterManager.UpdateOrder = App_Almacen.MPClienteDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'Label1
         '
@@ -131,12 +121,12 @@ Partial Class Registro_Entradas
         Me.Label3.TabIndex = 4
         Me.Label3.Text = "Cliente:"
         '
-        'TextBox2
+        'FacturaTXT
         '
-        Me.TextBox2.Location = New System.Drawing.Point(106, 77)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox2.TabIndex = 7
+        Me.FacturaTXT.Location = New System.Drawing.Point(106, 77)
+        Me.FacturaTXT.Name = "FacturaTXT"
+        Me.FacturaTXT.Size = New System.Drawing.Size(100, 20)
+        Me.FacturaTXT.TabIndex = 7
         '
         'Label4
         '
@@ -147,12 +137,12 @@ Partial Class Registro_Entradas
         Me.Label4.TabIndex = 6
         Me.Label4.Text = "Factura/Remisión:"
         '
-        'TextBox3
+        'CertificadoTXT
         '
-        Me.TextBox3.Location = New System.Drawing.Point(72, 103)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox3.TabIndex = 9
+        Me.CertificadoTXT.Location = New System.Drawing.Point(72, 103)
+        Me.CertificadoTXT.Name = "CertificadoTXT"
+        Me.CertificadoTXT.Size = New System.Drawing.Size(100, 20)
+        Me.CertificadoTXT.TabIndex = 9
         '
         'Label5
         '
@@ -163,12 +153,12 @@ Partial Class Registro_Entradas
         Me.Label5.TabIndex = 8
         Me.Label5.Text = "Certificado:"
         '
-        'TextBox4
+        'OCTXT
         '
-        Me.TextBox4.Location = New System.Drawing.Point(54, 51)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox4.TabIndex = 11
+        Me.OCTXT.Location = New System.Drawing.Point(54, 51)
+        Me.OCTXT.Name = "OCTXT"
+        Me.OCTXT.Size = New System.Drawing.Size(100, 20)
+        Me.OCTXT.TabIndex = 11
         '
         'Label6
         '
@@ -179,20 +169,39 @@ Partial Class Registro_Entradas
         Me.Label6.TabIndex = 10
         Me.Label6.Text = "OC:"
         '
-        'ComboBox1
+        'ClienteCBX
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(54, 24)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(148, 21)
-        Me.ComboBox1.TabIndex = 12
+        Me.ClienteCBX.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.ClienteCBX.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.ClienteCBX.DataSource = Me.CLIENTESBindingSource1
+        Me.ClienteCBX.DisplayMember = "NOMBRE"
+        Me.ClienteCBX.FormattingEnabled = True
+        Me.ClienteCBX.Location = New System.Drawing.Point(54, 24)
+        Me.ClienteCBX.Name = "ClienteCBX"
+        Me.ClienteCBX.Size = New System.Drawing.Size(148, 21)
+        Me.ClienteCBX.TabIndex = 12
         '
-        'TextBox1
+        'CLIENTESBindingSource1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(70, 22)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(48, 20)
-        Me.TextBox1.TabIndex = 14
+        Me.CLIENTESBindingSource1.DataMember = "CLIENTES"
+        Me.CLIENTESBindingSource1.DataSource = Me.ClientesBindingSource
+        '
+        'ClientesBindingSource
+        '
+        Me.ClientesBindingSource.DataSource = Me.Clientes
+        Me.ClientesBindingSource.Position = 0
+        '
+        'Clientes
+        '
+        Me.Clientes.DataSetName = "Clientes"
+        Me.Clientes.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'LargoTXT
+        '
+        Me.LargoTXT.Location = New System.Drawing.Point(70, 22)
+        Me.LargoTXT.Name = "LargoTXT"
+        Me.LargoTXT.Size = New System.Drawing.Size(48, 20)
+        Me.LargoTXT.TabIndex = 14
         '
         'Label7
         '
@@ -203,12 +212,12 @@ Partial Class Registro_Entradas
         Me.Label7.TabIndex = 13
         Me.Label7.Text = "Largo MM:"
         '
-        'TextBox5
+        'AnchoTXT
         '
-        Me.TextBox5.Location = New System.Drawing.Point(70, 48)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(48, 20)
-        Me.TextBox5.TabIndex = 16
+        Me.AnchoTXT.Location = New System.Drawing.Point(70, 48)
+        Me.AnchoTXT.Name = "AnchoTXT"
+        Me.AnchoTXT.Size = New System.Drawing.Size(48, 20)
+        Me.AnchoTXT.TabIndex = 16
         '
         'Label8
         '
@@ -230,13 +239,13 @@ Partial Class Registro_Entradas
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.ComboBox3)
+        Me.GroupBox1.Controls.Add(Me.MaterialTXT)
         Me.GroupBox1.Controls.Add(Me.Label10)
-        Me.GroupBox1.Controls.Add(Me.ComboBox2)
+        Me.GroupBox1.Controls.Add(Me.EspesorTXT)
         Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.Label9)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
-        Me.GroupBox1.Controls.Add(Me.TextBox5)
+        Me.GroupBox1.Controls.Add(Me.LargoTXT)
+        Me.GroupBox1.Controls.Add(Me.AnchoTXT)
         Me.GroupBox1.Controls.Add(Me.Label8)
         Me.GroupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.GroupBox1.Location = New System.Drawing.Point(353, 39)
@@ -246,23 +255,16 @@ Partial Class Registro_Entradas
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Material"
         '
-        'ComboBox2
+        'MaterialTXT
         '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Items.AddRange(New Object() {"C. 6", "C. 7", "C. 8", "C. 9", "C. 10", "C. 11", "C. 12", "C. 13", "C. 14", "C. 15", "C. 16", "C. 18", "C. 19", "C. 20", "C. 22", "C. 24", "C. 26", "C. 28", "C. 30", "1/4""", "5/16""", "3/8""", "7/16""", "1/2""", "9/16""", "5/8""", "3/4""", "7/8""", "1""", "1 1/8""", "1 1/4""", "1 3/8""", "1 1/2""", "1 5/8""", "1 3/4""", "2""", "2 1/4""", "2 1/2""", "2 3/4""", "3""", "3 1/2""", "4""", "4 1/2""", "5""", "5 1/2""", "6"""})
-        Me.ComboBox2.Location = New System.Drawing.Point(203, 22)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(78, 21)
-        Me.ComboBox2.TabIndex = 18
-        '
-        'ComboBox3
-        '
-        Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Items.AddRange(New Object() {"AC", "INOX 304", "INOX 316", "INOX 430", "NYLAMID", "COBRE", "PINTRO", "ALUMINIO", "DOMEX", "INCONEL"})
-        Me.ComboBox3.Location = New System.Drawing.Point(187, 51)
-        Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(94, 21)
-        Me.ComboBox3.TabIndex = 20
+        Me.MaterialTXT.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.MaterialTXT.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.MaterialTXT.FormattingEnabled = True
+        Me.MaterialTXT.Items.AddRange(New Object() {"AC", "INOX 304", "INOX 316", "INOX 430", "NYLAMID", "COBRE", "PINTRO", "ALUMINIO", "DOMEX", "INCONEL"})
+        Me.MaterialTXT.Location = New System.Drawing.Point(187, 51)
+        Me.MaterialTXT.Name = "MaterialTXT"
+        Me.MaterialTXT.Size = New System.Drawing.Size(94, 21)
+        Me.MaterialTXT.TabIndex = 20
         '
         'Label10
         '
@@ -273,15 +275,26 @@ Partial Class Registro_Entradas
         Me.Label10.TabIndex = 19
         Me.Label10.Text = "Material:"
         '
+        'EspesorTXT
+        '
+        Me.EspesorTXT.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.EspesorTXT.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.EspesorTXT.FormattingEnabled = True
+        Me.EspesorTXT.Items.AddRange(New Object() {"C. 6", "C. 7", "C. 8", "C. 9", "C. 10", "C. 11", "C. 12", "C. 13", "C. 14", "C. 15", "C. 16", "C. 18", "C. 19", "C. 20", "C. 22", "C. 24", "C. 26", "C. 28", "C. 30", "1/4""", "5/16""", "3/8""", "7/16""", "1/2""", "9/16""", "5/8""", "3/4""", "7/8""", "1""", "1 1/8""", "1 1/4""", "1 3/8""", "1 1/2""", "1 5/8""", "1 3/4""", "2""", "2 1/4""", "2 1/2""", "2 3/4""", "3""", "3 1/2""", "4""", "4 1/2""", "5""", "5 1/2""", "6"""})
+        Me.EspesorTXT.Location = New System.Drawing.Point(203, 22)
+        Me.EspesorTXT.Name = "EspesorTXT"
+        Me.EspesorTXT.Size = New System.Drawing.Size(78, 21)
+        Me.EspesorTXT.TabIndex = 18
+        '
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.Label3)
-        Me.GroupBox2.Controls.Add(Me.ComboBox1)
-        Me.GroupBox2.Controls.Add(Me.TextBox3)
-        Me.GroupBox2.Controls.Add(Me.TextBox4)
+        Me.GroupBox2.Controls.Add(Me.ClienteCBX)
+        Me.GroupBox2.Controls.Add(Me.CertificadoTXT)
+        Me.GroupBox2.Controls.Add(Me.OCTXT)
         Me.GroupBox2.Controls.Add(Me.Label5)
         Me.GroupBox2.Controls.Add(Me.Label6)
-        Me.GroupBox2.Controls.Add(Me.TextBox2)
+        Me.GroupBox2.Controls.Add(Me.FacturaTXT)
         Me.GroupBox2.Controls.Add(Me.Label4)
         Me.GroupBox2.Location = New System.Drawing.Point(12, 39)
         Me.GroupBox2.Name = "GroupBox2"
@@ -292,10 +305,10 @@ Partial Class Registro_Entradas
         '
         'GroupBox3
         '
-        Me.GroupBox3.Controls.Add(Me.ComboBox5)
+        Me.GroupBox3.Controls.Add(Me.NivelTXT)
         Me.GroupBox3.Controls.Add(Me.Label12)
         Me.GroupBox3.Controls.Add(Me.Label11)
-        Me.GroupBox3.Controls.Add(Me.ComboBox4)
+        Me.GroupBox3.Controls.Add(Me.RackTXT)
         Me.GroupBox3.Location = New System.Drawing.Point(353, 126)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(293, 58)
@@ -303,32 +316,16 @@ Partial Class Registro_Entradas
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Ubicación"
         '
-        'ComboBox4
+        'NivelTXT
         '
-        Me.ComboBox4.FormattingEnabled = True
-        Me.ComboBox4.Items.AddRange(New Object() {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ñ", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "INT.", "EXT."})
-        Me.ComboBox4.Location = New System.Drawing.Point(48, 25)
-        Me.ComboBox4.Name = "ComboBox4"
-        Me.ComboBox4.Size = New System.Drawing.Size(70, 21)
-        Me.ComboBox4.TabIndex = 21
-        '
-        'ComboBox5
-        '
-        Me.ComboBox5.FormattingEnabled = True
-        Me.ComboBox5.Items.AddRange(New Object() {"1", "2", "3", "4", "5"})
-        Me.ComboBox5.Location = New System.Drawing.Point(165, 25)
-        Me.ComboBox5.Name = "ComboBox5"
-        Me.ComboBox5.Size = New System.Drawing.Size(70, 21)
-        Me.ComboBox5.TabIndex = 22
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(6, 28)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(36, 13)
-        Me.Label11.TabIndex = 13
-        Me.Label11.Text = "Rack:"
+        Me.NivelTXT.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.NivelTXT.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.NivelTXT.FormattingEnabled = True
+        Me.NivelTXT.Items.AddRange(New Object() {"1", "2", "3", "4", "5"})
+        Me.NivelTXT.Location = New System.Drawing.Point(165, 25)
+        Me.NivelTXT.Name = "NivelTXT"
+        Me.NivelTXT.Size = New System.Drawing.Size(70, 21)
+        Me.NivelTXT.TabIndex = 22
         '
         'Label12
         '
@@ -339,11 +336,75 @@ Partial Class Registro_Entradas
         Me.Label12.TabIndex = 23
         Me.Label12.Text = "Nivel:"
         '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(6, 28)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(36, 13)
+        Me.Label11.TabIndex = 13
+        Me.Label11.Text = "Rack:"
+        '
+        'RackTXT
+        '
+        Me.RackTXT.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.RackTXT.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.RackTXT.FormattingEnabled = True
+        Me.RackTXT.Items.AddRange(New Object() {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ñ", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "INT.", "EXT."})
+        Me.RackTXT.Location = New System.Drawing.Point(48, 25)
+        Me.RackTXT.Name = "RackTXT"
+        Me.RackTXT.Size = New System.Drawing.Size(70, 21)
+        Me.RackTXT.TabIndex = 21
+        '
+        'MPClienteDataSet
+        '
+        Me.MPClienteDataSet.DataSetName = "MPClienteDataSet"
+        Me.MPClienteDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'ENTRADASBindingSource
+        '
+        Me.ENTRADASBindingSource.DataMember = "ENTRADAS"
+        Me.ENTRADASBindingSource.DataSource = Me.MPClienteDataSet
+        '
+        'ENTRADASTableAdapter
+        '
+        Me.ENTRADASTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.ENTRADASTableAdapter = Me.ENTRADASTableAdapter
+        Me.TableAdapterManager.SALIDASTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = App_Almacen.MPClienteDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'CLIENTESTableAdapter
+        '
+        Me.CLIENTESTableAdapter.ClearBeforeFill = True
+        '
+        'GroupBox4
+        '
+        Me.GroupBox4.Controls.Add(Me.ObservTXT)
+        Me.GroupBox4.Location = New System.Drawing.Point(12, 190)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(634, 135)
+        Me.GroupBox4.TabIndex = 21
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "Observaciones"
+        '
+        'ObservTXT
+        '
+        Me.ObservTXT.Location = New System.Drawing.Point(6, 19)
+        Me.ObservTXT.Multiline = True
+        Me.ObservTXT.Name = "ObservTXT"
+        Me.ObservTXT.Size = New System.Drawing.Size(622, 110)
+        Me.ObservTXT.TabIndex = 0
+        '
         'Registro_Entradas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(658, 387)
+        Me.ClientSize = New System.Drawing.Size(658, 337)
+        Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
@@ -351,16 +412,23 @@ Partial Class Registro_Entradas
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.FechaLBL)
         Me.Controls.Add(Me.Label1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Registro_Entradas"
-        Me.Text = "Registro_Entradas"
-        CType(Me.MPClienteDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ENTRADASBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Registro Entradas MP"
+        CType(Me.CLIENTESBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ClientesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Clientes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
+        CType(Me.MPClienteDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ENTRADASBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox4.ResumeLayout(False)
+        Me.GroupBox4.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -375,26 +443,32 @@ Partial Class Registro_Entradas
     Friend WithEvents Label2 As Label
     Friend WithEvents FolioLBL As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents FacturaTXT As TextBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents CertificadoTXT As TextBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents OCTXT As TextBox
     Friend WithEvents Label6 As Label
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents ClienteCBX As ComboBox
+    Friend WithEvents LargoTXT As TextBox
     Friend WithEvents Label7 As Label
-    Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents AnchoTXT As TextBox
     Friend WithEvents Label8 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents ComboBox2 As ComboBox
-    Friend WithEvents ComboBox3 As ComboBox
+    Friend WithEvents EspesorTXT As ComboBox
+    Friend WithEvents MaterialTXT As ComboBox
     Friend WithEvents Label10 As Label
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents GroupBox3 As GroupBox
-    Friend WithEvents ComboBox5 As ComboBox
+    Friend WithEvents NivelTXT As ComboBox
     Friend WithEvents Label12 As Label
     Friend WithEvents Label11 As Label
-    Friend WithEvents ComboBox4 As ComboBox
+    Friend WithEvents RackTXT As ComboBox
+    Friend WithEvents ClientesBindingSource As BindingSource
+    Friend WithEvents Clientes As Clientes
+    Friend WithEvents CLIENTESBindingSource1 As BindingSource
+    Friend WithEvents CLIENTESTableAdapter As ClientesTableAdapters.CLIENTESTableAdapter
+    Friend WithEvents GroupBox4 As GroupBox
+    Friend WithEvents ObservTXT As TextBox
 End Class

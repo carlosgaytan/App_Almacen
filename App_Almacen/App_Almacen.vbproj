@@ -73,6 +73,11 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bases\Clientes.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Clientes.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Bases\MPClienteDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -140,6 +145,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Bases\Clientes.xsc">
+      <DependentUpon>Clientes.xsd</DependentUpon>
+    </None>
+    <None Include="Bases\Clientes.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Clientes.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Bases\Clientes.xss">
+      <DependentUpon>Clientes.xsd</DependentUpon>
+    </None>
     <None Include="Bases\MPClienteDataSet.xsc">
       <DependentUpon>MPClienteDataSet.xsd</DependentUpon>
     </None>
