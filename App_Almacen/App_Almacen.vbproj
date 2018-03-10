@@ -78,6 +78,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Clientes.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Bases\MATERIALES.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MATERIALES.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Bases\MPClienteDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -155,6 +160,17 @@
     </None>
     <None Include="Bases\Clientes.xss">
       <DependentUpon>Clientes.xsd</DependentUpon>
+    </None>
+    <None Include="Bases\MATERIALES.xsc">
+      <DependentUpon>MATERIALES.xsd</DependentUpon>
+    </None>
+    <None Include="Bases\MATERIALES.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MATERIALES.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Bases\MATERIALES.xss">
+      <DependentUpon>MATERIALES.xsd</DependentUpon>
     </None>
     <None Include="Bases\MPClienteDataSet.xsc">
       <DependentUpon>MPClienteDataSet.xsd</DependentUpon>
