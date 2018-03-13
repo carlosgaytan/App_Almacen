@@ -1,4 +1,4 @@
 ﻿Module INFOADICIONAL
-    Public ACTUALIZAR As String
-
+    Public ACTUALIZARENTRADAS As String
+    Public ACTUALIZARSALIDAS As String
 End Module

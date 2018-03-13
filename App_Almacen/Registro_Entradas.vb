@@ -17,6 +17,8 @@
         mesTXT.Text = DateAndTime.Month(Now)
         yearTXT.Text = DateAndTime.Year(Now)
 
+        FolioLBL.Text = MPClienteDataSet.ENTRADAS.Last.FOLIO_ENTRADA + 1
+
     End Sub
 
     Private Sub GuardarBTN_Click(sender As Object, e As EventArgs) Handles GuardarBTN.Click
@@ -52,7 +54,7 @@
         ENTRADASTableAdapter.Update(MPClienteDataSet.ENTRADAS)
 
         'Regista información en el Módulo INFOADICIONAL para la actualización de la BD
-        INFOADICIONAL.ACTUALIZAR = 1
+        INFOADICIONAL.ACTUALIZARENTRADAS = 1
 
         'Muestra mensaje de confirmación
         MessageBox.Show("Registro guardado", "Registros")
@@ -178,6 +180,9 @@
             PesoLBL.Visible = False
         End If
 
+        'TODO: esta línea de código carga datos en la tabla 'MPClienteDataSet.ENTRADAS' Puede moverla o quitarla según sea necesario.
+        Me.ENTRADASTableAdapter.Fill(Me.MPClienteDataSet.ENTRADAS)
+        FolioLBL.Text = MPClienteDataSet.ENTRADAS.Last.FOLIO_ENTRADA + 1
 
     End Sub
 
