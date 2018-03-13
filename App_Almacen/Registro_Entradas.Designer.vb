@@ -46,6 +46,8 @@ Partial Class Registro_Entradas
         Me.Label9 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.MaterialTXT = New System.Windows.Forms.ComboBox()
+        Me.MATERIALBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.MATERIALES = New App_Almacen.MATERIALES()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.EspesorTXT = New System.Windows.Forms.ComboBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
@@ -76,22 +78,24 @@ Partial Class Registro_Entradas
         Me.ClienteTXT = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.PesoLBL = New System.Windows.Forms.Label()
-        Me.MATERIALES = New App_Almacen.MATERIALES()
-        Me.MATERIALBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.MATERIALTableAdapter = New App_Almacen.MATERIALESTableAdapters.MATERIALTableAdapter()
-        Me.DensidadTXT = New System.Windows.Forms.TextBox()
+        Me.BuscaMatBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.BuscaMatTableAdapter = New App_Almacen.MATERIALESTableAdapters.BuscaMatTableAdapter()
+        Me.TableAdapterManager1 = New App_Almacen.MATERIALESTableAdapters.TableAdapterManager()
+        Me.Label19 = New System.Windows.Forms.Label()
         CType(Me.CLIENTESBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ClientesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Clientes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.MATERIALBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MATERIALES, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.MPClienteDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ENTRADASBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
-        CType(Me.MATERIALES, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.MATERIALBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BuscaMatBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -289,6 +293,16 @@ Partial Class Registro_Entradas
         Me.MaterialTXT.Size = New System.Drawing.Size(94, 21)
         Me.MaterialTXT.TabIndex = 20
         '
+        'MATERIALBindingSource
+        '
+        Me.MATERIALBindingSource.DataMember = "MATERIAL"
+        Me.MATERIALBindingSource.DataSource = Me.MATERIALES
+        '
+        'MATERIALES
+        '
+        Me.MATERIALES.DataSetName = "MATERIALES"
+        Me.MATERIALES.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'Label10
         '
         Me.Label10.AutoSize = True
@@ -445,7 +459,7 @@ Partial Class Registro_Entradas
         Me.GroupBox5.Controls.Add(Me.Material)
         Me.GroupBox5.Controls.Add(Me.ClienteTXT)
         Me.GroupBox5.Controls.Add(Me.Label14)
-        Me.GroupBox5.Location = New System.Drawing.Point(95, 190)
+        Me.GroupBox5.Location = New System.Drawing.Point(178, 190)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Size = New System.Drawing.Size(353, 58)
         Me.GroupBox5.TabIndex = 29
@@ -558,41 +572,51 @@ Partial Class Registro_Entradas
         'PesoLBL
         '
         Me.PesoLBL.AutoSize = True
-        Me.PesoLBL.Location = New System.Drawing.Point(101, 413)
+        Me.PesoLBL.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PesoLBL.Location = New System.Drawing.Point(45, 223)
         Me.PesoLBL.Name = "PesoLBL"
-        Me.PesoLBL.Size = New System.Drawing.Size(45, 13)
+        Me.PesoLBL.Size = New System.Drawing.Size(89, 26)
         Me.PesoLBL.TabIndex = 30
         Me.PesoLBL.Text = "Label19"
-        '
-        'MATERIALES
-        '
-        Me.MATERIALES.DataSetName = "MATERIALES"
-        Me.MATERIALES.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'MATERIALBindingSource
-        '
-        Me.MATERIALBindingSource.DataMember = "MATERIAL"
-        Me.MATERIALBindingSource.DataSource = Me.MATERIALES
+        Me.PesoLBL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.PesoLBL.Visible = False
         '
         'MATERIALTableAdapter
         '
         Me.MATERIALTableAdapter.ClearBeforeFill = True
         '
-        'DensidadTXT
+        'BuscaMatBindingSource
         '
-        Me.DensidadTXT.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.MATERIALBindingSource, "KG_M3", True))
-        Me.DensidadTXT.Location = New System.Drawing.Point(471, 222)
-        Me.DensidadTXT.Name = "DensidadTXT"
-        Me.DensidadTXT.Size = New System.Drawing.Size(48, 20)
-        Me.DensidadTXT.TabIndex = 34
-        Me.DensidadTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.BuscaMatBindingSource.DataMember = "BuscaMat"
+        Me.BuscaMatBindingSource.DataSource = Me.MATERIALES
+        '
+        'BuscaMatTableAdapter
+        '
+        Me.BuscaMatTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager1
+        '
+        Me.TableAdapterManager1.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager1.BuscaMatTableAdapter = Me.BuscaMatTableAdapter
+        Me.TableAdapterManager1.MATERIALTableAdapter = Me.MATERIALTableAdapter
+        Me.TableAdapterManager1.UpdateOrder = App_Almacen.MATERIALESTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.Location = New System.Drawing.Point(55, 191)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(68, 26)
+        Me.Label19.TabIndex = 31
+        Me.Label19.Text = "Peso:"
         '
         'Registro_Entradas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(543, 438)
-        Me.Controls.Add(Me.DensidadTXT)
+        Me.ClientSize = New System.Drawing.Size(543, 437)
+        Me.Controls.Add(Me.Label19)
         Me.Controls.Add(Me.PesoLBL)
         Me.Controls.Add(Me.GroupBox5)
         Me.Controls.Add(Me.GuardarBTN)
@@ -613,6 +637,8 @@ Partial Class Registro_Entradas
         CType(Me.Clientes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.MATERIALBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MATERIALES, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
@@ -623,8 +649,7 @@ Partial Class Registro_Entradas
         Me.GroupBox4.PerformLayout()
         Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox5.PerformLayout()
-        CType(Me.MATERIALES, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.MATERIALBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BuscaMatBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -685,5 +710,8 @@ Partial Class Registro_Entradas
     Friend WithEvents MATERIALES As MATERIALES
     Friend WithEvents MATERIALBindingSource As BindingSource
     Friend WithEvents MATERIALTableAdapter As MATERIALESTableAdapters.MATERIALTableAdapter
-    Friend WithEvents DensidadTXT As TextBox
+    Friend WithEvents BuscaMatBindingSource As BindingSource
+    Friend WithEvents BuscaMatTableAdapter As MATERIALESTableAdapters.BuscaMatTableAdapter
+    Friend WithEvents TableAdapterManager1 As MATERIALESTableAdapters.TableAdapterManager
+    Friend WithEvents Label19 As Label
 End Class

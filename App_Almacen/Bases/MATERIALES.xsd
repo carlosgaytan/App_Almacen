@@ -36,7 +36,7 @@ FROM            MATERIAL</CommandText>
             </Mappings>
             <Sources />
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="MATERIAL1TableAdapter" GeneratorDataComponentClassName="MATERIAL1TableAdapter" Name="MATERIAL1" UserDataComponentName="MATERIAL1TableAdapter">
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="BuscaMatTableAdapter" GeneratorDataComponentClassName="BuscaMatTableAdapter" Name="BuscaMat" UserDataComponentName="BuscaMatTableAdapter">
             <MainSource>
               <DbSource ConnectionRef="MPClienteConnectionString (MySettings)" DbObjectName="MATERIAL" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="BUSCAMATFill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="BUSCAMATGetData" GeneratorSourceName="BUSCAMATFill" GetMethodModifier="Public" GetMethodName="BUSCAMATGetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="BUSCAMATGetData" UserSourceName="BUSCAMATFill">
                 <InsertCommand>
@@ -103,7 +103,7 @@ WHERE        (MATERIAL = ?)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="MATERIAL1" msprop:Generator_TableClassName="MATERIAL1DataTable" msprop:Generator_TableVarName="tableMATERIAL1" msprop:Generator_TablePropName="MATERIAL1" msprop:Generator_RowDeletingName="MATERIAL1RowDeleting" msprop:Generator_RowChangingName="MATERIAL1RowChanging" msprop:Generator_RowEvHandlerName="MATERIAL1RowChangeEventHandler" msprop:Generator_RowDeletedName="MATERIAL1RowDeleted" msprop:Generator_UserTableName="MATERIAL1" msprop:Generator_RowChangedName="MATERIAL1RowChanged" msprop:Generator_RowEvArgName="MATERIAL1RowChangeEvent" msprop:Generator_RowClassName="MATERIAL1Row">
+        <xs:element name="BuscaMat" msprop:Generator_TableClassName="BuscaMatDataTable" msprop:Generator_TableVarName="tableBuscaMat" msprop:Generator_TablePropName="BuscaMat" msprop:Generator_RowDeletingName="BuscaMatRowDeleting" msprop:Generator_RowChangingName="BuscaMatRowChanging" msprop:Generator_RowEvHandlerName="BuscaMatRowChangeEventHandler" msprop:Generator_RowDeletedName="BuscaMatRowDeleted" msprop:Generator_UserTableName="BuscaMat" msprop:Generator_RowChangedName="BuscaMatRowChanged" msprop:Generator_RowEvArgName="BuscaMatRowChangeEvent" msprop:Generator_RowClassName="BuscaMatRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MATERIAL" msprop:Generator_ColumnVarNameInTable="columnMATERIAL" msprop:Generator_ColumnPropNameInRow="MATERIAL" msprop:Generator_ColumnPropNameInTable="MATERIALColumn" msprop:Generator_UserColumnName="MATERIAL" minOccurs="0">

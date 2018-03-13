@@ -27,7 +27,7 @@ Partial Public Class MATERIALES
     
     Private tableMATERIAL As MATERIALDataTable
     
-    Private tableMATERIAL1 As MATERIAL1DataTable
+    Private tableBuscaMat As BuscaMatDataTable
     
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
@@ -61,8 +61,8 @@ Partial Public Class MATERIALES
             If (Not (ds.Tables("MATERIAL")) Is Nothing) Then
                 MyBase.Tables.Add(New MATERIALDataTable(ds.Tables("MATERIAL")))
             End If
-            If (Not (ds.Tables("MATERIAL1")) Is Nothing) Then
-                MyBase.Tables.Add(New MATERIAL1DataTable(ds.Tables("MATERIAL1")))
+            If (Not (ds.Tables("BuscaMat")) Is Nothing) Then
+                MyBase.Tables.Add(New BuscaMatDataTable(ds.Tables("BuscaMat")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -95,9 +95,9 @@ Partial Public Class MATERIALES
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property MATERIAL1() As MATERIAL1DataTable
+    Public ReadOnly Property BuscaMat() As BuscaMatDataTable
         Get
-            Return Me.tableMATERIAL1
+            Return Me.tableBuscaMat
         End Get
     End Property
     
@@ -171,8 +171,8 @@ Partial Public Class MATERIALES
             If (Not (ds.Tables("MATERIAL")) Is Nothing) Then
                 MyBase.Tables.Add(New MATERIALDataTable(ds.Tables("MATERIAL")))
             End If
-            If (Not (ds.Tables("MATERIAL1")) Is Nothing) Then
-                MyBase.Tables.Add(New MATERIAL1DataTable(ds.Tables("MATERIAL1")))
+            If (Not (ds.Tables("BuscaMat")) Is Nothing) Then
+                MyBase.Tables.Add(New BuscaMatDataTable(ds.Tables("BuscaMat")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -212,10 +212,10 @@ Partial Public Class MATERIALES
                 Me.tableMATERIAL.InitVars
             End If
         End If
-        Me.tableMATERIAL1 = CType(MyBase.Tables("MATERIAL1"),MATERIAL1DataTable)
+        Me.tableBuscaMat = CType(MyBase.Tables("BuscaMat"),BuscaMatDataTable)
         If (initTable = true) Then
-            If (Not (Me.tableMATERIAL1) Is Nothing) Then
-                Me.tableMATERIAL1.InitVars
+            If (Not (Me.tableBuscaMat) Is Nothing) Then
+                Me.tableBuscaMat.InitVars
             End If
         End If
     End Sub
@@ -230,8 +230,8 @@ Partial Public Class MATERIALES
         Me.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
         Me.tableMATERIAL = New MATERIALDataTable()
         MyBase.Tables.Add(Me.tableMATERIAL)
-        Me.tableMATERIAL1 = New MATERIAL1DataTable()
-        MyBase.Tables.Add(Me.tableMATERIAL1)
+        Me.tableBuscaMat = New BuscaMatDataTable()
+        MyBase.Tables.Add(Me.tableBuscaMat)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -242,7 +242,7 @@ Partial Public Class MATERIALES
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Private Function ShouldSerializeMATERIAL1() As Boolean
+    Private Function ShouldSerializeBuscaMat() As Boolean
         Return false
     End Function
     
@@ -308,7 +308,7 @@ Partial Public Class MATERIALES
     Public Delegate Sub MATERIALRowChangeEventHandler(ByVal sender As Object, ByVal e As MATERIALRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Public Delegate Sub MATERIAL1RowChangeEventHandler(ByVal sender As Object, ByVal e As MATERIAL1RowChangeEvent)
+    Public Delegate Sub BuscaMatRowChangeEventHandler(ByVal sender As Object, ByVal e As BuscaMatRowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
@@ -596,8 +596,8 @@ Partial Public Class MATERIALES
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class MATERIAL1DataTable
-        Inherits Global.System.Data.TypedTableBase(Of MATERIAL1Row)
+    Partial Public Class BuscaMatDataTable
+        Inherits Global.System.Data.TypedTableBase(Of BuscaMatRow)
         
         Private columnMATERIAL As Global.System.Data.DataColumn
         
@@ -609,7 +609,7 @@ Partial Public Class MATERIALES
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
             MyBase.New
-            Me.TableName = "MATERIAL1"
+            Me.TableName = "BuscaMat"
             Me.BeginInit
             Me.InitClass
             Me.EndInit
@@ -675,44 +675,44 @@ Partial Public Class MATERIALES
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As MATERIAL1Row
+        Public Default ReadOnly Property Item(ByVal index As Integer) As BuscaMatRow
             Get
-                Return CType(Me.Rows(index),MATERIAL1Row)
+                Return CType(Me.Rows(index),BuscaMatRow)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event MATERIAL1RowChanging As MATERIAL1RowChangeEventHandler
+        Public Event BuscaMatRowChanging As BuscaMatRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event MATERIAL1RowChanged As MATERIAL1RowChangeEventHandler
+        Public Event BuscaMatRowChanged As BuscaMatRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event MATERIAL1RowDeleting As MATERIAL1RowChangeEventHandler
+        Public Event BuscaMatRowDeleting As BuscaMatRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event MATERIAL1RowDeleted As MATERIAL1RowChangeEventHandler
+        Public Event BuscaMatRowDeleted As BuscaMatRowChangeEventHandler
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Sub AddMATERIAL1Row(ByVal row As MATERIAL1Row)
+        Public Overloads Sub AddBuscaMatRow(ByVal row As BuscaMatRow)
             Me.Rows.Add(row)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddMATERIAL1Row(ByVal MATERIAL As String, ByVal LB_IN3 As String, ByVal KG_M3 As String) As MATERIAL1Row
-            Dim rowMATERIAL1Row As MATERIAL1Row = CType(Me.NewRow,MATERIAL1Row)
+        Public Overloads Function AddBuscaMatRow(ByVal MATERIAL As String, ByVal LB_IN3 As String, ByVal KG_M3 As String) As BuscaMatRow
+            Dim rowBuscaMatRow As BuscaMatRow = CType(Me.NewRow,BuscaMatRow)
             Dim columnValuesArray() As Object = New Object() {MATERIAL, LB_IN3, KG_M3}
-            rowMATERIAL1Row.ItemArray = columnValuesArray
-            Me.Rows.Add(rowMATERIAL1Row)
-            Return rowMATERIAL1Row
+            rowBuscaMatRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowBuscaMatRow)
+            Return rowBuscaMatRow
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As MATERIAL1DataTable = CType(MyBase.Clone,MATERIAL1DataTable)
+            Dim cln As BuscaMatDataTable = CType(MyBase.Clone,BuscaMatDataTable)
             cln.InitVars
             Return cln
         End Function
@@ -720,7 +720,7 @@ Partial Public Class MATERIALES
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New MATERIAL1DataTable()
+            Return New BuscaMatDataTable()
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -747,28 +747,28 @@ Partial Public Class MATERIALES
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function NewMATERIAL1Row() As MATERIAL1Row
-            Return CType(Me.NewRow,MATERIAL1Row)
+        Public Function NewBuscaMatRow() As BuscaMatRow
+            Return CType(Me.NewRow,BuscaMatRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New MATERIAL1Row(builder)
+            Return New BuscaMatRow(builder)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(MATERIAL1Row)
+            Return GetType(BuscaMatRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me.MATERIAL1RowChangedEvent) Is Nothing) Then
-                RaiseEvent MATERIAL1RowChanged(Me, New MATERIAL1RowChangeEvent(CType(e.Row,MATERIAL1Row), e.Action))
+            If (Not (Me.BuscaMatRowChangedEvent) Is Nothing) Then
+                RaiseEvent BuscaMatRowChanged(Me, New BuscaMatRowChangeEvent(CType(e.Row,BuscaMatRow), e.Action))
             End If
         End Sub
         
@@ -776,8 +776,8 @@ Partial Public Class MATERIALES
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me.MATERIAL1RowChangingEvent) Is Nothing) Then
-                RaiseEvent MATERIAL1RowChanging(Me, New MATERIAL1RowChangeEvent(CType(e.Row,MATERIAL1Row), e.Action))
+            If (Not (Me.BuscaMatRowChangingEvent) Is Nothing) Then
+                RaiseEvent BuscaMatRowChanging(Me, New BuscaMatRowChangeEvent(CType(e.Row,BuscaMatRow), e.Action))
             End If
         End Sub
         
@@ -785,8 +785,8 @@ Partial Public Class MATERIALES
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me.MATERIAL1RowDeletedEvent) Is Nothing) Then
-                RaiseEvent MATERIAL1RowDeleted(Me, New MATERIAL1RowChangeEvent(CType(e.Row,MATERIAL1Row), e.Action))
+            If (Not (Me.BuscaMatRowDeletedEvent) Is Nothing) Then
+                RaiseEvent BuscaMatRowDeleted(Me, New BuscaMatRowChangeEvent(CType(e.Row,BuscaMatRow), e.Action))
             End If
         End Sub
         
@@ -794,14 +794,14 @@ Partial Public Class MATERIALES
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me.MATERIAL1RowDeletingEvent) Is Nothing) Then
-                RaiseEvent MATERIAL1RowDeleting(Me, New MATERIAL1RowChangeEvent(CType(e.Row,MATERIAL1Row), e.Action))
+            If (Not (Me.BuscaMatRowDeletingEvent) Is Nothing) Then
+                RaiseEvent BuscaMatRowDeleting(Me, New BuscaMatRowChangeEvent(CType(e.Row,BuscaMatRow), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub RemoveMATERIAL1Row(ByVal row As MATERIAL1Row)
+        Public Sub RemoveBuscaMatRow(ByVal row As BuscaMatRow)
             Me.Rows.Remove(row)
         End Sub
         
@@ -828,7 +828,7 @@ Partial Public Class MATERIALES
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "MATERIAL1DataTable"
+            attribute2.FixedValue = "BuscaMatDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -972,16 +972,16 @@ Partial Public Class MATERIALES
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class MATERIAL1Row
+    Partial Public Class BuscaMatRow
         Inherits Global.System.Data.DataRow
         
-        Private tableMATERIAL1 As MATERIAL1DataTable
+        Private tableBuscaMat As BuscaMatDataTable
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
-            Me.tableMATERIAL1 = CType(Me.Table,MATERIAL1DataTable)
+            Me.tableBuscaMat = CType(Me.Table,BuscaMatDataTable)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -989,13 +989,13 @@ Partial Public Class MATERIALES
         Public Property MATERIAL() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableMATERIAL1.MATERIALColumn),String)
+                    Return CType(Me(Me.tableBuscaMat.MATERIALColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'MATERIAL' de la tabla 'MATERIAL1' es DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'MATERIAL' de la tabla 'BuscaMat' es DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableMATERIAL1.MATERIALColumn) = value
+                Me(Me.tableBuscaMat.MATERIALColumn) = value
             End Set
         End Property
         
@@ -1004,13 +1004,13 @@ Partial Public Class MATERIALES
         Public Property LB_IN3() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableMATERIAL1.LB_IN3Column),String)
+                    Return CType(Me(Me.tableBuscaMat.LB_IN3Column),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'LB_IN3' de la tabla 'MATERIAL1' es DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'LB_IN3' de la tabla 'BuscaMat' es DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableMATERIAL1.LB_IN3Column) = value
+                Me(Me.tableBuscaMat.LB_IN3Column) = value
             End Set
         End Property
         
@@ -1019,50 +1019,50 @@ Partial Public Class MATERIALES
         Public Property KG_M3() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableMATERIAL1.KG_M3Column),String)
+                    Return CType(Me(Me.tableBuscaMat.KG_M3Column),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'KG_M3' de la tabla 'MATERIAL1' es DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'KG_M3' de la tabla 'BuscaMat' es DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableMATERIAL1.KG_M3Column) = value
+                Me(Me.tableBuscaMat.KG_M3Column) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsMATERIALNull() As Boolean
-            Return Me.IsNull(Me.tableMATERIAL1.MATERIALColumn)
+            Return Me.IsNull(Me.tableBuscaMat.MATERIALColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetMATERIALNull()
-            Me(Me.tableMATERIAL1.MATERIALColumn) = Global.System.Convert.DBNull
+            Me(Me.tableBuscaMat.MATERIALColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsLB_IN3Null() As Boolean
-            Return Me.IsNull(Me.tableMATERIAL1.LB_IN3Column)
+            Return Me.IsNull(Me.tableBuscaMat.LB_IN3Column)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetLB_IN3Null()
-            Me(Me.tableMATERIAL1.LB_IN3Column) = Global.System.Convert.DBNull
+            Me(Me.tableBuscaMat.LB_IN3Column) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsKG_M3Null() As Boolean
-            Return Me.IsNull(Me.tableMATERIAL1.KG_M3Column)
+            Return Me.IsNull(Me.tableBuscaMat.KG_M3Column)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetKG_M3Null()
-            Me(Me.tableMATERIAL1.KG_M3Column) = Global.System.Convert.DBNull
+            Me(Me.tableBuscaMat.KG_M3Column) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -1106,16 +1106,16 @@ Partial Public Class MATERIALES
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Public Class MATERIAL1RowChangeEvent
+    Public Class BuscaMatRowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As MATERIAL1Row
+        Private eventRow As BuscaMatRow
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub New(ByVal row As MATERIAL1Row, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As BuscaMatRow, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -1123,7 +1123,7 @@ Partial Public Class MATERIALES
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Row() As MATERIAL1Row
+        Public ReadOnly Property Row() As BuscaMatRow
             Get
                 Return Me.eventRow
             End Get
@@ -1395,7 +1395,7 @@ Namespace MATERIALESTableAdapters
      Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
      Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class MATERIAL1TableAdapter
+    Partial Public Class BuscaMatTableAdapter
         Inherits Global.System.ComponentModel.Component
         
         Private WithEvents _adapter As Global.System.Data.OleDb.OleDbDataAdapter
@@ -1512,7 +1512,7 @@ Namespace MATERIALESTableAdapters
             Me._adapter = New Global.System.Data.OleDb.OleDbDataAdapter()
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "MATERIAL1"
+            tableMapping.DataSetTable = "BuscaMat"
             tableMapping.ColumnMappings.Add("MATERIAL", "MATERIAL")
             tableMapping.ColumnMappings.Add("LB_IN3", "LB_IN3")
             tableMapping.ColumnMappings.Add("KG_M3", "KG_M3")
@@ -1549,7 +1549,7 @@ Namespace MATERIALESTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function BUSCAMATFill(ByVal dataTable As MATERIALES.MATERIAL1DataTable, ByVal MATERIAL As String) As Integer
+        Public Overloads Overridable Function BUSCAMATFill(ByVal dataTable As MATERIALES.BuscaMatDataTable, ByVal MATERIAL As String) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (MATERIAL Is Nothing) Then
                 Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
@@ -1567,14 +1567,14 @@ Namespace MATERIALESTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function BUSCAMATGetData(ByVal MATERIAL As String) As MATERIALES.MATERIAL1DataTable
+        Public Overloads Overridable Function BUSCAMATGetData(ByVal MATERIAL As String) As MATERIALES.BuscaMatDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (MATERIAL Is Nothing) Then
                 Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.SelectCommand.Parameters(0).Value = CType(MATERIAL,String)
             End If
-            Dim dataTable As MATERIALES.MATERIAL1DataTable = New MATERIALES.MATERIAL1DataTable()
+            Dim dataTable As MATERIALES.BuscaMatDataTable = New MATERIALES.BuscaMatDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -1582,7 +1582,7 @@ Namespace MATERIALESTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As MATERIALES.MATERIAL1DataTable) As Integer
+        Public Overloads Overridable Function Update(ByVal dataTable As MATERIALES.BuscaMatDataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
         
@@ -1590,7 +1590,7 @@ Namespace MATERIALESTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
         Public Overloads Overridable Function Update(ByVal dataSet As MATERIALES) As Integer
-            Return Me.Adapter.Update(dataSet, "MATERIAL1")
+            Return Me.Adapter.Update(dataSet, "BuscaMat")
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1658,7 +1658,7 @@ Namespace MATERIALESTableAdapters
         
         Private _mATERIALTableAdapter As MATERIALTableAdapter
         
-        Private _mATERIAL1TableAdapter As MATERIAL1TableAdapter
+        Private _buscaMatTableAdapter As BuscaMatTableAdapter
         
         Private _backupDataSetBeforeUpdate As Boolean
         
@@ -1694,12 +1694,12 @@ Namespace MATERIALESTableAdapters
          Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
             "a", "System.Drawing.Design.UITypeEditor")>  _
-        Public Property MATERIAL1TableAdapter() As MATERIAL1TableAdapter
+        Public Property BuscaMatTableAdapter() As BuscaMatTableAdapter
             Get
-                Return Me._mATERIAL1TableAdapter
+                Return Me._buscaMatTableAdapter
             End Get
             Set
-                Me._mATERIAL1TableAdapter = value
+                Me._buscaMatTableAdapter = value
             End Set
         End Property
         
@@ -1726,9 +1726,9 @@ Namespace MATERIALESTableAdapters
                             AndAlso (Not (Me._mATERIALTableAdapter.Connection) Is Nothing)) Then
                     Return Me._mATERIALTableAdapter.Connection
                 End If
-                If ((Not (Me._mATERIAL1TableAdapter) Is Nothing)  _
-                            AndAlso (Not (Me._mATERIAL1TableAdapter.Connection) Is Nothing)) Then
-                    Return Me._mATERIAL1TableAdapter.Connection
+                If ((Not (Me._buscaMatTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._buscaMatTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._buscaMatTableAdapter.Connection
                 End If
                 Return Nothing
             End Get
@@ -1746,7 +1746,7 @@ Namespace MATERIALESTableAdapters
                 If (Not (Me._mATERIALTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
-                If (Not (Me._mATERIAL1TableAdapter) Is Nothing) Then
+                If (Not (Me._buscaMatTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
                 Return count
@@ -1769,12 +1769,12 @@ Namespace MATERIALESTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._mATERIAL1TableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.MATERIAL1.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._buscaMatTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.BuscaMat.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._mATERIAL1TableAdapter.Update(updatedRows))
+                    result = (result + Me._buscaMatTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -1796,11 +1796,11 @@ Namespace MATERIALESTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
-            If (Not (Me._mATERIAL1TableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.MATERIAL1.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._buscaMatTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.BuscaMat.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._mATERIAL1TableAdapter.Update(addedRows))
+                    result = (result + Me._buscaMatTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -1814,11 +1814,11 @@ Namespace MATERIALESTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Function UpdateDeletedRows(ByVal dataSet As MATERIALES, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._mATERIAL1TableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.MATERIAL1.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._buscaMatTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.BuscaMat.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._mATERIAL1TableAdapter.Update(deletedRows))
+                    result = (result + Me._buscaMatTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -1876,8 +1876,8 @@ Namespace MATERIALESTableAdapters
                 Throw New Global.System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi"& _ 
                         "sma cadena de conexión.")
             End If
-            If ((Not (Me._mATERIAL1TableAdapter) Is Nothing)  _
-                        AndAlso (Me.MatchTableAdapterConnection(Me._mATERIAL1TableAdapter.Connection) = false)) Then
+            If ((Not (Me._buscaMatTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._buscaMatTableAdapter.Connection) = false)) Then
                 Throw New Global.System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi"& _ 
                         "sma cadena de conexión.")
             End If
@@ -1922,13 +1922,13 @@ Namespace MATERIALESTableAdapters
                         adaptersWithAcceptChangesDuringUpdate.Add(Me._mATERIALTableAdapter.Adapter)
                     End If
                 End If
-                If (Not (Me._mATERIAL1TableAdapter) Is Nothing) Then
-                    revertConnections.Add(Me._mATERIAL1TableAdapter, Me._mATERIAL1TableAdapter.Connection)
-                    Me._mATERIAL1TableAdapter.Connection = CType(workConnection,Global.System.Data.OleDb.OleDbConnection)
-                    Me._mATERIAL1TableAdapter.Transaction = CType(workTransaction,Global.System.Data.OleDb.OleDbTransaction)
-                    If Me._mATERIAL1TableAdapter.Adapter.AcceptChangesDuringUpdate Then
-                        Me._mATERIAL1TableAdapter.Adapter.AcceptChangesDuringUpdate = false
-                        adaptersWithAcceptChangesDuringUpdate.Add(Me._mATERIAL1TableAdapter.Adapter)
+                If (Not (Me._buscaMatTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._buscaMatTableAdapter, Me._buscaMatTableAdapter.Connection)
+                    Me._buscaMatTableAdapter.Connection = CType(workConnection,Global.System.Data.OleDb.OleDbConnection)
+                    Me._buscaMatTableAdapter.Transaction = CType(workTransaction,Global.System.Data.OleDb.OleDbTransaction)
+                    If Me._buscaMatTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._buscaMatTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._buscaMatTableAdapter.Adapter)
                     End If
                 End If
                 '
@@ -1995,9 +1995,9 @@ Namespace MATERIALESTableAdapters
                     Me._mATERIALTableAdapter.Connection = CType(revertConnections(Me._mATERIALTableAdapter),Global.System.Data.OleDb.OleDbConnection)
                     Me._mATERIALTableAdapter.Transaction = Nothing
                 End If
-                If (Not (Me._mATERIAL1TableAdapter) Is Nothing) Then
-                    Me._mATERIAL1TableAdapter.Connection = CType(revertConnections(Me._mATERIAL1TableAdapter),Global.System.Data.OleDb.OleDbConnection)
-                    Me._mATERIAL1TableAdapter.Transaction = Nothing
+                If (Not (Me._buscaMatTableAdapter) Is Nothing) Then
+                    Me._buscaMatTableAdapter.Connection = CType(revertConnections(Me._buscaMatTableAdapter),Global.System.Data.OleDb.OleDbConnection)
+                    Me._buscaMatTableAdapter.Transaction = Nothing
                 End If
                 If (0 < adaptersWithAcceptChangesDuringUpdate.Count) Then
                     Dim adapters((adaptersWithAcceptChangesDuringUpdate.Count) - 1) As Global.System.Data.Common.DataAdapter

@@ -1,5 +1,5 @@
 ﻿Public Class Registro_Entradas
-    Dim ESP, PES, MULT
+    Dim ESP, PES, MULT, DENSIDAD
 
 
     Private Sub Registro_Entradas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -12,10 +12,10 @@
         'TODO: esta línea de código carga datos en la tabla 'MPClienteDataSet.ENTRADAS' Puede moverla o quitarla según sea necesario.
         Me.ENTRADASTableAdapter.Fill(Me.MPClienteDataSet.ENTRADAS)
 
+        'Coloca el día, mes y año del LOTE
         diaTXT.Text = DateAndTime.Day(Now)
         mesTXT.Text = DateAndTime.Month(Now)
         yearTXT.Text = DateAndTime.Year(Now)
-        'Material.Text = If(MaterialTXT.Text = "Inoxidable", "IN", If(MaterialTXT.Text = "Acero", "AC", If(MaterialTXT.Text = "NYLAMID", "NY", If(MaterialTXT.Text = "Cobre", "CB", If(MaterialTXT.Text = "Pintro", "PNT", If(MaterialTXT.Text = "Aluminio", "AL", If(MaterialTXT.Text = "Inconel", "INC", "")))))))
 
     End Sub
 
@@ -43,12 +43,35 @@
         NuevaEntrada.LOTE_AÑO = yearTXT.Text
         NuevaEntrada.LOTE_CLIENTE = ClienteTXT.Text
         NuevaEntrada.LOTE_FOLIO = ConsecTXT.Text
-        'NuevaEntrada.PESO_KG
+        NuevaEntrada.PESO_KG = PES
+
+        'Insertar la fila en la tabla apropiada del DataSet
+        MPClienteDataSet.ENTRADAS.AddENTRADASRow(NuevaEntrada)
+
+        'Enviar informacón a la base de datos
+        ENTRADASTableAdapter.Update(MPClienteDataSet.ENTRADAS)
+
+        'Regista información en el Módulo INFOADICIONAL para la actualización de la BD
+        INFOADICIONAL.ACTUALIZAR = 1
+
+        'Muestra mensaje de confirmación
+        MessageBox.Show("Registro guardado", "Registros")
+
+        'Limpia los textbox necesarios
+        FacturaTXT.Clear()
+        OCTXT.Clear()
+        CertificadoTXT.Clear()
+        LargoTXT.Clear()
+        AnchoTXT.Clear()
+        EspesorTXT.Text = ""
+        ObservTXT.Clear()
+
 
     End Sub
 
     Private Sub LargoTXT_TextChanged(sender As Object, e As EventArgs) Handles LargoTXT.TextChanged, AnchoTXT.TextChanged, EspesorTXT.SelectedIndexChanged, MaterialTXT.SelectedIndexChanged
 
+        'Espesores en MM de cada calibre
         If EspesorTXT.Text = "C. 6" Then
             ESP = 4.94
         ElseIf EspesorTXT.Text = "C. 7" Then
@@ -141,12 +164,21 @@
             ESP = 127
         End If
 
-        PesoLBL.Text = MATERIALES.MATERIAL.C
+        'Carga la tabla con la densidad de los materiales seleccionados
+        Me.BuscaMatTableAdapter.BUSCAMATFill(Me.MATERIALES.BuscaMat, MaterialTXT.Text)
+        DENSIDAD = MATERIALES.BuscaMat.Last.KG_M3
 
-        MULT = 1000
-        PES = ((Val(AnchoTXT.Text) / MULT) * (Val(LargoTXT.Text) / MULT) * (ESP / 1000)) * Val(DensidadTXT.Text)
+        'Formula de calculo del peso de placas y láminas
+        If DENSIDAD <> 0 Then
+            MULT = 1000
+            PES = ((Val(AnchoTXT.Text) / MULT) * (Val(LargoTXT.Text) / MULT) * (ESP / 1000)) * DENSIDAD
+            PesoLBL.Visible = True
+            PesoLBL.Text = FormatNumber(PES, 2) & " KG"
+        Else
+            PesoLBL.Visible = False
+        End If
 
-        'PesoLBL.Text = FormatNumber(PES, 2)
+
     End Sub
 
 End Class
