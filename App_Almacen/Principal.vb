@@ -22,11 +22,18 @@ Public Class Principal
 
     Private Sub EntradasFSW_Changed(sender As Object, e As FileSystemEventArgs) Handles EntradasFSW.Changed
 
-        'Actualiza la base de datos al registrar cambios en la BD bajo la condición de que INFOADICIONAL sea distinto a ""
+        'Actualiza la base de datos al registrar cambios en la BD bajo la condición de que INFOADICIONAL sea distinto a "" en ENTRADAS
         If INFOADICIONAL.ACTUALIZARENTRADAS <> "" Then
             Me.ENTRADASTableAdapter.Fill(Me.MPClienteDataSet.ENTRADAS)
             INFOADICIONAL.ACTUALIZARENTRADAS = ""
         End If
+
+        'Actualiza la base de datos al registrar cambios en la BD bajo la condición de que INFOADICIONAL sea distinto a "" en Salidas
+        If INFOADICIONAL.ACTUALIZARSALIDAS <> "" Then
+            Me.SALIDASTableAdapter.Fill(Me.MPClienteDataSet.SALIDAS)
+            INFOADICIONAL.ACTUALIZARSALIDAS = ""
+        End If
+
 
     End Sub
 

@@ -29,7 +29,7 @@ Partial Class Registro_Salidas
         Me.SALIDASTableAdapter = New App_Almacen.MPClienteDataSetTableAdapters.SALIDASTableAdapter()
         Me.TableAdapterManager = New App_Almacen.MPClienteDataSetTableAdapters.TableAdapterManager()
         Me.ENTRADASTableAdapter = New App_Almacen.MPClienteDataSetTableAdapters.ENTRADASTableAdapter()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.EntradaCBX = New System.Windows.Forms.ComboBox()
         Me.ENTRADASBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -81,6 +81,9 @@ Partial Class Registro_Salidas
         Me.Label20 = New System.Windows.Forms.Label()
         Me.LimpiarBTN = New System.Windows.Forms.Button()
         Me.GuardarBTN = New System.Windows.Forms.Button()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.GroupBox6 = New System.Windows.Forms.GroupBox()
+        Me.ComenSalidasTXT = New System.Windows.Forms.TextBox()
         CType(Me.MPClienteDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SALIDASBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ENTRADASBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -89,6 +92,7 @@ Partial Class Registro_Salidas
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
+        Me.GroupBox6.SuspendLayout()
         Me.SuspendLayout()
         '
         'MPClienteDataSet
@@ -116,17 +120,17 @@ Partial Class Registro_Salidas
         '
         Me.ENTRADASTableAdapter.ClearBeforeFill = True
         '
-        'ComboBox1
+        'EntradaCBX
         '
-        Me.ComboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
-        Me.ComboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.ComboBox1.DataSource = Me.ENTRADASBindingSource
-        Me.ComboBox1.DisplayMember = "FOLIO_ENTRADA"
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(113, 17)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(100, 21)
-        Me.ComboBox1.TabIndex = 0
+        Me.EntradaCBX.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.EntradaCBX.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.EntradaCBX.DataSource = Me.ENTRADASBindingSource
+        Me.EntradaCBX.DisplayMember = "FOLIO_ENTRADA"
+        Me.EntradaCBX.FormattingEnabled = True
+        Me.EntradaCBX.Location = New System.Drawing.Point(113, 17)
+        Me.EntradaCBX.Name = "EntradaCBX"
+        Me.EntradaCBX.Size = New System.Drawing.Size(121, 21)
+        Me.EntradaCBX.TabIndex = 0
         '
         'ENTRADASBindingSource
         '
@@ -167,7 +171,7 @@ Partial Class Registro_Salidas
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(231, 9)
+        Me.Label3.Location = New System.Drawing.Point(345, 9)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(98, 17)
         Me.Label3.TabIndex = 5
@@ -177,7 +181,7 @@ Partial Class Registro_Salidas
         '
         Me.SalidaLBL.AutoSize = True
         Me.SalidaLBL.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SalidaLBL.Location = New System.Drawing.Point(335, 9)
+        Me.SalidaLBL.Location = New System.Drawing.Point(449, 9)
         Me.SalidaLBL.Name = "SalidaLBL"
         Me.SalidaLBL.Size = New System.Drawing.Size(98, 17)
         Me.SalidaLBL.TabIndex = 4
@@ -201,7 +205,7 @@ Partial Class Registro_Salidas
         Me.GroupBox1.Controls.Add(Me.ClienteLBL)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Controls.Add(Me.ComboBox1)
+        Me.GroupBox1.Controls.Add(Me.EntradaCBX)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 34)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(712, 72)
@@ -469,7 +473,7 @@ Partial Class Registro_Salidas
         Me.GroupBox4.Size = New System.Drawing.Size(342, 100)
         Me.GroupBox4.TabIndex = 9
         Me.GroupBox4.TabStop = False
-        Me.GroupBox4.Text = "Comentarios"
+        Me.GroupBox4.Text = "Comentarios Entrada"
         '
         'TextBox1
         '
@@ -563,7 +567,7 @@ Partial Class Registro_Salidas
         Me.GroupBox5.Controls.Add(Me.Label9)
         Me.GroupBox5.Location = New System.Drawing.Point(12, 215)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(577, 74)
+        Me.GroupBox5.Size = New System.Drawing.Size(295, 138)
         Me.GroupBox5.TabIndex = 10
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Datos Salida"
@@ -604,14 +608,14 @@ Partial Class Registro_Salidas
         '
         'AutorizaTXT
         '
-        Me.AutorizaTXT.Location = New System.Drawing.Point(365, 44)
+        Me.AutorizaTXT.Location = New System.Drawing.Point(88, 96)
         Me.AutorizaTXT.Name = "AutorizaTXT"
         Me.AutorizaTXT.Size = New System.Drawing.Size(198, 20)
         Me.AutorizaTXT.TabIndex = 27
         '
         'SolicitanteTXT
         '
-        Me.SolicitanteTXT.Location = New System.Drawing.Point(365, 18)
+        Me.SolicitanteTXT.Location = New System.Drawing.Point(88, 70)
         Me.SolicitanteTXT.Name = "SolicitanteTXT"
         Me.SolicitanteTXT.Size = New System.Drawing.Size(198, 20)
         Me.SolicitanteTXT.TabIndex = 26
@@ -620,7 +624,7 @@ Partial Class Registro_Salidas
         '
         Me.Label19.AutoSize = True
         Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.Location = New System.Drawing.Point(288, 47)
+        Me.Label19.Location = New System.Drawing.Point(6, 99)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(57, 13)
         Me.Label19.TabIndex = 25
@@ -630,7 +634,7 @@ Partial Class Registro_Salidas
         '
         Me.Label20.AutoSize = True
         Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.Location = New System.Drawing.Point(288, 21)
+        Me.Label20.Location = New System.Drawing.Point(6, 73)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(71, 13)
         Me.Label20.TabIndex = 24
@@ -638,7 +642,7 @@ Partial Class Registro_Salidas
         '
         'LimpiarBTN
         '
-        Me.LimpiarBTN.Location = New System.Drawing.Point(649, 220)
+        Me.LimpiarBTN.Location = New System.Drawing.Point(649, 278)
         Me.LimpiarBTN.Name = "LimpiarBTN"
         Me.LimpiarBTN.Size = New System.Drawing.Size(75, 23)
         Me.LimpiarBTN.TabIndex = 11
@@ -647,18 +651,41 @@ Partial Class Registro_Salidas
         '
         'GuardarBTN
         '
-        Me.GuardarBTN.Location = New System.Drawing.Point(649, 249)
+        Me.GuardarBTN.Location = New System.Drawing.Point(649, 307)
         Me.GuardarBTN.Name = "GuardarBTN"
         Me.GuardarBTN.Size = New System.Drawing.Size(75, 39)
         Me.GuardarBTN.TabIndex = 12
         Me.GuardarBTN.Text = "Registrar Salida"
         Me.GuardarBTN.UseVisualStyleBackColor = True
         '
+        'Timer1
+        '
+        Me.Timer1.Enabled = True
+        '
+        'GroupBox6
+        '
+        Me.GroupBox6.Controls.Add(Me.ComenSalidasTXT)
+        Me.GroupBox6.Location = New System.Drawing.Point(313, 218)
+        Me.GroupBox6.Name = "GroupBox6"
+        Me.GroupBox6.Size = New System.Drawing.Size(322, 135)
+        Me.GroupBox6.TabIndex = 13
+        Me.GroupBox6.TabStop = False
+        Me.GroupBox6.Text = "Comentarios Salida"
+        '
+        'ComenSalidasTXT
+        '
+        Me.ComenSalidasTXT.Location = New System.Drawing.Point(6, 15)
+        Me.ComenSalidasTXT.Multiline = True
+        Me.ComenSalidasTXT.Name = "ComenSalidasTXT"
+        Me.ComenSalidasTXT.Size = New System.Drawing.Size(310, 114)
+        Me.ComenSalidasTXT.TabIndex = 0
+        '
         'Registro_Salidas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(736, 300)
+        Me.ClientSize = New System.Drawing.Size(736, 365)
+        Me.Controls.Add(Me.GroupBox6)
         Me.Controls.Add(Me.GuardarBTN)
         Me.Controls.Add(Me.LimpiarBTN)
         Me.Controls.Add(Me.GroupBox5)
@@ -672,6 +699,7 @@ Partial Class Registro_Salidas
         Me.Controls.Add(Me.Label2)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Registro_Salidas"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Registro Salidas de MP"
         CType(Me.MPClienteDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SALIDASBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -686,6 +714,8 @@ Partial Class Registro_Salidas
         Me.GroupBox4.PerformLayout()
         Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox5.PerformLayout()
+        Me.GroupBox6.ResumeLayout(False)
+        Me.GroupBox6.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -696,7 +726,7 @@ Partial Class Registro_Salidas
     Friend WithEvents SALIDASTableAdapter As MPClienteDataSetTableAdapters.SALIDASTableAdapter
     Friend WithEvents TableAdapterManager As MPClienteDataSetTableAdapters.TableAdapterManager
     Friend WithEvents ENTRADASTableAdapter As MPClienteDataSetTableAdapters.ENTRADASTableAdapter
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents EntradaCBX As ComboBox
     Friend WithEvents Label1 As Label
     Friend WithEvents ENTRADASBindingSource As BindingSource
     Friend WithEvents Label2 As Label
@@ -748,4 +778,7 @@ Partial Class Registro_Salidas
     Friend WithEvents Label9 As Label
     Friend WithEvents LimpiarBTN As Button
     Friend WithEvents GuardarBTN As Button
+    Friend WithEvents Timer1 As Timer
+    Friend WithEvents GroupBox6 As GroupBox
+    Friend WithEvents ComenSalidasTXT As TextBox
 End Class
