@@ -46,6 +46,7 @@
         NuevaEntrada.LOTE_CLIENTE = ClienteTXT.Text
         NuevaEntrada.LOTE_FOLIO = ConsecTXT.Text
         NuevaEntrada.PESO_KG = PES
+        NuevaEntrada.FOLIO_SALIDA = "-"
 
         'Insertar la fila en la tabla apropiada del DataSet
         MPClienteDataSet.ENTRADAS.AddENTRADASRow(NuevaEntrada)

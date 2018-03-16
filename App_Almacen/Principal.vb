@@ -2,6 +2,8 @@
 
 Public Class Principal
     Private Sub Principal_Load(sender As Object, e As EventArgs) Handles Me.Load
+        'TODO: esta línea de código carga datos en la tabla 'MPClienteDataSet.IventariosMP' Puede moverla o quitarla según sea necesario.
+        Me.InventarioMPTableAdapter.InventarioMPFill(Me.MPClienteDataSet.IventariosMP)
         'TODO: esta línea de código carga datos en la tabla 'MPClienteDataSet.SALIDAS' Puede moverla o quitarla según sea necesario.
         Me.SALIDASTableAdapter.Fill(Me.MPClienteDataSet.SALIDAS)
         'TODO: esta línea de código carga datos en la tabla 'MPClienteDataSet.ENTRADAS' Puede moverla o quitarla según sea necesario.

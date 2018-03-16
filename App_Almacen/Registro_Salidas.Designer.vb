@@ -37,53 +37,54 @@ Partial Class Registro_Salidas
         Me.Label3 = New System.Windows.Forms.Label()
         Me.SalidaLBL = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.ClienteLBL = New System.Windows.Forms.Label()
-        Me.OCLBL = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.FacturaLBL = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.LargoLBL = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.AnchoLBL = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.EspesorLBL = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.MaterialLBL = New System.Windows.Forms.Label()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.PesoLBL = New System.Windows.Forms.Label()
-        Me.Label18 = New System.Windows.Forms.Label()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.NivelLBL = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.RackLBL = New System.Windows.Forms.Label()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.ConsecutivoLBL = New System.Windows.Forms.Label()
+        Me.MatLBL = New System.Windows.Forms.Label()
+        Me.ClienLBL = New System.Windows.Forms.Label()
+        Me.YearLBL = New System.Windows.Forms.Label()
+        Me.MesLBL = New System.Windows.Forms.Label()
         Me.DiaLBL = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.MesLBL = New System.Windows.Forms.Label()
-        Me.YearLBL = New System.Windows.Forms.Label()
-        Me.ClienLBL = New System.Windows.Forms.Label()
-        Me.MatLBL = New System.Windows.Forms.Label()
-        Me.ConsecutivoLBL = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.FacturaLBL = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.OCLBL = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.ClienteLBL = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.PesoLBL = New System.Windows.Forms.Label()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.MaterialLBL = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.EspesorLBL = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.AnchoLBL = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.LargoLBL = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.NivelLBL = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.RackLBL = New System.Windows.Forms.Label()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.ofTXT = New System.Windows.Forms.TextBox()
-        Me.piTXT = New System.Windows.Forms.TextBox()
         Me.AutorizaTXT = New System.Windows.Forms.TextBox()
         Me.SolicitanteTXT = New System.Windows.Forms.TextBox()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
+        Me.piTXT = New System.Windows.Forms.TextBox()
+        Me.ofTXT = New System.Windows.Forms.TextBox()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.LimpiarBTN = New System.Windows.Forms.Button()
         Me.GuardarBTN = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.ComenSalidasTXT = New System.Windows.Forms.TextBox()
+        Me.SalidaEntrada = New System.Windows.Forms.Label()
         CType(Me.MPClienteDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SALIDASBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ENTRADASBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -213,65 +214,75 @@ Partial Class Registro_Salidas
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Información General"
         '
-        'Label4
+        'ConsecutivoLBL
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(6, 49)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(50, 13)
-        Me.Label4.TabIndex = 2
-        Me.Label4.Text = "Cliente:"
+        Me.ConsecutivoLBL.AutoSize = True
+        Me.ConsecutivoLBL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "LOTE_FOLIO", True))
+        Me.ConsecutivoLBL.Location = New System.Drawing.Point(682, 49)
+        Me.ConsecutivoLBL.Name = "ConsecutivoLBL"
+        Me.ConsecutivoLBL.Size = New System.Drawing.Size(19, 13)
+        Me.ConsecutivoLBL.TabIndex = 16
+        Me.ConsecutivoLBL.Text = "00"
         '
-        'ClienteLBL
+        'MatLBL
         '
-        Me.ClienteLBL.AutoSize = True
-        Me.ClienteLBL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "CLIENTE", True))
-        Me.ClienteLBL.Location = New System.Drawing.Point(57, 49)
-        Me.ClienteLBL.Name = "ClienteLBL"
-        Me.ClienteLBL.Size = New System.Drawing.Size(42, 13)
-        Me.ClienteLBL.TabIndex = 3
-        Me.ClienteLBL.Text = "Cliente:"
+        Me.MatLBL.AutoSize = True
+        Me.MatLBL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "LOTE_MATERIAL", True))
+        Me.MatLBL.Location = New System.Drawing.Point(653, 49)
+        Me.MatLBL.Name = "MatLBL"
+        Me.MatLBL.Size = New System.Drawing.Size(31, 13)
+        Me.MatLBL.TabIndex = 15
+        Me.MatLBL.Text = "GGG"
         '
-        'OCLBL
+        'ClienLBL
         '
-        Me.OCLBL.AutoSize = True
-        Me.OCLBL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "OC", True))
-        Me.OCLBL.Location = New System.Drawing.Point(270, 20)
-        Me.OCLBL.Name = "OCLBL"
-        Me.OCLBL.Size = New System.Drawing.Size(25, 13)
-        Me.OCLBL.TabIndex = 5
-        Me.OCLBL.Text = "OC:"
+        Me.ClienLBL.AutoSize = True
+        Me.ClienLBL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "LOTE_CLIENTE", True))
+        Me.ClienLBL.Location = New System.Drawing.Point(622, 49)
+        Me.ClienLBL.Name = "ClienLBL"
+        Me.ClienLBL.Size = New System.Drawing.Size(31, 13)
+        Me.ClienLBL.TabIndex = 14
+        Me.ClienLBL.Text = "0100"
         '
-        'Label6
+        'YearLBL
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(240, 20)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(28, 13)
-        Me.Label6.TabIndex = 4
-        Me.Label6.Text = "OC:"
+        Me.YearLBL.AutoSize = True
+        Me.YearLBL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "LOTE_AÑO", True))
+        Me.YearLBL.Location = New System.Drawing.Point(592, 49)
+        Me.YearLBL.Name = "YearLBL"
+        Me.YearLBL.Size = New System.Drawing.Size(31, 13)
+        Me.YearLBL.TabIndex = 13
+        Me.YearLBL.Text = "0100"
         '
-        'FacturaLBL
+        'MesLBL
         '
-        Me.FacturaLBL.AutoSize = True
-        Me.FacturaLBL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "FACTURA_REMISION", True))
-        Me.FacturaLBL.Location = New System.Drawing.Point(388, 20)
-        Me.FacturaLBL.Name = "FacturaLBL"
-        Me.FacturaLBL.Size = New System.Drawing.Size(46, 13)
-        Me.FacturaLBL.TabIndex = 7
-        Me.FacturaLBL.Text = "Factura:"
+        Me.MesLBL.AutoSize = True
+        Me.MesLBL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "LOTE_MES", True))
+        Me.MesLBL.Location = New System.Drawing.Point(575, 49)
+        Me.MesLBL.Name = "MesLBL"
+        Me.MesLBL.Size = New System.Drawing.Size(19, 13)
+        Me.MesLBL.TabIndex = 12
+        Me.MesLBL.Text = "01"
         '
-        'Label7
+        'DiaLBL
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(333, 20)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(54, 13)
-        Me.Label7.TabIndex = 6
-        Me.Label7.Text = "Factura:"
+        Me.DiaLBL.AutoSize = True
+        Me.DiaLBL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "LOTE_DIA", True))
+        Me.DiaLBL.Location = New System.Drawing.Point(558, 49)
+        Me.DiaLBL.Name = "DiaLBL"
+        Me.DiaLBL.Size = New System.Drawing.Size(19, 13)
+        Me.DiaLBL.TabIndex = 11
+        Me.DiaLBL.Text = "01"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Location = New System.Drawing.Point(523, 49)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(36, 13)
+        Me.Label13.TabIndex = 10
+        Me.Label13.Text = "Lote:"
         '
         'Label5
         '
@@ -293,6 +304,66 @@ Partial Class Registro_Salidas
         Me.Label8.TabIndex = 8
         Me.Label8.Text = "Certificado:"
         '
+        'FacturaLBL
+        '
+        Me.FacturaLBL.AutoSize = True
+        Me.FacturaLBL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "FACTURA_REMISION", True))
+        Me.FacturaLBL.Location = New System.Drawing.Point(388, 20)
+        Me.FacturaLBL.Name = "FacturaLBL"
+        Me.FacturaLBL.Size = New System.Drawing.Size(46, 13)
+        Me.FacturaLBL.TabIndex = 7
+        Me.FacturaLBL.Text = "Factura:"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(333, 20)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(54, 13)
+        Me.Label7.TabIndex = 6
+        Me.Label7.Text = "Factura:"
+        '
+        'OCLBL
+        '
+        Me.OCLBL.AutoSize = True
+        Me.OCLBL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "OC", True))
+        Me.OCLBL.Location = New System.Drawing.Point(270, 20)
+        Me.OCLBL.Name = "OCLBL"
+        Me.OCLBL.Size = New System.Drawing.Size(25, 13)
+        Me.OCLBL.TabIndex = 5
+        Me.OCLBL.Text = "OC:"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(240, 20)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(28, 13)
+        Me.Label6.TabIndex = 4
+        Me.Label6.Text = "OC:"
+        '
+        'ClienteLBL
+        '
+        Me.ClienteLBL.AutoSize = True
+        Me.ClienteLBL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "CLIENTE", True))
+        Me.ClienteLBL.Location = New System.Drawing.Point(57, 49)
+        Me.ClienteLBL.Name = "ClienteLBL"
+        Me.ClienteLBL.Size = New System.Drawing.Size(42, 13)
+        Me.ClienteLBL.TabIndex = 3
+        Me.ClienteLBL.Text = "Cliente:"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(6, 49)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(50, 13)
+        Me.Label4.TabIndex = 2
+        Me.Label4.Text = "Cliente:"
+        '
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.PesoLBL)
@@ -312,65 +383,25 @@ Partial Class Registro_Salidas
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Descripción MP"
         '
-        'LargoLBL
+        'PesoLBL
         '
-        Me.LargoLBL.AutoSize = True
-        Me.LargoLBL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "LARGO", True))
-        Me.LargoLBL.Location = New System.Drawing.Point(75, 23)
-        Me.LargoLBL.Name = "LargoLBL"
-        Me.LargoLBL.Size = New System.Drawing.Size(34, 13)
-        Me.LargoLBL.TabIndex = 11
-        Me.LargoLBL.Text = "Largo"
+        Me.PesoLBL.AutoSize = True
+        Me.PesoLBL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "PESO_KG", True))
+        Me.PesoLBL.Location = New System.Drawing.Point(75, 75)
+        Me.PesoLBL.Name = "PesoLBL"
+        Me.PesoLBL.Size = New System.Drawing.Size(34, 13)
+        Me.PesoLBL.TabIndex = 19
+        Me.PesoLBL.Text = "Peso:"
         '
-        'Label10
+        'Label18
         '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(6, 23)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(67, 13)
-        Me.Label10.TabIndex = 10
-        Me.Label10.Text = "Largo MM:"
-        '
-        'AnchoLBL
-        '
-        Me.AnchoLBL.AutoSize = True
-        Me.AnchoLBL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "ANCHO", True))
-        Me.AnchoLBL.Location = New System.Drawing.Point(75, 49)
-        Me.AnchoLBL.Name = "AnchoLBL"
-        Me.AnchoLBL.Size = New System.Drawing.Size(38, 13)
-        Me.AnchoLBL.TabIndex = 13
-        Me.AnchoLBL.Text = "Ancho"
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(6, 49)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(71, 13)
-        Me.Label12.TabIndex = 12
-        Me.Label12.Text = "Ancho MM:"
-        '
-        'EspesorLBL
-        '
-        Me.EspesorLBL.AutoSize = True
-        Me.EspesorLBL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "ESPESOR", True))
-        Me.EspesorLBL.Location = New System.Drawing.Point(180, 23)
-        Me.EspesorLBL.Name = "EspesorLBL"
-        Me.EspesorLBL.Size = New System.Drawing.Size(45, 13)
-        Me.EspesorLBL.TabIndex = 15
-        Me.EspesorLBL.Text = "Espesor"
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(124, 23)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(56, 13)
-        Me.Label14.TabIndex = 14
-        Me.Label14.Text = "Espesor:"
+        Me.Label18.AutoSize = True
+        Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label18.Location = New System.Drawing.Point(6, 75)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(60, 13)
+        Me.Label18.TabIndex = 18
+        Me.Label18.Text = "Peso KG:"
         '
         'MaterialLBL
         '
@@ -392,25 +423,65 @@ Partial Class Registro_Salidas
         Me.Label16.TabIndex = 16
         Me.Label16.Text = "Material:"
         '
-        'PesoLBL
+        'EspesorLBL
         '
-        Me.PesoLBL.AutoSize = True
-        Me.PesoLBL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "PESO_KG", True))
-        Me.PesoLBL.Location = New System.Drawing.Point(75, 75)
-        Me.PesoLBL.Name = "PesoLBL"
-        Me.PesoLBL.Size = New System.Drawing.Size(34, 13)
-        Me.PesoLBL.TabIndex = 19
-        Me.PesoLBL.Text = "Peso:"
+        Me.EspesorLBL.AutoSize = True
+        Me.EspesorLBL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "ESPESOR", True))
+        Me.EspesorLBL.Location = New System.Drawing.Point(180, 23)
+        Me.EspesorLBL.Name = "EspesorLBL"
+        Me.EspesorLBL.Size = New System.Drawing.Size(45, 13)
+        Me.EspesorLBL.TabIndex = 15
+        Me.EspesorLBL.Text = "Espesor"
         '
-        'Label18
+        'Label14
         '
-        Me.Label18.AutoSize = True
-        Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.Location = New System.Drawing.Point(6, 75)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(60, 13)
-        Me.Label18.TabIndex = 18
-        Me.Label18.Text = "Peso KG:"
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.Location = New System.Drawing.Point(124, 23)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(56, 13)
+        Me.Label14.TabIndex = 14
+        Me.Label14.Text = "Espesor:"
+        '
+        'AnchoLBL
+        '
+        Me.AnchoLBL.AutoSize = True
+        Me.AnchoLBL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "ANCHO", True))
+        Me.AnchoLBL.Location = New System.Drawing.Point(75, 49)
+        Me.AnchoLBL.Name = "AnchoLBL"
+        Me.AnchoLBL.Size = New System.Drawing.Size(38, 13)
+        Me.AnchoLBL.TabIndex = 13
+        Me.AnchoLBL.Text = "Ancho"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Location = New System.Drawing.Point(6, 49)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(71, 13)
+        Me.Label12.TabIndex = 12
+        Me.Label12.Text = "Ancho MM:"
+        '
+        'LargoLBL
+        '
+        Me.LargoLBL.AutoSize = True
+        Me.LargoLBL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "LARGO", True))
+        Me.LargoLBL.Location = New System.Drawing.Point(75, 23)
+        Me.LargoLBL.Name = "LargoLBL"
+        Me.LargoLBL.Size = New System.Drawing.Size(34, 13)
+        Me.LargoLBL.TabIndex = 11
+        Me.LargoLBL.Text = "Largo"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(6, 23)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(67, 13)
+        Me.Label10.TabIndex = 10
+        Me.Label10.Text = "Largo MM:"
         '
         'GroupBox3
         '
@@ -435,6 +506,16 @@ Partial Class Registro_Salidas
         Me.NivelLBL.TabIndex = 23
         Me.NivelLBL.Text = "Nivel"
         '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.Location = New System.Drawing.Point(6, 29)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(41, 13)
+        Me.Label15.TabIndex = 20
+        Me.Label15.Text = "Rack:"
+        '
         'Label11
         '
         Me.Label11.AutoSize = True
@@ -454,16 +535,6 @@ Partial Class Registro_Salidas
         Me.RackLBL.Size = New System.Drawing.Size(36, 13)
         Me.RackLBL.TabIndex = 21
         Me.RackLBL.Text = "RACK"
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(6, 29)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(41, 13)
-        Me.Label15.TabIndex = 20
-        Me.Label15.Text = "Rack:"
         '
         'GroupBox4
         '
@@ -485,76 +556,6 @@ Partial Class Registro_Salidas
         Me.TextBox1.Size = New System.Drawing.Size(330, 75)
         Me.TextBox1.TabIndex = 10
         '
-        'DiaLBL
-        '
-        Me.DiaLBL.AutoSize = True
-        Me.DiaLBL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "LOTE_DIA", True))
-        Me.DiaLBL.Location = New System.Drawing.Point(558, 49)
-        Me.DiaLBL.Name = "DiaLBL"
-        Me.DiaLBL.Size = New System.Drawing.Size(19, 13)
-        Me.DiaLBL.TabIndex = 11
-        Me.DiaLBL.Text = "01"
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(523, 49)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(36, 13)
-        Me.Label13.TabIndex = 10
-        Me.Label13.Text = "Lote:"
-        '
-        'MesLBL
-        '
-        Me.MesLBL.AutoSize = True
-        Me.MesLBL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "LOTE_MES", True))
-        Me.MesLBL.Location = New System.Drawing.Point(575, 49)
-        Me.MesLBL.Name = "MesLBL"
-        Me.MesLBL.Size = New System.Drawing.Size(19, 13)
-        Me.MesLBL.TabIndex = 12
-        Me.MesLBL.Text = "01"
-        '
-        'YearLBL
-        '
-        Me.YearLBL.AutoSize = True
-        Me.YearLBL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "LOTE_AÑO", True))
-        Me.YearLBL.Location = New System.Drawing.Point(592, 49)
-        Me.YearLBL.Name = "YearLBL"
-        Me.YearLBL.Size = New System.Drawing.Size(31, 13)
-        Me.YearLBL.TabIndex = 13
-        Me.YearLBL.Text = "0100"
-        '
-        'ClienLBL
-        '
-        Me.ClienLBL.AutoSize = True
-        Me.ClienLBL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "LOTE_CLIENTE", True))
-        Me.ClienLBL.Location = New System.Drawing.Point(622, 49)
-        Me.ClienLBL.Name = "ClienLBL"
-        Me.ClienLBL.Size = New System.Drawing.Size(31, 13)
-        Me.ClienLBL.TabIndex = 14
-        Me.ClienLBL.Text = "0100"
-        '
-        'MatLBL
-        '
-        Me.MatLBL.AutoSize = True
-        Me.MatLBL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "LOTE_MATERIAL", True))
-        Me.MatLBL.Location = New System.Drawing.Point(653, 49)
-        Me.MatLBL.Name = "MatLBL"
-        Me.MatLBL.Size = New System.Drawing.Size(31, 13)
-        Me.MatLBL.TabIndex = 15
-        Me.MatLBL.Text = "GGG"
-        '
-        'ConsecutivoLBL
-        '
-        Me.ConsecutivoLBL.AutoSize = True
-        Me.ConsecutivoLBL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "LOTE_FOLIO", True))
-        Me.ConsecutivoLBL.Location = New System.Drawing.Point(682, 49)
-        Me.ConsecutivoLBL.Name = "ConsecutivoLBL"
-        Me.ConsecutivoLBL.Size = New System.Drawing.Size(19, 13)
-        Me.ConsecutivoLBL.TabIndex = 16
-        Me.ConsecutivoLBL.Text = "00"
-        '
         'GroupBox5
         '
         Me.GroupBox5.Controls.Add(Me.AutorizaTXT)
@@ -571,40 +572,6 @@ Partial Class Registro_Salidas
         Me.GroupBox5.TabIndex = 10
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Datos Salida"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(6, 21)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(133, 13)
-        Me.Label9.TabIndex = 20
-        Me.Label9.Text = "Orden de Fabricación:"
-        '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(6, 47)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(94, 13)
-        Me.Label17.TabIndex = 21
-        Me.Label17.Text = "Pedido Interno:"
-        '
-        'ofTXT
-        '
-        Me.ofTXT.Location = New System.Drawing.Point(145, 18)
-        Me.ofTXT.Name = "ofTXT"
-        Me.ofTXT.Size = New System.Drawing.Size(100, 20)
-        Me.ofTXT.TabIndex = 22
-        '
-        'piTXT
-        '
-        Me.piTXT.Location = New System.Drawing.Point(145, 44)
-        Me.piTXT.Name = "piTXT"
-        Me.piTXT.Size = New System.Drawing.Size(100, 20)
-        Me.piTXT.TabIndex = 23
         '
         'AutorizaTXT
         '
@@ -639,6 +606,40 @@ Partial Class Registro_Salidas
         Me.Label20.Size = New System.Drawing.Size(71, 13)
         Me.Label20.TabIndex = 24
         Me.Label20.Text = "Solicitante:"
+        '
+        'piTXT
+        '
+        Me.piTXT.Location = New System.Drawing.Point(145, 44)
+        Me.piTXT.Name = "piTXT"
+        Me.piTXT.Size = New System.Drawing.Size(100, 20)
+        Me.piTXT.TabIndex = 23
+        '
+        'ofTXT
+        '
+        Me.ofTXT.Location = New System.Drawing.Point(145, 18)
+        Me.ofTXT.Name = "ofTXT"
+        Me.ofTXT.Size = New System.Drawing.Size(100, 20)
+        Me.ofTXT.TabIndex = 22
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.Location = New System.Drawing.Point(6, 47)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(94, 13)
+        Me.Label17.TabIndex = 21
+        Me.Label17.Text = "Pedido Interno:"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(6, 21)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(133, 13)
+        Me.Label9.TabIndex = 20
+        Me.Label9.Text = "Orden de Fabricación:"
         '
         'LimpiarBTN
         '
@@ -680,11 +681,22 @@ Partial Class Registro_Salidas
         Me.ComenSalidasTXT.Size = New System.Drawing.Size(310, 114)
         Me.ComenSalidasTXT.TabIndex = 0
         '
+        'SalidaEntrada
+        '
+        Me.SalidaEntrada.AutoSize = True
+        Me.SalidaEntrada.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "FOLIO_SALIDA", True))
+        Me.SalidaEntrada.Location = New System.Drawing.Point(660, 236)
+        Me.SalidaEntrada.Name = "SalidaEntrada"
+        Me.SalidaEntrada.Size = New System.Drawing.Size(45, 13)
+        Me.SalidaEntrada.TabIndex = 14
+        Me.SalidaEntrada.Text = "Label21"
+        '
         'Registro_Salidas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(736, 365)
+        Me.Controls.Add(Me.SalidaEntrada)
         Me.Controls.Add(Me.GroupBox6)
         Me.Controls.Add(Me.GuardarBTN)
         Me.Controls.Add(Me.LimpiarBTN)
@@ -781,4 +793,5 @@ Partial Class Registro_Salidas
     Friend WithEvents Timer1 As Timer
     Friend WithEvents GroupBox6 As GroupBox
     Friend WithEvents ComenSalidasTXT As TextBox
+    Friend WithEvents SalidaEntrada As Label
 End Class

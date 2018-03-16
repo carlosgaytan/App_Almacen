@@ -6,6 +6,7 @@
         'TODO: esta línea de código carga datos en la tabla 'MPClienteDataSet.SALIDAS' Puede moverla o quitarla según sea necesario.
         Me.SALIDASTableAdapter.Fill(Me.MPClienteDataSet.SALIDAS)
 
+
         'Muestra el # de folio que se registrará
         SalidaLBL.Text = MPClienteDataSet.SALIDAS.Last.FOLIO_SALIDA + 1
 
@@ -39,9 +40,22 @@
         'Enviar informacón a la base de datos
         SALIDASTableAdapter.Update(MPClienteDataSet.SALIDAS)
 
+        '---------------------------
+
+        Me.ENTRADASTableAdapter.BuscaEntradaFillBy(Me.MPClienteDataSet.ENTRADAS, EntradaCBX.Text)
+        SalidaEntrada.Text = SalidaLBL.Text
+
+        'Actualiza registro
+        Me.Validate()
+        Me.ENTRADASBindingSource.EndEdit()
+        Me.TableAdapterManager.UpdateAll(Me.MPClienteDataSet)
+
+        '---------------------------
+
         'Confirma proceso
         MessageBox.Show("Registro guardado", "Registros")
         INFOADICIONAL.ACTUALIZARSALIDAS = 1
+        INFOADICIONAL.ACTUALIZARENTRADAS = 1
 
         'Recarga la tabla de Salidas y actualiza el contador de folio
         Me.SALIDASTableAdapter.Fill(Me.MPClienteDataSet.SALIDAS)
@@ -72,5 +86,9 @@
             e.Cancel = True
         End If
 
+    End Sub
+
+    Private Sub EntradaCBX_SelectedIndexChanged(sender As Object, e As EventArgs) Handles EntradaCBX.SelectedIndexChanged
+        SalidaEntrada.Text = SalidaLBL.Text
     End Sub
 End Class
