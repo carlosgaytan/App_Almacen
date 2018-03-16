@@ -186,4 +186,12 @@
 
     End Sub
 
+    Private Sub Registro_Entradas_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+
+        'Confirmación de cierre
+        If MessageBox.Show("¿Seguro que desea salir", "Salida", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.No Then
+            e.Cancel = True
+        End If
+
+    End Sub
 End Class
