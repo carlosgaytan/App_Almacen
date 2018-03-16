@@ -27,15 +27,16 @@ Public Class Principal
         'Actualiza la base de datos al registrar cambios en la BD bajo la condición de que INFOADICIONAL sea distinto a "" en ENTRADAS
         If INFOADICIONAL.ACTUALIZARENTRADAS <> "" Then
             Me.ENTRADASTableAdapter.Fill(Me.MPClienteDataSet.ENTRADAS)
+            Me.InventarioMPTableAdapter.InventarioMPFill(Me.MPClienteDataSet.IventariosMP)
             INFOADICIONAL.ACTUALIZARENTRADAS = ""
         End If
 
         'Actualiza la base de datos al registrar cambios en la BD bajo la condición de que INFOADICIONAL sea distinto a "" en Salidas
         If INFOADICIONAL.ACTUALIZARSALIDAS <> "" Then
             Me.SALIDASTableAdapter.Fill(Me.MPClienteDataSet.SALIDAS)
+            Me.InventarioMPTableAdapter.InventarioMPFill(Me.MPClienteDataSet.IventariosMP)
             INFOADICIONAL.ACTUALIZARSALIDAS = ""
         End If
-
 
     End Sub
 
@@ -50,6 +51,10 @@ Public Class Principal
         If MessageBox.Show("¿Seguro que desea salir", "Salida", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.No Then
             e.Cancel = True
         End If
+
+    End Sub
+
+    Private Sub FiltroBTN_Click(sender As Object, e As EventArgs) Handles FiltroBTN.Click
 
     End Sub
 End Class
