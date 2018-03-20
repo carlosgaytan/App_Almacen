@@ -1,7 +1,11 @@
 ﻿Imports System.IO
 
 Public Class Principal
+    Dim EntradaFilt, NoClienteFilt, ClienteFilt, EspesorFilt, MaterialFilt, RackFilt, NivelFilt, ObservFilt
+
     Private Sub Principal_Load(sender As Object, e As EventArgs) Handles Me.Load
+        'TODO: esta línea de código carga datos en la tabla 'Clientes._CLIENTES' Puede moverla o quitarla según sea necesario.
+        Me.CLIENTESTableAdapter.CLIENTEFill(Me.Clientes._CLIENTES)
         'TODO: esta línea de código carga datos en la tabla 'MPClienteDataSet.IventariosMP' Puede moverla o quitarla según sea necesario.
         Me.InventarioMPTableAdapter.InventarioMPFill(Me.MPClienteDataSet.IventariosMP)
         'TODO: esta línea de código carga datos en la tabla 'MPClienteDataSet.SALIDAS' Puede moverla o quitarla según sea necesario.
@@ -56,5 +60,52 @@ Public Class Principal
 
     Private Sub FiltroBTN_Click(sender As Object, e As EventArgs) Handles FiltroBTN.Click
 
+        FiltroMpGroup.Visible = True
+        NoClienteCBX.Text = ""
+        ClienteCBX.Text = ""
+        EspesorCBX.Text = ""
+        MaterialCBX.Text = ""
+        RackCBX.Text = ""
+        NivelCBX.Text = ""
+        ObservacionesCBX.Text = ""
+
+    End Sub
+
+    Private Sub FiltrarBTN_Click(sender As Object, e As EventArgs) Handles FiltrarBTN.Click
+
+        If ClienteCBX.Text <> "" Then
+            ClienteFilt = String.Format("CLIENTE Like '{0}%'", ClienteCBX.Text)
+            IventariosMPBindingSource.Filter = ClienteFilt
+            'ElseIf NoClienteCBX.Text <> "" Then
+            '    NoClienteFilt = String.Format("CLIENTE Like '{0}%'", NoClienteCBX.Text)
+            '    IventariosMPBindingSource.Filter = NoClienteFilt
+        ElseIf EspesorCBX.Text <> "" Then
+            EspesorFilt = String.Format("ESPESOR Like '{0}%'", EspesorCBX.Text)
+            IventariosMPBindingSource.Filter = EspesorFilt
+        ElseIf MaterialCBX.Text <> "" Then
+            MaterialFilt = String.Format("MATERIAL Like '{0}%'", MaterialCBX.Text)
+            IventariosMPBindingSource.Filter = MaterialFilt
+        ElseIf RackCBX.Text <> "" Then
+            RackFilt = String.Format("RACK Like '{0}%'", RackCBX.Text)
+            IventariosMPBindingSource.Filter = RackFilt
+        ElseIf NivelCBX.Text <> "" Then
+            NivelFilt = String.Format("NIVEL Like '{0}%'", NivelCBX.Text)
+            IventariosMPBindingSource.Filter = NivelFilt
+        ElseIf ObservacionesCBX.Text <> "" Then
+            ObservFilt = String.Format("OBSERVACIONES_ENTRADA Like '{0}%'", NoClienteCBX.Text)
+            IventariosMPBindingSource.Filter = ObservFilt
+
+        End If
+
+        FiltroMpGroup.Visible = False
+
+    End Sub
+
+    Private Sub CancelarBTN_Click(sender As Object, e As EventArgs) Handles CancelarBTN.Click
+        FiltroMpGroup.Visible = False
+    End Sub
+
+    Private Sub RestaurarBTN_Click(sender As Object, e As EventArgs) Handles RestaurarBTN.Click
+        IventariosMPBindingSource.RemoveFilter()
     End Sub
 End Class

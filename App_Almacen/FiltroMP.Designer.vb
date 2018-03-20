@@ -24,8 +24,8 @@ Partial Class FiltroMP
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FiltroMP))
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
+        Me.EntradaTXT = New System.Windows.Forms.TextBox()
+        Me.ObservacionesCBX = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -35,38 +35,38 @@ Partial Class FiltroMP
         Me.Label7 = New System.Windows.Forms.Label()
         Me.FiltroBTN = New System.Windows.Forms.Button()
         Me.RestaurarBTN = New System.Windows.Forms.Button()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox4 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox5 = New System.Windows.Forms.ComboBox()
-        Me.Clientes = New App_Almacen.Clientes()
+        Me.ClienteCBX = New System.Windows.Forms.ComboBox()
         Me.CLIENTESBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.CLIENTESTableAdapter = New App_Almacen.ClientesTableAdapters.CLIENTESTableAdapter()
-        Me.MATERIALES = New App_Almacen.MATERIALES()
+        Me.Clientes = New App_Almacen.Clientes()
+        Me.EspesorCBX = New System.Windows.Forms.ComboBox()
+        Me.MaterialCBX = New System.Windows.Forms.ComboBox()
         Me.MATERIALBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.MATERIALES = New App_Almacen.MATERIALES()
+        Me.RachCBX = New System.Windows.Forms.ComboBox()
+        Me.NivelCBX = New System.Windows.Forms.ComboBox()
+        Me.CLIENTESTableAdapter = New App_Almacen.ClientesTableAdapters.CLIENTESTableAdapter()
         Me.MATERIALTableAdapter = New App_Almacen.MATERIALESTableAdapters.MATERIALTableAdapter()
-        Me.ComboBox6 = New System.Windows.Forms.ComboBox()
+        Me.NoClienteCBX = New System.Windows.Forms.ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
-        CType(Me.Clientes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CLIENTESBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.MATERIALES, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Clientes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MATERIALBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MATERIALES, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'TextBox1
+        'EntradaTXT
         '
-        Me.TextBox1.Location = New System.Drawing.Point(96, 12)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(120, 20)
-        Me.TextBox1.TabIndex = 0
+        Me.EntradaTXT.Location = New System.Drawing.Point(96, 12)
+        Me.EntradaTXT.Name = "EntradaTXT"
+        Me.EntradaTXT.Size = New System.Drawing.Size(120, 20)
+        Me.EntradaTXT.TabIndex = 0
         '
-        'TextBox7
+        'ObservacionesCBX
         '
-        Me.TextBox7.Location = New System.Drawing.Point(96, 200)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(120, 20)
-        Me.TextBox7.TabIndex = 6
+        Me.ObservacionesCBX.Location = New System.Drawing.Point(96, 200)
+        Me.ObservacionesCBX.Name = "ObservacionesCBX"
+        Me.ObservacionesCBX.Size = New System.Drawing.Size(120, 20)
+        Me.ObservacionesCBX.TabIndex = 6
         '
         'Label1
         '
@@ -149,112 +149,112 @@ Partial Class FiltroMP
         Me.RestaurarBTN.Text = "Restaurar filtro"
         Me.RestaurarBTN.UseVisualStyleBackColor = True
         '
-        'ComboBox1
+        'ClienteCBX
         '
-        Me.ComboBox1.DataSource = Me.CLIENTESBindingSource
-        Me.ComboBox1.DisplayMember = "NOMBRE"
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(96, 65)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(120, 21)
-        Me.ComboBox1.TabIndex = 16
-        '
-        'ComboBox2
-        '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Items.AddRange(New Object() {"C. 6", "C. 7", "C. 8", "C. 9", "C. 10", "C. 11", "C. 12", "C. 13", "C. 14", "C. 15", "C. 16", "C. 18", "C. 19", "C. 20", "C. 22", "C. 24", "C. 26", "C. 28", "C. 30", "1/8''", "3/16''", "1/4''", "5/16''", "3/8''", "7/16''", "1/2''", "5/8''", "3/4''", "7/8''", "1''", "1 1/8''", "1 1/4''", "1 3/8''", "1 1/2''", "1 5/8''", "1 3/4''", "2''", "2 1/4''", "2 1/2''", "2 3/4''", "3''", "3 1/2''", "4''", "4 1/2''", "5''"})
-        Me.ComboBox2.Location = New System.Drawing.Point(96, 92)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(120, 21)
-        Me.ComboBox2.TabIndex = 17
-        '
-        'ComboBox3
-        '
-        Me.ComboBox3.DataSource = Me.MATERIALBindingSource
-        Me.ComboBox3.DisplayMember = "MATERIAL"
-        Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Location = New System.Drawing.Point(96, 119)
-        Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(120, 21)
-        Me.ComboBox3.TabIndex = 18
-        '
-        'ComboBox4
-        '
-        Me.ComboBox4.FormattingEnabled = True
-        Me.ComboBox4.Items.AddRange(New Object() {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ñ", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "INT.", "EXT."})
-        Me.ComboBox4.Location = New System.Drawing.Point(96, 146)
-        Me.ComboBox4.Name = "ComboBox4"
-        Me.ComboBox4.Size = New System.Drawing.Size(120, 21)
-        Me.ComboBox4.TabIndex = 19
-        '
-        'ComboBox5
-        '
-        Me.ComboBox5.FormattingEnabled = True
-        Me.ComboBox5.Items.AddRange(New Object() {"1", "2", "3", "4", "5"})
-        Me.ComboBox5.Location = New System.Drawing.Point(96, 173)
-        Me.ComboBox5.Name = "ComboBox5"
-        Me.ComboBox5.Size = New System.Drawing.Size(120, 21)
-        Me.ComboBox5.TabIndex = 20
-        '
-        'Clientes
-        '
-        Me.Clientes.DataSetName = "Clientes"
-        Me.Clientes.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        Me.ClienteCBX.DataSource = Me.CLIENTESBindingSource
+        Me.ClienteCBX.DisplayMember = "NOMBRE"
+        Me.ClienteCBX.FormattingEnabled = True
+        Me.ClienteCBX.Location = New System.Drawing.Point(96, 65)
+        Me.ClienteCBX.Name = "ClienteCBX"
+        Me.ClienteCBX.Size = New System.Drawing.Size(120, 21)
+        Me.ClienteCBX.TabIndex = 16
         '
         'CLIENTESBindingSource
         '
         Me.CLIENTESBindingSource.DataMember = "CLIENTES"
         Me.CLIENTESBindingSource.DataSource = Me.Clientes
         '
-        'CLIENTESTableAdapter
+        'Clientes
         '
-        Me.CLIENTESTableAdapter.ClearBeforeFill = True
+        Me.Clientes.DataSetName = "Clientes"
+        Me.Clientes.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'MATERIALES
+        'EspesorCBX
         '
-        Me.MATERIALES.DataSetName = "MATERIALES"
-        Me.MATERIALES.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        Me.EspesorCBX.FormattingEnabled = True
+        Me.EspesorCBX.Items.AddRange(New Object() {"C. 6", "C. 7", "C. 8", "C. 9", "C. 10", "C. 11", "C. 12", "C. 13", "C. 14", "C. 15", "C. 16", "C. 18", "C. 19", "C. 20", "C. 22", "C. 24", "C. 26", "C. 28", "C. 30", "1/8''", "3/16''", "1/4''", "5/16''", "3/8''", "7/16''", "1/2''", "5/8''", "3/4''", "7/8''", "1''", "1 1/8''", "1 1/4''", "1 3/8''", "1 1/2''", "1 5/8''", "1 3/4''", "2''", "2 1/4''", "2 1/2''", "2 3/4''", "3''", "3 1/2''", "4''", "4 1/2''", "5''"})
+        Me.EspesorCBX.Location = New System.Drawing.Point(96, 92)
+        Me.EspesorCBX.Name = "EspesorCBX"
+        Me.EspesorCBX.Size = New System.Drawing.Size(120, 21)
+        Me.EspesorCBX.TabIndex = 17
+        '
+        'MaterialCBX
+        '
+        Me.MaterialCBX.DataSource = Me.MATERIALBindingSource
+        Me.MaterialCBX.DisplayMember = "MATERIAL"
+        Me.MaterialCBX.FormattingEnabled = True
+        Me.MaterialCBX.Location = New System.Drawing.Point(96, 119)
+        Me.MaterialCBX.Name = "MaterialCBX"
+        Me.MaterialCBX.Size = New System.Drawing.Size(120, 21)
+        Me.MaterialCBX.TabIndex = 18
         '
         'MATERIALBindingSource
         '
         Me.MATERIALBindingSource.DataMember = "MATERIAL"
         Me.MATERIALBindingSource.DataSource = Me.MATERIALES
         '
+        'MATERIALES
+        '
+        Me.MATERIALES.DataSetName = "MATERIALES"
+        Me.MATERIALES.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'RachCBX
+        '
+        Me.RachCBX.FormattingEnabled = True
+        Me.RachCBX.Items.AddRange(New Object() {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ñ", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "INT.", "EXT."})
+        Me.RachCBX.Location = New System.Drawing.Point(96, 146)
+        Me.RachCBX.Name = "RachCBX"
+        Me.RachCBX.Size = New System.Drawing.Size(120, 21)
+        Me.RachCBX.TabIndex = 19
+        '
+        'NivelCBX
+        '
+        Me.NivelCBX.FormattingEnabled = True
+        Me.NivelCBX.Items.AddRange(New Object() {"1", "2", "3", "4", "5"})
+        Me.NivelCBX.Location = New System.Drawing.Point(96, 173)
+        Me.NivelCBX.Name = "NivelCBX"
+        Me.NivelCBX.Size = New System.Drawing.Size(120, 21)
+        Me.NivelCBX.TabIndex = 20
+        '
+        'CLIENTESTableAdapter
+        '
+        Me.CLIENTESTableAdapter.ClearBeforeFill = True
+        '
         'MATERIALTableAdapter
         '
         Me.MATERIALTableAdapter.ClearBeforeFill = True
         '
-        'ComboBox6
+        'NoClienteCBX
         '
-        Me.ComboBox6.DataSource = Me.CLIENTESBindingSource
-        Me.ComboBox6.DisplayMember = "NOMBRE"
-        Me.ComboBox6.FormattingEnabled = True
-        Me.ComboBox6.Location = New System.Drawing.Point(96, 38)
-        Me.ComboBox6.Name = "ComboBox6"
-        Me.ComboBox6.Size = New System.Drawing.Size(120, 21)
-        Me.ComboBox6.TabIndex = 22
+        Me.NoClienteCBX.DataSource = Me.CLIENTESBindingSource
+        Me.NoClienteCBX.DisplayMember = "NOMBRE"
+        Me.NoClienteCBX.FormattingEnabled = True
+        Me.NoClienteCBX.Location = New System.Drawing.Point(96, 38)
+        Me.NoClienteCBX.Name = "NoClienteCBX"
+        Me.NoClienteCBX.Size = New System.Drawing.Size(120, 21)
+        Me.NoClienteCBX.TabIndex = 22
         '
         'Label8
         '
         Me.Label8.AutoSize = True
         Me.Label8.Location = New System.Drawing.Point(12, 41)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(42, 13)
+        Me.Label8.Size = New System.Drawing.Size(62, 13)
         Me.Label8.TabIndex = 21
-        Me.Label8.Text = "Cliente:"
+        Me.Label8.Text = "No. Cliente:"
         '
         'FiltroMP
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(228, 285)
-        Me.Controls.Add(Me.ComboBox6)
+        Me.Controls.Add(Me.NoClienteCBX)
         Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.ComboBox5)
-        Me.Controls.Add(Me.ComboBox4)
-        Me.Controls.Add(Me.ComboBox3)
-        Me.Controls.Add(Me.ComboBox2)
-        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.NivelCBX)
+        Me.Controls.Add(Me.RachCBX)
+        Me.Controls.Add(Me.MaterialCBX)
+        Me.Controls.Add(Me.EspesorCBX)
+        Me.Controls.Add(Me.ClienteCBX)
         Me.Controls.Add(Me.RestaurarBTN)
         Me.Controls.Add(Me.FiltroBTN)
         Me.Controls.Add(Me.Label7)
@@ -264,22 +264,22 @@ Partial Class FiltroMP
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.TextBox7)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.ObservacionesCBX)
+        Me.Controls.Add(Me.EntradaTXT)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FiltroMP"
         Me.Text = "Filtro"
-        CType(Me.Clientes, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CLIENTESBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.MATERIALES, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Clientes, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MATERIALBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MATERIALES, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox7 As TextBox
+    Friend WithEvents EntradaTXT As TextBox
+    Friend WithEvents ObservacionesCBX As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
@@ -289,17 +289,17 @@ Partial Class FiltroMP
     Friend WithEvents Label7 As Label
     Friend WithEvents FiltroBTN As Button
     Friend WithEvents RestaurarBTN As Button
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents ComboBox2 As ComboBox
-    Friend WithEvents ComboBox3 As ComboBox
-    Friend WithEvents ComboBox4 As ComboBox
-    Friend WithEvents ComboBox5 As ComboBox
+    Friend WithEvents ClienteCBX As ComboBox
+    Friend WithEvents EspesorCBX As ComboBox
+    Friend WithEvents MaterialCBX As ComboBox
+    Friend WithEvents RachCBX As ComboBox
+    Friend WithEvents NivelCBX As ComboBox
     Friend WithEvents Clientes As Clientes
     Friend WithEvents CLIENTESBindingSource As BindingSource
     Friend WithEvents CLIENTESTableAdapter As ClientesTableAdapters.CLIENTESTableAdapter
     Friend WithEvents MATERIALES As MATERIALES
     Friend WithEvents MATERIALBindingSource As BindingSource
     Friend WithEvents MATERIALTableAdapter As MATERIALESTableAdapters.MATERIALTableAdapter
-    Friend WithEvents ComboBox6 As ComboBox
+    Friend WithEvents NoClienteCBX As ComboBox
     Friend WithEvents Label8 As Label
 End Class

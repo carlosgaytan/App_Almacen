@@ -27,34 +27,9 @@ Partial Class Principal
         Me.Reg_entradas = New System.Windows.Forms.Button()
         Me.Reg_Salidas = New System.Windows.Forms.Button()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.ENTRADASBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
-        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
-        Me.ENTRADASBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.MPClienteDataSet = New App_Almacen.MPClienteDataSet()
-        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
-        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorSeparator = New System.Windows.Forms.ToolStripSeparator()
-        Me.BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox()
-        Me.BindingNavigatorSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ENTRADASBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
-        Me.ENTRADASDataGridView = New System.Windows.Forms.DataGridView()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.SALIDASDataGridView = New System.Windows.Forms.DataGridView()
-        Me.SALIDASBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.EntradasFSW = New System.IO.FileSystemWatcher()
-        Me.ENTRADASTableAdapter = New App_Almacen.MPClienteDataSetTableAdapters.ENTRADASTableAdapter()
-        Me.TableAdapterManager = New App_Almacen.MPClienteDataSetTableAdapters.TableAdapterManager()
-        Me.SALIDASTableAdapter = New App_Almacen.MPClienteDataSetTableAdapters.SALIDASTableAdapter()
-        Me.IventariosMPBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.InventarioMPTableAdapter = New App_Almacen.MPClienteDataSetTableAdapters.InventarioMPTableAdapter()
+        Me.RestaurarBTN = New System.Windows.Forms.Button()
+        Me.FiltroBTN = New System.Windows.Forms.Button()
         Me.IventariosMPDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn30 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -77,6 +52,24 @@ Partial Class Principal
         Me.DataGridViewTextBoxColumn47 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn48 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn49 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IventariosMPBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.MPClienteDataSet = New App_Almacen.MPClienteDataSet()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.ENTRADASBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
+        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
+        Me.ENTRADASBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
+        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorSeparator = New System.Windows.Forms.ToolStripSeparator()
+        Me.BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox()
+        Me.BindingNavigatorSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ENTRADASBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
+        Me.ENTRADASDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FOLIO_SALIDA = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -97,6 +90,8 @@ Partial Class Principal
         Me.DataGridViewTextBoxColumn21 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn22 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn23 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.SALIDASDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn24 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn25 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn26 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -106,22 +101,54 @@ Partial Class Principal
         Me.LOTE = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn28 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn29 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FiltroBTN = New System.Windows.Forms.Button()
-        Me.RestaurarBTN = New System.Windows.Forms.Button()
+        Me.SALIDASBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.EntradasFSW = New System.IO.FileSystemWatcher()
+        Me.ENTRADASTableAdapter = New App_Almacen.MPClienteDataSetTableAdapters.ENTRADASTableAdapter()
+        Me.TableAdapterManager = New App_Almacen.MPClienteDataSetTableAdapters.TableAdapterManager()
+        Me.SALIDASTableAdapter = New App_Almacen.MPClienteDataSetTableAdapters.SALIDASTableAdapter()
+        Me.InventarioMPTableAdapter = New App_Almacen.MPClienteDataSetTableAdapters.InventarioMPTableAdapter()
+        Me.FiltroMpGroup = New System.Windows.Forms.GroupBox()
+        Me.NoClienteCBX = New System.Windows.Forms.ComboBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.NivelCBX = New System.Windows.Forms.ComboBox()
+        Me.RackCBX = New System.Windows.Forms.ComboBox()
+        Me.MaterialCBX = New System.Windows.Forms.ComboBox()
+        Me.EspesorCBX = New System.Windows.Forms.ComboBox()
+        Me.ClienteCBX = New System.Windows.Forms.ComboBox()
+        Me.FiltrarBTN = New System.Windows.Forms.Button()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.ObservacionesCBX = New System.Windows.Forms.TextBox()
+        Me.EntradaTXT = New System.Windows.Forms.TextBox()
+        Me.Clientes = New App_Almacen.Clientes()
+        Me.CLIENTESBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CLIENTESTableAdapter = New App_Almacen.ClientesTableAdapters.CLIENTESTableAdapter()
+        Me.ENTRADASSALIDASBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CancelarBTN = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
+        Me.TabPage3.SuspendLayout()
+        CType(Me.IventariosMPDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.IventariosMPBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MPClienteDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage1.SuspendLayout()
         CType(Me.ENTRADASBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ENTRADASBindingNavigator.SuspendLayout()
         CType(Me.ENTRADASBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.MPClienteDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ENTRADASDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
         CType(Me.SALIDASDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SALIDASBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage3.SuspendLayout()
         CType(Me.EntradasFSW, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.IventariosMPBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.IventariosMPDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.FiltroMpGroup.SuspendLayout()
+        CType(Me.Clientes, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CLIENTESBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ENTRADASSALIDASBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Reg_entradas
@@ -153,188 +180,9 @@ Partial Class Principal
         Me.TabControl1.Size = New System.Drawing.Size(1018, 533)
         Me.TabControl1.TabIndex = 5
         '
-        'TabPage1
-        '
-        Me.TabPage1.Controls.Add(Me.ENTRADASBindingNavigator)
-        Me.TabPage1.Controls.Add(Me.ENTRADASDataGridView)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(1010, 507)
-        Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "Entradas"
-        Me.TabPage1.UseVisualStyleBackColor = True
-        '
-        'ENTRADASBindingNavigator
-        '
-        Me.ENTRADASBindingNavigator.AddNewItem = Me.BindingNavigatorAddNewItem
-        Me.ENTRADASBindingNavigator.BindingSource = Me.ENTRADASBindingSource
-        Me.ENTRADASBindingNavigator.CountItem = Me.BindingNavigatorCountItem
-        Me.ENTRADASBindingNavigator.DeleteItem = Me.BindingNavigatorDeleteItem
-        Me.ENTRADASBindingNavigator.Dock = System.Windows.Forms.DockStyle.None
-        Me.ENTRADASBindingNavigator.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2, Me.BindingNavigatorAddNewItem, Me.BindingNavigatorDeleteItem, Me.ENTRADASBindingNavigatorSaveItem})
-        Me.ENTRADASBindingNavigator.Location = New System.Drawing.Point(3, 3)
-        Me.ENTRADASBindingNavigator.MoveFirstItem = Me.BindingNavigatorMoveFirstItem
-        Me.ENTRADASBindingNavigator.MoveLastItem = Me.BindingNavigatorMoveLastItem
-        Me.ENTRADASBindingNavigator.MoveNextItem = Me.BindingNavigatorMoveNextItem
-        Me.ENTRADASBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
-        Me.ENTRADASBindingNavigator.Name = "ENTRADASBindingNavigator"
-        Me.ENTRADASBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.ENTRADASBindingNavigator.Size = New System.Drawing.Size(280, 25)
-        Me.ENTRADASBindingNavigator.TabIndex = 6
-        Me.ENTRADASBindingNavigator.Text = "BindingNavigator1"
-        '
-        'BindingNavigatorAddNewItem
-        '
-        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
-        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorAddNewItem.Text = "Agregar nuevo"
-        '
-        'ENTRADASBindingSource
-        '
-        Me.ENTRADASBindingSource.DataMember = "ENTRADAS"
-        Me.ENTRADASBindingSource.DataSource = Me.MPClienteDataSet
-        '
-        'MPClienteDataSet
-        '
-        Me.MPClienteDataSet.DataSetName = "MPClienteDataSet"
-        Me.MPClienteDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'BindingNavigatorCountItem
-        '
-        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(37, 22)
-        Me.BindingNavigatorCountItem.Text = "de {0}"
-        Me.BindingNavigatorCountItem.ToolTipText = "Número total de elementos"
-        '
-        'BindingNavigatorDeleteItem
-        '
-        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
-        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorDeleteItem.Text = "Eliminar"
-        '
-        'BindingNavigatorMoveFirstItem
-        '
-        Me.BindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMoveFirstItem.Image = CType(resources.GetObject("BindingNavigatorMoveFirstItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMoveFirstItem.Name = "BindingNavigatorMoveFirstItem"
-        Me.BindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorMoveFirstItem.Text = "Mover primero"
-        '
-        'BindingNavigatorMovePreviousItem
-        '
-        Me.BindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMovePreviousItem.Image = CType(resources.GetObject("BindingNavigatorMovePreviousItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMovePreviousItem.Name = "BindingNavigatorMovePreviousItem"
-        Me.BindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorMovePreviousItem.Text = "Mover anterior"
-        '
-        'BindingNavigatorSeparator
-        '
-        Me.BindingNavigatorSeparator.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 25)
-        '
-        'BindingNavigatorPositionItem
-        '
-        Me.BindingNavigatorPositionItem.AccessibleName = "Posición"
-        Me.BindingNavigatorPositionItem.AutoSize = False
-        Me.BindingNavigatorPositionItem.Name = "BindingNavigatorPositionItem"
-        Me.BindingNavigatorPositionItem.Size = New System.Drawing.Size(50, 23)
-        Me.BindingNavigatorPositionItem.Text = "0"
-        Me.BindingNavigatorPositionItem.ToolTipText = "Posición actual"
-        '
-        'BindingNavigatorSeparator1
-        '
-        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1"
-        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 25)
-        '
-        'BindingNavigatorMoveNextItem
-        '
-        Me.BindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMoveNextItem.Image = CType(resources.GetObject("BindingNavigatorMoveNextItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMoveNextItem.Name = "BindingNavigatorMoveNextItem"
-        Me.BindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorMoveNextItem.Text = "Mover siguiente"
-        '
-        'BindingNavigatorMoveLastItem
-        '
-        Me.BindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMoveLastItem.Image = CType(resources.GetObject("BindingNavigatorMoveLastItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMoveLastItem.Name = "BindingNavigatorMoveLastItem"
-        Me.BindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorMoveLastItem.Text = "Mover último"
-        '
-        'BindingNavigatorSeparator2
-        '
-        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
-        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 25)
-        '
-        'ENTRADASBindingNavigatorSaveItem
-        '
-        Me.ENTRADASBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.ENTRADASBindingNavigatorSaveItem.Image = CType(resources.GetObject("ENTRADASBindingNavigatorSaveItem.Image"), System.Drawing.Image)
-        Me.ENTRADASBindingNavigatorSaveItem.Name = "ENTRADASBindingNavigatorSaveItem"
-        Me.ENTRADASBindingNavigatorSaveItem.Size = New System.Drawing.Size(23, 22)
-        Me.ENTRADASBindingNavigatorSaveItem.Text = "Guardar datos"
-        '
-        'ENTRADASDataGridView
-        '
-        Me.ENTRADASDataGridView.AllowUserToAddRows = False
-        Me.ENTRADASDataGridView.AllowUserToDeleteRows = False
-        Me.ENTRADASDataGridView.AllowUserToOrderColumns = True
-        Me.ENTRADASDataGridView.AutoGenerateColumns = False
-        Me.ENTRADASDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.ENTRADASDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.FOLIO_SALIDA, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn11, Me.DataGridViewTextBoxColumn14, Me.DataGridViewTextBoxColumn15, Me.DataGridViewTextBoxColumn17, Me.DataGridViewTextBoxColumn18, Me.DataGridViewTextBoxColumn19, Me.DataGridViewTextBoxColumn20, Me.DataGridViewTextBoxColumn21, Me.DataGridViewTextBoxColumn22, Me.DataGridViewTextBoxColumn23})
-        Me.ENTRADASDataGridView.DataSource = Me.ENTRADASBindingSource
-        Me.ENTRADASDataGridView.Location = New System.Drawing.Point(3, 31)
-        Me.ENTRADASDataGridView.Name = "ENTRADASDataGridView"
-        Me.ENTRADASDataGridView.ReadOnly = True
-        Me.ENTRADASDataGridView.Size = New System.Drawing.Size(1001, 470)
-        Me.ENTRADASDataGridView.TabIndex = 0
-        '
-        'TabPage2
-        '
-        Me.TabPage2.Controls.Add(Me.SALIDASDataGridView)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(1010, 507)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Salidas"
-        Me.TabPage2.UseVisualStyleBackColor = True
-        '
-        'SALIDASDataGridView
-        '
-        Me.SALIDASDataGridView.AllowUserToAddRows = False
-        Me.SALIDASDataGridView.AllowUserToDeleteRows = False
-        Me.SALIDASDataGridView.AllowUserToOrderColumns = True
-        Me.SALIDASDataGridView.AutoGenerateColumns = False
-        Me.SALIDASDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.SALIDASDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn24, Me.DataGridViewTextBoxColumn25, Me.DataGridViewTextBoxColumn26, Me.DataGridViewTextBoxColumn27, Me.PI, Me.SOLICITANTE, Me.LOTE, Me.DataGridViewTextBoxColumn28, Me.DataGridViewTextBoxColumn29})
-        Me.SALIDASDataGridView.DataSource = Me.SALIDASBindingSource
-        Me.SALIDASDataGridView.Location = New System.Drawing.Point(6, 6)
-        Me.SALIDASDataGridView.Name = "SALIDASDataGridView"
-        Me.SALIDASDataGridView.ReadOnly = True
-        Me.SALIDASDataGridView.Size = New System.Drawing.Size(998, 498)
-        Me.SALIDASDataGridView.TabIndex = 0
-        '
-        'SALIDASBindingSource
-        '
-        Me.SALIDASBindingSource.DataMember = "SALIDAS"
-        Me.SALIDASBindingSource.DataSource = Me.MPClienteDataSet
-        '
         'TabPage3
         '
+        Me.TabPage3.Controls.Add(Me.FiltroMpGroup)
         Me.TabPage3.Controls.Add(Me.RestaurarBTN)
         Me.TabPage3.Controls.Add(Me.FiltroBTN)
         Me.TabPage3.Controls.Add(Me.IventariosMPDataGridView)
@@ -346,50 +194,36 @@ Partial Class Principal
         Me.TabPage3.Text = "Inventario MP"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
-        'Timer1
+        'RestaurarBTN
         '
-        Me.Timer1.Enabled = True
+        Me.RestaurarBTN.Location = New System.Drawing.Point(87, 6)
+        Me.RestaurarBTN.Name = "RestaurarBTN"
+        Me.RestaurarBTN.Size = New System.Drawing.Size(75, 23)
+        Me.RestaurarBTN.TabIndex = 2
+        Me.RestaurarBTN.Text = "Restaurar"
+        Me.RestaurarBTN.UseVisualStyleBackColor = True
         '
-        'EntradasFSW
+        'FiltroBTN
         '
-        Me.EntradasFSW.EnableRaisingEvents = True
-        Me.EntradasFSW.NotifyFilter = System.IO.NotifyFilters.LastWrite
-        Me.EntradasFSW.Path = "S:\BASE DE DATOS\Almacén"
-        Me.EntradasFSW.SynchronizingObject = Me
-        '
-        'ENTRADASTableAdapter
-        '
-        Me.ENTRADASTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.ENTRADASTableAdapter = Me.ENTRADASTableAdapter
-        Me.TableAdapterManager.InventarioMPTableAdapter = Nothing
-        Me.TableAdapterManager.SALIDASTableAdapter = Nothing
-        Me.TableAdapterManager.UpdateOrder = App_Almacen.MPClienteDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
-        'SALIDASTableAdapter
-        '
-        Me.SALIDASTableAdapter.ClearBeforeFill = True
-        '
-        'IventariosMPBindingSource
-        '
-        Me.IventariosMPBindingSource.DataMember = "IventariosMP"
-        Me.IventariosMPBindingSource.DataSource = Me.MPClienteDataSet
-        '
-        'InventarioMPTableAdapter
-        '
-        Me.InventarioMPTableAdapter.ClearBeforeFill = True
+        Me.FiltroBTN.Location = New System.Drawing.Point(6, 6)
+        Me.FiltroBTN.Name = "FiltroBTN"
+        Me.FiltroBTN.Size = New System.Drawing.Size(75, 23)
+        Me.FiltroBTN.TabIndex = 1
+        Me.FiltroBTN.Text = "Filtrar"
+        Me.FiltroBTN.UseVisualStyleBackColor = True
         '
         'IventariosMPDataGridView
         '
+        Me.IventariosMPDataGridView.AllowUserToAddRows = False
+        Me.IventariosMPDataGridView.AllowUserToDeleteRows = False
+        Me.IventariosMPDataGridView.AllowUserToOrderColumns = True
         Me.IventariosMPDataGridView.AutoGenerateColumns = False
         Me.IventariosMPDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.IventariosMPDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn30, Me.DataGridViewTextBoxColumn31, Me.DataGridViewTextBoxColumn32, Me.DataGridViewTextBoxColumn33, Me.DataGridViewTextBoxColumn34, Me.DataGridViewTextBoxColumn35, Me.DataGridViewTextBoxColumn36, Me.DataGridViewTextBoxColumn37, Me.DataGridViewTextBoxColumn38, Me.DataGridViewTextBoxColumn39, Me.DataGridViewTextBoxColumn40, Me.DataGridViewTextBoxColumn41, Me.DataGridViewTextBoxColumn42, Me.DataGridViewTextBoxColumn43, Me.DataGridViewTextBoxColumn44, Me.DataGridViewTextBoxColumn45, Me.DataGridViewTextBoxColumn46, Me.DataGridViewTextBoxColumn47, Me.DataGridViewTextBoxColumn48, Me.DataGridViewTextBoxColumn49})
         Me.IventariosMPDataGridView.DataSource = Me.IventariosMPBindingSource
         Me.IventariosMPDataGridView.Location = New System.Drawing.Point(6, 35)
         Me.IventariosMPDataGridView.Name = "IventariosMPDataGridView"
+        Me.IventariosMPDataGridView.ReadOnly = True
         Me.IventariosMPDataGridView.Size = New System.Drawing.Size(998, 466)
         Me.IventariosMPDataGridView.TabIndex = 0
         '
@@ -399,7 +233,7 @@ Partial Class Principal
         Me.DataGridViewTextBoxColumn4.DataPropertyName = "FOLIO_ENTRADA"
         Me.DataGridViewTextBoxColumn4.HeaderText = "Folio Entrada"
         Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        Me.DataGridViewTextBoxColumn4.Width = 94
+        Me.DataGridViewTextBoxColumn4.Width = 87
         '
         'DataGridViewTextBoxColumn30
         '
@@ -560,7 +394,160 @@ Partial Class Principal
         Me.DataGridViewTextBoxColumn49.HeaderText = "Folio Salida"
         Me.DataGridViewTextBoxColumn49.Name = "DataGridViewTextBoxColumn49"
         Me.DataGridViewTextBoxColumn49.Visible = False
-        Me.DataGridViewTextBoxColumn49.Width = 79
+        '
+        'IventariosMPBindingSource
+        '
+        Me.IventariosMPBindingSource.DataMember = "IventariosMP"
+        Me.IventariosMPBindingSource.DataSource = Me.MPClienteDataSet
+        '
+        'MPClienteDataSet
+        '
+        Me.MPClienteDataSet.DataSetName = "MPClienteDataSet"
+        Me.MPClienteDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'TabPage1
+        '
+        Me.TabPage1.Controls.Add(Me.ENTRADASBindingNavigator)
+        Me.TabPage1.Controls.Add(Me.ENTRADASDataGridView)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage1.Size = New System.Drawing.Size(1010, 507)
+        Me.TabPage1.TabIndex = 0
+        Me.TabPage1.Text = "Entradas"
+        Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'ENTRADASBindingNavigator
+        '
+        Me.ENTRADASBindingNavigator.AddNewItem = Me.BindingNavigatorAddNewItem
+        Me.ENTRADASBindingNavigator.BindingSource = Me.ENTRADASBindingSource
+        Me.ENTRADASBindingNavigator.CountItem = Me.BindingNavigatorCountItem
+        Me.ENTRADASBindingNavigator.DeleteItem = Me.BindingNavigatorDeleteItem
+        Me.ENTRADASBindingNavigator.Dock = System.Windows.Forms.DockStyle.None
+        Me.ENTRADASBindingNavigator.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2, Me.BindingNavigatorAddNewItem, Me.BindingNavigatorDeleteItem, Me.ENTRADASBindingNavigatorSaveItem})
+        Me.ENTRADASBindingNavigator.Location = New System.Drawing.Point(3, 3)
+        Me.ENTRADASBindingNavigator.MoveFirstItem = Me.BindingNavigatorMoveFirstItem
+        Me.ENTRADASBindingNavigator.MoveLastItem = Me.BindingNavigatorMoveLastItem
+        Me.ENTRADASBindingNavigator.MoveNextItem = Me.BindingNavigatorMoveNextItem
+        Me.ENTRADASBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
+        Me.ENTRADASBindingNavigator.Name = "ENTRADASBindingNavigator"
+        Me.ENTRADASBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
+        Me.ENTRADASBindingNavigator.Size = New System.Drawing.Size(280, 25)
+        Me.ENTRADASBindingNavigator.TabIndex = 6
+        Me.ENTRADASBindingNavigator.Text = "BindingNavigator1"
+        '
+        'BindingNavigatorAddNewItem
+        '
+        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
+        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorAddNewItem.Text = "Agregar nuevo"
+        '
+        'ENTRADASBindingSource
+        '
+        Me.ENTRADASBindingSource.DataMember = "ENTRADAS"
+        Me.ENTRADASBindingSource.DataSource = Me.MPClienteDataSet
+        '
+        'BindingNavigatorCountItem
+        '
+        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(37, 22)
+        Me.BindingNavigatorCountItem.Text = "de {0}"
+        Me.BindingNavigatorCountItem.ToolTipText = "Número total de elementos"
+        '
+        'BindingNavigatorDeleteItem
+        '
+        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
+        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorDeleteItem.Text = "Eliminar"
+        '
+        'BindingNavigatorMoveFirstItem
+        '
+        Me.BindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorMoveFirstItem.Image = CType(resources.GetObject("BindingNavigatorMoveFirstItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorMoveFirstItem.Name = "BindingNavigatorMoveFirstItem"
+        Me.BindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorMoveFirstItem.Text = "Mover primero"
+        '
+        'BindingNavigatorMovePreviousItem
+        '
+        Me.BindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorMovePreviousItem.Image = CType(resources.GetObject("BindingNavigatorMovePreviousItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorMovePreviousItem.Name = "BindingNavigatorMovePreviousItem"
+        Me.BindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorMovePreviousItem.Text = "Mover anterior"
+        '
+        'BindingNavigatorSeparator
+        '
+        Me.BindingNavigatorSeparator.Name = "BindingNavigatorSeparator"
+        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 25)
+        '
+        'BindingNavigatorPositionItem
+        '
+        Me.BindingNavigatorPositionItem.AccessibleName = "Posición"
+        Me.BindingNavigatorPositionItem.AutoSize = False
+        Me.BindingNavigatorPositionItem.Name = "BindingNavigatorPositionItem"
+        Me.BindingNavigatorPositionItem.Size = New System.Drawing.Size(50, 23)
+        Me.BindingNavigatorPositionItem.Text = "0"
+        Me.BindingNavigatorPositionItem.ToolTipText = "Posición actual"
+        '
+        'BindingNavigatorSeparator1
+        '
+        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1"
+        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 25)
+        '
+        'BindingNavigatorMoveNextItem
+        '
+        Me.BindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorMoveNextItem.Image = CType(resources.GetObject("BindingNavigatorMoveNextItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorMoveNextItem.Name = "BindingNavigatorMoveNextItem"
+        Me.BindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorMoveNextItem.Text = "Mover siguiente"
+        '
+        'BindingNavigatorMoveLastItem
+        '
+        Me.BindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorMoveLastItem.Image = CType(resources.GetObject("BindingNavigatorMoveLastItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorMoveLastItem.Name = "BindingNavigatorMoveLastItem"
+        Me.BindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorMoveLastItem.Text = "Mover último"
+        '
+        'BindingNavigatorSeparator2
+        '
+        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
+        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 25)
+        '
+        'ENTRADASBindingNavigatorSaveItem
+        '
+        Me.ENTRADASBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.ENTRADASBindingNavigatorSaveItem.Image = CType(resources.GetObject("ENTRADASBindingNavigatorSaveItem.Image"), System.Drawing.Image)
+        Me.ENTRADASBindingNavigatorSaveItem.Name = "ENTRADASBindingNavigatorSaveItem"
+        Me.ENTRADASBindingNavigatorSaveItem.Size = New System.Drawing.Size(23, 22)
+        Me.ENTRADASBindingNavigatorSaveItem.Text = "Guardar datos"
+        '
+        'ENTRADASDataGridView
+        '
+        Me.ENTRADASDataGridView.AllowUserToAddRows = False
+        Me.ENTRADASDataGridView.AllowUserToDeleteRows = False
+        Me.ENTRADASDataGridView.AllowUserToOrderColumns = True
+        Me.ENTRADASDataGridView.AutoGenerateColumns = False
+        Me.ENTRADASDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.ENTRADASDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.FOLIO_SALIDA, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn11, Me.DataGridViewTextBoxColumn14, Me.DataGridViewTextBoxColumn15, Me.DataGridViewTextBoxColumn17, Me.DataGridViewTextBoxColumn18, Me.DataGridViewTextBoxColumn19, Me.DataGridViewTextBoxColumn20, Me.DataGridViewTextBoxColumn21, Me.DataGridViewTextBoxColumn22, Me.DataGridViewTextBoxColumn23})
+        Me.ENTRADASDataGridView.DataSource = Me.ENTRADASBindingSource
+        Me.ENTRADASDataGridView.Location = New System.Drawing.Point(3, 31)
+        Me.ENTRADASDataGridView.Name = "ENTRADASDataGridView"
+        Me.ENTRADASDataGridView.ReadOnly = True
+        Me.ENTRADASDataGridView.Size = New System.Drawing.Size(1001, 470)
+        Me.ENTRADASDataGridView.TabIndex = 0
         '
         'DataGridViewTextBoxColumn1
         '
@@ -742,6 +729,32 @@ Partial Class Principal
         Me.DataGridViewTextBoxColumn23.ReadOnly = True
         Me.DataGridViewTextBoxColumn23.Width = 91
         '
+        'TabPage2
+        '
+        Me.TabPage2.Controls.Add(Me.SALIDASDataGridView)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(1010, 507)
+        Me.TabPage2.TabIndex = 1
+        Me.TabPage2.Text = "Salidas"
+        Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'SALIDASDataGridView
+        '
+        Me.SALIDASDataGridView.AllowUserToAddRows = False
+        Me.SALIDASDataGridView.AllowUserToDeleteRows = False
+        Me.SALIDASDataGridView.AllowUserToOrderColumns = True
+        Me.SALIDASDataGridView.AutoGenerateColumns = False
+        Me.SALIDASDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.SALIDASDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn24, Me.DataGridViewTextBoxColumn25, Me.DataGridViewTextBoxColumn26, Me.DataGridViewTextBoxColumn27, Me.PI, Me.SOLICITANTE, Me.LOTE, Me.DataGridViewTextBoxColumn28, Me.DataGridViewTextBoxColumn29})
+        Me.SALIDASDataGridView.DataSource = Me.SALIDASBindingSource
+        Me.SALIDASDataGridView.Location = New System.Drawing.Point(6, 6)
+        Me.SALIDASDataGridView.Name = "SALIDASDataGridView"
+        Me.SALIDASDataGridView.ReadOnly = True
+        Me.SALIDASDataGridView.Size = New System.Drawing.Size(998, 498)
+        Me.SALIDASDataGridView.TabIndex = 0
+        '
         'DataGridViewTextBoxColumn24
         '
         Me.DataGridViewTextBoxColumn24.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
@@ -823,23 +836,251 @@ Partial Class Principal
         Me.DataGridViewTextBoxColumn29.ReadOnly = True
         Me.DataGridViewTextBoxColumn29.Width = 103
         '
-        'FiltroBTN
+        'SALIDASBindingSource
         '
-        Me.FiltroBTN.Location = New System.Drawing.Point(6, 6)
-        Me.FiltroBTN.Name = "FiltroBTN"
-        Me.FiltroBTN.Size = New System.Drawing.Size(75, 23)
-        Me.FiltroBTN.TabIndex = 1
-        Me.FiltroBTN.Text = "Filtrar"
-        Me.FiltroBTN.UseVisualStyleBackColor = True
+        Me.SALIDASBindingSource.DataMember = "SALIDAS"
+        Me.SALIDASBindingSource.DataSource = Me.MPClienteDataSet
         '
-        'RestaurarBTN
+        'Timer1
         '
-        Me.RestaurarBTN.Location = New System.Drawing.Point(87, 6)
-        Me.RestaurarBTN.Name = "RestaurarBTN"
-        Me.RestaurarBTN.Size = New System.Drawing.Size(75, 23)
-        Me.RestaurarBTN.TabIndex = 2
-        Me.RestaurarBTN.Text = "Restaurar"
-        Me.RestaurarBTN.UseVisualStyleBackColor = True
+        Me.Timer1.Enabled = True
+        '
+        'EntradasFSW
+        '
+        Me.EntradasFSW.EnableRaisingEvents = True
+        Me.EntradasFSW.NotifyFilter = System.IO.NotifyFilters.LastWrite
+        Me.EntradasFSW.Path = "S:\BASE DE DATOS\Almacén"
+        Me.EntradasFSW.SynchronizingObject = Me
+        '
+        'ENTRADASTableAdapter
+        '
+        Me.ENTRADASTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.ENTRADASTableAdapter = Me.ENTRADASTableAdapter
+        Me.TableAdapterManager.InventarioMPTableAdapter = Nothing
+        Me.TableAdapterManager.SALIDASTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = App_Almacen.MPClienteDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'SALIDASTableAdapter
+        '
+        Me.SALIDASTableAdapter.ClearBeforeFill = True
+        '
+        'InventarioMPTableAdapter
+        '
+        Me.InventarioMPTableAdapter.ClearBeforeFill = True
+        '
+        'FiltroMpGroup
+        '
+        Me.FiltroMpGroup.Controls.Add(Me.CancelarBTN)
+        Me.FiltroMpGroup.Controls.Add(Me.NoClienteCBX)
+        Me.FiltroMpGroup.Controls.Add(Me.Label8)
+        Me.FiltroMpGroup.Controls.Add(Me.NivelCBX)
+        Me.FiltroMpGroup.Controls.Add(Me.RackCBX)
+        Me.FiltroMpGroup.Controls.Add(Me.MaterialCBX)
+        Me.FiltroMpGroup.Controls.Add(Me.EspesorCBX)
+        Me.FiltroMpGroup.Controls.Add(Me.ClienteCBX)
+        Me.FiltroMpGroup.Controls.Add(Me.FiltrarBTN)
+        Me.FiltroMpGroup.Controls.Add(Me.Label7)
+        Me.FiltroMpGroup.Controls.Add(Me.Label6)
+        Me.FiltroMpGroup.Controls.Add(Me.Label5)
+        Me.FiltroMpGroup.Controls.Add(Me.Label4)
+        Me.FiltroMpGroup.Controls.Add(Me.Label3)
+        Me.FiltroMpGroup.Controls.Add(Me.Label2)
+        Me.FiltroMpGroup.Controls.Add(Me.Label1)
+        Me.FiltroMpGroup.Controls.Add(Me.ObservacionesCBX)
+        Me.FiltroMpGroup.Controls.Add(Me.EntradaTXT)
+        Me.FiltroMpGroup.Location = New System.Drawing.Point(372, 126)
+        Me.FiltroMpGroup.Name = "FiltroMpGroup"
+        Me.FiltroMpGroup.Size = New System.Drawing.Size(219, 267)
+        Me.FiltroMpGroup.TabIndex = 3
+        Me.FiltroMpGroup.TabStop = False
+        Me.FiltroMpGroup.Text = "Filtrar"
+        Me.FiltroMpGroup.Visible = False
+        '
+        'NoClienteCBX
+        '
+        Me.NoClienteCBX.DataSource = Me.CLIENTESBindingSource
+        Me.NoClienteCBX.DisplayMember = "NO_CLIENTE"
+        Me.NoClienteCBX.FormattingEnabled = True
+        Me.NoClienteCBX.Location = New System.Drawing.Point(90, 42)
+        Me.NoClienteCBX.Name = "NoClienteCBX"
+        Me.NoClienteCBX.Size = New System.Drawing.Size(120, 21)
+        Me.NoClienteCBX.TabIndex = 40
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(6, 45)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(62, 13)
+        Me.Label8.TabIndex = 39
+        Me.Label8.Text = "No. Cliente:"
+        '
+        'NivelCBX
+        '
+        Me.NivelCBX.DataSource = Me.IventariosMPBindingSource
+        Me.NivelCBX.DisplayMember = "NIVEL"
+        Me.NivelCBX.FormattingEnabled = True
+        Me.NivelCBX.Location = New System.Drawing.Point(90, 177)
+        Me.NivelCBX.Name = "NivelCBX"
+        Me.NivelCBX.Size = New System.Drawing.Size(120, 21)
+        Me.NivelCBX.TabIndex = 38
+        '
+        'RackCBX
+        '
+        Me.RackCBX.DataSource = Me.IventariosMPBindingSource
+        Me.RackCBX.DisplayMember = "RACK"
+        Me.RackCBX.FormattingEnabled = True
+        Me.RackCBX.Location = New System.Drawing.Point(90, 150)
+        Me.RackCBX.Name = "RackCBX"
+        Me.RackCBX.Size = New System.Drawing.Size(120, 21)
+        Me.RackCBX.TabIndex = 37
+        '
+        'MaterialCBX
+        '
+        Me.MaterialCBX.DataSource = Me.IventariosMPBindingSource
+        Me.MaterialCBX.DisplayMember = "MATERIAL"
+        Me.MaterialCBX.FormattingEnabled = True
+        Me.MaterialCBX.Location = New System.Drawing.Point(90, 123)
+        Me.MaterialCBX.Name = "MaterialCBX"
+        Me.MaterialCBX.Size = New System.Drawing.Size(120, 21)
+        Me.MaterialCBX.TabIndex = 36
+        '
+        'EspesorCBX
+        '
+        Me.EspesorCBX.FormattingEnabled = True
+        Me.EspesorCBX.Items.AddRange(New Object() {"C. 6", "C. 7", "C. 8", "C. 9", "C. 10", "C. 11", "C. 12", "C. 13", "C. 14", "C. 15", "C. 16", "C. 18", "C. 19", "C. 20", "C. 22", "C. 24", "C. 26", "C. 28", "C. 30", "1/8''", "3/16''", "1/4''", "5/16''", "3/8''", "7/16''", "1/2''", "5/8''", "3/4''", "7/8''", "1''", "1 1/8''", "1 1/4''", "1 3/8''", "1 1/2''", "1 5/8''", "1 3/4''", "2''", "2 1/4''", "2 1/2''", "2 3/4''", "3''", "3 1/2''", "4''", "4 1/2''", "5''"})
+        Me.EspesorCBX.Location = New System.Drawing.Point(90, 96)
+        Me.EspesorCBX.Name = "EspesorCBX"
+        Me.EspesorCBX.Size = New System.Drawing.Size(120, 21)
+        Me.EspesorCBX.TabIndex = 35
+        '
+        'ClienteCBX
+        '
+        Me.ClienteCBX.DataSource = Me.CLIENTESBindingSource
+        Me.ClienteCBX.DisplayMember = "NOMBRE"
+        Me.ClienteCBX.FormattingEnabled = True
+        Me.ClienteCBX.Location = New System.Drawing.Point(90, 69)
+        Me.ClienteCBX.Name = "ClienteCBX"
+        Me.ClienteCBX.Size = New System.Drawing.Size(120, 21)
+        Me.ClienteCBX.TabIndex = 34
+        '
+        'FiltrarBTN
+        '
+        Me.FiltrarBTN.Location = New System.Drawing.Point(135, 238)
+        Me.FiltrarBTN.Name = "FiltrarBTN"
+        Me.FiltrarBTN.Size = New System.Drawing.Size(75, 23)
+        Me.FiltrarBTN.TabIndex = 32
+        Me.FiltrarBTN.Text = "Filtrar"
+        Me.FiltrarBTN.UseVisualStyleBackColor = True
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(6, 207)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(81, 13)
+        Me.Label7.TabIndex = 31
+        Me.Label7.Text = "Observaciones:"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(6, 180)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(34, 13)
+        Me.Label6.TabIndex = 30
+        Me.Label6.Text = "Nivel:"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(6, 153)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(36, 13)
+        Me.Label5.TabIndex = 29
+        Me.Label5.Text = "Rack:"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(6, 126)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(47, 13)
+        Me.Label4.TabIndex = 28
+        Me.Label4.Text = "Material:"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(6, 99)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(48, 13)
+        Me.Label3.TabIndex = 27
+        Me.Label3.Text = "Espesor:"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(6, 72)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(42, 13)
+        Me.Label2.TabIndex = 26
+        Me.Label2.Text = "Cliente:"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(6, 19)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(72, 13)
+        Me.Label1.TabIndex = 25
+        Me.Label1.Text = "Folio Entrada:"
+        '
+        'ObservacionesCBX
+        '
+        Me.ObservacionesCBX.Location = New System.Drawing.Point(90, 204)
+        Me.ObservacionesCBX.Name = "ObservacionesCBX"
+        Me.ObservacionesCBX.Size = New System.Drawing.Size(120, 20)
+        Me.ObservacionesCBX.TabIndex = 24
+        '
+        'EntradaTXT
+        '
+        Me.EntradaTXT.Location = New System.Drawing.Point(90, 16)
+        Me.EntradaTXT.Name = "EntradaTXT"
+        Me.EntradaTXT.Size = New System.Drawing.Size(120, 20)
+        Me.EntradaTXT.TabIndex = 23
+        '
+        'Clientes
+        '
+        Me.Clientes.DataSetName = "Clientes"
+        Me.Clientes.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'CLIENTESBindingSource
+        '
+        Me.CLIENTESBindingSource.DataMember = "CLIENTES"
+        Me.CLIENTESBindingSource.DataSource = Me.Clientes
+        '
+        'CLIENTESTableAdapter
+        '
+        Me.CLIENTESTableAdapter.ClearBeforeFill = True
+        '
+        'ENTRADASSALIDASBindingSource
+        '
+        Me.ENTRADASSALIDASBindingSource.DataMember = "ENTRADASSALIDAS"
+        Me.ENTRADASSALIDASBindingSource.DataSource = Me.ENTRADASBindingSource
+        '
+        'CancelarBTN
+        '
+        Me.CancelarBTN.Location = New System.Drawing.Point(6, 238)
+        Me.CancelarBTN.Name = "CancelarBTN"
+        Me.CancelarBTN.Size = New System.Drawing.Size(75, 23)
+        Me.CancelarBTN.TabIndex = 41
+        Me.CancelarBTN.Text = "Cancelar"
+        Me.CancelarBTN.UseVisualStyleBackColor = True
         '
         'Principal
         '
@@ -854,21 +1095,26 @@ Partial Class Principal
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Apps Almacén"
         Me.TabControl1.ResumeLayout(False)
+        Me.TabPage3.ResumeLayout(False)
+        CType(Me.IventariosMPDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.IventariosMPBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MPClienteDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
         CType(Me.ENTRADASBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ENTRADASBindingNavigator.ResumeLayout(False)
         Me.ENTRADASBindingNavigator.PerformLayout()
         CType(Me.ENTRADASBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.MPClienteDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ENTRADASDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
         CType(Me.SALIDASDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SALIDASBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TabPage3.ResumeLayout(False)
         CType(Me.EntradasFSW, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.IventariosMPBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.IventariosMPDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.FiltroMpGroup.ResumeLayout(False)
+        Me.FiltroMpGroup.PerformLayout()
+        CType(Me.Clientes, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CLIENTESBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ENTRADASSALIDASBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -959,4 +1205,27 @@ Partial Class Principal
     Friend WithEvents DataGridViewTextBoxColumn29 As DataGridViewTextBoxColumn
     Friend WithEvents FiltroBTN As Button
     Friend WithEvents RestaurarBTN As Button
+    Friend WithEvents FiltroMpGroup As GroupBox
+    Friend WithEvents NoClienteCBX As ComboBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents NivelCBX As ComboBox
+    Friend WithEvents RackCBX As ComboBox
+    Friend WithEvents MaterialCBX As ComboBox
+    Friend WithEvents EspesorCBX As ComboBox
+    Friend WithEvents ClienteCBX As ComboBox
+    Friend WithEvents FiltrarBTN As Button
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents ObservacionesCBX As TextBox
+    Friend WithEvents EntradaTXT As TextBox
+    Friend WithEvents Clientes As Clientes
+    Friend WithEvents CLIENTESBindingSource As BindingSource
+    Friend WithEvents CLIENTESTableAdapter As ClientesTableAdapters.CLIENTESTableAdapter
+    Friend WithEvents ENTRADASSALIDASBindingSource As BindingSource
+    Friend WithEvents CancelarBTN As Button
 End Class
