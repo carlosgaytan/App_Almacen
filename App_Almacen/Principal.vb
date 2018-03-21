@@ -23,6 +23,10 @@ Public Class Principal
 
     End Function
 
+    Private Sub ClientesBTN_Click(sender As Object, e As EventArgs) Handles ClientesBTN.Click
+        Alta_Clientes.Show()
+    End Sub
+
     Private Sub Principal_Load(sender As Object, e As EventArgs) Handles Me.Load
         'TODO: esta línea de código carga datos en la tabla 'Clientes._CLIENTES' Puede moverla o quitarla según sea necesario.
         Me.CLIENTESTableAdapter.CLIENTEFill(Me.Clientes._CLIENTES)
@@ -393,8 +397,6 @@ Public Class Principal
         AutorizaTXT.Visible = False
         ObservSalidas.Visible = False
 
-
-        EntradaSalida.Text = ""
         OFTXT.Clear()
         PITXT.Clear()
         SolicitanteTXT.Clear()

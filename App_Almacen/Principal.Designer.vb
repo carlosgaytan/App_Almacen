@@ -122,16 +122,15 @@ Partial Class Principal
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.GBSalida = New System.Windows.Forms.GroupBox()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.ObservSalidas = New System.Windows.Forms.TextBox()
+        Me.AutorizaTXT = New System.Windows.Forms.TextBox()
+        Me.LoteTXT = New System.Windows.Forms.TextBox()
+        Me.SolicitanteTXT = New System.Windows.Forms.TextBox()
+        Me.PITXT = New System.Windows.Forms.TextBox()
+        Me.OFTXT = New System.Windows.Forms.TextBox()
         Me.BuscarSalida = New System.Windows.Forms.ComboBox()
         Me.CancelarSalida = New System.Windows.Forms.Button()
         Me.FiltrarSalida = New System.Windows.Forms.Button()
-        Me.OFTXT = New System.Windows.Forms.TextBox()
-        Me.PITXT = New System.Windows.Forms.TextBox()
-        Me.SALIDASBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.SolicitanteTXT = New System.Windows.Forms.TextBox()
-        Me.LoteTXT = New System.Windows.Forms.TextBox()
-        Me.AutorizaTXT = New System.Windows.Forms.TextBox()
-        Me.ObservSalidas = New System.Windows.Forms.TextBox()
         Me.RestSalidaBTN = New System.Windows.Forms.Button()
         Me.FiltroSalidaBTN = New System.Windows.Forms.Button()
         Me.SalidaDGV = New System.Windows.Forms.DataGridView()
@@ -144,6 +143,7 @@ Partial Class Principal
         Me.LOTE = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn28 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn29 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SALIDASBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.EntradasFSW = New System.IO.FileSystemWatcher()
         Me.ENTRADASTableAdapter = New App_Almacen.MPClienteDataSetTableAdapters.ENTRADASTableAdapter()
@@ -153,6 +153,7 @@ Partial Class Principal
         Me.CLIENTESTableAdapter = New App_Almacen.ClientesTableAdapters.CLIENTESTableAdapter()
         Me.ENTRADASSALIDASBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ENTRADASSALIDASBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ClientesBTN = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         Me.FiltroMpGroup.SuspendLayout()
@@ -168,8 +169,8 @@ Partial Class Principal
         CType(Me.ENTRADASBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
         Me.GBSalida.SuspendLayout()
-        CType(Me.SALIDASBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SalidaDGV, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SALIDASBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EntradasFSW, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ENTRADASSALIDASBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ENTRADASSALIDASBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -177,7 +178,7 @@ Partial Class Principal
         '
         'Reg_entradas
         '
-        Me.Reg_entradas.Location = New System.Drawing.Point(23, 57)
+        Me.Reg_entradas.Location = New System.Drawing.Point(12, 85)
         Me.Reg_entradas.Name = "Reg_entradas"
         Me.Reg_entradas.Size = New System.Drawing.Size(75, 39)
         Me.Reg_entradas.TabIndex = 2
@@ -186,7 +187,7 @@ Partial Class Principal
         '
         'Reg_Salidas
         '
-        Me.Reg_Salidas.Location = New System.Drawing.Point(23, 111)
+        Me.Reg_Salidas.Location = New System.Drawing.Point(12, 130)
         Me.Reg_Salidas.Name = "Reg_Salidas"
         Me.Reg_Salidas.Size = New System.Drawing.Size(75, 39)
         Me.Reg_Salidas.TabIndex = 3
@@ -198,10 +199,10 @@ Partial Class Principal
         Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Location = New System.Drawing.Point(121, 12)
+        Me.TabControl1.Location = New System.Drawing.Point(93, 12)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(1018, 533)
+        Me.TabControl1.Size = New System.Drawing.Size(1046, 533)
         Me.TabControl1.TabIndex = 5
         '
         'TabPage3
@@ -213,7 +214,7 @@ Partial Class Principal
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(1010, 507)
+        Me.TabPage3.Size = New System.Drawing.Size(1038, 507)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Inventario MP"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -466,7 +467,7 @@ Partial Class Principal
         Me.BusquedaCBX.Location = New System.Drawing.Point(6, 35)
         Me.BusquedaCBX.Name = "BusquedaCBX"
         Me.BusquedaCBX.ReadOnly = True
-        Me.BusquedaCBX.Size = New System.Drawing.Size(998, 466)
+        Me.BusquedaCBX.Size = New System.Drawing.Size(1026, 466)
         Me.BusquedaCBX.TabIndex = 0
         '
         'DataGridViewTextBoxColumn4
@@ -667,7 +668,7 @@ Partial Class Principal
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(1010, 507)
+        Me.TabPage1.Size = New System.Drawing.Size(1038, 507)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Entradas"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -917,7 +918,7 @@ Partial Class Principal
         Me.ENTRADASDataGridView.Location = New System.Drawing.Point(3, 35)
         Me.ENTRADASDataGridView.Name = "ENTRADASDataGridView"
         Me.ENTRADASDataGridView.ReadOnly = True
-        Me.ENTRADASDataGridView.Size = New System.Drawing.Size(1001, 466)
+        Me.ENTRADASDataGridView.Size = New System.Drawing.Size(1029, 466)
         Me.ENTRADASDataGridView.TabIndex = 0
         '
         'DataGridViewTextBoxColumn1
@@ -1114,7 +1115,7 @@ Partial Class Principal
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(1010, 507)
+        Me.TabPage2.Size = New System.Drawing.Size(1038, 507)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Salidas"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -1148,6 +1149,54 @@ Partial Class Principal
         Me.Label3.TabIndex = 49
         Me.Label3.Text = "Filtrar por:"
         '
+        'ObservSalidas
+        '
+        Me.ObservSalidas.Location = New System.Drawing.Point(62, 42)
+        Me.ObservSalidas.Name = "ObservSalidas"
+        Me.ObservSalidas.Size = New System.Drawing.Size(120, 20)
+        Me.ObservSalidas.TabIndex = 48
+        Me.ObservSalidas.Visible = False
+        '
+        'AutorizaTXT
+        '
+        Me.AutorizaTXT.Location = New System.Drawing.Point(62, 42)
+        Me.AutorizaTXT.Name = "AutorizaTXT"
+        Me.AutorizaTXT.Size = New System.Drawing.Size(120, 20)
+        Me.AutorizaTXT.TabIndex = 47
+        Me.AutorizaTXT.Visible = False
+        '
+        'LoteTXT
+        '
+        Me.LoteTXT.Location = New System.Drawing.Point(62, 42)
+        Me.LoteTXT.Name = "LoteTXT"
+        Me.LoteTXT.Size = New System.Drawing.Size(120, 20)
+        Me.LoteTXT.TabIndex = 46
+        Me.LoteTXT.Visible = False
+        '
+        'SolicitanteTXT
+        '
+        Me.SolicitanteTXT.Location = New System.Drawing.Point(62, 42)
+        Me.SolicitanteTXT.Name = "SolicitanteTXT"
+        Me.SolicitanteTXT.Size = New System.Drawing.Size(120, 20)
+        Me.SolicitanteTXT.TabIndex = 45
+        Me.SolicitanteTXT.Visible = False
+        '
+        'PITXT
+        '
+        Me.PITXT.Location = New System.Drawing.Point(62, 42)
+        Me.PITXT.Name = "PITXT"
+        Me.PITXT.Size = New System.Drawing.Size(120, 20)
+        Me.PITXT.TabIndex = 44
+        Me.PITXT.Visible = False
+        '
+        'OFTXT
+        '
+        Me.OFTXT.Location = New System.Drawing.Point(62, 42)
+        Me.OFTXT.Name = "OFTXT"
+        Me.OFTXT.Size = New System.Drawing.Size(120, 20)
+        Me.OFTXT.TabIndex = 43
+        Me.OFTXT.Visible = False
+        '
         'BuscarSalida
         '
         Me.BuscarSalida.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
@@ -1176,59 +1225,6 @@ Partial Class Principal
         Me.FiltrarSalida.TabIndex = 32
         Me.FiltrarSalida.Text = "Filtrar"
         Me.FiltrarSalida.UseVisualStyleBackColor = True
-        '
-        'OFTXT
-        '
-        Me.OFTXT.Location = New System.Drawing.Point(62, 42)
-        Me.OFTXT.Name = "OFTXT"
-        Me.OFTXT.Size = New System.Drawing.Size(120, 20)
-        Me.OFTXT.TabIndex = 43
-        Me.OFTXT.Visible = False
-        '
-        'PITXT
-        '
-        Me.PITXT.Location = New System.Drawing.Point(62, 42)
-        Me.PITXT.Name = "PITXT"
-        Me.PITXT.Size = New System.Drawing.Size(120, 20)
-        Me.PITXT.TabIndex = 44
-        Me.PITXT.Visible = False
-        '
-        'SALIDASBindingSource
-        '
-        Me.SALIDASBindingSource.DataMember = "SALIDAS"
-        Me.SALIDASBindingSource.DataSource = Me.MPClienteDataSet
-        '
-        'SolicitanteTXT
-        '
-        Me.SolicitanteTXT.Location = New System.Drawing.Point(62, 42)
-        Me.SolicitanteTXT.Name = "SolicitanteTXT"
-        Me.SolicitanteTXT.Size = New System.Drawing.Size(120, 20)
-        Me.SolicitanteTXT.TabIndex = 45
-        Me.SolicitanteTXT.Visible = False
-        '
-        'LoteTXT
-        '
-        Me.LoteTXT.Location = New System.Drawing.Point(62, 42)
-        Me.LoteTXT.Name = "LoteTXT"
-        Me.LoteTXT.Size = New System.Drawing.Size(120, 20)
-        Me.LoteTXT.TabIndex = 46
-        Me.LoteTXT.Visible = False
-        '
-        'AutorizaTXT
-        '
-        Me.AutorizaTXT.Location = New System.Drawing.Point(62, 42)
-        Me.AutorizaTXT.Name = "AutorizaTXT"
-        Me.AutorizaTXT.Size = New System.Drawing.Size(120, 20)
-        Me.AutorizaTXT.TabIndex = 47
-        Me.AutorizaTXT.Visible = False
-        '
-        'ObservSalidas
-        '
-        Me.ObservSalidas.Location = New System.Drawing.Point(62, 42)
-        Me.ObservSalidas.Name = "ObservSalidas"
-        Me.ObservSalidas.Size = New System.Drawing.Size(120, 20)
-        Me.ObservSalidas.TabIndex = 48
-        Me.ObservSalidas.Visible = False
         '
         'RestSalidaBTN
         '
@@ -1260,7 +1256,7 @@ Partial Class Principal
         Me.SalidaDGV.Location = New System.Drawing.Point(6, 35)
         Me.SalidaDGV.Name = "SalidaDGV"
         Me.SalidaDGV.ReadOnly = True
-        Me.SalidaDGV.Size = New System.Drawing.Size(998, 469)
+        Me.SalidaDGV.Size = New System.Drawing.Size(1026, 469)
         Me.SalidaDGV.TabIndex = 0
         '
         'DataGridViewTextBoxColumn24
@@ -1344,6 +1340,11 @@ Partial Class Principal
         Me.DataGridViewTextBoxColumn29.ReadOnly = True
         Me.DataGridViewTextBoxColumn29.Width = 103
         '
+        'SALIDASBindingSource
+        '
+        Me.SALIDASBindingSource.DataMember = "SALIDAS"
+        Me.SALIDASBindingSource.DataSource = Me.MPClienteDataSet
+        '
         'Timer1
         '
         Me.Timer1.Enabled = True
@@ -1389,11 +1390,21 @@ Partial Class Principal
         Me.ENTRADASSALIDASBindingSource1.DataMember = "ENTRADASSALIDAS"
         Me.ENTRADASSALIDASBindingSource1.DataSource = Me.ENTRADASBindingSource
         '
+        'ClientesBTN
+        '
+        Me.ClientesBTN.Location = New System.Drawing.Point(12, 40)
+        Me.ClientesBTN.Name = "ClientesBTN"
+        Me.ClientesBTN.Size = New System.Drawing.Size(75, 39)
+        Me.ClientesBTN.TabIndex = 6
+        Me.ClientesBTN.Text = "Alta Clientes"
+        Me.ClientesBTN.UseVisualStyleBackColor = True
+        '
         'Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1151, 557)
+        Me.Controls.Add(Me.ClientesBTN)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.Reg_Salidas)
         Me.Controls.Add(Me.Reg_entradas)
@@ -1419,8 +1430,8 @@ Partial Class Principal
         Me.TabPage2.ResumeLayout(False)
         Me.GBSalida.ResumeLayout(False)
         Me.GBSalida.PerformLayout()
-        CType(Me.SALIDASBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SalidaDGV, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SALIDASBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EntradasFSW, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ENTRADASSALIDASBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ENTRADASSALIDASBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1559,4 +1570,5 @@ Partial Class Principal
     Friend WithEvents SalidaEntrada As ComboBox
     Friend WithEvents ENTRADASBindingSource1 As BindingSource
     Friend WithEvents ENTRADASSALIDASBindingSource1 As BindingSource
+    Friend WithEvents ClientesBTN As Button
 End Class

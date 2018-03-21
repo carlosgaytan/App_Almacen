@@ -76,6 +76,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alta_Clientes.Designer.vb">
+      <DependentUpon>Alta_Clientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Alta_Clientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Bases\Clientes.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -134,6 +140,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Alta_Clientes.resx">
+      <DependentUpon>Alta_Clientes.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.vb</DependentUpon>
     </EmbeddedResource>
