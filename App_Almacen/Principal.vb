@@ -1,7 +1,9 @@
 ﻿Imports System.IO
 
 Public Class Principal
-    Dim EntradaFilt, NoClienteFilt, ClienteFilt, EspesorFilt, MaterialFilt, RackFilt, NivelFilt, ObservFilt, FechaFilt, FacturaFilt, OCFILT, CalidadFILT, LargoFilt, AnchoFilt, PesoFilt
+    Dim EntradaFilt, NoClienteFilt, ClienteFilt, EspesorFilt, MaterialFilt, RackFilt, NivelFilt, ObservFilt, FechaFilt, FacturaFilt, OCFILT, CalidadFILT, LargoFilt, AnchoFilt, PesoFilt, SalidaEntradaFilt, NoClienteEntradaFilt, ClienteEntradaFilt, EspesorEntradaFilt, MaterialEntradaFilt, RackEntradaFilt, NivelEntradaFilt, ObservEntradaFilt, FacturaEntradaFilt, OCEntradaFILT, CalidadEntradaFILT, LargoEntradaFilt, AnchoEntradaFilt, PesoEntradaFilt
+
+
     Function OcultarFiltro()
         ClienteCBX.Visible = False
         NoClienteCBX.Visible = False
@@ -36,12 +38,6 @@ Public Class Principal
         Registro_Entradas.Show()
     End Sub
 
-    Private Sub ENTRADASBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs) Handles ENTRADASBindingNavigatorSaveItem.Click
-        Me.Validate()
-        Me.ENTRADASBindingSource.EndEdit()
-        Me.TableAdapterManager.UpdateAll(Me.MPClienteDataSet)
-    End Sub
-
     Private Sub EntradasFSW_Changed(sender As Object, e As FileSystemEventArgs) Handles EntradasFSW.Changed
 
         'Actualiza la base de datos al registrar cambios en la BD bajo la condición de que INFOADICIONAL sea distinto a "" en ENTRADAS
@@ -74,8 +70,10 @@ Public Class Principal
 
     End Sub
 
+#Region "Filtro Inventario MP"
     Private Sub FiltroBTN_Click(sender As Object, e As EventArgs) Handles FiltroBTN.Click
 
+        'Muestra el formuilario de Filtro Inventario MP
         FiltroMpGroup.Visible = True
         NoClienteCBX.Text = ""
         ClienteCBX.Text = ""
@@ -84,11 +82,18 @@ Public Class Principal
         RackCBX.Text = ""
         NivelCBX.Text = ""
         ObservacionesCBX.Text = ""
+        FacturaTXT.Text = ""
+        ocTXT.Text = ""
+        CalidadTXT.Text = ""
+        LargoTXT.Text = ""
+        AnchoTXT.Text = ""
+        PesoTXT.Text = ""
 
     End Sub
 
     Private Sub FiltrarBTN_Click(sender As Object, e As EventArgs) Handles FiltrarBTN.Click
 
+        'Filtro de Inventario MP
         If ClienteCBX.Text <> "" Then
             ClienteFilt = String.Format("CLIENTE Like '{0}%'", ClienteCBX.Text)
             IventariosMPBindingSource.Filter = ClienteFilt
@@ -108,7 +113,7 @@ Public Class Principal
             NivelFilt = String.Format("NIVEL Like '{0}%'", NivelCBX.Text)
             IventariosMPBindingSource.Filter = NivelFilt
         ElseIf ObservacionesCBX.Text <> "" Then
-            ObservFilt = String.Format("OBSERVACIONES_ENTRADA Like '{0}%'", NoClienteCBX.Text)
+            ObservFilt = String.Format("OBSERVACIONES_ENTRADA Like '{0}%'", ObservacionesCBX.Text)
             IventariosMPBindingSource.Filter = ObservFilt
         ElseIf FacturaTXT.Text <> "" Then
             FacturaFilt = String.Format("FACTURA_REMISISON Like '{0}%'", FacturaTXT.Text)
@@ -116,20 +121,17 @@ Public Class Principal
         ElseIf ocTXT.Text <> "" Then
             OCFILT = String.Format("OC Like '{0}%'", ocTXT.Text)
             IventariosMPBindingSource.Filter = OCFILT
-        ElseIf ObservacionesCBX.Text <> "" Then
-            ObservFilt = String.Format("OBSERVACIONES_ENTRADA Like '{0}%'", NoClienteCBX.Text)
-            IventariosMPBindingSource.Filter = ObservFilt
         ElseIf CalidadTXT.Text <> "" Then
             CalidadFILT = String.Format("CERTIFICADO_CALIDAD Like '{0}%'", CalidadTXT.Text)
             IventariosMPBindingSource.Filter = CalidadFILT
         ElseIf LargoTXT.Text <> "" Then
-            LargoFilt = String.Format("OBSERVACIONES_ENTRADA Like '{0}%'", LargoTXT.Text)
+            LargoFilt = String.Format("LARGO Like '{0}%'", LargoTXT.Text)
             IventariosMPBindingSource.Filter = LargoFilt
         ElseIf AnchoTXT.Text <> "" Then
-            AnchoFilt = String.Format("OBSERVACIONES_ENTRADA Like '{0}%'", AnchoTXT.Text)
+            AnchoFilt = String.Format("ANCHO Like '{0}%'", AnchoTXT.Text)
             IventariosMPBindingSource.Filter = AnchoFilt
         ElseIf PesoTXT.Text <> "" Then
-            PesoFilt = String.Format("OBSERVACIONES_ENTRADA Like '{0}%'", PesoTXT.Text)
+            PesoFilt = String.Format("PESO KG Like '{0}%'", PesoTXT.Text)
             IventariosMPBindingSource.Filter = PesoFilt
 
         End If
@@ -138,8 +140,9 @@ Public Class Principal
 
     End Sub
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Buscar.SelectedIndexChanged, Buscar.TextChanged
-
+        'Oculta el filtro Inventario MP
         OcultarFiltro()
+
         NoClienteCBX.Text = ""
         ClienteCBX.Text = ""
         EspesorCBX.Text = ""
@@ -154,6 +157,7 @@ Public Class Principal
         AnchoTXT.Text = ""
         PesoTXT.Text = ""
 
+        'Muestra los textbox o combobox indicados para la busqueda
         If Buscar.Text = "Cliente" Then
             ClienteCBX.Visible = True
         ElseIf Buscar.Text = "No Cliente" Then
@@ -183,13 +187,165 @@ Public Class Principal
         End If
 
     End Sub
-
-
     Private Sub CancelarBTN_Click(sender As Object, e As EventArgs) Handles CancelarBTN.Click
+        'Oculta el filtro Inventario MP
         FiltroMpGroup.Visible = False
     End Sub
 
     Private Sub RestaurarBTN_Click(sender As Object, e As EventArgs) Handles RestaurarBTN.Click
+        'Remueve el filtro en Inventario MP
         IventariosMPBindingSource.RemoveFilter()
     End Sub
+
+#End Region
+
+#Region "Filtro Entrada"
+    Private Sub FiltroEntradaBTN_Click(sender As Object, e As EventArgs) Handles FiltroEntradaBTN.Click
+        GBEntrada.Visible = True
+        SalidaEntrada.Text = ""
+        ObserEntradaTXT.Text = ""
+        ClienteEntrada.Text = ""
+        EspesorEntrada.Text = ""
+        MateriaEntrada.Text = ""
+        RackEntrada.Text = ""
+        NivelEntrada.Text = ""
+        NoClienteEntrada.Text = ""
+        OcEntrada.Text = ""
+        CalidadEntrada.Text = ""
+        LargoEntrada.Text = ""
+        FacturaEntrada.Text = ""
+        AnchoEntrada.Text = ""
+        PesoEntrada.Text = ""
+    End Sub
+    Private Sub RestEntradaBTN_Click(sender As Object, e As EventArgs) Handles RestEntradaBTN.Click
+        ENTRADASBindingSource.RemoveFilter()
+    End Sub
+    Private Sub CancelarEntrada_Click(sender As Object, e As EventArgs) Handles CancelarEntrada.Click
+        GBEntrada.Visible = False
+    End Sub
+    Private Sub FiltrarEntrada_Click(sender As Object, e As EventArgs) Handles FiltrarEntrada.Click
+        'Filtro de Entradas
+        If ClienteEntrada.Text <> "" Then
+            ClienteEntradaFilt = String.Format("CLIENTE Like '{0}%'", ClienteEntrada.Text)
+            ENTRADASBindingSource.Filter = ClienteEntradaFilt
+        ElseIf NoClienteEntrada.Text <> "" Then
+            NoClienteEntradaFilt = String.Format("LOTE_CLIENTE Like '{0}%'", NoClienteEntrada.Text)
+            ENTRADASBindingSource.Filter = NoClienteEntradaFilt
+        ElseIf EspesorEntrada.Text <> "" Then
+            EspesorEntradaFilt = String.Format("ESPESOR Like '{0}%'", EspesorEntrada.Text)
+            ENTRADASBindingSource.Filter = EspesorEntradaFilt
+        ElseIf MateriaEntrada.Text <> "" Then
+            MaterialEntradaFilt = String.Format("MATERIAL Like '{0}%'", MateriaEntrada.Text)
+            ENTRADASBindingSource.Filter = MaterialEntradaFilt
+        ElseIf RackEntrada.Text <> "" Then
+            RackEntradaFilt = String.Format("RACK Like '{0}%'", RackEntrada.Text)
+            ENTRADASBindingSource.Filter = RackEntradaFilt
+        ElseIf NivelEntrada.Text <> "" Then
+            NivelEntradaFilt = String.Format("NIVEL Like '{0}%'", NivelEntrada.Text)
+            ENTRADASBindingSource.Filter = NivelEntradaFilt
+        ElseIf ObserEntradaTXT.Text <> "" Then
+            ObservEntradaFilt = String.Format("OBSERVACIONES_ENTRADA Like '{0}%'", ObserEntradaTXT.Text)
+            ENTRADASBindingSource.Filter = ObservEntradaFilt
+        ElseIf FacturaEntrada.Text <> "" Then
+            FacturaEntradaFilt = String.Format("FACTURA_REMISISON Like '{0}%'", FacturaEntrada.Text)
+            ENTRADASBindingSource.Filter = FacturaEntradaFilt
+        ElseIf OcEntrada.Text <> "" Then
+            OCEntradaFILT = String.Format("OC Like '{0}%'", OcEntrada.Text)
+            ENTRADASBindingSource.Filter = OCFILT
+        ElseIf SalidaEntrada.Text <> "" Then
+            SalidaEntradaFilt = String.Format("FOLIO_SALIDA Like '{0}%'", SalidaEntrada.Text)
+            ENTRADASBindingSource.Filter = SalidaEntradaFilt
+        ElseIf CalidadEntrada.Text <> "" Then
+            CalidadEntradaFILT = String.Format("CERTIFICADO_CALIDAD Like '{0}%'", CalidadEntrada.Text)
+            ENTRADASBindingSource.Filter = CalidadEntradaFILT
+        ElseIf LargoEntrada.Text <> "" Then
+            LargoEntradaFilt = String.Format("LARGO Like '{0}%'", LargoEntrada.Text)
+            ENTRADASBindingSource.Filter = LargoEntradaFilt
+        ElseIf AnchoEntrada.Text <> "" Then
+            AnchoEntradaFilt = String.Format("ANCHO Like '{0}%'", AnchoEntrada.Text)
+            ENTRADASBindingSource.Filter = AnchoEntradaFilt
+        ElseIf PesoEntrada.Text <> "" Then
+            PesoEntradaFilt = String.Format("PESO_KG Like '{0}%'", PesoEntrada.Text)
+            ENTRADASBindingSource.Filter = PesoEntradaFilt
+
+        End If
+
+        GBEntrada.Visible = False
+
+    End Sub
+    Private Sub BuscarEntrada_SelectedIndexChanged(sender As Object, e As EventArgs) Handles BuscarEntrada.SelectedIndexChanged
+
+        SalidaEntrada.Visible = False
+        ObserEntradaTXT.Visible = False
+        ClienteEntrada.Visible = False
+        EspesorEntrada.Visible = False
+        MateriaEntrada.Visible = False
+        RackEntrada.Visible = False
+        NivelEntrada.Visible = False
+        NoClienteEntrada.Visible = False
+        OcEntrada.Visible = False
+        CalidadEntrada.Visible = False
+        LargoEntrada.Visible = False
+        FacturaEntrada.Visible = False
+        AnchoEntrada.Visible = False
+        PesoEntrada.Visible = False
+
+        SalidaEntrada.Text = ""
+        ObserEntradaTXT.Text = ""
+        ClienteEntrada.Text = ""
+        EspesorEntrada.Text = ""
+        MateriaEntrada.Text = ""
+        RackEntrada.Text = ""
+        NivelEntrada.Text = ""
+        NoClienteEntrada.Text = ""
+        OcEntrada.Text = ""
+        CalidadEntrada.Text = ""
+        LargoEntrada.Text = ""
+        FacturaEntrada.Text = ""
+        AnchoEntrada.Text = ""
+        PesoEntrada.Text = ""
+
+
+        'Muestra los textbox o combobox indicados para la busqueda
+        If BuscarEntrada.Text = "Cliente" Then
+            ClienteEntrada.Visible = True
+        ElseIf BuscarEntrada.Text = "No Cliente" Then
+            NoClienteEntrada.Visible = True
+        ElseIf BuscarEntrada.Text = "Espesor" Then
+            EspesorEntrada.Visible = True
+        ElseIf BuscarEntrada.Text = "Material" Then
+            MateriaEntrada.Visible = True
+        ElseIf BuscarEntrada.Text = "RACK" Then
+            RackEntrada.Visible = True
+        ElseIf BuscarEntrada.Text = "Nivel" Then
+            NivelEntrada.Visible = True
+        ElseIf BuscarEntrada.Text = "Observaciones" Then
+            ObserEntradaTXT.Visible = True
+        ElseIf BuscarEntrada.Text = "Factura/Remisión" Then
+            FacturaEntrada.Visible = True
+        ElseIf BuscarEntrada.Text = "OC" Then
+            OcEntrada.Visible = True
+        ElseIf BuscarEntrada.Text = "Certificado Calidad" Then
+            CalidadEntrada.Visible = True
+        ElseIf BuscarEntrada.Text = "Largo" Then
+            LargoEntrada.Visible = True
+        ElseIf BuscarEntrada.Text = "Ancho" Then
+            AnchoEntrada.Visible = True
+        ElseIf BuscarEntrada.Text = "Peso KG" Then
+            PesoEntrada.Visible = True
+        ElseIf BuscarEntrada.Text = "Salida" Then
+            SalidaEntrada.Visible = True
+
+        End If
+
+    End Sub
+#End Region
+
+#Region "Filtro Salida"
+    Private Sub FiltroSalidaBTN_Click(sender As Object, e As EventArgs) Handles FiltroSalidaBTN.Click
+        GBSalida
+    End Sub
+
+
+#End Region
 End Class

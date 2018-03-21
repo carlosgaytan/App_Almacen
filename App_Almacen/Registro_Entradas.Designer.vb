@@ -411,6 +411,7 @@ Partial Class Registro_Entradas
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.ENTRADASTableAdapter = Me.ENTRADASTableAdapter
+        Me.TableAdapterManager.InventarioMPTableAdapter = Nothing
         Me.TableAdapterManager.SALIDASTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = App_Almacen.MPClienteDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
