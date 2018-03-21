@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Principal
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Principal
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Principal))
@@ -28,9 +28,30 @@ Partial Class Principal
         Me.Reg_Salidas = New System.Windows.Forms.Button()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.FiltroMpGroup = New System.Windows.Forms.GroupBox()
+        Me.PesoTXT = New System.Windows.Forms.TextBox()
+        Me.AnchoTXT = New System.Windows.Forms.TextBox()
+        Me.FacturaTXT = New System.Windows.Forms.TextBox()
+        Me.LargoTXT = New System.Windows.Forms.TextBox()
+        Me.CalidadTXT = New System.Windows.Forms.TextBox()
+        Me.ocTXT = New System.Windows.Forms.TextBox()
+        Me.Buscar = New System.Windows.Forms.ComboBox()
+        Me.CancelarBTN = New System.Windows.Forms.Button()
+        Me.NoClienteCBX = New System.Windows.Forms.ComboBox()
+        Me.CLIENTESBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Clientes = New App_Almacen.Clientes()
+        Me.NivelCBX = New System.Windows.Forms.ComboBox()
+        Me.IventariosMPBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.MPClienteDataSet = New App_Almacen.MPClienteDataSet()
+        Me.RackCBX = New System.Windows.Forms.ComboBox()
+        Me.MaterialCBX = New System.Windows.Forms.ComboBox()
+        Me.EspesorCBX = New System.Windows.Forms.ComboBox()
+        Me.ClienteCBX = New System.Windows.Forms.ComboBox()
+        Me.FiltrarBTN = New System.Windows.Forms.Button()
+        Me.ObservacionesCBX = New System.Windows.Forms.TextBox()
         Me.RestaurarBTN = New System.Windows.Forms.Button()
         Me.FiltroBTN = New System.Windows.Forms.Button()
-        Me.IventariosMPDataGridView = New System.Windows.Forms.DataGridView()
+        Me.BusquedaCBX = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn30 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn31 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -52,8 +73,6 @@ Partial Class Principal
         Me.DataGridViewTextBoxColumn47 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn48 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn49 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.IventariosMPBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.MPClienteDataSet = New App_Almacen.MPClienteDataSet()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.ENTRADASBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
         Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
@@ -108,34 +127,17 @@ Partial Class Principal
         Me.TableAdapterManager = New App_Almacen.MPClienteDataSetTableAdapters.TableAdapterManager()
         Me.SALIDASTableAdapter = New App_Almacen.MPClienteDataSetTableAdapters.SALIDASTableAdapter()
         Me.InventarioMPTableAdapter = New App_Almacen.MPClienteDataSetTableAdapters.InventarioMPTableAdapter()
-        Me.FiltroMpGroup = New System.Windows.Forms.GroupBox()
-        Me.NoClienteCBX = New System.Windows.Forms.ComboBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.NivelCBX = New System.Windows.Forms.ComboBox()
-        Me.RackCBX = New System.Windows.Forms.ComboBox()
-        Me.MaterialCBX = New System.Windows.Forms.ComboBox()
-        Me.EspesorCBX = New System.Windows.Forms.ComboBox()
-        Me.ClienteCBX = New System.Windows.Forms.ComboBox()
-        Me.FiltrarBTN = New System.Windows.Forms.Button()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.ObservacionesCBX = New System.Windows.Forms.TextBox()
-        Me.EntradaTXT = New System.Windows.Forms.TextBox()
-        Me.Clientes = New App_Almacen.Clientes()
-        Me.CLIENTESBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CLIENTESTableAdapter = New App_Almacen.ClientesTableAdapters.CLIENTESTableAdapter()
         Me.ENTRADASSALIDASBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.CancelarBTN = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage3.SuspendLayout()
-        CType(Me.IventariosMPDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.FiltroMpGroup.SuspendLayout()
+        CType(Me.CLIENTESBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Clientes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.IventariosMPBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MPClienteDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BusquedaCBX, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage1.SuspendLayout()
         CType(Me.ENTRADASBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ENTRADASBindingNavigator.SuspendLayout()
@@ -145,9 +147,6 @@ Partial Class Principal
         CType(Me.SALIDASDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SALIDASBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EntradasFSW, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.FiltroMpGroup.SuspendLayout()
-        CType(Me.Clientes, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.CLIENTESBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ENTRADASSALIDASBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -185,7 +184,7 @@ Partial Class Principal
         Me.TabPage3.Controls.Add(Me.FiltroMpGroup)
         Me.TabPage3.Controls.Add(Me.RestaurarBTN)
         Me.TabPage3.Controls.Add(Me.FiltroBTN)
-        Me.TabPage3.Controls.Add(Me.IventariosMPDataGridView)
+        Me.TabPage3.Controls.Add(Me.BusquedaCBX)
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
@@ -193,6 +192,215 @@ Partial Class Principal
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Inventario MP"
         Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'FiltroMpGroup
+        '
+        Me.FiltroMpGroup.Controls.Add(Me.Label1)
+        Me.FiltroMpGroup.Controls.Add(Me.PesoTXT)
+        Me.FiltroMpGroup.Controls.Add(Me.AnchoTXT)
+        Me.FiltroMpGroup.Controls.Add(Me.FacturaTXT)
+        Me.FiltroMpGroup.Controls.Add(Me.LargoTXT)
+        Me.FiltroMpGroup.Controls.Add(Me.CalidadTXT)
+        Me.FiltroMpGroup.Controls.Add(Me.ocTXT)
+        Me.FiltroMpGroup.Controls.Add(Me.Buscar)
+        Me.FiltroMpGroup.Controls.Add(Me.CancelarBTN)
+        Me.FiltroMpGroup.Controls.Add(Me.NoClienteCBX)
+        Me.FiltroMpGroup.Controls.Add(Me.NivelCBX)
+        Me.FiltroMpGroup.Controls.Add(Me.RackCBX)
+        Me.FiltroMpGroup.Controls.Add(Me.MaterialCBX)
+        Me.FiltroMpGroup.Controls.Add(Me.EspesorCBX)
+        Me.FiltroMpGroup.Controls.Add(Me.ClienteCBX)
+        Me.FiltroMpGroup.Controls.Add(Me.FiltrarBTN)
+        Me.FiltroMpGroup.Controls.Add(Me.ObservacionesCBX)
+        Me.FiltroMpGroup.Location = New System.Drawing.Point(381, 193)
+        Me.FiltroMpGroup.Name = "FiltroMpGroup"
+        Me.FiltroMpGroup.Size = New System.Drawing.Size(195, 118)
+        Me.FiltroMpGroup.TabIndex = 3
+        Me.FiltroMpGroup.TabStop = False
+        Me.FiltroMpGroup.Text = "Filtrar"
+        Me.FiltroMpGroup.Visible = False
+        '
+        'PesoTXT
+        '
+        Me.PesoTXT.Location = New System.Drawing.Point(62, 42)
+        Me.PesoTXT.Name = "PesoTXT"
+        Me.PesoTXT.Size = New System.Drawing.Size(120, 20)
+        Me.PesoTXT.TabIndex = 48
+        Me.PesoTXT.Visible = False
+        '
+        'AnchoTXT
+        '
+        Me.AnchoTXT.Location = New System.Drawing.Point(62, 42)
+        Me.AnchoTXT.Name = "AnchoTXT"
+        Me.AnchoTXT.Size = New System.Drawing.Size(120, 20)
+        Me.AnchoTXT.TabIndex = 47
+        Me.AnchoTXT.Visible = False
+        '
+        'FacturaTXT
+        '
+        Me.FacturaTXT.Location = New System.Drawing.Point(62, 42)
+        Me.FacturaTXT.Name = "FacturaTXT"
+        Me.FacturaTXT.Size = New System.Drawing.Size(120, 20)
+        Me.FacturaTXT.TabIndex = 46
+        Me.FacturaTXT.Visible = False
+        '
+        'LargoTXT
+        '
+        Me.LargoTXT.Location = New System.Drawing.Point(62, 42)
+        Me.LargoTXT.Name = "LargoTXT"
+        Me.LargoTXT.Size = New System.Drawing.Size(120, 20)
+        Me.LargoTXT.TabIndex = 45
+        Me.LargoTXT.Visible = False
+        '
+        'CalidadTXT
+        '
+        Me.CalidadTXT.Location = New System.Drawing.Point(62, 42)
+        Me.CalidadTXT.Name = "CalidadTXT"
+        Me.CalidadTXT.Size = New System.Drawing.Size(120, 20)
+        Me.CalidadTXT.TabIndex = 44
+        Me.CalidadTXT.Visible = False
+        '
+        'ocTXT
+        '
+        Me.ocTXT.Location = New System.Drawing.Point(62, 42)
+        Me.ocTXT.Name = "ocTXT"
+        Me.ocTXT.Size = New System.Drawing.Size(120, 20)
+        Me.ocTXT.TabIndex = 43
+        Me.ocTXT.Visible = False
+        '
+        'Buscar
+        '
+        Me.Buscar.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.Buscar.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.Buscar.FormattingEnabled = True
+        Me.Buscar.Items.AddRange(New Object() {"Folio Entrada", "Fecha", "Cliente", "Factura/Remisión", "OC", "Certificado Calidad", "Largo", "Ancho", "Espesor", "Material", "Peso KG", "RACK", "Nivel", "Observaciones"})
+        Me.Buscar.Location = New System.Drawing.Point(62, 15)
+        Me.Buscar.Name = "Buscar"
+        Me.Buscar.Size = New System.Drawing.Size(121, 21)
+        Me.Buscar.TabIndex = 42
+        '
+        'CancelarBTN
+        '
+        Me.CancelarBTN.Location = New System.Drawing.Point(6, 82)
+        Me.CancelarBTN.Name = "CancelarBTN"
+        Me.CancelarBTN.Size = New System.Drawing.Size(75, 23)
+        Me.CancelarBTN.TabIndex = 41
+        Me.CancelarBTN.Text = "Cancelar"
+        Me.CancelarBTN.UseVisualStyleBackColor = True
+        '
+        'NoClienteCBX
+        '
+        Me.NoClienteCBX.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.NoClienteCBX.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystem
+        Me.NoClienteCBX.DataSource = Me.CLIENTESBindingSource
+        Me.NoClienteCBX.DisplayMember = "NO_CLIENTE"
+        Me.NoClienteCBX.FormattingEnabled = True
+        Me.NoClienteCBX.Location = New System.Drawing.Point(62, 42)
+        Me.NoClienteCBX.Name = "NoClienteCBX"
+        Me.NoClienteCBX.Size = New System.Drawing.Size(120, 21)
+        Me.NoClienteCBX.TabIndex = 40
+        Me.NoClienteCBX.Visible = False
+        '
+        'CLIENTESBindingSource
+        '
+        Me.CLIENTESBindingSource.DataMember = "CLIENTES"
+        Me.CLIENTESBindingSource.DataSource = Me.Clientes
+        '
+        'Clientes
+        '
+        Me.Clientes.DataSetName = "Clientes"
+        Me.Clientes.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'NivelCBX
+        '
+        Me.NivelCBX.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.NivelCBX.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystem
+        Me.NivelCBX.DataSource = Me.IventariosMPBindingSource
+        Me.NivelCBX.DisplayMember = "NIVEL"
+        Me.NivelCBX.FormattingEnabled = True
+        Me.NivelCBX.Location = New System.Drawing.Point(62, 42)
+        Me.NivelCBX.Name = "NivelCBX"
+        Me.NivelCBX.Size = New System.Drawing.Size(120, 21)
+        Me.NivelCBX.TabIndex = 38
+        Me.NivelCBX.Visible = False
+        '
+        'IventariosMPBindingSource
+        '
+        Me.IventariosMPBindingSource.DataMember = "IventariosMP"
+        Me.IventariosMPBindingSource.DataSource = Me.MPClienteDataSet
+        '
+        'MPClienteDataSet
+        '
+        Me.MPClienteDataSet.DataSetName = "MPClienteDataSet"
+        Me.MPClienteDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'RackCBX
+        '
+        Me.RackCBX.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.RackCBX.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystem
+        Me.RackCBX.DataSource = Me.IventariosMPBindingSource
+        Me.RackCBX.DisplayMember = "RACK"
+        Me.RackCBX.FormattingEnabled = True
+        Me.RackCBX.Location = New System.Drawing.Point(62, 42)
+        Me.RackCBX.Name = "RackCBX"
+        Me.RackCBX.Size = New System.Drawing.Size(120, 21)
+        Me.RackCBX.TabIndex = 37
+        Me.RackCBX.Visible = False
+        '
+        'MaterialCBX
+        '
+        Me.MaterialCBX.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.MaterialCBX.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystem
+        Me.MaterialCBX.DataSource = Me.IventariosMPBindingSource
+        Me.MaterialCBX.DisplayMember = "MATERIAL"
+        Me.MaterialCBX.FormattingEnabled = True
+        Me.MaterialCBX.Location = New System.Drawing.Point(62, 42)
+        Me.MaterialCBX.Name = "MaterialCBX"
+        Me.MaterialCBX.Size = New System.Drawing.Size(120, 21)
+        Me.MaterialCBX.TabIndex = 36
+        Me.MaterialCBX.Visible = False
+        '
+        'EspesorCBX
+        '
+        Me.EspesorCBX.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.EspesorCBX.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.EspesorCBX.FormattingEnabled = True
+        Me.EspesorCBX.Items.AddRange(New Object() {"C. 6", "C. 7", "C. 8", "C. 9", "C. 10", "C. 11", "C. 12", "C. 13", "C. 14", "C. 15", "C. 16", "C. 18", "C. 19", "C. 20", "C. 22", "C. 24", "C. 26", "C. 28", "C. 30", "1/8''", "3/16''", "1/4''", "5/16''", "3/8''", "7/16''", "1/2''", "5/8''", "3/4''", "7/8''", "1''", "1 1/8''", "1 1/4''", "1 3/8''", "1 1/2''", "1 5/8''", "1 3/4''", "2''", "2 1/4''", "2 1/2''", "2 3/4''", "3''", "3 1/2''", "4''", "4 1/2''", "5''"})
+        Me.EspesorCBX.Location = New System.Drawing.Point(62, 42)
+        Me.EspesorCBX.Name = "EspesorCBX"
+        Me.EspesorCBX.Size = New System.Drawing.Size(120, 21)
+        Me.EspesorCBX.TabIndex = 35
+        Me.EspesorCBX.Visible = False
+        '
+        'ClienteCBX
+        '
+        Me.ClienteCBX.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.ClienteCBX.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystem
+        Me.ClienteCBX.DataSource = Me.CLIENTESBindingSource
+        Me.ClienteCBX.DisplayMember = "NOMBRE"
+        Me.ClienteCBX.FormattingEnabled = True
+        Me.ClienteCBX.Location = New System.Drawing.Point(62, 42)
+        Me.ClienteCBX.Name = "ClienteCBX"
+        Me.ClienteCBX.Size = New System.Drawing.Size(120, 21)
+        Me.ClienteCBX.TabIndex = 34
+        Me.ClienteCBX.Visible = False
+        '
+        'FiltrarBTN
+        '
+        Me.FiltrarBTN.Location = New System.Drawing.Point(108, 82)
+        Me.FiltrarBTN.Name = "FiltrarBTN"
+        Me.FiltrarBTN.Size = New System.Drawing.Size(75, 23)
+        Me.FiltrarBTN.TabIndex = 32
+        Me.FiltrarBTN.Text = "Filtrar"
+        Me.FiltrarBTN.UseVisualStyleBackColor = True
+        '
+        'ObservacionesCBX
+        '
+        Me.ObservacionesCBX.Location = New System.Drawing.Point(62, 42)
+        Me.ObservacionesCBX.Name = "ObservacionesCBX"
+        Me.ObservacionesCBX.Size = New System.Drawing.Size(120, 20)
+        Me.ObservacionesCBX.TabIndex = 24
+        Me.ObservacionesCBX.Visible = False
         '
         'RestaurarBTN
         '
@@ -212,20 +420,20 @@ Partial Class Principal
         Me.FiltroBTN.Text = "Filtrar"
         Me.FiltroBTN.UseVisualStyleBackColor = True
         '
-        'IventariosMPDataGridView
+        'BusquedaCBX
         '
-        Me.IventariosMPDataGridView.AllowUserToAddRows = False
-        Me.IventariosMPDataGridView.AllowUserToDeleteRows = False
-        Me.IventariosMPDataGridView.AllowUserToOrderColumns = True
-        Me.IventariosMPDataGridView.AutoGenerateColumns = False
-        Me.IventariosMPDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.IventariosMPDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn30, Me.DataGridViewTextBoxColumn31, Me.DataGridViewTextBoxColumn32, Me.DataGridViewTextBoxColumn33, Me.DataGridViewTextBoxColumn34, Me.DataGridViewTextBoxColumn35, Me.DataGridViewTextBoxColumn36, Me.DataGridViewTextBoxColumn37, Me.DataGridViewTextBoxColumn38, Me.DataGridViewTextBoxColumn39, Me.DataGridViewTextBoxColumn40, Me.DataGridViewTextBoxColumn41, Me.DataGridViewTextBoxColumn42, Me.DataGridViewTextBoxColumn43, Me.DataGridViewTextBoxColumn44, Me.DataGridViewTextBoxColumn45, Me.DataGridViewTextBoxColumn46, Me.DataGridViewTextBoxColumn47, Me.DataGridViewTextBoxColumn48, Me.DataGridViewTextBoxColumn49})
-        Me.IventariosMPDataGridView.DataSource = Me.IventariosMPBindingSource
-        Me.IventariosMPDataGridView.Location = New System.Drawing.Point(6, 35)
-        Me.IventariosMPDataGridView.Name = "IventariosMPDataGridView"
-        Me.IventariosMPDataGridView.ReadOnly = True
-        Me.IventariosMPDataGridView.Size = New System.Drawing.Size(998, 466)
-        Me.IventariosMPDataGridView.TabIndex = 0
+        Me.BusquedaCBX.AllowUserToAddRows = False
+        Me.BusquedaCBX.AllowUserToDeleteRows = False
+        Me.BusquedaCBX.AllowUserToOrderColumns = True
+        Me.BusquedaCBX.AutoGenerateColumns = False
+        Me.BusquedaCBX.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.BusquedaCBX.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn30, Me.DataGridViewTextBoxColumn31, Me.DataGridViewTextBoxColumn32, Me.DataGridViewTextBoxColumn33, Me.DataGridViewTextBoxColumn34, Me.DataGridViewTextBoxColumn35, Me.DataGridViewTextBoxColumn36, Me.DataGridViewTextBoxColumn37, Me.DataGridViewTextBoxColumn38, Me.DataGridViewTextBoxColumn39, Me.DataGridViewTextBoxColumn40, Me.DataGridViewTextBoxColumn41, Me.DataGridViewTextBoxColumn42, Me.DataGridViewTextBoxColumn43, Me.DataGridViewTextBoxColumn44, Me.DataGridViewTextBoxColumn45, Me.DataGridViewTextBoxColumn46, Me.DataGridViewTextBoxColumn47, Me.DataGridViewTextBoxColumn48, Me.DataGridViewTextBoxColumn49})
+        Me.BusquedaCBX.DataSource = Me.IventariosMPBindingSource
+        Me.BusquedaCBX.Location = New System.Drawing.Point(6, 35)
+        Me.BusquedaCBX.Name = "BusquedaCBX"
+        Me.BusquedaCBX.ReadOnly = True
+        Me.BusquedaCBX.Size = New System.Drawing.Size(998, 466)
+        Me.BusquedaCBX.TabIndex = 0
         '
         'DataGridViewTextBoxColumn4
         '
@@ -233,6 +441,7 @@ Partial Class Principal
         Me.DataGridViewTextBoxColumn4.DataPropertyName = "FOLIO_ENTRADA"
         Me.DataGridViewTextBoxColumn4.HeaderText = "Folio Entrada"
         Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        Me.DataGridViewTextBoxColumn4.ReadOnly = True
         Me.DataGridViewTextBoxColumn4.Width = 87
         '
         'DataGridViewTextBoxColumn30
@@ -241,6 +450,7 @@ Partial Class Principal
         Me.DataGridViewTextBoxColumn30.DataPropertyName = "FECHA"
         Me.DataGridViewTextBoxColumn30.HeaderText = "Fecha"
         Me.DataGridViewTextBoxColumn30.Name = "DataGridViewTextBoxColumn30"
+        Me.DataGridViewTextBoxColumn30.ReadOnly = True
         Me.DataGridViewTextBoxColumn30.Width = 62
         '
         'DataGridViewTextBoxColumn31
@@ -249,6 +459,7 @@ Partial Class Principal
         Me.DataGridViewTextBoxColumn31.DataPropertyName = "CLIENTE"
         Me.DataGridViewTextBoxColumn31.HeaderText = "Cliente"
         Me.DataGridViewTextBoxColumn31.Name = "DataGridViewTextBoxColumn31"
+        Me.DataGridViewTextBoxColumn31.ReadOnly = True
         Me.DataGridViewTextBoxColumn31.Width = 64
         '
         'DataGridViewTextBoxColumn32
@@ -257,6 +468,7 @@ Partial Class Principal
         Me.DataGridViewTextBoxColumn32.DataPropertyName = "FACTURA_REMISION"
         Me.DataGridViewTextBoxColumn32.HeaderText = "Factura/Remisión"
         Me.DataGridViewTextBoxColumn32.Name = "DataGridViewTextBoxColumn32"
+        Me.DataGridViewTextBoxColumn32.ReadOnly = True
         Me.DataGridViewTextBoxColumn32.Width = 116
         '
         'DataGridViewTextBoxColumn33
@@ -265,6 +477,7 @@ Partial Class Principal
         Me.DataGridViewTextBoxColumn33.DataPropertyName = "OC"
         Me.DataGridViewTextBoxColumn33.HeaderText = "OC"
         Me.DataGridViewTextBoxColumn33.Name = "DataGridViewTextBoxColumn33"
+        Me.DataGridViewTextBoxColumn33.ReadOnly = True
         Me.DataGridViewTextBoxColumn33.Width = 47
         '
         'DataGridViewTextBoxColumn34
@@ -273,6 +486,7 @@ Partial Class Principal
         Me.DataGridViewTextBoxColumn34.DataPropertyName = "CERTIFICADO_CALIDAD"
         Me.DataGridViewTextBoxColumn34.HeaderText = "Certificado Calidad"
         Me.DataGridViewTextBoxColumn34.Name = "DataGridViewTextBoxColumn34"
+        Me.DataGridViewTextBoxColumn34.ReadOnly = True
         Me.DataGridViewTextBoxColumn34.Width = 110
         '
         'DataGridViewTextBoxColumn35
@@ -281,6 +495,7 @@ Partial Class Principal
         Me.DataGridViewTextBoxColumn35.DataPropertyName = "LARGO"
         Me.DataGridViewTextBoxColumn35.HeaderText = "Largo"
         Me.DataGridViewTextBoxColumn35.Name = "DataGridViewTextBoxColumn35"
+        Me.DataGridViewTextBoxColumn35.ReadOnly = True
         Me.DataGridViewTextBoxColumn35.Width = 59
         '
         'DataGridViewTextBoxColumn36
@@ -289,6 +504,7 @@ Partial Class Principal
         Me.DataGridViewTextBoxColumn36.DataPropertyName = "ANCHO"
         Me.DataGridViewTextBoxColumn36.HeaderText = "Ancho"
         Me.DataGridViewTextBoxColumn36.Name = "DataGridViewTextBoxColumn36"
+        Me.DataGridViewTextBoxColumn36.ReadOnly = True
         Me.DataGridViewTextBoxColumn36.Width = 63
         '
         'DataGridViewTextBoxColumn37
@@ -297,6 +513,7 @@ Partial Class Principal
         Me.DataGridViewTextBoxColumn37.DataPropertyName = "ESPESOR"
         Me.DataGridViewTextBoxColumn37.HeaderText = "Espesor"
         Me.DataGridViewTextBoxColumn37.Name = "DataGridViewTextBoxColumn37"
+        Me.DataGridViewTextBoxColumn37.ReadOnly = True
         Me.DataGridViewTextBoxColumn37.Width = 70
         '
         'DataGridViewTextBoxColumn38
@@ -305,6 +522,7 @@ Partial Class Principal
         Me.DataGridViewTextBoxColumn38.DataPropertyName = "MATERIAL"
         Me.DataGridViewTextBoxColumn38.HeaderText = "Material"
         Me.DataGridViewTextBoxColumn38.Name = "DataGridViewTextBoxColumn38"
+        Me.DataGridViewTextBoxColumn38.ReadOnly = True
         Me.DataGridViewTextBoxColumn38.Width = 69
         '
         'DataGridViewTextBoxColumn39
@@ -313,6 +531,7 @@ Partial Class Principal
         Me.DataGridViewTextBoxColumn39.DataPropertyName = "PESO_KG"
         Me.DataGridViewTextBoxColumn39.HeaderText = "Peso KG"
         Me.DataGridViewTextBoxColumn39.Name = "DataGridViewTextBoxColumn39"
+        Me.DataGridViewTextBoxColumn39.ReadOnly = True
         Me.DataGridViewTextBoxColumn39.Width = 69
         '
         'DataGridViewTextBoxColumn40
@@ -321,6 +540,7 @@ Partial Class Principal
         Me.DataGridViewTextBoxColumn40.DataPropertyName = "RACK"
         Me.DataGridViewTextBoxColumn40.HeaderText = "RACK"
         Me.DataGridViewTextBoxColumn40.Name = "DataGridViewTextBoxColumn40"
+        Me.DataGridViewTextBoxColumn40.ReadOnly = True
         Me.DataGridViewTextBoxColumn40.Width = 61
         '
         'DataGridViewTextBoxColumn41
@@ -329,6 +549,7 @@ Partial Class Principal
         Me.DataGridViewTextBoxColumn41.DataPropertyName = "NIVEL"
         Me.DataGridViewTextBoxColumn41.HeaderText = "Nivel"
         Me.DataGridViewTextBoxColumn41.Name = "DataGridViewTextBoxColumn41"
+        Me.DataGridViewTextBoxColumn41.ReadOnly = True
         Me.DataGridViewTextBoxColumn41.Width = 56
         '
         'DataGridViewTextBoxColumn42
@@ -337,6 +558,7 @@ Partial Class Principal
         Me.DataGridViewTextBoxColumn42.DataPropertyName = "OBSERVACIONES_ENTRADA"
         Me.DataGridViewTextBoxColumn42.HeaderText = "Observaciones"
         Me.DataGridViewTextBoxColumn42.Name = "DataGridViewTextBoxColumn42"
+        Me.DataGridViewTextBoxColumn42.ReadOnly = True
         Me.DataGridViewTextBoxColumn42.Width = 103
         '
         'DataGridViewTextBoxColumn43
@@ -345,6 +567,7 @@ Partial Class Principal
         Me.DataGridViewTextBoxColumn43.DataPropertyName = "LOTE_DIA"
         Me.DataGridViewTextBoxColumn43.HeaderText = "LOTE_DIA"
         Me.DataGridViewTextBoxColumn43.Name = "DataGridViewTextBoxColumn43"
+        Me.DataGridViewTextBoxColumn43.ReadOnly = True
         Me.DataGridViewTextBoxColumn43.Width = 84
         '
         'DataGridViewTextBoxColumn44
@@ -353,6 +576,7 @@ Partial Class Principal
         Me.DataGridViewTextBoxColumn44.DataPropertyName = "LOTE_MES"
         Me.DataGridViewTextBoxColumn44.HeaderText = "LOTE_MES"
         Me.DataGridViewTextBoxColumn44.Name = "DataGridViewTextBoxColumn44"
+        Me.DataGridViewTextBoxColumn44.ReadOnly = True
         Me.DataGridViewTextBoxColumn44.Width = 89
         '
         'DataGridViewTextBoxColumn45
@@ -361,6 +585,7 @@ Partial Class Principal
         Me.DataGridViewTextBoxColumn45.DataPropertyName = "LOTE_AÑO"
         Me.DataGridViewTextBoxColumn45.HeaderText = "LOTE_AÑO"
         Me.DataGridViewTextBoxColumn45.Name = "DataGridViewTextBoxColumn45"
+        Me.DataGridViewTextBoxColumn45.ReadOnly = True
         Me.DataGridViewTextBoxColumn45.Width = 89
         '
         'DataGridViewTextBoxColumn46
@@ -369,6 +594,7 @@ Partial Class Principal
         Me.DataGridViewTextBoxColumn46.DataPropertyName = "LOTE_CLIENTE"
         Me.DataGridViewTextBoxColumn46.HeaderText = "LOTE_CLIENTE"
         Me.DataGridViewTextBoxColumn46.Name = "DataGridViewTextBoxColumn46"
+        Me.DataGridViewTextBoxColumn46.ReadOnly = True
         Me.DataGridViewTextBoxColumn46.Width = 111
         '
         'DataGridViewTextBoxColumn47
@@ -377,6 +603,7 @@ Partial Class Principal
         Me.DataGridViewTextBoxColumn47.DataPropertyName = "LOTE_MATERIAL"
         Me.DataGridViewTextBoxColumn47.HeaderText = "LOTE_MATERIAL"
         Me.DataGridViewTextBoxColumn47.Name = "DataGridViewTextBoxColumn47"
+        Me.DataGridViewTextBoxColumn47.ReadOnly = True
         Me.DataGridViewTextBoxColumn47.Width = 120
         '
         'DataGridViewTextBoxColumn48
@@ -385,6 +612,7 @@ Partial Class Principal
         Me.DataGridViewTextBoxColumn48.DataPropertyName = "LOTE_FOLIO"
         Me.DataGridViewTextBoxColumn48.HeaderText = "LOTE_FOLIO"
         Me.DataGridViewTextBoxColumn48.Name = "DataGridViewTextBoxColumn48"
+        Me.DataGridViewTextBoxColumn48.ReadOnly = True
         Me.DataGridViewTextBoxColumn48.Width = 97
         '
         'DataGridViewTextBoxColumn49
@@ -393,17 +621,8 @@ Partial Class Principal
         Me.DataGridViewTextBoxColumn49.DataPropertyName = "FOLIO_SALIDA"
         Me.DataGridViewTextBoxColumn49.HeaderText = "Folio Salida"
         Me.DataGridViewTextBoxColumn49.Name = "DataGridViewTextBoxColumn49"
+        Me.DataGridViewTextBoxColumn49.ReadOnly = True
         Me.DataGridViewTextBoxColumn49.Visible = False
-        '
-        'IventariosMPBindingSource
-        '
-        Me.IventariosMPBindingSource.DataMember = "IventariosMP"
-        Me.IventariosMPBindingSource.DataSource = Me.MPClienteDataSet
-        '
-        'MPClienteDataSet
-        '
-        Me.MPClienteDataSet.DataSetName = "MPClienteDataSet"
-        Me.MPClienteDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'TabPage1
         '
@@ -872,198 +1091,6 @@ Partial Class Principal
         '
         Me.InventarioMPTableAdapter.ClearBeforeFill = True
         '
-        'FiltroMpGroup
-        '
-        Me.FiltroMpGroup.Controls.Add(Me.CancelarBTN)
-        Me.FiltroMpGroup.Controls.Add(Me.NoClienteCBX)
-        Me.FiltroMpGroup.Controls.Add(Me.Label8)
-        Me.FiltroMpGroup.Controls.Add(Me.NivelCBX)
-        Me.FiltroMpGroup.Controls.Add(Me.RackCBX)
-        Me.FiltroMpGroup.Controls.Add(Me.MaterialCBX)
-        Me.FiltroMpGroup.Controls.Add(Me.EspesorCBX)
-        Me.FiltroMpGroup.Controls.Add(Me.ClienteCBX)
-        Me.FiltroMpGroup.Controls.Add(Me.FiltrarBTN)
-        Me.FiltroMpGroup.Controls.Add(Me.Label7)
-        Me.FiltroMpGroup.Controls.Add(Me.Label6)
-        Me.FiltroMpGroup.Controls.Add(Me.Label5)
-        Me.FiltroMpGroup.Controls.Add(Me.Label4)
-        Me.FiltroMpGroup.Controls.Add(Me.Label3)
-        Me.FiltroMpGroup.Controls.Add(Me.Label2)
-        Me.FiltroMpGroup.Controls.Add(Me.Label1)
-        Me.FiltroMpGroup.Controls.Add(Me.ObservacionesCBX)
-        Me.FiltroMpGroup.Controls.Add(Me.EntradaTXT)
-        Me.FiltroMpGroup.Location = New System.Drawing.Point(372, 126)
-        Me.FiltroMpGroup.Name = "FiltroMpGroup"
-        Me.FiltroMpGroup.Size = New System.Drawing.Size(219, 267)
-        Me.FiltroMpGroup.TabIndex = 3
-        Me.FiltroMpGroup.TabStop = False
-        Me.FiltroMpGroup.Text = "Filtrar"
-        Me.FiltroMpGroup.Visible = False
-        '
-        'NoClienteCBX
-        '
-        Me.NoClienteCBX.DataSource = Me.CLIENTESBindingSource
-        Me.NoClienteCBX.DisplayMember = "NO_CLIENTE"
-        Me.NoClienteCBX.FormattingEnabled = True
-        Me.NoClienteCBX.Location = New System.Drawing.Point(90, 42)
-        Me.NoClienteCBX.Name = "NoClienteCBX"
-        Me.NoClienteCBX.Size = New System.Drawing.Size(120, 21)
-        Me.NoClienteCBX.TabIndex = 40
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(6, 45)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(62, 13)
-        Me.Label8.TabIndex = 39
-        Me.Label8.Text = "No. Cliente:"
-        '
-        'NivelCBX
-        '
-        Me.NivelCBX.DataSource = Me.IventariosMPBindingSource
-        Me.NivelCBX.DisplayMember = "NIVEL"
-        Me.NivelCBX.FormattingEnabled = True
-        Me.NivelCBX.Location = New System.Drawing.Point(90, 177)
-        Me.NivelCBX.Name = "NivelCBX"
-        Me.NivelCBX.Size = New System.Drawing.Size(120, 21)
-        Me.NivelCBX.TabIndex = 38
-        '
-        'RackCBX
-        '
-        Me.RackCBX.DataSource = Me.IventariosMPBindingSource
-        Me.RackCBX.DisplayMember = "RACK"
-        Me.RackCBX.FormattingEnabled = True
-        Me.RackCBX.Location = New System.Drawing.Point(90, 150)
-        Me.RackCBX.Name = "RackCBX"
-        Me.RackCBX.Size = New System.Drawing.Size(120, 21)
-        Me.RackCBX.TabIndex = 37
-        '
-        'MaterialCBX
-        '
-        Me.MaterialCBX.DataSource = Me.IventariosMPBindingSource
-        Me.MaterialCBX.DisplayMember = "MATERIAL"
-        Me.MaterialCBX.FormattingEnabled = True
-        Me.MaterialCBX.Location = New System.Drawing.Point(90, 123)
-        Me.MaterialCBX.Name = "MaterialCBX"
-        Me.MaterialCBX.Size = New System.Drawing.Size(120, 21)
-        Me.MaterialCBX.TabIndex = 36
-        '
-        'EspesorCBX
-        '
-        Me.EspesorCBX.FormattingEnabled = True
-        Me.EspesorCBX.Items.AddRange(New Object() {"C. 6", "C. 7", "C. 8", "C. 9", "C. 10", "C. 11", "C. 12", "C. 13", "C. 14", "C. 15", "C. 16", "C. 18", "C. 19", "C. 20", "C. 22", "C. 24", "C. 26", "C. 28", "C. 30", "1/8''", "3/16''", "1/4''", "5/16''", "3/8''", "7/16''", "1/2''", "5/8''", "3/4''", "7/8''", "1''", "1 1/8''", "1 1/4''", "1 3/8''", "1 1/2''", "1 5/8''", "1 3/4''", "2''", "2 1/4''", "2 1/2''", "2 3/4''", "3''", "3 1/2''", "4''", "4 1/2''", "5''"})
-        Me.EspesorCBX.Location = New System.Drawing.Point(90, 96)
-        Me.EspesorCBX.Name = "EspesorCBX"
-        Me.EspesorCBX.Size = New System.Drawing.Size(120, 21)
-        Me.EspesorCBX.TabIndex = 35
-        '
-        'ClienteCBX
-        '
-        Me.ClienteCBX.DataSource = Me.CLIENTESBindingSource
-        Me.ClienteCBX.DisplayMember = "NOMBRE"
-        Me.ClienteCBX.FormattingEnabled = True
-        Me.ClienteCBX.Location = New System.Drawing.Point(90, 69)
-        Me.ClienteCBX.Name = "ClienteCBX"
-        Me.ClienteCBX.Size = New System.Drawing.Size(120, 21)
-        Me.ClienteCBX.TabIndex = 34
-        '
-        'FiltrarBTN
-        '
-        Me.FiltrarBTN.Location = New System.Drawing.Point(135, 238)
-        Me.FiltrarBTN.Name = "FiltrarBTN"
-        Me.FiltrarBTN.Size = New System.Drawing.Size(75, 23)
-        Me.FiltrarBTN.TabIndex = 32
-        Me.FiltrarBTN.Text = "Filtrar"
-        Me.FiltrarBTN.UseVisualStyleBackColor = True
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(6, 207)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(81, 13)
-        Me.Label7.TabIndex = 31
-        Me.Label7.Text = "Observaciones:"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(6, 180)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(34, 13)
-        Me.Label6.TabIndex = 30
-        Me.Label6.Text = "Nivel:"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(6, 153)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(36, 13)
-        Me.Label5.TabIndex = 29
-        Me.Label5.Text = "Rack:"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(6, 126)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(47, 13)
-        Me.Label4.TabIndex = 28
-        Me.Label4.Text = "Material:"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(6, 99)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(48, 13)
-        Me.Label3.TabIndex = 27
-        Me.Label3.Text = "Espesor:"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(6, 72)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(42, 13)
-        Me.Label2.TabIndex = 26
-        Me.Label2.Text = "Cliente:"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(6, 19)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(72, 13)
-        Me.Label1.TabIndex = 25
-        Me.Label1.Text = "Folio Entrada:"
-        '
-        'ObservacionesCBX
-        '
-        Me.ObservacionesCBX.Location = New System.Drawing.Point(90, 204)
-        Me.ObservacionesCBX.Name = "ObservacionesCBX"
-        Me.ObservacionesCBX.Size = New System.Drawing.Size(120, 20)
-        Me.ObservacionesCBX.TabIndex = 24
-        '
-        'EntradaTXT
-        '
-        Me.EntradaTXT.Location = New System.Drawing.Point(90, 16)
-        Me.EntradaTXT.Name = "EntradaTXT"
-        Me.EntradaTXT.Size = New System.Drawing.Size(120, 20)
-        Me.EntradaTXT.TabIndex = 23
-        '
-        'Clientes
-        '
-        Me.Clientes.DataSetName = "Clientes"
-        Me.Clientes.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'CLIENTESBindingSource
-        '
-        Me.CLIENTESBindingSource.DataMember = "CLIENTES"
-        Me.CLIENTESBindingSource.DataSource = Me.Clientes
-        '
         'CLIENTESTableAdapter
         '
         Me.CLIENTESTableAdapter.ClearBeforeFill = True
@@ -1073,14 +1100,14 @@ Partial Class Principal
         Me.ENTRADASSALIDASBindingSource.DataMember = "ENTRADASSALIDAS"
         Me.ENTRADASSALIDASBindingSource.DataSource = Me.ENTRADASBindingSource
         '
-        'CancelarBTN
+        'Label1
         '
-        Me.CancelarBTN.Location = New System.Drawing.Point(6, 238)
-        Me.CancelarBTN.Name = "CancelarBTN"
-        Me.CancelarBTN.Size = New System.Drawing.Size(75, 23)
-        Me.CancelarBTN.TabIndex = 41
-        Me.CancelarBTN.Text = "Cancelar"
-        Me.CancelarBTN.UseVisualStyleBackColor = True
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(3, 18)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(53, 13)
+        Me.Label1.TabIndex = 49
+        Me.Label1.Text = "Filtrar por:"
         '
         'Principal
         '
@@ -1096,9 +1123,13 @@ Partial Class Principal
         Me.Text = "Apps Almacén"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage3.ResumeLayout(False)
-        CType(Me.IventariosMPDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.FiltroMpGroup.ResumeLayout(False)
+        Me.FiltroMpGroup.PerformLayout()
+        CType(Me.CLIENTESBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Clientes, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.IventariosMPBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MPClienteDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BusquedaCBX, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
         CType(Me.ENTRADASBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1110,10 +1141,6 @@ Partial Class Principal
         CType(Me.SALIDASDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SALIDASBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EntradasFSW, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.FiltroMpGroup.ResumeLayout(False)
-        Me.FiltroMpGroup.PerformLayout()
-        CType(Me.Clientes, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CLIENTESBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ENTRADASSALIDASBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -1152,7 +1179,7 @@ Partial Class Principal
     Friend WithEvents TabPage3 As TabPage
     Friend WithEvents IventariosMPBindingSource As BindingSource
     Friend WithEvents InventarioMPTableAdapter As MPClienteDataSetTableAdapters.InventarioMPTableAdapter
-    Friend WithEvents IventariosMPDataGridView As DataGridView
+    Friend WithEvents BusquedaCBX As DataGridView
     Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn30 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn31 As DataGridViewTextBoxColumn
@@ -1207,25 +1234,24 @@ Partial Class Principal
     Friend WithEvents RestaurarBTN As Button
     Friend WithEvents FiltroMpGroup As GroupBox
     Friend WithEvents NoClienteCBX As ComboBox
-    Friend WithEvents Label8 As Label
     Friend WithEvents NivelCBX As ComboBox
     Friend WithEvents RackCBX As ComboBox
     Friend WithEvents MaterialCBX As ComboBox
-    Friend WithEvents EspesorCBX As ComboBox
     Friend WithEvents ClienteCBX As ComboBox
     Friend WithEvents FiltrarBTN As Button
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label1 As Label
     Friend WithEvents ObservacionesCBX As TextBox
-    Friend WithEvents EntradaTXT As TextBox
     Friend WithEvents Clientes As Clientes
     Friend WithEvents CLIENTESBindingSource As BindingSource
     Friend WithEvents CLIENTESTableAdapter As ClientesTableAdapters.CLIENTESTableAdapter
     Friend WithEvents ENTRADASSALIDASBindingSource As BindingSource
     Friend WithEvents CancelarBTN As Button
+    Friend WithEvents Buscar As ComboBox
+    Friend WithEvents PesoTXT As TextBox
+    Friend WithEvents AnchoTXT As TextBox
+    Friend WithEvents FacturaTXT As TextBox
+    Friend WithEvents LargoTXT As TextBox
+    Friend WithEvents CalidadTXT As TextBox
+    Friend WithEvents ocTXT As TextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents EspesorCBX As ComboBox
 End Class

@@ -91,12 +91,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MPClienteDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="FiltroMP.Designer.vb">
-      <DependentUpon>FiltroMP.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FiltroMP.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="INFOADICIONAL.vb" />
     <Compile Include="Principal.vb">
       <SubType>Form</SubType>
@@ -140,9 +134,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FiltroMP.resx">
-      <DependentUpon>FiltroMP.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.vb</DependentUpon>
     </EmbeddedResource>
