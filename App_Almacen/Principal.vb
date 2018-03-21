@@ -3,7 +3,6 @@
 Public Class Principal
     Dim EntradaFilt, NoClienteFilt, ClienteFilt, EspesorFilt, MaterialFilt, RackFilt, NivelFilt, ObservFilt, FechaFilt, FacturaFilt, OCFILT, CalidadFILT, LargoFilt, AnchoFilt, PesoFilt, SalidaEntradaFilt, NoClienteEntradaFilt, ClienteEntradaFilt, EspesorEntradaFilt, MaterialEntradaFilt, RackEntradaFilt, NivelEntradaFilt, ObservEntradaFilt, FacturaEntradaFilt, OCEntradaFILT, CalidadEntradaFILT, LargoEntradaFilt, AnchoEntradaFilt, PesoEntradaFilt
 
-
     Dim EntradaSalidaFilt, OFFILT, PIFILT, SolicitanteFilt, LoteFilt, AutorizaFilt, ObservSalidasFilt
 
     Function OcultarFiltro()
@@ -49,15 +48,18 @@ Public Class Principal
         'Actualiza la base de datos al registrar cambios en la BD bajo la condición de que INFOADICIONAL sea distinto a "" en ENTRADAS
         If INFOADICIONAL.ACTUALIZARENTRADAS <> "" Then
             Me.ENTRADASTableAdapter.Fill(Me.MPClienteDataSet.ENTRADAS)
-            Me.InventarioMPTableAdapter.InventarioMPFill(Me.MPClienteDataSet.IventariosMP)
             INFOADICIONAL.ACTUALIZARENTRADAS = ""
         End If
 
         'Actualiza la base de datos al registrar cambios en la BD bajo la condición de que INFOADICIONAL sea distinto a "" en Salidas
         If INFOADICIONAL.ACTUALIZARSALIDAS <> "" Then
             Me.SALIDASTableAdapter.Fill(Me.MPClienteDataSet.SALIDAS)
-            Me.InventarioMPTableAdapter.InventarioMPFill(Me.MPClienteDataSet.IventariosMP)
             INFOADICIONAL.ACTUALIZARSALIDAS = ""
+        End If
+
+        If INFOADICIONAL.ACTUALIZARINVENTARIOMP <> "" Then
+            Me.InventarioMPTableAdapter.InventarioMPFill(Me.MPClienteDataSet.IventariosMP)
+            INFOADICIONAL.ACTUALIZARINVENTARIOMP = ""
         End If
 
     End Sub
@@ -311,7 +313,6 @@ Public Class Principal
         AnchoEntrada.Text = ""
         PesoEntrada.Text = ""
 
-
         'Muestra los textbox o combobox indicados para la busqueda
         If BuscarEntrada.Text = "Cliente" Then
             ClienteEntrada.Visible = True
@@ -387,7 +388,6 @@ Public Class Principal
 
         GBSalida.Visible = False
 
-
     End Sub
     Private Sub BuscarSalida_SelectedIndexChanged(sender As Object, e As EventArgs) Handles BuscarSalida.SelectedIndexChanged, BuscarSalida.TextChanged
         OFTXT.Visible = False
@@ -403,7 +403,6 @@ Public Class Principal
         LoteTXT.Clear()
         AutorizaTXT.Clear()
         ObservSalidas.Clear()
-
 
         'Muestra los textbox o combobox indicados para la busqueda
         If BuscarSalida.Text = "OF" Then
@@ -422,7 +421,20 @@ Public Class Principal
 
     End Sub
 
-
-
 #End Region
+    Private Sub ActualizarSalidas_Click(sender As Object, e As EventArgs) Handles ActualizarSalidas.Click
+        Me.SALIDASTableAdapter.Fill(Me.MPClienteDataSet.SALIDAS)
+
+    End Sub
+
+    Private Sub ActualizarEntradas_Click(sender As Object, e As EventArgs) Handles ActualizarEntradas.Click
+        Me.ENTRADASTableAdapter.Fill(Me.MPClienteDataSet.ENTRADAS)
+
+    End Sub
+
+    Private Sub ActualizarInvent_Click(sender As Object, e As EventArgs) Handles ActualizarInvent.Click
+        Me.InventarioMPTableAdapter.InventarioMPFill(Me.MPClienteDataSet.IventariosMP)
+
+    End Sub
+
 End Class

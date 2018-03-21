@@ -606,11 +606,11 @@ Partial Class Registro_Entradas
         '
         Me.Label19.AutoSize = True
         Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.Location = New System.Drawing.Point(55, 191)
+        Me.Label19.Location = New System.Drawing.Point(37, 191)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(68, 26)
+        Me.Label19.Size = New System.Drawing.Size(106, 26)
         Me.Label19.TabIndex = 31
-        Me.Label19.Text = "Peso:"
+        Me.Label19.Text = "Peso KG:"
         '
         'Registro_Entradas
         '

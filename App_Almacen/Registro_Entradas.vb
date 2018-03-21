@@ -44,9 +44,11 @@
         NuevaEntrada.LOTE_MES = mesTXT.Text
         NuevaEntrada.LOTE_AÑO = yearTXT.Text
         NuevaEntrada.LOTE_CLIENTE = ClienteTXT.Text
+        NuevaEntrada.LOTE_MATERIAL = MaterialTXT.Text
         NuevaEntrada.LOTE_FOLIO = ConsecTXT.Text
-        NuevaEntrada.PESO_KG = PES
+        NuevaEntrada.PESO_KG = PesoLBL.Text
         NuevaEntrada.FOLIO_SALIDA = "-"
+        NuevaEntrada.LOTE = diaTXT.Text & mesTXT.Text & yearTXT.Text & ClienteTXT.Text & Material.Text & ConsecTXT.Text
 
         'Insertar la fila en la tabla apropiada del DataSet
         MPClienteDataSet.ENTRADAS.AddENTRADASRow(NuevaEntrada)
@@ -56,6 +58,7 @@
 
         'Regista información en el Módulo INFOADICIONAL para la actualización de la BD
         INFOADICIONAL.ACTUALIZARENTRADAS = 1
+        INFOADICIONAL.ACTUALIZARINVENTARIOMP = 1
 
         'Muestra mensaje de confirmación
         MessageBox.Show("Registro guardado", "Registros")
@@ -176,7 +179,7 @@
             MULT = 1000
             PES = ((Val(AnchoTXT.Text) / MULT) * (Val(LargoTXT.Text) / MULT) * (ESP / 1000)) * DENSIDAD
             PesoLBL.Visible = True
-            PesoLBL.Text = FormatNumber(PES, 2) & " KG"
+            PesoLBL.Text = FormatNumber(PES, 2)
         Else
             PesoLBL.Visible = False
         End If

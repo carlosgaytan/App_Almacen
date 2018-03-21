@@ -31,7 +31,7 @@
         RegistroSalida.PI = piTXT.Text
         RegistroSalida.SOLICITANTE = SolicitanteTXT.Text
         RegistroSalida.AUTORIZACION = AutorizaTXT.Text
-        'RegistroSalida.LOTE=
+        RegistroSalida.LOTE = LoteLBL.Text
         RegistroSalida.OBSERVACIONES_SALIDA = ComenSalidasTXT.Text
 
         'Insertar la fila en la tabla apropiada del DataSet
@@ -56,6 +56,7 @@
         MessageBox.Show("Registro guardado", "Registros")
         INFOADICIONAL.ACTUALIZARSALIDAS = 1
         INFOADICIONAL.ACTUALIZARENTRADAS = 1
+        INFOADICIONAL.ACTUALIZARINVENTARIOMP = 1
 
         'Recarga la tabla de Salidas y actualiza el contador de folio
         Me.SALIDASTableAdapter.Fill(Me.MPClienteDataSet.SALIDAS)

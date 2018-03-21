@@ -37,12 +37,6 @@ Partial Class Registro_Salidas
         Me.Label3 = New System.Windows.Forms.Label()
         Me.SalidaLBL = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.ConsecutivoLBL = New System.Windows.Forms.Label()
-        Me.MatLBL = New System.Windows.Forms.Label()
-        Me.ClienLBL = New System.Windows.Forms.Label()
-        Me.YearLBL = New System.Windows.Forms.Label()
-        Me.MesLBL = New System.Windows.Forms.Label()
-        Me.DiaLBL = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -85,6 +79,7 @@ Partial Class Registro_Salidas
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.ComenSalidasTXT = New System.Windows.Forms.TextBox()
         Me.SalidaEntrada = New System.Windows.Forms.Label()
+        Me.LoteLBL = New System.Windows.Forms.Label()
         CType(Me.MPClienteDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SALIDASBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ENTRADASBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -114,6 +109,7 @@ Partial Class Registro_Salidas
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.ENTRADASTableAdapter = Me.ENTRADASTableAdapter
+        Me.TableAdapterManager.InventarioMPTableAdapter = Nothing
         Me.TableAdapterManager.SALIDASTableAdapter = Me.SALIDASTableAdapter
         Me.TableAdapterManager.UpdateOrder = App_Almacen.MPClienteDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
@@ -190,12 +186,7 @@ Partial Class Registro_Salidas
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.ConsecutivoLBL)
-        Me.GroupBox1.Controls.Add(Me.MatLBL)
-        Me.GroupBox1.Controls.Add(Me.ClienLBL)
-        Me.GroupBox1.Controls.Add(Me.YearLBL)
-        Me.GroupBox1.Controls.Add(Me.MesLBL)
-        Me.GroupBox1.Controls.Add(Me.DiaLBL)
+        Me.GroupBox1.Controls.Add(Me.LoteLBL)
         Me.GroupBox1.Controls.Add(Me.Label13)
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.Label8)
@@ -213,66 +204,6 @@ Partial Class Registro_Salidas
         Me.GroupBox1.TabIndex = 6
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Información General"
-        '
-        'ConsecutivoLBL
-        '
-        Me.ConsecutivoLBL.AutoSize = True
-        Me.ConsecutivoLBL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "LOTE_FOLIO", True))
-        Me.ConsecutivoLBL.Location = New System.Drawing.Point(682, 49)
-        Me.ConsecutivoLBL.Name = "ConsecutivoLBL"
-        Me.ConsecutivoLBL.Size = New System.Drawing.Size(19, 13)
-        Me.ConsecutivoLBL.TabIndex = 16
-        Me.ConsecutivoLBL.Text = "00"
-        '
-        'MatLBL
-        '
-        Me.MatLBL.AutoSize = True
-        Me.MatLBL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "LOTE_MATERIAL", True))
-        Me.MatLBL.Location = New System.Drawing.Point(653, 49)
-        Me.MatLBL.Name = "MatLBL"
-        Me.MatLBL.Size = New System.Drawing.Size(31, 13)
-        Me.MatLBL.TabIndex = 15
-        Me.MatLBL.Text = "GGG"
-        '
-        'ClienLBL
-        '
-        Me.ClienLBL.AutoSize = True
-        Me.ClienLBL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "LOTE_CLIENTE", True))
-        Me.ClienLBL.Location = New System.Drawing.Point(622, 49)
-        Me.ClienLBL.Name = "ClienLBL"
-        Me.ClienLBL.Size = New System.Drawing.Size(31, 13)
-        Me.ClienLBL.TabIndex = 14
-        Me.ClienLBL.Text = "0100"
-        '
-        'YearLBL
-        '
-        Me.YearLBL.AutoSize = True
-        Me.YearLBL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "LOTE_AÑO", True))
-        Me.YearLBL.Location = New System.Drawing.Point(592, 49)
-        Me.YearLBL.Name = "YearLBL"
-        Me.YearLBL.Size = New System.Drawing.Size(31, 13)
-        Me.YearLBL.TabIndex = 13
-        Me.YearLBL.Text = "0100"
-        '
-        'MesLBL
-        '
-        Me.MesLBL.AutoSize = True
-        Me.MesLBL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "LOTE_MES", True))
-        Me.MesLBL.Location = New System.Drawing.Point(575, 49)
-        Me.MesLBL.Name = "MesLBL"
-        Me.MesLBL.Size = New System.Drawing.Size(19, 13)
-        Me.MesLBL.TabIndex = 12
-        Me.MesLBL.Text = "01"
-        '
-        'DiaLBL
-        '
-        Me.DiaLBL.AutoSize = True
-        Me.DiaLBL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "LOTE_DIA", True))
-        Me.DiaLBL.Location = New System.Drawing.Point(558, 49)
-        Me.DiaLBL.Name = "DiaLBL"
-        Me.DiaLBL.Size = New System.Drawing.Size(19, 13)
-        Me.DiaLBL.TabIndex = 11
-        Me.DiaLBL.Text = "01"
         '
         'Label13
         '
@@ -691,6 +622,16 @@ Partial Class Registro_Salidas
         Me.SalidaEntrada.TabIndex = 14
         Me.SalidaEntrada.Text = "Label21"
         '
+        'LoteLBL
+        '
+        Me.LoteLBL.AutoSize = True
+        Me.LoteLBL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "LOTE", True))
+        Me.LoteLBL.Location = New System.Drawing.Point(559, 49)
+        Me.LoteLBL.Name = "LoteLBL"
+        Me.LoteLBL.Size = New System.Drawing.Size(19, 13)
+        Me.LoteLBL.TabIndex = 17
+        Me.LoteLBL.Text = "00"
+        '
         'Registro_Salidas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -772,12 +713,6 @@ Partial Class Registro_Salidas
     Friend WithEvents RackLBL As Label
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents ConsecutivoLBL As Label
-    Friend WithEvents MatLBL As Label
-    Friend WithEvents ClienLBL As Label
-    Friend WithEvents YearLBL As Label
-    Friend WithEvents MesLBL As Label
-    Friend WithEvents DiaLBL As Label
     Friend WithEvents Label13 As Label
     Friend WithEvents GroupBox5 As GroupBox
     Friend WithEvents AutorizaTXT As TextBox
@@ -794,4 +729,5 @@ Partial Class Registro_Salidas
     Friend WithEvents GroupBox6 As GroupBox
     Friend WithEvents ComenSalidasTXT As TextBox
     Friend WithEvents SalidaEntrada As Label
+    Friend WithEvents LoteLBL As Label
 End Class
