@@ -4,6 +4,8 @@ Public Class Principal
     Dim EntradaFilt, NoClienteFilt, ClienteFilt, EspesorFilt, MaterialFilt, RackFilt, NivelFilt, ObservFilt, FechaFilt, FacturaFilt, OCFILT, CalidadFILT, LargoFilt, AnchoFilt, PesoFilt, SalidaEntradaFilt, NoClienteEntradaFilt, ClienteEntradaFilt, EspesorEntradaFilt, MaterialEntradaFilt, RackEntradaFilt, NivelEntradaFilt, ObservEntradaFilt, FacturaEntradaFilt, OCEntradaFILT, CalidadEntradaFILT, LargoEntradaFilt, AnchoEntradaFilt, PesoEntradaFilt
 
 
+    Dim EntradaSalidaFilt, OFFILT, PIFILT, SolicitanteFilt, LoteFilt, AutorizaFilt, ObservSalidasFilt
+
     Function OcultarFiltro()
         ClienteCBX.Visible = False
         NoClienteCBX.Visible = False
@@ -343,8 +345,81 @@ Public Class Principal
 
 #Region "Filtro Salida"
     Private Sub FiltroSalidaBTN_Click(sender As Object, e As EventArgs) Handles FiltroSalidaBTN.Click
-        GBSalida
+        GBSalida.Visible = True
+        OFTXT.Clear()
+        PITXT.Clear()
+        SolicitanteTXT.Clear()
+        LoteTXT.Clear()
+        AutorizaTXT.Clear()
+        ObservSalidas.Clear()
     End Sub
+    Private Sub RestSalidaBTN_Click(sender As Object, e As EventArgs) Handles RestSalidaBTN.Click
+        SALIDASBindingSource.RemoveFilter()
+    End Sub
+    Private Sub CancelarSalida_Click(sender As Object, e As EventArgs) Handles CancelarSalida.Click
+        GBSalida.Visible = False
+    End Sub
+    Private Sub FiltrarSalida_Click(sender As Object, e As EventArgs) Handles FiltrarSalida.Click
+        'Filtro de Salidas
+        If OFTXT.Text <> "" Then
+            OFFILT = String.Format("OF Like '{0}%'", OFTXT.Text)
+            SALIDASBindingSource.Filter = OFFILT
+        ElseIf PITXT.Text <> "" Then
+            PIFILT = String.Format("PI Like '{0}%'", PITXT.Text)
+            SALIDASBindingSource.Filter = PIFILT
+        ElseIf SolicitanteTXT.Text <> "" Then
+            SolicitanteFilt = String.Format("SOLICITANTE Like '{0}%'", SolicitanteTXT.Text)
+            SALIDASBindingSource.Filter = SolicitanteFilt
+        ElseIf LoteTXT.Text <> "" Then
+            LoteFilt = String.Format("LOTE Like '{0}%'", LoteTXT.Text)
+            SALIDASBindingSource.Filter = LoteFilt
+        ElseIf AutorizaTXT.Text <> "" Then
+            AutorizaFilt = String.Format("AUTORIZACION Like '{0}%'", AutorizaTXT.Text)
+            SALIDASBindingSource.Filter = AutorizaFilt
+        ElseIf ObservSalidas.Text <> "" Then
+            ObservSalidasFilt = String.Format("OBSERVACIONES_SALIDA Like '{0}%'", ObservSalidas.Text)
+            SALIDASBindingSource.Filter = ObservSalidasFilt
+        End If
+
+        GBSalida.Visible = False
+
+
+    End Sub
+    Private Sub BuscarSalida_SelectedIndexChanged(sender As Object, e As EventArgs) Handles BuscarSalida.SelectedIndexChanged, BuscarSalida.TextChanged
+        OFTXT.Visible = False
+        PITXT.Visible = False
+        SolicitanteTXT.Visible = False
+        LoteTXT.Visible = False
+        AutorizaTXT.Visible = False
+        ObservSalidas.Visible = False
+
+
+        EntradaSalida.Text = ""
+        OFTXT.Clear()
+        PITXT.Clear()
+        SolicitanteTXT.Clear()
+        LoteTXT.Clear()
+        AutorizaTXT.Clear()
+        ObservSalidas.Clear()
+
+
+        'Muestra los textbox o combobox indicados para la busqueda
+        If BuscarSalida.Text = "OF" Then
+            OFTXT.Visible = True
+        ElseIf BuscarSalida.Text = "PI" Then
+            PITXT.Visible = True
+        ElseIf BuscarSalida.Text = "SOLICITANTE" Then
+            SolicitanteTXT.Visible = True
+        ElseIf BuscarSalida.Text = "LOTE" Then
+            LoteTXT.Visible = True
+        ElseIf BuscarSalida.Text = "Autorización" Then
+            AutorizaTXT.Visible = True
+        ElseIf BuscarSalida.Text = "Observaciones" Then
+            ObservSalidas.Visible = True
+        End If
+
+    End Sub
+
 
 
 #End Region

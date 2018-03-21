@@ -127,7 +127,6 @@ Partial Class Principal
         Me.FiltrarSalida = New System.Windows.Forms.Button()
         Me.OFTXT = New System.Windows.Forms.TextBox()
         Me.PITXT = New System.Windows.Forms.TextBox()
-        Me.ComboBox14 = New System.Windows.Forms.ComboBox()
         Me.SALIDASBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SolicitanteTXT = New System.Windows.Forms.TextBox()
         Me.LoteTXT = New System.Windows.Forms.TextBox()
@@ -135,7 +134,7 @@ Partial Class Principal
         Me.ObservSalidas = New System.Windows.Forms.TextBox()
         Me.RestSalidaBTN = New System.Windows.Forms.Button()
         Me.FiltroSalidaBTN = New System.Windows.Forms.Button()
-        Me.EntradaSalida = New System.Windows.Forms.DataGridView()
+        Me.SalidaDGV = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn24 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn25 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn26 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -170,7 +169,7 @@ Partial Class Principal
         Me.TabPage2.SuspendLayout()
         Me.GBSalida.SuspendLayout()
         CType(Me.SALIDASBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EntradaSalida, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SalidaDGV, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EntradasFSW, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ENTRADASSALIDASBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ENTRADASSALIDASBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1109,16 +1108,9 @@ Partial Class Principal
         'TabPage2
         '
         Me.TabPage2.Controls.Add(Me.GBSalida)
-        Me.TabPage2.Controls.Add(Me.OFTXT)
-        Me.TabPage2.Controls.Add(Me.PITXT)
-        Me.TabPage2.Controls.Add(Me.ComboBox14)
-        Me.TabPage2.Controls.Add(Me.SolicitanteTXT)
-        Me.TabPage2.Controls.Add(Me.LoteTXT)
-        Me.TabPage2.Controls.Add(Me.AutorizaTXT)
-        Me.TabPage2.Controls.Add(Me.ObservSalidas)
         Me.TabPage2.Controls.Add(Me.RestSalidaBTN)
         Me.TabPage2.Controls.Add(Me.FiltroSalidaBTN)
-        Me.TabPage2.Controls.Add(Me.EntradaSalida)
+        Me.TabPage2.Controls.Add(Me.SalidaDGV)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
@@ -1130,6 +1122,12 @@ Partial Class Principal
         'GBSalida
         '
         Me.GBSalida.Controls.Add(Me.Label3)
+        Me.GBSalida.Controls.Add(Me.ObservSalidas)
+        Me.GBSalida.Controls.Add(Me.AutorizaTXT)
+        Me.GBSalida.Controls.Add(Me.LoteTXT)
+        Me.GBSalida.Controls.Add(Me.SolicitanteTXT)
+        Me.GBSalida.Controls.Add(Me.PITXT)
+        Me.GBSalida.Controls.Add(Me.OFTXT)
         Me.GBSalida.Controls.Add(Me.BuscarSalida)
         Me.GBSalida.Controls.Add(Me.CancelarSalida)
         Me.GBSalida.Controls.Add(Me.FiltrarSalida)
@@ -1155,7 +1153,7 @@ Partial Class Principal
         Me.BuscarSalida.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.BuscarSalida.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.BuscarSalida.FormattingEnabled = True
-        Me.BuscarSalida.Items.AddRange(New Object() {"Folio Entrada", "Fecha", "Cliente", "Factura/Remisión", "OC", "Certificado Calidad", "Largo", "Ancho", "Espesor", "Material", "Peso KG", "RACK", "Nivel", "Observaciones"})
+        Me.BuscarSalida.Items.AddRange(New Object() {"OF", "PI", "Solicitante", "Lote", "Autorización", "Observaciones"})
         Me.BuscarSalida.Location = New System.Drawing.Point(62, 15)
         Me.BuscarSalida.Name = "BuscarSalida"
         Me.BuscarSalida.Size = New System.Drawing.Size(121, 21)
@@ -1181,7 +1179,7 @@ Partial Class Principal
         '
         'OFTXT
         '
-        Me.OFTXT.Location = New System.Drawing.Point(132, 189)
+        Me.OFTXT.Location = New System.Drawing.Point(62, 42)
         Me.OFTXT.Name = "OFTXT"
         Me.OFTXT.Size = New System.Drawing.Size(120, 20)
         Me.OFTXT.TabIndex = 43
@@ -1189,24 +1187,11 @@ Partial Class Principal
         '
         'PITXT
         '
-        Me.PITXT.Location = New System.Drawing.Point(132, 216)
+        Me.PITXT.Location = New System.Drawing.Point(62, 42)
         Me.PITXT.Name = "PITXT"
         Me.PITXT.Size = New System.Drawing.Size(120, 20)
         Me.PITXT.TabIndex = 44
         Me.PITXT.Visible = False
-        '
-        'ComboBox14
-        '
-        Me.ComboBox14.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.ComboBox14.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystem
-        Me.ComboBox14.DataSource = Me.SALIDASBindingSource
-        Me.ComboBox14.DisplayMember = "FOLIO_ENTRADA"
-        Me.ComboBox14.FormattingEnabled = True
-        Me.ComboBox14.Location = New System.Drawing.Point(132, 163)
-        Me.ComboBox14.Name = "ComboBox14"
-        Me.ComboBox14.Size = New System.Drawing.Size(120, 21)
-        Me.ComboBox14.TabIndex = 34
-        Me.ComboBox14.Visible = False
         '
         'SALIDASBindingSource
         '
@@ -1215,7 +1200,7 @@ Partial Class Principal
         '
         'SolicitanteTXT
         '
-        Me.SolicitanteTXT.Location = New System.Drawing.Point(132, 243)
+        Me.SolicitanteTXT.Location = New System.Drawing.Point(62, 42)
         Me.SolicitanteTXT.Name = "SolicitanteTXT"
         Me.SolicitanteTXT.Size = New System.Drawing.Size(120, 20)
         Me.SolicitanteTXT.TabIndex = 45
@@ -1223,7 +1208,7 @@ Partial Class Principal
         '
         'LoteTXT
         '
-        Me.LoteTXT.Location = New System.Drawing.Point(132, 271)
+        Me.LoteTXT.Location = New System.Drawing.Point(62, 42)
         Me.LoteTXT.Name = "LoteTXT"
         Me.LoteTXT.Size = New System.Drawing.Size(120, 20)
         Me.LoteTXT.TabIndex = 46
@@ -1231,7 +1216,7 @@ Partial Class Principal
         '
         'AutorizaTXT
         '
-        Me.AutorizaTXT.Location = New System.Drawing.Point(132, 297)
+        Me.AutorizaTXT.Location = New System.Drawing.Point(62, 42)
         Me.AutorizaTXT.Name = "AutorizaTXT"
         Me.AutorizaTXT.Size = New System.Drawing.Size(120, 20)
         Me.AutorizaTXT.TabIndex = 47
@@ -1239,7 +1224,7 @@ Partial Class Principal
         '
         'ObservSalidas
         '
-        Me.ObservSalidas.Location = New System.Drawing.Point(132, 325)
+        Me.ObservSalidas.Location = New System.Drawing.Point(62, 42)
         Me.ObservSalidas.Name = "ObservSalidas"
         Me.ObservSalidas.Size = New System.Drawing.Size(120, 20)
         Me.ObservSalidas.TabIndex = 48
@@ -1263,20 +1248,20 @@ Partial Class Principal
         Me.FiltroSalidaBTN.Text = "Filtrar"
         Me.FiltroSalidaBTN.UseVisualStyleBackColor = True
         '
-        'EntradaSalida
+        'SalidaDGV
         '
-        Me.EntradaSalida.AllowUserToAddRows = False
-        Me.EntradaSalida.AllowUserToDeleteRows = False
-        Me.EntradaSalida.AllowUserToOrderColumns = True
-        Me.EntradaSalida.AutoGenerateColumns = False
-        Me.EntradaSalida.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.EntradaSalida.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn24, Me.DataGridViewTextBoxColumn25, Me.DataGridViewTextBoxColumn26, Me.DataGridViewTextBoxColumn27, Me.PI, Me.SOLICITANTE, Me.LOTE, Me.DataGridViewTextBoxColumn28, Me.DataGridViewTextBoxColumn29})
-        Me.EntradaSalida.DataSource = Me.SALIDASBindingSource
-        Me.EntradaSalida.Location = New System.Drawing.Point(6, 35)
-        Me.EntradaSalida.Name = "EntradaSalida"
-        Me.EntradaSalida.ReadOnly = True
-        Me.EntradaSalida.Size = New System.Drawing.Size(998, 469)
-        Me.EntradaSalida.TabIndex = 0
+        Me.SalidaDGV.AllowUserToAddRows = False
+        Me.SalidaDGV.AllowUserToDeleteRows = False
+        Me.SalidaDGV.AllowUserToOrderColumns = True
+        Me.SalidaDGV.AutoGenerateColumns = False
+        Me.SalidaDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.SalidaDGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn24, Me.DataGridViewTextBoxColumn25, Me.DataGridViewTextBoxColumn26, Me.DataGridViewTextBoxColumn27, Me.PI, Me.SOLICITANTE, Me.LOTE, Me.DataGridViewTextBoxColumn28, Me.DataGridViewTextBoxColumn29})
+        Me.SalidaDGV.DataSource = Me.SALIDASBindingSource
+        Me.SalidaDGV.Location = New System.Drawing.Point(6, 35)
+        Me.SalidaDGV.Name = "SalidaDGV"
+        Me.SalidaDGV.ReadOnly = True
+        Me.SalidaDGV.Size = New System.Drawing.Size(998, 469)
+        Me.SalidaDGV.TabIndex = 0
         '
         'DataGridViewTextBoxColumn24
         '
@@ -1432,11 +1417,10 @@ Partial Class Principal
         CType(Me.ENTRADASDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ENTRADASBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
-        Me.TabPage2.PerformLayout()
         Me.GBSalida.ResumeLayout(False)
         Me.GBSalida.PerformLayout()
         CType(Me.SALIDASBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EntradaSalida, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SalidaDGV, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EntradasFSW, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ENTRADASSALIDASBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ENTRADASSALIDASBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1455,7 +1439,7 @@ Partial Class Principal
     Friend WithEvents ENTRADASDataGridView As DataGridView
     Friend WithEvents SALIDASBindingSource As BindingSource
     Friend WithEvents SALIDASTableAdapter As MPClienteDataSetTableAdapters.SALIDASTableAdapter
-    Friend WithEvents EntradaSalida As DataGridView
+    Friend WithEvents SalidaDGV As DataGridView
     Friend WithEvents DataGridViewTextBoxColumn12 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn13 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn16 As DataGridViewTextBoxColumn
@@ -1569,7 +1553,6 @@ Partial Class Principal
     Friend WithEvents OFTXT As TextBox
     Friend WithEvents BuscarSalida As ComboBox
     Friend WithEvents CancelarSalida As Button
-    Friend WithEvents ComboBox14 As ComboBox
     Friend WithEvents FiltrarSalida As Button
     Friend WithEvents RestSalidaBTN As Button
     Friend WithEvents FiltroSalidaBTN As Button
