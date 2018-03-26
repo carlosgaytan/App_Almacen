@@ -437,5 +437,9 @@ Public Class Principal
         Me.InventarioMPTableAdapter.InventarioMPFill(Me.MPClienteDataSet.IventariosMP)
 
     End Sub
+    Private Sub ModEntradasBTN_Click(sender As Object, e As EventArgs) Handles ModEntradasBTN.Click
+        Modificar_Entradas.Show()
+    End Sub
+
 
 End Class

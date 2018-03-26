@@ -4,4 +4,16 @@
         Me.ENTRADASTableAdapter.Fill(Me.MPClienteDataSet.ENTRADAS)
 
     End Sub
+
+
+    Private Sub GuardarBTN_Click(sender As Object, e As EventArgs) Handles GuardarBTN.Click
+        If MessageBox.Show("¿Desea guardar los cambios realizados?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Information) = DialogResult.Yes Then
+            'Actualiza registro
+            Me.Validate()
+            Me.ENTRADASBindingSource.EndEdit()
+            Me.TableAdapterManager.UpdateAll(Me.MPClienteDataSet)
+            INFOADICIONAL.ACTUALIZARENTRADAS = 1
+            MessageBox.Show("Cambios guardados", "Registro")
+        End If
+    End Sub
 End Class
