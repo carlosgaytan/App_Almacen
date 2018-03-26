@@ -36,6 +36,7 @@ Public Class Principal
         'TODO: esta línea de código carga datos en la tabla 'MPClienteDataSet.ENTRADAS' Puede moverla o quitarla según sea necesario.
         Me.ENTRADASTableAdapter.Fill(Me.MPClienteDataSet.ENTRADAS)
 
+
     End Sub
 
     Private Sub Reg_entradas_Click(sender As Object, e As EventArgs) Handles Reg_entradas.Click

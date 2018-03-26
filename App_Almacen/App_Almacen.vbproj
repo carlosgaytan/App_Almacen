@@ -126,6 +126,12 @@
       <DependentUpon>MPClienteDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="INFOADICIONAL.vb" />
+    <Compile Include="Modificar_Entradas.Designer.vb">
+      <DependentUpon>Modificar_Entradas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modificar_Entradas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Principal.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +176,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Alta_Clientes.resx">
       <DependentUpon>Alta_Clientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modificar_Entradas.resx">
+      <DependentUpon>Modificar_Entradas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.vb</DependentUpon>

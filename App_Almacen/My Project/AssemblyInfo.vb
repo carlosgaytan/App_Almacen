@@ -8,10 +8,10 @@ Imports System.Runtime.InteropServices
 
 ' Revisar los valores de los atributos del ensamblado
 
-<Assembly: AssemblyTitle("App_Almacen")>
-<Assembly: AssemblyDescription("")>
+<Assembly: AssemblyTitle("App Almacén")>
+<Assembly: AssemblyDescription("Conjunto de aplicaciones utilizadas para el alta de materia prima en Almacen de FGR TRANSFORMACIONES METÁLICAS S.A. DE C.V.")>
 <Assembly: AssemblyCompany("")>
-<Assembly: AssemblyProduct("App_Almacen")>
+<Assembly: AssemblyProduct("App Almacen")>
 <Assembly: AssemblyCopyright("Copyright ©  2018")>
 <Assembly: AssemblyTrademark("")>
 

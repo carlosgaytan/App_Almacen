@@ -28,6 +28,7 @@ Partial Class Principal
         Me.Reg_Salidas = New System.Windows.Forms.Button()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.ActualizarInvent = New System.Windows.Forms.Button()
         Me.FiltroMpGroup = New System.Windows.Forms.GroupBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PesoTXT = New System.Windows.Forms.TextBox()
@@ -53,7 +54,24 @@ Partial Class Principal
         Me.RestaurarBTN = New System.Windows.Forms.Button()
         Me.FiltroBTN = New System.Windows.Forms.Button()
         Me.BusquedaCBX = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn30 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn31 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn32 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn33 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn34 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn35 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn36 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn37 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn38 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn39 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn40 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn41 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn42 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn43 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn49 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.ActualizarEntradas = New System.Windows.Forms.Button()
         Me.GBEntrada = New System.Windows.Forms.GroupBox()
         Me.SalidaEntrada = New System.Windows.Forms.ComboBox()
         Me.ENTRADASBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
@@ -77,8 +95,24 @@ Partial Class Principal
         Me.RestEntradaBTN = New System.Windows.Forms.Button()
         Me.FiltroEntradaBTN = New System.Windows.Forms.Button()
         Me.ENTRADASDataGridView = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FOLIO_SALIDA = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn17 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn18 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ENTRADASBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.ActualizarSalidas = New System.Windows.Forms.Button()
         Me.GBSalida = New System.Windows.Forms.GroupBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.ObservSalidas = New System.Windows.Forms.TextBox()
@@ -113,40 +147,8 @@ Partial Class Principal
         Me.ENTRADASSALIDASBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ENTRADASSALIDASBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.ClientesBTN = New System.Windows.Forms.Button()
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn30 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn31 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn32 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn33 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn34 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn35 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn36 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn37 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn38 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn39 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn40 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn41 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn42 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn43 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn49 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FOLIO_SALIDA = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn17 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn18 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ActualizarInvent = New System.Windows.Forms.Button()
-        Me.ActualizarEntradas = New System.Windows.Forms.Button()
-        Me.ActualizarSalidas = New System.Windows.Forms.Button()
+        Me.ModEntradasBTN = New System.Windows.Forms.Button()
+        Me.ModSalidasBTN = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         Me.FiltroMpGroup.SuspendLayout()
@@ -212,6 +214,15 @@ Partial Class Principal
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Inventario MP"
         Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'ActualizarInvent
+        '
+        Me.ActualizarInvent.Location = New System.Drawing.Point(168, 6)
+        Me.ActualizarInvent.Name = "ActualizarInvent"
+        Me.ActualizarInvent.Size = New System.Drawing.Size(75, 23)
+        Me.ActualizarInvent.TabIndex = 4
+        Me.ActualizarInvent.Text = "Actualizar"
+        Me.ActualizarInvent.UseVisualStyleBackColor = True
         '
         'FiltroMpGroup
         '
@@ -464,6 +475,148 @@ Partial Class Principal
         Me.BusquedaCBX.Size = New System.Drawing.Size(1026, 466)
         Me.BusquedaCBX.TabIndex = 0
         '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn4.DataPropertyName = "FOLIO_ENTRADA"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "Folio Entrada"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        Me.DataGridViewTextBoxColumn4.ReadOnly = True
+        Me.DataGridViewTextBoxColumn4.Width = 87
+        '
+        'DataGridViewTextBoxColumn30
+        '
+        Me.DataGridViewTextBoxColumn30.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn30.DataPropertyName = "FECHA"
+        Me.DataGridViewTextBoxColumn30.HeaderText = "Fecha"
+        Me.DataGridViewTextBoxColumn30.Name = "DataGridViewTextBoxColumn30"
+        Me.DataGridViewTextBoxColumn30.ReadOnly = True
+        Me.DataGridViewTextBoxColumn30.Width = 62
+        '
+        'DataGridViewTextBoxColumn31
+        '
+        Me.DataGridViewTextBoxColumn31.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn31.DataPropertyName = "CLIENTE"
+        Me.DataGridViewTextBoxColumn31.HeaderText = "Cliente"
+        Me.DataGridViewTextBoxColumn31.Name = "DataGridViewTextBoxColumn31"
+        Me.DataGridViewTextBoxColumn31.ReadOnly = True
+        Me.DataGridViewTextBoxColumn31.Width = 64
+        '
+        'DataGridViewTextBoxColumn32
+        '
+        Me.DataGridViewTextBoxColumn32.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn32.DataPropertyName = "FACTURA_REMISION"
+        Me.DataGridViewTextBoxColumn32.HeaderText = "Factura/Remisión"
+        Me.DataGridViewTextBoxColumn32.Name = "DataGridViewTextBoxColumn32"
+        Me.DataGridViewTextBoxColumn32.ReadOnly = True
+        Me.DataGridViewTextBoxColumn32.Width = 116
+        '
+        'DataGridViewTextBoxColumn33
+        '
+        Me.DataGridViewTextBoxColumn33.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn33.DataPropertyName = "OC"
+        Me.DataGridViewTextBoxColumn33.HeaderText = "OC"
+        Me.DataGridViewTextBoxColumn33.Name = "DataGridViewTextBoxColumn33"
+        Me.DataGridViewTextBoxColumn33.ReadOnly = True
+        Me.DataGridViewTextBoxColumn33.Width = 47
+        '
+        'DataGridViewTextBoxColumn34
+        '
+        Me.DataGridViewTextBoxColumn34.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn34.DataPropertyName = "CERTIFICADO_CALIDAD"
+        Me.DataGridViewTextBoxColumn34.HeaderText = "Certificado Calidad"
+        Me.DataGridViewTextBoxColumn34.Name = "DataGridViewTextBoxColumn34"
+        Me.DataGridViewTextBoxColumn34.ReadOnly = True
+        Me.DataGridViewTextBoxColumn34.Width = 110
+        '
+        'DataGridViewTextBoxColumn35
+        '
+        Me.DataGridViewTextBoxColumn35.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn35.DataPropertyName = "LARGO"
+        Me.DataGridViewTextBoxColumn35.HeaderText = "Largo"
+        Me.DataGridViewTextBoxColumn35.Name = "DataGridViewTextBoxColumn35"
+        Me.DataGridViewTextBoxColumn35.ReadOnly = True
+        Me.DataGridViewTextBoxColumn35.Width = 59
+        '
+        'DataGridViewTextBoxColumn36
+        '
+        Me.DataGridViewTextBoxColumn36.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn36.DataPropertyName = "ANCHO"
+        Me.DataGridViewTextBoxColumn36.HeaderText = "Ancho"
+        Me.DataGridViewTextBoxColumn36.Name = "DataGridViewTextBoxColumn36"
+        Me.DataGridViewTextBoxColumn36.ReadOnly = True
+        Me.DataGridViewTextBoxColumn36.Width = 63
+        '
+        'DataGridViewTextBoxColumn37
+        '
+        Me.DataGridViewTextBoxColumn37.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn37.DataPropertyName = "ESPESOR"
+        Me.DataGridViewTextBoxColumn37.HeaderText = "Espesor"
+        Me.DataGridViewTextBoxColumn37.Name = "DataGridViewTextBoxColumn37"
+        Me.DataGridViewTextBoxColumn37.ReadOnly = True
+        Me.DataGridViewTextBoxColumn37.Width = 70
+        '
+        'DataGridViewTextBoxColumn38
+        '
+        Me.DataGridViewTextBoxColumn38.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn38.DataPropertyName = "MATERIAL"
+        Me.DataGridViewTextBoxColumn38.HeaderText = "Material"
+        Me.DataGridViewTextBoxColumn38.Name = "DataGridViewTextBoxColumn38"
+        Me.DataGridViewTextBoxColumn38.ReadOnly = True
+        Me.DataGridViewTextBoxColumn38.Width = 69
+        '
+        'DataGridViewTextBoxColumn39
+        '
+        Me.DataGridViewTextBoxColumn39.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn39.DataPropertyName = "PESO_KG"
+        Me.DataGridViewTextBoxColumn39.HeaderText = "Peso KG"
+        Me.DataGridViewTextBoxColumn39.Name = "DataGridViewTextBoxColumn39"
+        Me.DataGridViewTextBoxColumn39.ReadOnly = True
+        Me.DataGridViewTextBoxColumn39.Width = 69
+        '
+        'DataGridViewTextBoxColumn40
+        '
+        Me.DataGridViewTextBoxColumn40.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn40.DataPropertyName = "RACK"
+        Me.DataGridViewTextBoxColumn40.HeaderText = "RACK"
+        Me.DataGridViewTextBoxColumn40.Name = "DataGridViewTextBoxColumn40"
+        Me.DataGridViewTextBoxColumn40.ReadOnly = True
+        Me.DataGridViewTextBoxColumn40.Width = 61
+        '
+        'DataGridViewTextBoxColumn41
+        '
+        Me.DataGridViewTextBoxColumn41.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn41.DataPropertyName = "NIVEL"
+        Me.DataGridViewTextBoxColumn41.HeaderText = "Nivel"
+        Me.DataGridViewTextBoxColumn41.Name = "DataGridViewTextBoxColumn41"
+        Me.DataGridViewTextBoxColumn41.ReadOnly = True
+        Me.DataGridViewTextBoxColumn41.Width = 56
+        '
+        'DataGridViewTextBoxColumn42
+        '
+        Me.DataGridViewTextBoxColumn42.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn42.DataPropertyName = "OBSERVACIONES_ENTRADA"
+        Me.DataGridViewTextBoxColumn42.HeaderText = "Observaciones"
+        Me.DataGridViewTextBoxColumn42.Name = "DataGridViewTextBoxColumn42"
+        Me.DataGridViewTextBoxColumn42.ReadOnly = True
+        Me.DataGridViewTextBoxColumn42.Width = 103
+        '
+        'DataGridViewTextBoxColumn43
+        '
+        Me.DataGridViewTextBoxColumn43.DataPropertyName = "LOTE"
+        Me.DataGridViewTextBoxColumn43.HeaderText = "LOTE"
+        Me.DataGridViewTextBoxColumn43.Name = "DataGridViewTextBoxColumn43"
+        Me.DataGridViewTextBoxColumn43.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn49
+        '
+        Me.DataGridViewTextBoxColumn49.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn49.DataPropertyName = "FOLIO_SALIDA"
+        Me.DataGridViewTextBoxColumn49.HeaderText = "Folio Salida"
+        Me.DataGridViewTextBoxColumn49.Name = "DataGridViewTextBoxColumn49"
+        Me.DataGridViewTextBoxColumn49.ReadOnly = True
+        Me.DataGridViewTextBoxColumn49.Visible = False
+        '
         'TabPage1
         '
         Me.TabPage1.Controls.Add(Me.ActualizarEntradas)
@@ -478,6 +631,15 @@ Partial Class Principal
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Entradas"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'ActualizarEntradas
+        '
+        Me.ActualizarEntradas.Location = New System.Drawing.Point(168, 6)
+        Me.ActualizarEntradas.Name = "ActualizarEntradas"
+        Me.ActualizarEntradas.Size = New System.Drawing.Size(75, 23)
+        Me.ActualizarEntradas.TabIndex = 6
+        Me.ActualizarEntradas.Text = "Actualizar"
+        Me.ActualizarEntradas.UseVisualStyleBackColor = True
         '
         'GBEntrada
         '
@@ -727,6 +889,139 @@ Partial Class Principal
         Me.ENTRADASDataGridView.Size = New System.Drawing.Size(1029, 466)
         Me.ENTRADASDataGridView.TabIndex = 0
         '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "FOLIO_ENTRADA"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Folio"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        Me.DataGridViewTextBoxColumn1.Width = 54
+        '
+        'FOLIO_SALIDA
+        '
+        Me.FOLIO_SALIDA.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.FOLIO_SALIDA.DataPropertyName = "FOLIO_SALIDA"
+        Me.FOLIO_SALIDA.HeaderText = "Salida"
+        Me.FOLIO_SALIDA.Name = "FOLIO_SALIDA"
+        Me.FOLIO_SALIDA.ReadOnly = True
+        Me.FOLIO_SALIDA.Width = 61
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "FECHA"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Fecha"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.ReadOnly = True
+        Me.DataGridViewTextBoxColumn2.Width = 62
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "CLIENTE"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Cliente"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.ReadOnly = True
+        Me.DataGridViewTextBoxColumn3.Width = 64
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn5.DataPropertyName = "FACTURA_REMISION"
+        Me.DataGridViewTextBoxColumn5.HeaderText = "Factura/Remisión"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        Me.DataGridViewTextBoxColumn5.ReadOnly = True
+        Me.DataGridViewTextBoxColumn5.Width = 116
+        '
+        'DataGridViewTextBoxColumn6
+        '
+        Me.DataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn6.DataPropertyName = "OC"
+        Me.DataGridViewTextBoxColumn6.HeaderText = "OC"
+        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        Me.DataGridViewTextBoxColumn6.ReadOnly = True
+        Me.DataGridViewTextBoxColumn6.Width = 47
+        '
+        'DataGridViewTextBoxColumn7
+        '
+        Me.DataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn7.DataPropertyName = "CERTIFICADO_CALIDAD"
+        Me.DataGridViewTextBoxColumn7.HeaderText = "Certificado Calidad"
+        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
+        Me.DataGridViewTextBoxColumn7.ReadOnly = True
+        Me.DataGridViewTextBoxColumn7.Width = 110
+        '
+        'DataGridViewTextBoxColumn8
+        '
+        Me.DataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn8.DataPropertyName = "LARGO"
+        Me.DataGridViewTextBoxColumn8.HeaderText = "Largo"
+        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
+        Me.DataGridViewTextBoxColumn8.ReadOnly = True
+        Me.DataGridViewTextBoxColumn8.Width = 59
+        '
+        'DataGridViewTextBoxColumn9
+        '
+        Me.DataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn9.DataPropertyName = "ANCHO"
+        Me.DataGridViewTextBoxColumn9.HeaderText = "Ancho"
+        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
+        Me.DataGridViewTextBoxColumn9.ReadOnly = True
+        Me.DataGridViewTextBoxColumn9.Width = 63
+        '
+        'DataGridViewTextBoxColumn10
+        '
+        Me.DataGridViewTextBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn10.DataPropertyName = "ESPESOR"
+        Me.DataGridViewTextBoxColumn10.HeaderText = "Espesor"
+        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
+        Me.DataGridViewTextBoxColumn10.ReadOnly = True
+        Me.DataGridViewTextBoxColumn10.Width = 70
+        '
+        'DataGridViewTextBoxColumn11
+        '
+        Me.DataGridViewTextBoxColumn11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn11.DataPropertyName = "MATERIAL"
+        Me.DataGridViewTextBoxColumn11.HeaderText = "Material"
+        Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
+        Me.DataGridViewTextBoxColumn11.ReadOnly = True
+        Me.DataGridViewTextBoxColumn11.Width = 69
+        '
+        'DataGridViewTextBoxColumn14
+        '
+        Me.DataGridViewTextBoxColumn14.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn14.DataPropertyName = "RACK"
+        Me.DataGridViewTextBoxColumn14.HeaderText = "RACK"
+        Me.DataGridViewTextBoxColumn14.Name = "DataGridViewTextBoxColumn14"
+        Me.DataGridViewTextBoxColumn14.ReadOnly = True
+        Me.DataGridViewTextBoxColumn14.Width = 61
+        '
+        'DataGridViewTextBoxColumn15
+        '
+        Me.DataGridViewTextBoxColumn15.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn15.DataPropertyName = "NIVEL"
+        Me.DataGridViewTextBoxColumn15.HeaderText = "Nivel"
+        Me.DataGridViewTextBoxColumn15.Name = "DataGridViewTextBoxColumn15"
+        Me.DataGridViewTextBoxColumn15.ReadOnly = True
+        Me.DataGridViewTextBoxColumn15.Width = 56
+        '
+        'DataGridViewTextBoxColumn17
+        '
+        Me.DataGridViewTextBoxColumn17.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn17.DataPropertyName = "OBSERVACIONES_ENTRADA"
+        Me.DataGridViewTextBoxColumn17.HeaderText = "Observaciones"
+        Me.DataGridViewTextBoxColumn17.Name = "DataGridViewTextBoxColumn17"
+        Me.DataGridViewTextBoxColumn17.ReadOnly = True
+        Me.DataGridViewTextBoxColumn17.Width = 103
+        '
+        'DataGridViewTextBoxColumn18
+        '
+        Me.DataGridViewTextBoxColumn18.DataPropertyName = "LOTE"
+        Me.DataGridViewTextBoxColumn18.HeaderText = "Lote"
+        Me.DataGridViewTextBoxColumn18.Name = "DataGridViewTextBoxColumn18"
+        Me.DataGridViewTextBoxColumn18.ReadOnly = True
+        '
         'ENTRADASBindingSource
         '
         Me.ENTRADASBindingSource.DataMember = "ENTRADAS"
@@ -746,6 +1041,15 @@ Partial Class Principal
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Salidas"
         Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'ActualizarSalidas
+        '
+        Me.ActualizarSalidas.Location = New System.Drawing.Point(168, 6)
+        Me.ActualizarSalidas.Name = "ActualizarSalidas"
+        Me.ActualizarSalidas.Size = New System.Drawing.Size(75, 23)
+        Me.ActualizarSalidas.TabIndex = 6
+        Me.ActualizarSalidas.Text = "Actualizar"
+        Me.ActualizarSalidas.UseVisualStyleBackColor = True
         '
         'GBSalida
         '
@@ -1026,314 +1330,31 @@ Partial Class Principal
         Me.ClientesBTN.Text = "Alta Clientes"
         Me.ClientesBTN.UseVisualStyleBackColor = True
         '
-        'DataGridViewTextBoxColumn4
-        '
-        Me.DataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DataGridViewTextBoxColumn4.DataPropertyName = "FOLIO_ENTRADA"
-        Me.DataGridViewTextBoxColumn4.HeaderText = "Folio Entrada"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        Me.DataGridViewTextBoxColumn4.ReadOnly = True
-        Me.DataGridViewTextBoxColumn4.Width = 94
-        '
-        'DataGridViewTextBoxColumn30
-        '
-        Me.DataGridViewTextBoxColumn30.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DataGridViewTextBoxColumn30.DataPropertyName = "FECHA"
-        Me.DataGridViewTextBoxColumn30.HeaderText = "Fecha"
-        Me.DataGridViewTextBoxColumn30.Name = "DataGridViewTextBoxColumn30"
-        Me.DataGridViewTextBoxColumn30.ReadOnly = True
-        Me.DataGridViewTextBoxColumn30.Width = 62
-        '
-        'DataGridViewTextBoxColumn31
-        '
-        Me.DataGridViewTextBoxColumn31.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DataGridViewTextBoxColumn31.DataPropertyName = "CLIENTE"
-        Me.DataGridViewTextBoxColumn31.HeaderText = "Cliente"
-        Me.DataGridViewTextBoxColumn31.Name = "DataGridViewTextBoxColumn31"
-        Me.DataGridViewTextBoxColumn31.ReadOnly = True
-        Me.DataGridViewTextBoxColumn31.Width = 64
-        '
-        'DataGridViewTextBoxColumn32
-        '
-        Me.DataGridViewTextBoxColumn32.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DataGridViewTextBoxColumn32.DataPropertyName = "FACTURA_REMISION"
-        Me.DataGridViewTextBoxColumn32.HeaderText = "Factura/Remisión"
-        Me.DataGridViewTextBoxColumn32.Name = "DataGridViewTextBoxColumn32"
-        Me.DataGridViewTextBoxColumn32.ReadOnly = True
-        Me.DataGridViewTextBoxColumn32.Width = 116
-        '
-        'DataGridViewTextBoxColumn33
-        '
-        Me.DataGridViewTextBoxColumn33.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DataGridViewTextBoxColumn33.DataPropertyName = "OC"
-        Me.DataGridViewTextBoxColumn33.HeaderText = "OC"
-        Me.DataGridViewTextBoxColumn33.Name = "DataGridViewTextBoxColumn33"
-        Me.DataGridViewTextBoxColumn33.ReadOnly = True
-        Me.DataGridViewTextBoxColumn33.Width = 47
-        '
-        'DataGridViewTextBoxColumn34
-        '
-        Me.DataGridViewTextBoxColumn34.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DataGridViewTextBoxColumn34.DataPropertyName = "CERTIFICADO_CALIDAD"
-        Me.DataGridViewTextBoxColumn34.HeaderText = "Certificado Calidad"
-        Me.DataGridViewTextBoxColumn34.Name = "DataGridViewTextBoxColumn34"
-        Me.DataGridViewTextBoxColumn34.ReadOnly = True
-        Me.DataGridViewTextBoxColumn34.Width = 110
-        '
-        'DataGridViewTextBoxColumn35
-        '
-        Me.DataGridViewTextBoxColumn35.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DataGridViewTextBoxColumn35.DataPropertyName = "LARGO"
-        Me.DataGridViewTextBoxColumn35.HeaderText = "Largo"
-        Me.DataGridViewTextBoxColumn35.Name = "DataGridViewTextBoxColumn35"
-        Me.DataGridViewTextBoxColumn35.ReadOnly = True
-        Me.DataGridViewTextBoxColumn35.Width = 59
-        '
-        'DataGridViewTextBoxColumn36
-        '
-        Me.DataGridViewTextBoxColumn36.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DataGridViewTextBoxColumn36.DataPropertyName = "ANCHO"
-        Me.DataGridViewTextBoxColumn36.HeaderText = "Ancho"
-        Me.DataGridViewTextBoxColumn36.Name = "DataGridViewTextBoxColumn36"
-        Me.DataGridViewTextBoxColumn36.ReadOnly = True
-        Me.DataGridViewTextBoxColumn36.Width = 63
-        '
-        'DataGridViewTextBoxColumn37
-        '
-        Me.DataGridViewTextBoxColumn37.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DataGridViewTextBoxColumn37.DataPropertyName = "ESPESOR"
-        Me.DataGridViewTextBoxColumn37.HeaderText = "Espesor"
-        Me.DataGridViewTextBoxColumn37.Name = "DataGridViewTextBoxColumn37"
-        Me.DataGridViewTextBoxColumn37.ReadOnly = True
-        Me.DataGridViewTextBoxColumn37.Width = 70
-        '
-        'DataGridViewTextBoxColumn38
-        '
-        Me.DataGridViewTextBoxColumn38.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DataGridViewTextBoxColumn38.DataPropertyName = "MATERIAL"
-        Me.DataGridViewTextBoxColumn38.HeaderText = "Material"
-        Me.DataGridViewTextBoxColumn38.Name = "DataGridViewTextBoxColumn38"
-        Me.DataGridViewTextBoxColumn38.ReadOnly = True
-        Me.DataGridViewTextBoxColumn38.Width = 69
-        '
-        'DataGridViewTextBoxColumn39
-        '
-        Me.DataGridViewTextBoxColumn39.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DataGridViewTextBoxColumn39.DataPropertyName = "PESO_KG"
-        Me.DataGridViewTextBoxColumn39.HeaderText = "Peso KG"
-        Me.DataGridViewTextBoxColumn39.Name = "DataGridViewTextBoxColumn39"
-        Me.DataGridViewTextBoxColumn39.ReadOnly = True
-        Me.DataGridViewTextBoxColumn39.Width = 69
-        '
-        'DataGridViewTextBoxColumn40
-        '
-        Me.DataGridViewTextBoxColumn40.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DataGridViewTextBoxColumn40.DataPropertyName = "RACK"
-        Me.DataGridViewTextBoxColumn40.HeaderText = "RACK"
-        Me.DataGridViewTextBoxColumn40.Name = "DataGridViewTextBoxColumn40"
-        Me.DataGridViewTextBoxColumn40.ReadOnly = True
-        Me.DataGridViewTextBoxColumn40.Width = 61
-        '
-        'DataGridViewTextBoxColumn41
-        '
-        Me.DataGridViewTextBoxColumn41.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DataGridViewTextBoxColumn41.DataPropertyName = "NIVEL"
-        Me.DataGridViewTextBoxColumn41.HeaderText = "Nivel"
-        Me.DataGridViewTextBoxColumn41.Name = "DataGridViewTextBoxColumn41"
-        Me.DataGridViewTextBoxColumn41.ReadOnly = True
-        Me.DataGridViewTextBoxColumn41.Width = 56
-        '
-        'DataGridViewTextBoxColumn42
-        '
-        Me.DataGridViewTextBoxColumn42.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DataGridViewTextBoxColumn42.DataPropertyName = "OBSERVACIONES_ENTRADA"
-        Me.DataGridViewTextBoxColumn42.HeaderText = "Observaciones"
-        Me.DataGridViewTextBoxColumn42.Name = "DataGridViewTextBoxColumn42"
-        Me.DataGridViewTextBoxColumn42.ReadOnly = True
-        Me.DataGridViewTextBoxColumn42.Width = 103
-        '
-        'DataGridViewTextBoxColumn43
-        '
-        Me.DataGridViewTextBoxColumn43.DataPropertyName = "LOTE"
-        Me.DataGridViewTextBoxColumn43.HeaderText = "LOTE"
-        Me.DataGridViewTextBoxColumn43.Name = "DataGridViewTextBoxColumn43"
-        Me.DataGridViewTextBoxColumn43.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn49
-        '
-        Me.DataGridViewTextBoxColumn49.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DataGridViewTextBoxColumn49.DataPropertyName = "FOLIO_SALIDA"
-        Me.DataGridViewTextBoxColumn49.HeaderText = "Folio Salida"
-        Me.DataGridViewTextBoxColumn49.Name = "DataGridViewTextBoxColumn49"
-        Me.DataGridViewTextBoxColumn49.ReadOnly = True
-        Me.DataGridViewTextBoxColumn49.Visible = False
-        Me.DataGridViewTextBoxColumn49.Width = 79
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "FOLIO_ENTRADA"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "Folio"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        Me.DataGridViewTextBoxColumn1.Width = 54
-        '
-        'FOLIO_SALIDA
-        '
-        Me.FOLIO_SALIDA.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.FOLIO_SALIDA.DataPropertyName = "FOLIO_SALIDA"
-        Me.FOLIO_SALIDA.HeaderText = "Salida"
-        Me.FOLIO_SALIDA.Name = "FOLIO_SALIDA"
-        Me.FOLIO_SALIDA.ReadOnly = True
-        Me.FOLIO_SALIDA.Width = 61
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "FECHA"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Fecha"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.ReadOnly = True
-        Me.DataGridViewTextBoxColumn2.Width = 62
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "CLIENTE"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "Cliente"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.ReadOnly = True
-        Me.DataGridViewTextBoxColumn3.Width = 64
-        '
-        'DataGridViewTextBoxColumn5
-        '
-        Me.DataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DataGridViewTextBoxColumn5.DataPropertyName = "FACTURA_REMISION"
-        Me.DataGridViewTextBoxColumn5.HeaderText = "Factura/Remisión"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        Me.DataGridViewTextBoxColumn5.ReadOnly = True
-        Me.DataGridViewTextBoxColumn5.Width = 116
-        '
-        'DataGridViewTextBoxColumn6
-        '
-        Me.DataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DataGridViewTextBoxColumn6.DataPropertyName = "OC"
-        Me.DataGridViewTextBoxColumn6.HeaderText = "OC"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        Me.DataGridViewTextBoxColumn6.ReadOnly = True
-        Me.DataGridViewTextBoxColumn6.Width = 47
-        '
-        'DataGridViewTextBoxColumn7
-        '
-        Me.DataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DataGridViewTextBoxColumn7.DataPropertyName = "CERTIFICADO_CALIDAD"
-        Me.DataGridViewTextBoxColumn7.HeaderText = "Certificado Calidad"
-        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
-        Me.DataGridViewTextBoxColumn7.ReadOnly = True
-        Me.DataGridViewTextBoxColumn7.Width = 110
-        '
-        'DataGridViewTextBoxColumn8
-        '
-        Me.DataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DataGridViewTextBoxColumn8.DataPropertyName = "LARGO"
-        Me.DataGridViewTextBoxColumn8.HeaderText = "Largo"
-        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
-        Me.DataGridViewTextBoxColumn8.ReadOnly = True
-        Me.DataGridViewTextBoxColumn8.Width = 59
-        '
-        'DataGridViewTextBoxColumn9
-        '
-        Me.DataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DataGridViewTextBoxColumn9.DataPropertyName = "ANCHO"
-        Me.DataGridViewTextBoxColumn9.HeaderText = "Ancho"
-        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
-        Me.DataGridViewTextBoxColumn9.ReadOnly = True
-        Me.DataGridViewTextBoxColumn9.Width = 63
-        '
-        'DataGridViewTextBoxColumn10
-        '
-        Me.DataGridViewTextBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DataGridViewTextBoxColumn10.DataPropertyName = "ESPESOR"
-        Me.DataGridViewTextBoxColumn10.HeaderText = "Espesor"
-        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
-        Me.DataGridViewTextBoxColumn10.ReadOnly = True
-        Me.DataGridViewTextBoxColumn10.Width = 70
-        '
-        'DataGridViewTextBoxColumn11
-        '
-        Me.DataGridViewTextBoxColumn11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DataGridViewTextBoxColumn11.DataPropertyName = "MATERIAL"
-        Me.DataGridViewTextBoxColumn11.HeaderText = "Material"
-        Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
-        Me.DataGridViewTextBoxColumn11.ReadOnly = True
-        Me.DataGridViewTextBoxColumn11.Width = 69
-        '
-        'DataGridViewTextBoxColumn14
-        '
-        Me.DataGridViewTextBoxColumn14.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DataGridViewTextBoxColumn14.DataPropertyName = "RACK"
-        Me.DataGridViewTextBoxColumn14.HeaderText = "RACK"
-        Me.DataGridViewTextBoxColumn14.Name = "DataGridViewTextBoxColumn14"
-        Me.DataGridViewTextBoxColumn14.ReadOnly = True
-        Me.DataGridViewTextBoxColumn14.Width = 61
-        '
-        'DataGridViewTextBoxColumn15
-        '
-        Me.DataGridViewTextBoxColumn15.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DataGridViewTextBoxColumn15.DataPropertyName = "NIVEL"
-        Me.DataGridViewTextBoxColumn15.HeaderText = "Nivel"
-        Me.DataGridViewTextBoxColumn15.Name = "DataGridViewTextBoxColumn15"
-        Me.DataGridViewTextBoxColumn15.ReadOnly = True
-        Me.DataGridViewTextBoxColumn15.Width = 56
-        '
-        'DataGridViewTextBoxColumn17
-        '
-        Me.DataGridViewTextBoxColumn17.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DataGridViewTextBoxColumn17.DataPropertyName = "OBSERVACIONES_ENTRADA"
-        Me.DataGridViewTextBoxColumn17.HeaderText = "Observaciones"
-        Me.DataGridViewTextBoxColumn17.Name = "DataGridViewTextBoxColumn17"
-        Me.DataGridViewTextBoxColumn17.ReadOnly = True
-        Me.DataGridViewTextBoxColumn17.Width = 103
-        '
-        'DataGridViewTextBoxColumn18
-        '
-        Me.DataGridViewTextBoxColumn18.DataPropertyName = "LOTE"
-        Me.DataGridViewTextBoxColumn18.HeaderText = "Lote"
-        Me.DataGridViewTextBoxColumn18.Name = "DataGridViewTextBoxColumn18"
-        Me.DataGridViewTextBoxColumn18.ReadOnly = True
-        '
-        'ActualizarInvent
-        '
-        Me.ActualizarInvent.Location = New System.Drawing.Point(168, 6)
-        Me.ActualizarInvent.Name = "ActualizarInvent"
-        Me.ActualizarInvent.Size = New System.Drawing.Size(75, 23)
-        Me.ActualizarInvent.TabIndex = 4
-        Me.ActualizarInvent.Text = "Actualizar"
-        Me.ActualizarInvent.UseVisualStyleBackColor = True
-        '
-        'ActualizarEntradas
-        '
-        Me.ActualizarEntradas.Location = New System.Drawing.Point(168, 6)
-        Me.ActualizarEntradas.Name = "ActualizarEntradas"
-        Me.ActualizarEntradas.Size = New System.Drawing.Size(75, 23)
-        Me.ActualizarEntradas.TabIndex = 6
-        Me.ActualizarEntradas.Text = "Actualizar"
-        Me.ActualizarEntradas.UseVisualStyleBackColor = True
-        '
-        'ActualizarSalidas
-        '
-        Me.ActualizarSalidas.Location = New System.Drawing.Point(168, 6)
-        Me.ActualizarSalidas.Name = "ActualizarSalidas"
-        Me.ActualizarSalidas.Size = New System.Drawing.Size(75, 23)
-        Me.ActualizarSalidas.TabIndex = 6
-        Me.ActualizarSalidas.Text = "Actualizar"
-        Me.ActualizarSalidas.UseVisualStyleBackColor = True
+        'ModEntradasBTN
+        '
+        Me.ModEntradasBTN.Location = New System.Drawing.Point(12, 175)
+        Me.ModEntradasBTN.Name = "ModEntradasBTN"
+        Me.ModEntradasBTN.Size = New System.Drawing.Size(75, 39)
+        Me.ModEntradasBTN.TabIndex = 7
+        Me.ModEntradasBTN.Text = "Modificar Entradas"
+        Me.ModEntradasBTN.UseVisualStyleBackColor = True
+        '
+        'ModSalidasBTN
+        '
+        Me.ModSalidasBTN.Location = New System.Drawing.Point(12, 220)
+        Me.ModSalidasBTN.Name = "ModSalidasBTN"
+        Me.ModSalidasBTN.Size = New System.Drawing.Size(75, 39)
+        Me.ModSalidasBTN.TabIndex = 8
+        Me.ModSalidasBTN.Text = "Modificar Salidas"
+        Me.ModSalidasBTN.UseVisualStyleBackColor = True
         '
         'Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1151, 557)
+        Me.Controls.Add(Me.ModSalidasBTN)
+        Me.Controls.Add(Me.ModEntradasBTN)
         Me.Controls.Add(Me.ClientesBTN)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.Reg_Salidas)
@@ -1494,4 +1515,6 @@ Partial Class Principal
     Friend WithEvents ActualizarInvent As Button
     Friend WithEvents ActualizarEntradas As Button
     Friend WithEvents ActualizarSalidas As Button
+    Friend WithEvents ModSalidasBTN As Button
+    Friend WithEvents ModEntradasBTN As Button
 End Class
