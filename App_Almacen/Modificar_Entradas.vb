@@ -13,6 +13,7 @@
             Me.ENTRADASBindingSource.EndEdit()
             Me.TableAdapterManager.UpdateAll(Me.MPClienteDataSet)
             INFOADICIONAL.ACTUALIZARENTRADAS = 1
+            INFOADICIONAL.ACTUALIZARINVENTARIOMP = 1
             MessageBox.Show("Cambios guardados", "Registro")
         End If
     End Sub

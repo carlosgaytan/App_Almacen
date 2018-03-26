@@ -22,10 +22,14 @@ Partial Class Modificar_Salida
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Modificar_Salida))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.SalidaTXT = New System.Windows.Forms.ComboBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.SalidaTXT = New System.Windows.Forms.ComboBox()
+        Me.SALIDASBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.MPClienteDataSet = New App_Almacen.MPClienteDataSet()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.ComenSalidasTXT = New System.Windows.Forms.TextBox()
         Me.GuardarBTN = New System.Windows.Forms.Button()
@@ -40,6 +44,7 @@ Partial Class Modificar_Salida
         Me.Label9 = New System.Windows.Forms.Label()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.ENTRADASBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.NivelLBL = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
@@ -69,11 +74,18 @@ Partial Class Modificar_Salida
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.EntradaCBX = New System.Windows.Forms.ComboBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.SALIDASTableAdapter = New App_Almacen.MPClienteDataSetTableAdapters.SALIDASTableAdapter()
+        Me.ENTRADASTableAdapter = New App_Almacen.MPClienteDataSetTableAdapters.ENTRADASTableAdapter()
+        Me.EstatusLBL = New System.Windows.Forms.Label()
+        Me.TableAdapterManager = New App_Almacen.MPClienteDataSetTableAdapters.TableAdapterManager()
+        Me.EntradaLBL = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.SALIDASBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MPClienteDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox6.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
+        CType(Me.ENTRADASBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox7.SuspendLayout()
@@ -91,13 +103,14 @@ Partial Class Modificar_Salida
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Buscar Folio"
         '
-        'SalidaTXT
+        'Button1
         '
-        Me.SalidaTXT.FormattingEnabled = True
-        Me.SalidaTXT.Location = New System.Drawing.Point(50, 25)
-        Me.SalidaTXT.Name = "SalidaTXT"
-        Me.SalidaTXT.Size = New System.Drawing.Size(121, 21)
-        Me.SalidaTXT.TabIndex = 1
+        Me.Button1.Location = New System.Drawing.Point(216, 14)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 39)
+        Me.Button1.TabIndex = 2
+        Me.Button1.Text = "Cancelar Salida"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'Label1
         '
@@ -108,6 +121,26 @@ Partial Class Modificar_Salida
         Me.Label1.Size = New System.Drawing.Size(38, 13)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Folio:"
+        '
+        'SalidaTXT
+        '
+        Me.SalidaTXT.DataSource = Me.SALIDASBindingSource
+        Me.SalidaTXT.DisplayMember = "FOLIO_SALIDA"
+        Me.SalidaTXT.FormattingEnabled = True
+        Me.SalidaTXT.Location = New System.Drawing.Point(50, 25)
+        Me.SalidaTXT.Name = "SalidaTXT"
+        Me.SalidaTXT.Size = New System.Drawing.Size(121, 21)
+        Me.SalidaTXT.TabIndex = 1
+        '
+        'SALIDASBindingSource
+        '
+        Me.SALIDASBindingSource.DataMember = "SALIDAS"
+        Me.SALIDASBindingSource.DataSource = Me.MPClienteDataSet
+        '
+        'MPClienteDataSet
+        '
+        Me.MPClienteDataSet.DataSetName = "MPClienteDataSet"
+        Me.MPClienteDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'GroupBox6
         '
@@ -121,6 +154,7 @@ Partial Class Modificar_Salida
         '
         'ComenSalidasTXT
         '
+        Me.ComenSalidasTXT.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SALIDASBindingSource, "OBSERVACIONES_SALIDA", True))
         Me.ComenSalidasTXT.Location = New System.Drawing.Point(6, 15)
         Me.ComenSalidasTXT.Multiline = True
         Me.ComenSalidasTXT.Name = "ComenSalidasTXT"
@@ -155,6 +189,7 @@ Partial Class Modificar_Salida
         '
         'AutorizaTXT
         '
+        Me.AutorizaTXT.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SALIDASBindingSource, "AUTORIZACION", True))
         Me.AutorizaTXT.Location = New System.Drawing.Point(88, 96)
         Me.AutorizaTXT.Name = "AutorizaTXT"
         Me.AutorizaTXT.Size = New System.Drawing.Size(198, 20)
@@ -162,6 +197,7 @@ Partial Class Modificar_Salida
         '
         'SolicitanteTXT
         '
+        Me.SolicitanteTXT.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SALIDASBindingSource, "SOLICITANTE", True))
         Me.SolicitanteTXT.Location = New System.Drawing.Point(88, 70)
         Me.SolicitanteTXT.Name = "SolicitanteTXT"
         Me.SolicitanteTXT.Size = New System.Drawing.Size(198, 20)
@@ -189,6 +225,7 @@ Partial Class Modificar_Salida
         '
         'piTXT
         '
+        Me.piTXT.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SALIDASBindingSource, "PI", True))
         Me.piTXT.Location = New System.Drawing.Point(145, 44)
         Me.piTXT.Name = "piTXT"
         Me.piTXT.Size = New System.Drawing.Size(100, 20)
@@ -196,6 +233,7 @@ Partial Class Modificar_Salida
         '
         'ofTXT
         '
+        Me.ofTXT.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SALIDASBindingSource, "OF", True))
         Me.ofTXT.Location = New System.Drawing.Point(145, 18)
         Me.ofTXT.Name = "ofTXT"
         Me.ofTXT.Size = New System.Drawing.Size(100, 20)
@@ -233,12 +271,18 @@ Partial Class Modificar_Salida
         '
         'TextBox1
         '
+        Me.TextBox1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "OBSERVACIONES_ENTRADA", True))
         Me.TextBox1.Enabled = False
         Me.TextBox1.Location = New System.Drawing.Point(6, 19)
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(330, 75)
         Me.TextBox1.TabIndex = 10
+        '
+        'ENTRADASBindingSource
+        '
+        Me.ENTRADASBindingSource.DataMember = "ENTRADAS"
+        Me.ENTRADASBindingSource.DataSource = Me.MPClienteDataSet
         '
         'GroupBox3
         '
@@ -256,6 +300,7 @@ Partial Class Modificar_Salida
         'NivelLBL
         '
         Me.NivelLBL.AutoSize = True
+        Me.NivelLBL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "NIVEL", True))
         Me.NivelLBL.Location = New System.Drawing.Point(47, 55)
         Me.NivelLBL.Name = "NivelLBL"
         Me.NivelLBL.Size = New System.Drawing.Size(31, 13)
@@ -285,6 +330,7 @@ Partial Class Modificar_Salida
         'RackLBL
         '
         Me.RackLBL.AutoSize = True
+        Me.RackLBL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "RACK", True))
         Me.RackLBL.Location = New System.Drawing.Point(47, 29)
         Me.RackLBL.Name = "RackLBL"
         Me.RackLBL.Size = New System.Drawing.Size(36, 13)
@@ -313,6 +359,7 @@ Partial Class Modificar_Salida
         'PesoLBL
         '
         Me.PesoLBL.AutoSize = True
+        Me.PesoLBL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "PESO_KG", True))
         Me.PesoLBL.Location = New System.Drawing.Point(75, 75)
         Me.PesoLBL.Name = "PesoLBL"
         Me.PesoLBL.Size = New System.Drawing.Size(34, 13)
@@ -332,6 +379,7 @@ Partial Class Modificar_Salida
         'MaterialLBL
         '
         Me.MaterialLBL.AutoSize = True
+        Me.MaterialLBL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "MATERIAL", True))
         Me.MaterialLBL.Location = New System.Drawing.Point(180, 49)
         Me.MaterialLBL.Name = "MaterialLBL"
         Me.MaterialLBL.Size = New System.Drawing.Size(44, 13)
@@ -351,6 +399,7 @@ Partial Class Modificar_Salida
         'EspesorLBL
         '
         Me.EspesorLBL.AutoSize = True
+        Me.EspesorLBL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "ESPESOR", True))
         Me.EspesorLBL.Location = New System.Drawing.Point(180, 23)
         Me.EspesorLBL.Name = "EspesorLBL"
         Me.EspesorLBL.Size = New System.Drawing.Size(45, 13)
@@ -370,6 +419,7 @@ Partial Class Modificar_Salida
         'AnchoLBL
         '
         Me.AnchoLBL.AutoSize = True
+        Me.AnchoLBL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "ANCHO", True))
         Me.AnchoLBL.Location = New System.Drawing.Point(75, 49)
         Me.AnchoLBL.Name = "AnchoLBL"
         Me.AnchoLBL.Size = New System.Drawing.Size(38, 13)
@@ -389,6 +439,7 @@ Partial Class Modificar_Salida
         'LargoLBL
         '
         Me.LargoLBL.AutoSize = True
+        Me.LargoLBL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "LARGO", True))
         Me.LargoLBL.Location = New System.Drawing.Point(75, 23)
         Me.LargoLBL.Name = "LargoLBL"
         Me.LargoLBL.Size = New System.Drawing.Size(34, 13)
@@ -429,6 +480,7 @@ Partial Class Modificar_Salida
         'LoteLBL
         '
         Me.LoteLBL.AutoSize = True
+        Me.LoteLBL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "LOTE", True))
         Me.LoteLBL.Location = New System.Drawing.Point(559, 49)
         Me.LoteLBL.Name = "LoteLBL"
         Me.LoteLBL.Size = New System.Drawing.Size(19, 13)
@@ -448,6 +500,7 @@ Partial Class Modificar_Salida
         'Label5
         '
         Me.Label5.AutoSize = True
+        Me.Label5.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "CERTIFICADO_CALIDAD", True))
         Me.Label5.Location = New System.Drawing.Point(557, 20)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(57, 13)
@@ -467,6 +520,7 @@ Partial Class Modificar_Salida
         'FacturaLBL
         '
         Me.FacturaLBL.AutoSize = True
+        Me.FacturaLBL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "FACTURA_REMISION", True))
         Me.FacturaLBL.Location = New System.Drawing.Point(388, 20)
         Me.FacturaLBL.Name = "FacturaLBL"
         Me.FacturaLBL.Size = New System.Drawing.Size(46, 13)
@@ -486,6 +540,7 @@ Partial Class Modificar_Salida
         'OCLBL
         '
         Me.OCLBL.AutoSize = True
+        Me.OCLBL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "OC", True))
         Me.OCLBL.Location = New System.Drawing.Point(270, 20)
         Me.OCLBL.Name = "OCLBL"
         Me.OCLBL.Size = New System.Drawing.Size(25, 13)
@@ -505,6 +560,7 @@ Partial Class Modificar_Salida
         'ClienteLBL
         '
         Me.ClienteLBL.AutoSize = True
+        Me.ClienteLBL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "CLIENTE", True))
         Me.ClienteLBL.Location = New System.Drawing.Point(57, 49)
         Me.ClienteLBL.Name = "ClienteLBL"
         Me.ClienteLBL.Size = New System.Drawing.Size(42, 13)
@@ -535,6 +591,8 @@ Partial Class Modificar_Salida
         '
         Me.EntradaCBX.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
         Me.EntradaCBX.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.EntradaCBX.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SALIDASBindingSource, "FOLIO_ENTRADA", True))
+        Me.EntradaCBX.DataSource = Me.ENTRADASBindingSource
         Me.EntradaCBX.DisplayMember = "FOLIO_ENTRADA"
         Me.EntradaCBX.FormattingEnabled = True
         Me.EntradaCBX.Location = New System.Drawing.Point(113, 17)
@@ -542,20 +600,51 @@ Partial Class Modificar_Salida
         Me.EntradaCBX.Size = New System.Drawing.Size(121, 21)
         Me.EntradaCBX.TabIndex = 0
         '
-        'Button1
+        'SALIDASTableAdapter
         '
-        Me.Button1.Location = New System.Drawing.Point(216, 14)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 39)
-        Me.Button1.TabIndex = 2
-        Me.Button1.Text = "Cancelar Salida"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.SALIDASTableAdapter.ClearBeforeFill = True
+        '
+        'ENTRADASTableAdapter
+        '
+        Me.ENTRADASTableAdapter.ClearBeforeFill = True
+        '
+        'EstatusLBL
+        '
+        Me.EstatusLBL.AutoSize = True
+        Me.EstatusLBL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SALIDASBindingSource, "ESTATUS", True))
+        Me.EstatusLBL.Location = New System.Drawing.Point(483, 32)
+        Me.EstatusLBL.Name = "EstatusLBL"
+        Me.EstatusLBL.Size = New System.Drawing.Size(42, 13)
+        Me.EstatusLBL.TabIndex = 23
+        Me.EstatusLBL.Text = "Estatus"
+        Me.EstatusLBL.Visible = False
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.ENTRADASTableAdapter = Me.ENTRADASTableAdapter
+        Me.TableAdapterManager.InventarioMPTableAdapter = Nothing
+        Me.TableAdapterManager.SALIDASTableAdapter = Me.SALIDASTableAdapter
+        Me.TableAdapterManager.UpdateOrder = App_Almacen.MPClienteDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'EntradaLBL
+        '
+        Me.EntradaLBL.AutoSize = True
+        Me.EntradaLBL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "FOLIO_SALIDA", True))
+        Me.EntradaLBL.Location = New System.Drawing.Point(483, 61)
+        Me.EntradaLBL.Name = "EntradaLBL"
+        Me.EntradaLBL.Size = New System.Drawing.Size(39, 13)
+        Me.EntradaLBL.TabIndex = 24
+        Me.EntradaLBL.Text = "Label3"
+        Me.EntradaLBL.Visible = False
         '
         'Modificar_Salida
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(736, 404)
+        Me.ClientSize = New System.Drawing.Size(744, 409)
+        Me.Controls.Add(Me.EntradaLBL)
+        Me.Controls.Add(Me.EstatusLBL)
         Me.Controls.Add(Me.GroupBox6)
         Me.Controls.Add(Me.GuardarBTN)
         Me.Controls.Add(Me.GroupBox5)
@@ -570,12 +659,15 @@ Partial Class Modificar_Salida
         Me.Text = "Modificar Salida"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.SALIDASBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MPClienteDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox6.ResumeLayout(False)
         Me.GroupBox6.PerformLayout()
         Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox5.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
+        CType(Me.ENTRADASBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
@@ -583,6 +675,7 @@ Partial Class Modificar_Salida
         Me.GroupBox7.ResumeLayout(False)
         Me.GroupBox7.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -633,4 +726,12 @@ Partial Class Modificar_Salida
     Friend WithEvents Label4 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents EntradaCBX As ComboBox
+    Friend WithEvents MPClienteDataSet As MPClienteDataSet
+    Friend WithEvents SALIDASBindingSource As BindingSource
+    Friend WithEvents SALIDASTableAdapter As MPClienteDataSetTableAdapters.SALIDASTableAdapter
+    Friend WithEvents ENTRADASBindingSource As BindingSource
+    Friend WithEvents ENTRADASTableAdapter As MPClienteDataSetTableAdapters.ENTRADASTableAdapter
+    Friend WithEvents EstatusLBL As Label
+    Friend WithEvents TableAdapterManager As MPClienteDataSetTableAdapters.TableAdapterManager
+    Friend WithEvents EntradaLBL As Label
 End Class
