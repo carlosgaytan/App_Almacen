@@ -440,6 +440,8 @@ Public Class Principal
     Private Sub ModEntradasBTN_Click(sender As Object, e As EventArgs) Handles ModEntradasBTN.Click
         Modificar_Entradas.Show()
     End Sub
-
+    Private Sub ModSalidasBTN_Click(sender As Object, e As EventArgs) Handles ModSalidasBTN.Click
+        Modificar_Salida.Show()
+    End Sub
 
 End Class

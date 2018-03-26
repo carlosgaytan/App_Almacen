@@ -27,6 +27,7 @@
         'Rellena la fila
         RegistroSalida.FOLIO_ENTRADA = EntradaCBX.Text
         RegistroSalida.FECHA_SALIDA = FechaLBL.Text
+        RegistroSalida.ESTATUS = "EMITIDO"
         RegistroSalida._OF = ofTXT.Text
         RegistroSalida.PI = piTXT.Text
         RegistroSalida.SOLICITANTE = SolicitanteTXT.Text
