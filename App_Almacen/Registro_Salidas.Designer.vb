@@ -37,6 +37,7 @@ Partial Class Registro_Salidas
         Me.Label3 = New System.Windows.Forms.Label()
         Me.SalidaLBL = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.LoteLBL = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -79,7 +80,6 @@ Partial Class Registro_Salidas
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.ComenSalidasTXT = New System.Windows.Forms.TextBox()
         Me.SalidaEntrada = New System.Windows.Forms.Label()
-        Me.LoteLBL = New System.Windows.Forms.Label()
         CType(Me.MPClienteDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SALIDASBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ENTRADASBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -108,6 +108,7 @@ Partial Class Registro_Salidas
         'TableAdapterManager
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.ENTRADAS1TableAdapter = Nothing
         Me.TableAdapterManager.ENTRADASTableAdapter = Me.ENTRADASTableAdapter
         Me.TableAdapterManager.InventarioMPTableAdapter = Nothing
         Me.TableAdapterManager.SALIDASTableAdapter = Me.SALIDASTableAdapter
@@ -204,6 +205,16 @@ Partial Class Registro_Salidas
         Me.GroupBox1.TabIndex = 6
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Información General"
+        '
+        'LoteLBL
+        '
+        Me.LoteLBL.AutoSize = True
+        Me.LoteLBL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "LOTE", True))
+        Me.LoteLBL.Location = New System.Drawing.Point(559, 49)
+        Me.LoteLBL.Name = "LoteLBL"
+        Me.LoteLBL.Size = New System.Drawing.Size(19, 13)
+        Me.LoteLBL.TabIndex = 17
+        Me.LoteLBL.Text = "00"
         '
         'Label13
         '
@@ -597,6 +608,7 @@ Partial Class Registro_Salidas
         'GroupBox6
         '
         Me.GroupBox6.Controls.Add(Me.ComenSalidasTXT)
+        Me.GroupBox6.Controls.Add(Me.SalidaEntrada)
         Me.GroupBox6.Location = New System.Drawing.Point(313, 218)
         Me.GroupBox6.Name = "GroupBox6"
         Me.GroupBox6.Size = New System.Drawing.Size(322, 135)
@@ -616,28 +628,17 @@ Partial Class Registro_Salidas
         '
         Me.SalidaEntrada.AutoSize = True
         Me.SalidaEntrada.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "FOLIO_SALIDA", True))
-        Me.SalidaEntrada.Location = New System.Drawing.Point(660, 236)
+        Me.SalidaEntrada.Location = New System.Drawing.Point(243, 48)
         Me.SalidaEntrada.Name = "SalidaEntrada"
         Me.SalidaEntrada.Size = New System.Drawing.Size(45, 13)
         Me.SalidaEntrada.TabIndex = 14
         Me.SalidaEntrada.Text = "Label21"
-        '
-        'LoteLBL
-        '
-        Me.LoteLBL.AutoSize = True
-        Me.LoteLBL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "LOTE", True))
-        Me.LoteLBL.Location = New System.Drawing.Point(559, 49)
-        Me.LoteLBL.Name = "LoteLBL"
-        Me.LoteLBL.Size = New System.Drawing.Size(19, 13)
-        Me.LoteLBL.TabIndex = 17
-        Me.LoteLBL.Text = "00"
         '
         'Registro_Salidas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(736, 365)
-        Me.Controls.Add(Me.SalidaEntrada)
         Me.Controls.Add(Me.GroupBox6)
         Me.Controls.Add(Me.GuardarBTN)
         Me.Controls.Add(Me.LimpiarBTN)

@@ -10,7 +10,7 @@
         If MessageBox.Show("¿Desea guardar los cambios realizados?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Information) = DialogResult.Yes Then
             'Actualiza registro
             Me.Validate()
-            Me.ENTRADASBindingSource.EndEdit()
+            Me.ENTRADAS1BindingSource.EndEdit()
             Me.TableAdapterManager.UpdateAll(Me.MPClienteDataSet)
             INFOADICIONAL.ACTUALIZARENTRADAS = 1
             INFOADICIONAL.ACTUALIZARINVENTARIOMP = 1
