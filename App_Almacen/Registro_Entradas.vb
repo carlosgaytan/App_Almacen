@@ -20,6 +20,19 @@
 
     End Sub
 
+    Private Sub LimpiarBTN_Click(sender As Object, e As EventArgs) Handles LimpiarBTN.Click
+        'Limpia los textbox necesarios
+        FacturaTXT.Clear()
+        OCTXT.Clear()
+        CertificadoTXT.Clear()
+        LargoTXT.Clear()
+        AnchoTXT.Clear()
+        EspesorTXT.Text = ""
+        ObservTXT.Clear()
+
+
+    End Sub
+
     Private Sub CalcPesoBTN_Click(sender As Object, e As EventArgs) Handles CalcPesoBTN.Click
         'Espesores en MM de cada calibre
         If EspesorTXT.Text = "C. 6" Then
@@ -175,15 +188,6 @@
 
         'Muestra mensaje de confirmación
         MessageBox.Show("Registro guardado", "Registros")
-
-        'Limpia los textbox necesarios
-        FacturaTXT.Clear()
-        OCTXT.Clear()
-        CertificadoTXT.Clear()
-        LargoTXT.Clear()
-        AnchoTXT.Clear()
-        EspesorTXT.Text = ""
-        ObservTXT.Clear()
 
 
     End Sub

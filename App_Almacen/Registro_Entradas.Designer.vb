@@ -45,6 +45,7 @@ Partial Class Registro_Entradas
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.CalcPesoBTN = New System.Windows.Forms.Button()
         Me.MaterialTXT = New System.Windows.Forms.ComboBox()
         Me.MATERIALBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.MATERIALES = New App_Almacen.MATERIALES()
@@ -83,7 +84,7 @@ Partial Class Registro_Entradas
         Me.BuscaMatTableAdapter = New App_Almacen.MATERIALESTableAdapters.BuscaMatTableAdapter()
         Me.TableAdapterManager1 = New App_Almacen.MATERIALESTableAdapters.TableAdapterManager()
         Me.Label19 = New System.Windows.Forms.Label()
-        Me.CalcPesoBTN = New System.Windows.Forms.Button()
+        Me.LimpiarBTN = New System.Windows.Forms.Button()
         CType(Me.CLIENTESBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ClientesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Clientes, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -282,6 +283,15 @@ Partial Class Registro_Entradas
         Me.GroupBox1.TabIndex = 18
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Material"
+        '
+        'CalcPesoBTN
+        '
+        Me.CalcPesoBTN.Location = New System.Drawing.Point(212, 78)
+        Me.CalcPesoBTN.Name = "CalcPesoBTN"
+        Me.CalcPesoBTN.Size = New System.Drawing.Size(75, 23)
+        Me.CalcPesoBTN.TabIndex = 32
+        Me.CalcPesoBTN.Text = "Calc. Peso"
+        Me.CalcPesoBTN.UseVisualStyleBackColor = True
         '
         'MaterialTXT
         '
@@ -615,20 +625,21 @@ Partial Class Registro_Entradas
         Me.Label19.TabIndex = 31
         Me.Label19.Text = "Peso KG:"
         '
-        'CalcPesoBTN
+        'LimpiarBTN
         '
-        Me.CalcPesoBTN.Location = New System.Drawing.Point(212, 78)
-        Me.CalcPesoBTN.Name = "CalcPesoBTN"
-        Me.CalcPesoBTN.Size = New System.Drawing.Size(75, 23)
-        Me.CalcPesoBTN.TabIndex = 32
-        Me.CalcPesoBTN.Text = "Calc. Peso"
-        Me.CalcPesoBTN.UseVisualStyleBackColor = True
+        Me.LimpiarBTN.Location = New System.Drawing.Point(356, 423)
+        Me.LimpiarBTN.Name = "LimpiarBTN"
+        Me.LimpiarBTN.Size = New System.Drawing.Size(75, 23)
+        Me.LimpiarBTN.TabIndex = 32
+        Me.LimpiarBTN.Text = "Limpiar"
+        Me.LimpiarBTN.UseVisualStyleBackColor = True
         '
         'Registro_Entradas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(543, 460)
+        Me.Controls.Add(Me.LimpiarBTN)
         Me.Controls.Add(Me.Label19)
         Me.Controls.Add(Me.PesoLBL)
         Me.Controls.Add(Me.GroupBox5)
@@ -728,4 +739,5 @@ Partial Class Registro_Entradas
     Friend WithEvents TableAdapterManager1 As MATERIALESTableAdapters.TableAdapterManager
     Friend WithEvents Label19 As Label
     Friend WithEvents CalcPesoBTN As Button
+    Friend WithEvents LimpiarBTN As Button
 End Class
