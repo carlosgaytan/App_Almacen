@@ -26,9 +26,9 @@ Partial Class Modificar_Entradas
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Modificar_Entradas))
         Me.Label19 = New System.Windows.Forms.Label()
         Me.PesoLBL = New System.Windows.Forms.Label()
-        Me.ENTRADAS1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.MPClienteDataSet = New App_Almacen.MPClienteDataSet()
         Me.ENTRADASBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.MPClienteDataSet = New App_Almacen.MPClienteDataSet()
+        Me.ENTRADAS1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
@@ -53,6 +53,8 @@ Partial Class Modificar_Entradas
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.ClienteCBX = New System.Windows.Forms.ComboBox()
+        Me.CLIENTESBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Clientes = New App_Almacen.Clientes()
         Me.CertificadoTXT = New System.Windows.Forms.TextBox()
         Me.OCTXT = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -60,7 +62,10 @@ Partial Class Modificar_Entradas
         Me.FacturaTXT = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.MaterialTXT = New System.Windows.Forms.ComboBox()
+        Me.MATERIALBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.MATERIALES = New App_Almacen.MATERIALES()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.EspesorTXT = New System.Windows.Forms.ComboBox()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -69,28 +74,37 @@ Partial Class Modificar_Entradas
         Me.AnchoTXT = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
-        Me.BuscarBTN = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.FolioCBX = New System.Windows.Forms.ComboBox()
         Me.ENTRADASTableAdapter = New App_Almacen.MPClienteDataSetTableAdapters.ENTRADASTableAdapter()
         Me.TableAdapterManager = New App_Almacen.MPClienteDataSetTableAdapters.TableAdapterManager()
         Me.ENTRADAS1TableAdapter = New App_Almacen.MPClienteDataSetTableAdapters.ENTRADAS1TableAdapter()
-        CType(Me.ENTRADAS1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.MPClienteDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MATERIALTableAdapter = New App_Almacen.MATERIALESTableAdapters.MATERIALTableAdapter()
+        Me.BuscaMatBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.BuscaMatTableAdapter = New App_Almacen.MATERIALESTableAdapters.BuscaMatTableAdapter()
+        Me.TableAdapterManager1 = New App_Almacen.MATERIALESTableAdapters.TableAdapterManager()
+        Me.CLIENTESTableAdapter = New App_Almacen.ClientesTableAdapters.CLIENTESTableAdapter()
         CType(Me.ENTRADASBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MPClienteDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ENTRADAS1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox5.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        CType(Me.CLIENTESBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Clientes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.MATERIALBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MATERIALES, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox6.SuspendLayout()
+        CType(Me.BuscaMatBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label19
         '
         Me.Label19.AutoSize = True
         Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.Location = New System.Drawing.Point(37, 220)
+        Me.Label19.Location = New System.Drawing.Point(37, 234)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(106, 26)
         Me.Label19.TabIndex = 39
@@ -99,30 +113,29 @@ Partial Class Modificar_Entradas
         'PesoLBL
         '
         Me.PesoLBL.AutoSize = True
-        Me.PesoLBL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADAS1BindingSource, "PESO_KG", True))
+        Me.PesoLBL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "PESO_KG", True))
         Me.PesoLBL.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PesoLBL.Location = New System.Drawing.Point(45, 252)
+        Me.PesoLBL.Location = New System.Drawing.Point(53, 266)
         Me.PesoLBL.Name = "PesoLBL"
         Me.PesoLBL.Size = New System.Drawing.Size(89, 26)
         Me.PesoLBL.TabIndex = 38
         Me.PesoLBL.Text = "Label19"
         Me.PesoLBL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.PesoLBL.Visible = False
         '
-        'ENTRADAS1BindingSource
+        'ENTRADASBindingSource
         '
-        Me.ENTRADAS1BindingSource.DataMember = "ENTRADAS1"
-        Me.ENTRADAS1BindingSource.DataSource = Me.MPClienteDataSet
+        Me.ENTRADASBindingSource.DataMember = "ENTRADAS"
+        Me.ENTRADASBindingSource.DataSource = Me.MPClienteDataSet
         '
         'MPClienteDataSet
         '
         Me.MPClienteDataSet.DataSetName = "MPClienteDataSet"
         Me.MPClienteDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'ENTRADASBindingSource
+        'ENTRADAS1BindingSource
         '
-        Me.ENTRADASBindingSource.DataMember = "ENTRADAS"
-        Me.ENTRADASBindingSource.DataSource = Me.MPClienteDataSet
+        Me.ENTRADAS1BindingSource.DataMember = "ENTRADAS1"
+        Me.ENTRADAS1BindingSource.DataSource = Me.MPClienteDataSet
         '
         'GroupBox5
         '
@@ -138,7 +151,7 @@ Partial Class Modificar_Entradas
         Me.GroupBox5.Controls.Add(Me.Material)
         Me.GroupBox5.Controls.Add(Me.ClienteTXT)
         Me.GroupBox5.Controls.Add(Me.Label14)
-        Me.GroupBox5.Location = New System.Drawing.Point(178, 219)
+        Me.GroupBox5.Location = New System.Drawing.Point(178, 233)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Size = New System.Drawing.Size(353, 58)
         Me.GroupBox5.TabIndex = 37
@@ -174,7 +187,7 @@ Partial Class Modificar_Entradas
         '
         'mesTXT
         '
-        Me.mesTXT.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADAS1BindingSource, "LOTE_MES", True))
+        Me.mesTXT.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "LOTE_MES", True))
         Me.mesTXT.Location = New System.Drawing.Point(64, 32)
         Me.mesTXT.Name = "mesTXT"
         Me.mesTXT.Size = New System.Drawing.Size(48, 20)
@@ -183,7 +196,7 @@ Partial Class Modificar_Entradas
         '
         'diaTXT
         '
-        Me.diaTXT.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADAS1BindingSource, "LOTE_DIA", True))
+        Me.diaTXT.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "LOTE_DIA", True))
         Me.diaTXT.Location = New System.Drawing.Point(10, 32)
         Me.diaTXT.Name = "diaTXT"
         Me.diaTXT.Size = New System.Drawing.Size(48, 20)
@@ -201,7 +214,7 @@ Partial Class Modificar_Entradas
         '
         'ConsecTXT
         '
-        Me.ConsecTXT.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADAS1BindingSource, "LOTE_FOLIO", True))
+        Me.ConsecTXT.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "LOTE_FOLIO", True))
         Me.ConsecTXT.Location = New System.Drawing.Point(286, 32)
         Me.ConsecTXT.Name = "ConsecTXT"
         Me.ConsecTXT.Size = New System.Drawing.Size(48, 20)
@@ -210,7 +223,7 @@ Partial Class Modificar_Entradas
         '
         'yearTXT
         '
-        Me.yearTXT.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADAS1BindingSource, "LOTE_AÑO", True))
+        Me.yearTXT.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "LOTE_AÑO", True))
         Me.yearTXT.Location = New System.Drawing.Point(118, 32)
         Me.yearTXT.Name = "yearTXT"
         Me.yearTXT.Size = New System.Drawing.Size(48, 20)
@@ -228,7 +241,7 @@ Partial Class Modificar_Entradas
         '
         'Material
         '
-        Me.Material.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADAS1BindingSource, "LOTE_MATERIAL", True))
+        Me.Material.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "LOTE_MATERIAL", True))
         Me.Material.Location = New System.Drawing.Point(226, 32)
         Me.Material.Name = "Material"
         Me.Material.Size = New System.Drawing.Size(48, 20)
@@ -237,7 +250,7 @@ Partial Class Modificar_Entradas
         '
         'ClienteTXT
         '
-        Me.ClienteTXT.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADAS1BindingSource, "LOTE_CLIENTE", True))
+        Me.ClienteTXT.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "LOTE_CLIENTE", True))
         Me.ClienteTXT.Location = New System.Drawing.Point(172, 32)
         Me.ClienteTXT.Name = "ClienteTXT"
         Me.ClienteTXT.Size = New System.Drawing.Size(48, 20)
@@ -255,7 +268,7 @@ Partial Class Modificar_Entradas
         '
         'GuardarBTN
         '
-        Me.GuardarBTN.Location = New System.Drawing.Point(441, 424)
+        Me.GuardarBTN.Location = New System.Drawing.Point(441, 438)
         Me.GuardarBTN.Name = "GuardarBTN"
         Me.GuardarBTN.Size = New System.Drawing.Size(90, 35)
         Me.GuardarBTN.TabIndex = 36
@@ -265,7 +278,7 @@ Partial Class Modificar_Entradas
         'GroupBox4
         '
         Me.GroupBox4.Controls.Add(Me.ObservTXT)
-        Me.GroupBox4.Location = New System.Drawing.Point(12, 283)
+        Me.GroupBox4.Location = New System.Drawing.Point(12, 297)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(519, 135)
         Me.GroupBox4.TabIndex = 35
@@ -274,7 +287,7 @@ Partial Class Modificar_Entradas
         '
         'ObservTXT
         '
-        Me.ObservTXT.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADAS1BindingSource, "OBSERVACIONES_ENTRADA", True))
+        Me.ObservTXT.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "OBSERVACIONES_ENTRADA", True))
         Me.ObservTXT.Location = New System.Drawing.Point(6, 19)
         Me.ObservTXT.Multiline = True
         Me.ObservTXT.Name = "ObservTXT"
@@ -287,7 +300,7 @@ Partial Class Modificar_Entradas
         Me.GroupBox3.Controls.Add(Me.Label12)
         Me.GroupBox3.Controls.Add(Me.Label11)
         Me.GroupBox3.Controls.Add(Me.RackTXT)
-        Me.GroupBox3.Location = New System.Drawing.Point(238, 155)
+        Me.GroupBox3.Location = New System.Drawing.Point(238, 169)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(293, 58)
         Me.GroupBox3.TabIndex = 34
@@ -298,7 +311,7 @@ Partial Class Modificar_Entradas
         '
         Me.NivelTXT.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.NivelTXT.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.NivelTXT.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADAS1BindingSource, "NIVEL", True))
+        Me.NivelTXT.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "NIVEL", True))
         Me.NivelTXT.FormattingEnabled = True
         Me.NivelTXT.Items.AddRange(New Object() {"1", "2", "3", "4", "5"})
         Me.NivelTXT.Location = New System.Drawing.Point(165, 25)
@@ -328,7 +341,7 @@ Partial Class Modificar_Entradas
         '
         Me.RackTXT.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.RackTXT.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.RackTXT.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADAS1BindingSource, "RACK", True))
+        Me.RackTXT.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "RACK", True))
         Me.RackTXT.FormattingEnabled = True
         Me.RackTXT.Items.AddRange(New Object() {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ñ", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "INT.", "EXT."})
         Me.RackTXT.Location = New System.Drawing.Point(48, 25)
@@ -348,7 +361,7 @@ Partial Class Modificar_Entradas
         Me.GroupBox2.Controls.Add(Me.Label4)
         Me.GroupBox2.Location = New System.Drawing.Point(12, 68)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(220, 145)
+        Me.GroupBox2.Size = New System.Drawing.Size(220, 159)
         Me.GroupBox2.TabIndex = 33
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Información"
@@ -356,7 +369,7 @@ Partial Class Modificar_Entradas
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(6, 27)
+        Me.Label3.Location = New System.Drawing.Point(6, 34)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(42, 13)
         Me.Label3.TabIndex = 4
@@ -366,25 +379,37 @@ Partial Class Modificar_Entradas
         '
         Me.ClienteCBX.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.ClienteCBX.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.ClienteCBX.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADAS1BindingSource, "CLIENTE", True))
+        Me.ClienteCBX.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "CLIENTE", True))
+        Me.ClienteCBX.DataSource = Me.CLIENTESBindingSource
+        Me.ClienteCBX.DisplayMember = "NOMBRE"
         Me.ClienteCBX.FormattingEnabled = True
-        Me.ClienteCBX.Location = New System.Drawing.Point(54, 24)
+        Me.ClienteCBX.Location = New System.Drawing.Point(54, 31)
         Me.ClienteCBX.Name = "ClienteCBX"
         Me.ClienteCBX.Size = New System.Drawing.Size(148, 21)
         Me.ClienteCBX.TabIndex = 12
         '
+        'CLIENTESBindingSource
+        '
+        Me.CLIENTESBindingSource.DataMember = "CLIENTES"
+        Me.CLIENTESBindingSource.DataSource = Me.Clientes
+        '
+        'Clientes
+        '
+        Me.Clientes.DataSetName = "Clientes"
+        Me.Clientes.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'CertificadoTXT
         '
-        Me.CertificadoTXT.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADAS1BindingSource, "CERTIFICADO_CALIDAD", True))
-        Me.CertificadoTXT.Location = New System.Drawing.Point(72, 103)
+        Me.CertificadoTXT.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "CERTIFICADO_CALIDAD", True))
+        Me.CertificadoTXT.Location = New System.Drawing.Point(72, 110)
         Me.CertificadoTXT.Name = "CertificadoTXT"
         Me.CertificadoTXT.Size = New System.Drawing.Size(100, 20)
         Me.CertificadoTXT.TabIndex = 9
         '
         'OCTXT
         '
-        Me.OCTXT.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADAS1BindingSource, "OC", True))
-        Me.OCTXT.Location = New System.Drawing.Point(54, 51)
+        Me.OCTXT.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "OC", True))
+        Me.OCTXT.Location = New System.Drawing.Point(54, 58)
         Me.OCTXT.Name = "OCTXT"
         Me.OCTXT.Size = New System.Drawing.Size(100, 20)
         Me.OCTXT.TabIndex = 11
@@ -392,7 +417,7 @@ Partial Class Modificar_Entradas
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(6, 106)
+        Me.Label5.Location = New System.Drawing.Point(6, 113)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(60, 13)
         Me.Label5.TabIndex = 8
@@ -401,7 +426,7 @@ Partial Class Modificar_Entradas
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(6, 54)
+        Me.Label6.Location = New System.Drawing.Point(6, 61)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(25, 13)
         Me.Label6.TabIndex = 10
@@ -409,8 +434,8 @@ Partial Class Modificar_Entradas
         '
         'FacturaTXT
         '
-        Me.FacturaTXT.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADAS1BindingSource, "FACTURA_REMISION", True))
-        Me.FacturaTXT.Location = New System.Drawing.Point(106, 77)
+        Me.FacturaTXT.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "FACTURA_REMISION", True))
+        Me.FacturaTXT.Location = New System.Drawing.Point(106, 84)
         Me.FacturaTXT.Name = "FacturaTXT"
         Me.FacturaTXT.Size = New System.Drawing.Size(100, 20)
         Me.FacturaTXT.TabIndex = 7
@@ -418,7 +443,7 @@ Partial Class Modificar_Entradas
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(6, 80)
+        Me.Label4.Location = New System.Drawing.Point(6, 87)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(94, 13)
         Me.Label4.TabIndex = 6
@@ -426,6 +451,7 @@ Partial Class Modificar_Entradas
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Controls.Add(Me.MaterialTXT)
         Me.GroupBox1.Controls.Add(Me.Label10)
         Me.GroupBox1.Controls.Add(Me.EspesorTXT)
@@ -437,22 +463,42 @@ Partial Class Modificar_Entradas
         Me.GroupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.GroupBox1.Location = New System.Drawing.Point(238, 68)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(293, 81)
+        Me.GroupBox1.Size = New System.Drawing.Size(293, 100)
         Me.GroupBox1.TabIndex = 32
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Material"
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(212, 74)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 42
+        Me.Button1.Text = "Calc. Peso"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'MaterialTXT
         '
         Me.MaterialTXT.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append
         Me.MaterialTXT.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.MaterialTXT.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADAS1BindingSource, "MATERIAL", True))
+        Me.MaterialTXT.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "MATERIAL", True))
+        Me.MaterialTXT.DataSource = Me.MATERIALBindingSource
         Me.MaterialTXT.DisplayMember = "MATERIAL"
         Me.MaterialTXT.FormattingEnabled = True
         Me.MaterialTXT.Location = New System.Drawing.Point(187, 51)
         Me.MaterialTXT.Name = "MaterialTXT"
         Me.MaterialTXT.Size = New System.Drawing.Size(94, 21)
         Me.MaterialTXT.TabIndex = 20
+        '
+        'MATERIALBindingSource
+        '
+        Me.MATERIALBindingSource.DataMember = "MATERIAL"
+        Me.MATERIALBindingSource.DataSource = Me.MATERIALES
+        '
+        'MATERIALES
+        '
+        Me.MATERIALES.DataSetName = "MATERIALES"
+        Me.MATERIALES.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'Label10
         '
@@ -467,7 +513,7 @@ Partial Class Modificar_Entradas
         '
         Me.EspesorTXT.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.EspesorTXT.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.EspesorTXT.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADAS1BindingSource, "ESPESOR", True))
+        Me.EspesorTXT.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "ESPESOR", True))
         Me.EspesorTXT.FormattingEnabled = True
         Me.EspesorTXT.Items.AddRange(New Object() {"C. 6", "C. 7", "C. 8", "C. 9", "C. 10", "C. 11", "C. 12", "C. 13", "C. 14", "C. 15", "C. 16", "C. 18", "C. 19", "C. 20", "C. 22", "C. 24", "C. 26", "C. 28", "C. 30", "1/8''", "3/16''", "1/4''", "5/16''", "3/8''", "7/16''", "1/2''", "5/8''", "3/4''", "7/8''", "1''", "1 1/8''", "1 1/4''", "1 3/8''", "1 1/2''", "1 5/8''", "1 3/4''", "2''", "2 1/4''", "2 1/2''", "2 3/4''", "3''", "3 1/2''", "4''", "4 1/2''", "5''"})
         Me.EspesorTXT.Location = New System.Drawing.Point(203, 22)
@@ -495,7 +541,7 @@ Partial Class Modificar_Entradas
         '
         'LargoTXT
         '
-        Me.LargoTXT.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADAS1BindingSource, "LARGO", True))
+        Me.LargoTXT.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "LARGO", True))
         Me.LargoTXT.Location = New System.Drawing.Point(70, 22)
         Me.LargoTXT.Name = "LargoTXT"
         Me.LargoTXT.Size = New System.Drawing.Size(48, 20)
@@ -503,7 +549,7 @@ Partial Class Modificar_Entradas
         '
         'AnchoTXT
         '
-        Me.AnchoTXT.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADAS1BindingSource, "ANCHO", True))
+        Me.AnchoTXT.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "ANCHO", True))
         Me.AnchoTXT.Location = New System.Drawing.Point(70, 48)
         Me.AnchoTXT.Name = "AnchoTXT"
         Me.AnchoTXT.Size = New System.Drawing.Size(48, 20)
@@ -520,24 +566,14 @@ Partial Class Modificar_Entradas
         '
         'GroupBox6
         '
-        Me.GroupBox6.Controls.Add(Me.BuscarBTN)
         Me.GroupBox6.Controls.Add(Me.Label1)
         Me.GroupBox6.Controls.Add(Me.FolioCBX)
         Me.GroupBox6.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Size = New System.Drawing.Size(255, 50)
+        Me.GroupBox6.Size = New System.Drawing.Size(172, 50)
         Me.GroupBox6.TabIndex = 40
         Me.GroupBox6.TabStop = False
         Me.GroupBox6.Text = "Buscar Folio"
-        '
-        'BuscarBTN
-        '
-        Me.BuscarBTN.Location = New System.Drawing.Point(171, 17)
-        Me.BuscarBTN.Name = "BuscarBTN"
-        Me.BuscarBTN.Size = New System.Drawing.Size(75, 23)
-        Me.BuscarBTN.TabIndex = 41
-        Me.BuscarBTN.Text = "Buscar"
-        Me.BuscarBTN.UseVisualStyleBackColor = True
         '
         'Label1
         '
@@ -575,11 +611,35 @@ Partial Class Modificar_Entradas
         '
         Me.ENTRADAS1TableAdapter.ClearBeforeFill = True
         '
+        'MATERIALTableAdapter
+        '
+        Me.MATERIALTableAdapter.ClearBeforeFill = True
+        '
+        'BuscaMatBindingSource
+        '
+        Me.BuscaMatBindingSource.DataMember = "BuscaMat"
+        Me.BuscaMatBindingSource.DataSource = Me.MATERIALES
+        '
+        'BuscaMatTableAdapter
+        '
+        Me.BuscaMatTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager1
+        '
+        Me.TableAdapterManager1.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager1.BuscaMatTableAdapter = Me.BuscaMatTableAdapter
+        Me.TableAdapterManager1.MATERIALTableAdapter = Me.MATERIALTableAdapter
+        Me.TableAdapterManager1.UpdateOrder = App_Almacen.MATERIALESTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'CLIENTESTableAdapter
+        '
+        Me.CLIENTESTableAdapter.ClearBeforeFill = True
+        '
         'Modificar_Entradas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(544, 470)
+        Me.ClientSize = New System.Drawing.Size(551, 479)
         Me.Controls.Add(Me.GroupBox6)
         Me.Controls.Add(Me.Label19)
         Me.Controls.Add(Me.PesoLBL)
@@ -593,9 +653,9 @@ Partial Class Modificar_Entradas
         Me.Name = "Modificar_Entradas"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Modificar Entradas"
-        CType(Me.ENTRADAS1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.MPClienteDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ENTRADASBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MPClienteDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ENTRADAS1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox5.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
@@ -604,10 +664,15 @@ Partial Class Modificar_Entradas
         Me.GroupBox3.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        CType(Me.CLIENTESBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Clientes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.MATERIALBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MATERIALES, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox6.ResumeLayout(False)
         Me.GroupBox6.PerformLayout()
+        CType(Me.BuscaMatBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -661,7 +726,16 @@ Partial Class Modificar_Entradas
     Friend WithEvents ENTRADASBindingSource As BindingSource
     Friend WithEvents ENTRADASTableAdapter As MPClienteDataSetTableAdapters.ENTRADASTableAdapter
     Friend WithEvents TableAdapterManager As MPClienteDataSetTableAdapters.TableAdapterManager
-    Friend WithEvents BuscarBTN As Button
     Friend WithEvents ENTRADAS1BindingSource As BindingSource
     Friend WithEvents ENTRADAS1TableAdapter As MPClienteDataSetTableAdapters.ENTRADAS1TableAdapter
+    Friend WithEvents MATERIALES As MATERIALES
+    Friend WithEvents MATERIALBindingSource As BindingSource
+    Friend WithEvents MATERIALTableAdapter As MATERIALESTableAdapters.MATERIALTableAdapter
+    Friend WithEvents BuscaMatBindingSource As BindingSource
+    Friend WithEvents BuscaMatTableAdapter As MATERIALESTableAdapters.BuscaMatTableAdapter
+    Friend WithEvents TableAdapterManager1 As MATERIALESTableAdapters.TableAdapterManager
+    Friend WithEvents Clientes As Clientes
+    Friend WithEvents CLIENTESBindingSource As BindingSource
+    Friend WithEvents CLIENTESTableAdapter As ClientesTableAdapters.CLIENTESTableAdapter
+    Friend WithEvents Button1 As Button
 End Class

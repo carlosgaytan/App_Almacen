@@ -1,7 +1,6 @@
 ﻿Public Class Registro_Entradas
     Dim ESP, PES, MULT, DENSIDAD
 
-
     Private Sub Registro_Entradas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: esta línea de código carga datos en la tabla 'MATERIALES.MATERIAL' Puede moverla o quitarla según sea necesario.
         Me.MATERIALTableAdapter.MATERIALFill(Me.MATERIALES.MATERIAL)
