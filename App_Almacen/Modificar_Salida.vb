@@ -24,6 +24,7 @@
             INFOADICIONAL.ACTUALIZARENTRADAS = 1
             INFOADICIONAL.ACTUALIZARINVENTARIOMP = 1
             INFOADICIONAL.ACTUALIZARSALIDAS = 1
+            MessageBox.Show("Registro Actualizado", "Guardado")
         End If
     End Sub
 

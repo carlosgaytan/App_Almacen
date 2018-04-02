@@ -93,9 +93,9 @@ Partial Class Modificar_Salida
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.SalidaTXT)
         Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Controls.Add(Me.SalidaTXT)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(304, 62)
@@ -612,16 +612,16 @@ Partial Class Modificar_Salida
         '
         Me.EstatusLBL.AutoSize = True
         Me.EstatusLBL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SALIDASBindingSource, "ESTATUS", True))
-        Me.EstatusLBL.Location = New System.Drawing.Point(483, 32)
+        Me.EstatusLBL.Location = New System.Drawing.Point(69, 39)
         Me.EstatusLBL.Name = "EstatusLBL"
         Me.EstatusLBL.Size = New System.Drawing.Size(42, 13)
         Me.EstatusLBL.TabIndex = 23
         Me.EstatusLBL.Text = "Estatus"
-        Me.EstatusLBL.Visible = False
         '
         'TableAdapterManager
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.ENTRADAS1TableAdapter = Nothing
         Me.TableAdapterManager.ENTRADASTableAdapter = Me.ENTRADASTableAdapter
         Me.TableAdapterManager.InventarioMPTableAdapter = Nothing
         Me.TableAdapterManager.SALIDASTableAdapter = Me.SALIDASTableAdapter
@@ -631,20 +631,17 @@ Partial Class Modificar_Salida
         '
         Me.EntradaLBL.AutoSize = True
         Me.EntradaLBL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "FOLIO_SALIDA", True))
-        Me.EntradaLBL.Location = New System.Drawing.Point(483, 61)
+        Me.EntradaLBL.Location = New System.Drawing.Point(69, 39)
         Me.EntradaLBL.Name = "EntradaLBL"
         Me.EntradaLBL.Size = New System.Drawing.Size(39, 13)
         Me.EntradaLBL.TabIndex = 24
         Me.EntradaLBL.Text = "Label3"
-        Me.EntradaLBL.Visible = False
         '
         'Modificar_Salida
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(744, 409)
-        Me.Controls.Add(Me.EntradaLBL)
-        Me.Controls.Add(Me.EstatusLBL)
         Me.Controls.Add(Me.GroupBox6)
         Me.Controls.Add(Me.GuardarBTN)
         Me.Controls.Add(Me.GroupBox5)
@@ -653,6 +650,8 @@ Partial Class Modificar_Salida
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox7)
         Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.EntradaLBL)
+        Me.Controls.Add(Me.EstatusLBL)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Modificar_Salida"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

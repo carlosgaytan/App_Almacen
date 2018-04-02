@@ -17,4 +17,12 @@
             MessageBox.Show("Cambios guardados", "Registro")
         End If
     End Sub
+
+    Private Sub BuscarBTN_Click(sender As Object, e As EventArgs) Handles BuscarBTN.Click
+        Try
+            Me.ENTRADAS1TableAdapter.FiltroEntradaFill(Me.MPClienteDataSet.ENTRADAS1, CType(FolioCBX.Text, Integer))
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
 End Class
