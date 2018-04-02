@@ -83,6 +83,7 @@ Partial Class Registro_Entradas
         Me.BuscaMatTableAdapter = New App_Almacen.MATERIALESTableAdapters.BuscaMatTableAdapter()
         Me.TableAdapterManager1 = New App_Almacen.MATERIALESTableAdapters.TableAdapterManager()
         Me.Label19 = New System.Windows.Forms.Label()
+        Me.CalcPesoBTN = New System.Windows.Forms.Button()
         CType(Me.CLIENTESBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ClientesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Clientes, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -265,6 +266,7 @@ Partial Class Registro_Entradas
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.CalcPesoBTN)
         Me.GroupBox1.Controls.Add(Me.MaterialTXT)
         Me.GroupBox1.Controls.Add(Me.Label10)
         Me.GroupBox1.Controls.Add(Me.EspesorTXT)
@@ -276,7 +278,7 @@ Partial Class Registro_Entradas
         Me.GroupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.GroupBox1.Location = New System.Drawing.Point(238, 39)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(293, 81)
+        Me.GroupBox1.Size = New System.Drawing.Size(293, 107)
         Me.GroupBox1.TabIndex = 18
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Material"
@@ -335,7 +337,7 @@ Partial Class Registro_Entradas
         Me.GroupBox2.Controls.Add(Me.Label4)
         Me.GroupBox2.Location = New System.Drawing.Point(12, 39)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(220, 145)
+        Me.GroupBox2.Size = New System.Drawing.Size(220, 171)
         Me.GroupBox2.TabIndex = 19
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Información"
@@ -346,7 +348,7 @@ Partial Class Registro_Entradas
         Me.GroupBox3.Controls.Add(Me.Label12)
         Me.GroupBox3.Controls.Add(Me.Label11)
         Me.GroupBox3.Controls.Add(Me.RackTXT)
-        Me.GroupBox3.Location = New System.Drawing.Point(238, 126)
+        Me.GroupBox3.Location = New System.Drawing.Point(238, 152)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(293, 58)
         Me.GroupBox3.TabIndex = 20
@@ -410,6 +412,7 @@ Partial Class Registro_Entradas
         'TableAdapterManager
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.ENTRADAS1TableAdapter = Nothing
         Me.TableAdapterManager.ENTRADASTableAdapter = Me.ENTRADASTableAdapter
         Me.TableAdapterManager.InventarioMPTableAdapter = Nothing
         Me.TableAdapterManager.SALIDASTableAdapter = Nothing
@@ -422,7 +425,7 @@ Partial Class Registro_Entradas
         'GroupBox4
         '
         Me.GroupBox4.Controls.Add(Me.ObservTXT)
-        Me.GroupBox4.Location = New System.Drawing.Point(12, 254)
+        Me.GroupBox4.Location = New System.Drawing.Point(12, 276)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(519, 135)
         Me.GroupBox4.TabIndex = 21
@@ -439,7 +442,7 @@ Partial Class Registro_Entradas
         '
         'GuardarBTN
         '
-        Me.GuardarBTN.Location = New System.Drawing.Point(441, 395)
+        Me.GuardarBTN.Location = New System.Drawing.Point(441, 417)
         Me.GuardarBTN.Name = "GuardarBTN"
         Me.GuardarBTN.Size = New System.Drawing.Size(90, 35)
         Me.GuardarBTN.TabIndex = 22
@@ -460,7 +463,7 @@ Partial Class Registro_Entradas
         Me.GroupBox5.Controls.Add(Me.Material)
         Me.GroupBox5.Controls.Add(Me.ClienteTXT)
         Me.GroupBox5.Controls.Add(Me.Label14)
-        Me.GroupBox5.Location = New System.Drawing.Point(178, 190)
+        Me.GroupBox5.Location = New System.Drawing.Point(178, 212)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Size = New System.Drawing.Size(353, 58)
         Me.GroupBox5.TabIndex = 29
@@ -574,7 +577,7 @@ Partial Class Registro_Entradas
         '
         Me.PesoLBL.AutoSize = True
         Me.PesoLBL.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PesoLBL.Location = New System.Drawing.Point(45, 223)
+        Me.PesoLBL.Location = New System.Drawing.Point(45, 245)
         Me.PesoLBL.Name = "PesoLBL"
         Me.PesoLBL.Size = New System.Drawing.Size(89, 26)
         Me.PesoLBL.TabIndex = 30
@@ -606,17 +609,26 @@ Partial Class Registro_Entradas
         '
         Me.Label19.AutoSize = True
         Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.Location = New System.Drawing.Point(37, 191)
+        Me.Label19.Location = New System.Drawing.Point(37, 213)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(106, 26)
         Me.Label19.TabIndex = 31
         Me.Label19.Text = "Peso KG:"
         '
+        'CalcPesoBTN
+        '
+        Me.CalcPesoBTN.Location = New System.Drawing.Point(212, 78)
+        Me.CalcPesoBTN.Name = "CalcPesoBTN"
+        Me.CalcPesoBTN.Size = New System.Drawing.Size(75, 23)
+        Me.CalcPesoBTN.TabIndex = 32
+        Me.CalcPesoBTN.Text = "Calc. Peso"
+        Me.CalcPesoBTN.UseVisualStyleBackColor = True
+        '
         'Registro_Entradas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(543, 437)
+        Me.ClientSize = New System.Drawing.Size(543, 460)
         Me.Controls.Add(Me.Label19)
         Me.Controls.Add(Me.PesoLBL)
         Me.Controls.Add(Me.GroupBox5)
@@ -715,4 +727,5 @@ Partial Class Registro_Entradas
     Friend WithEvents BuscaMatTableAdapter As MATERIALESTableAdapters.BuscaMatTableAdapter
     Friend WithEvents TableAdapterManager1 As MATERIALESTableAdapters.TableAdapterManager
     Friend WithEvents Label19 As Label
+    Friend WithEvents CalcPesoBTN As Button
 End Class

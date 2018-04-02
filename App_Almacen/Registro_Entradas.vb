@@ -20,62 +20,7 @@
 
     End Sub
 
-    Private Sub GuardarBTN_Click(sender As Object, e As EventArgs) Handles GuardarBTN.Click
-
-        ' Crea una nueva fila en el registro
-        Dim NuevaEntrada As MPClienteDataSet.ENTRADASRow
-        NuevaEntrada = MPClienteDataSet.ENTRADAS.NewENTRADASRow
-
-        'Carga la información en la fila
-        NuevaEntrada.FECHA = DateAndTime.DateString & " " & DateAndTime.TimeOfDay
-        NuevaEntrada.CLIENTE = ClienteCBX.Text
-        NuevaEntrada.FACTURA_REMISION = FacturaTXT.Text
-        NuevaEntrada.OC = OCTXT.Text
-        NuevaEntrada.CERTIFICADO_CALIDAD = CertificadoTXT.Text
-        NuevaEntrada.LARGO = LargoTXT.Text
-        NuevaEntrada.ANCHO = AnchoTXT.Text
-        NuevaEntrada.ESPESOR = EspesorTXT.Text
-        NuevaEntrada.MATERIAL = MaterialTXT.Text
-        NuevaEntrada.RACK = RackTXT.Text
-        NuevaEntrada.NIVEL = NivelTXT.Text
-        NuevaEntrada.OBSERVACIONES_ENTRADA = ObservTXT.Text
-        NuevaEntrada.LOTE_DIA = diaTXT.Text
-        NuevaEntrada.LOTE_MES = mesTXT.Text
-        NuevaEntrada.LOTE_AÑO = yearTXT.Text
-        NuevaEntrada.LOTE_CLIENTE = ClienteTXT.Text
-        NuevaEntrada.LOTE_MATERIAL = MaterialTXT.Text
-        NuevaEntrada.LOTE_FOLIO = ConsecTXT.Text
-        NuevaEntrada.PESO_KG = PesoLBL.Text
-        NuevaEntrada.FOLIO_SALIDA = "-"
-        NuevaEntrada.LOTE = diaTXT.Text & mesTXT.Text & yearTXT.Text & ClienteTXT.Text & Material.Text & ConsecTXT.Text
-
-        'Insertar la fila en la tabla apropiada del DataSet
-        MPClienteDataSet.ENTRADAS.AddENTRADASRow(NuevaEntrada)
-
-        'Enviar informacón a la base de datos
-        ENTRADASTableAdapter.Update(MPClienteDataSet.ENTRADAS)
-
-        'Regista información en el Módulo INFOADICIONAL para la actualización de la BD
-        INFOADICIONAL.ACTUALIZARENTRADAS = 1
-        INFOADICIONAL.ACTUALIZARINVENTARIOMP = 1
-
-        'Muestra mensaje de confirmación
-        MessageBox.Show("Registro guardado", "Registros")
-
-        'Limpia los textbox necesarios
-        FacturaTXT.Clear()
-        OCTXT.Clear()
-        CertificadoTXT.Clear()
-        LargoTXT.Clear()
-        AnchoTXT.Clear()
-        EspesorTXT.Text = ""
-        ObservTXT.Clear()
-
-
-    End Sub
-
-    Private Sub LargoTXT_TextChanged(sender As Object, e As EventArgs) Handles LargoTXT.TextChanged, AnchoTXT.TextChanged, EspesorTXT.SelectedIndexChanged, MaterialTXT.SelectedIndexChanged
-
+    Private Sub CalcPesoBTN_Click(sender As Object, e As EventArgs) Handles CalcPesoBTN.Click
         'Espesores en MM de cada calibre
         If EspesorTXT.Text = "C. 6" Then
             ESP = 4.94
@@ -186,6 +131,60 @@
         'TODO: esta línea de código carga datos en la tabla 'MPClienteDataSet.ENTRADAS' Puede moverla o quitarla según sea necesario.
         Me.ENTRADASTableAdapter.Fill(Me.MPClienteDataSet.ENTRADAS)
         FolioLBL.Text = MPClienteDataSet.ENTRADAS.Last.FOLIO_ENTRADA + 1
+
+    End Sub
+
+    Private Sub GuardarBTN_Click(sender As Object, e As EventArgs) Handles GuardarBTN.Click
+
+        ' Crea una nueva fila en el registro
+        Dim NuevaEntrada As MPClienteDataSet.ENTRADASRow
+        NuevaEntrada = MPClienteDataSet.ENTRADAS.NewENTRADASRow
+
+        'Carga la información en la fila
+        NuevaEntrada.FECHA = DateAndTime.DateString & " " & DateAndTime.TimeOfDay
+        NuevaEntrada.CLIENTE = ClienteCBX.Text
+        NuevaEntrada.FACTURA_REMISION = FacturaTXT.Text
+        NuevaEntrada.OC = OCTXT.Text
+        NuevaEntrada.CERTIFICADO_CALIDAD = CertificadoTXT.Text
+        NuevaEntrada.LARGO = LargoTXT.Text
+        NuevaEntrada.ANCHO = AnchoTXT.Text
+        NuevaEntrada.ESPESOR = EspesorTXT.Text
+        NuevaEntrada.MATERIAL = MaterialTXT.Text
+        NuevaEntrada.RACK = RackTXT.Text
+        NuevaEntrada.NIVEL = NivelTXT.Text
+        NuevaEntrada.OBSERVACIONES_ENTRADA = ObservTXT.Text
+        NuevaEntrada.LOTE_DIA = diaTXT.Text
+        NuevaEntrada.LOTE_MES = mesTXT.Text
+        NuevaEntrada.LOTE_AÑO = yearTXT.Text
+        NuevaEntrada.LOTE_CLIENTE = ClienteTXT.Text
+        NuevaEntrada.LOTE_MATERIAL = MaterialTXT.Text
+        NuevaEntrada.LOTE_FOLIO = ConsecTXT.Text
+        NuevaEntrada.PESO_KG = PesoLBL.Text
+        NuevaEntrada.FOLIO_SALIDA = "-"
+        NuevaEntrada.LOTE = diaTXT.Text & mesTXT.Text & yearTXT.Text & ClienteTXT.Text & Material.Text & ConsecTXT.Text
+
+        'Insertar la fila en la tabla apropiada del DataSet
+        MPClienteDataSet.ENTRADAS.AddENTRADASRow(NuevaEntrada)
+
+        'Enviar informacón a la base de datos
+        ENTRADASTableAdapter.Update(MPClienteDataSet.ENTRADAS)
+
+        'Regista información en el Módulo INFOADICIONAL para la actualización de la BD
+        INFOADICIONAL.ACTUALIZARENTRADAS = 1
+        INFOADICIONAL.ACTUALIZARINVENTARIOMP = 1
+
+        'Muestra mensaje de confirmación
+        MessageBox.Show("Registro guardado", "Registros")
+
+        'Limpia los textbox necesarios
+        FacturaTXT.Clear()
+        OCTXT.Clear()
+        CertificadoTXT.Clear()
+        LargoTXT.Clear()
+        AnchoTXT.Clear()
+        EspesorTXT.Text = ""
+        ObservTXT.Clear()
+
 
     End Sub
 
