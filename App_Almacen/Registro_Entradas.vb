@@ -170,11 +170,11 @@
         NuevaEntrada.LOTE_MES = mesTXT.Text
         NuevaEntrada.LOTE_AÑO = yearTXT.Text
         NuevaEntrada.LOTE_CLIENTE = ClienteTXT.Text
-        NuevaEntrada.LOTE_MATERIAL = MaterialTXT.Text
+        NuevaEntrada.LOTE_MATERIAL = MaterialLOTE.Text
         NuevaEntrada.LOTE_FOLIO = ConsecTXT.Text
         NuevaEntrada.PESO_KG = PesoLBL.Text
         NuevaEntrada.FOLIO_SALIDA = "-"
-        NuevaEntrada.LOTE = diaTXT.Text & mesTXT.Text & yearTXT.Text & ClienteTXT.Text & Material.Text & ConsecTXT.Text
+        NuevaEntrada.LOTE = diaTXT.Text & mesTXT.Text & yearTXT.Text & ClienteTXT.Text & MaterialLOTE.Text & ConsecTXT.Text
 
         'Insertar la fila en la tabla apropiada del DataSet
         MPClienteDataSet.ENTRADAS.AddENTRADASRow(NuevaEntrada)
@@ -188,6 +188,9 @@
 
         'Muestra mensaje de confirmación
         MessageBox.Show("Registro guardado", "Registros")
+        'TODO: esta línea de código carga datos en la tabla 'MPClienteDataSet.ENTRADAS' Puede moverla o quitarla según sea necesario.
+        Me.ENTRADASTableAdapter.Fill(Me.MPClienteDataSet.ENTRADAS)
+        FolioLBL.Text = MPClienteDataSet.ENTRADAS.Last.FOLIO_ENTRADA + 1
 
 
     End Sub

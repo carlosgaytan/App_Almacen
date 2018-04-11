@@ -75,7 +75,7 @@ Partial Class Registro_Entradas
         Me.ConsecTXT = New System.Windows.Forms.TextBox()
         Me.yearTXT = New System.Windows.Forms.TextBox()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.Material = New System.Windows.Forms.TextBox()
+        Me.MaterialLOTE = New System.Windows.Forms.TextBox()
         Me.ClienteTXT = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.PesoLBL = New System.Windows.Forms.Label()
@@ -470,7 +470,7 @@ Partial Class Registro_Entradas
         Me.GroupBox5.Controls.Add(Me.ConsecTXT)
         Me.GroupBox5.Controls.Add(Me.yearTXT)
         Me.GroupBox5.Controls.Add(Me.Label15)
-        Me.GroupBox5.Controls.Add(Me.Material)
+        Me.GroupBox5.Controls.Add(Me.MaterialLOTE)
         Me.GroupBox5.Controls.Add(Me.ClienteTXT)
         Me.GroupBox5.Controls.Add(Me.Label14)
         Me.GroupBox5.Location = New System.Drawing.Point(178, 212)
@@ -557,13 +557,13 @@ Partial Class Registro_Entradas
         Me.Label15.TabIndex = 24
         Me.Label15.Text = "Año:"
         '
-        'Material
+        'MaterialLOTE
         '
-        Me.Material.Location = New System.Drawing.Point(226, 32)
-        Me.Material.Name = "Material"
-        Me.Material.Size = New System.Drawing.Size(48, 20)
-        Me.Material.TabIndex = 30
-        Me.Material.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.MaterialLOTE.Location = New System.Drawing.Point(226, 32)
+        Me.MaterialLOTE.Name = "MaterialLOTE"
+        Me.MaterialLOTE.Size = New System.Drawing.Size(48, 20)
+        Me.MaterialLOTE.TabIndex = 30
+        Me.MaterialLOTE.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'ClienteTXT
         '
@@ -727,7 +727,7 @@ Partial Class Registro_Entradas
     Friend WithEvents ConsecTXT As TextBox
     Friend WithEvents yearTXT As TextBox
     Friend WithEvents Label15 As Label
-    Friend WithEvents Material As TextBox
+    Friend WithEvents MaterialLOTE As TextBox
     Friend WithEvents ClienteTXT As TextBox
     Friend WithEvents Label14 As Label
     Friend WithEvents PesoLBL As Label

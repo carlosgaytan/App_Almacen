@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "App_Almacen", "App_Almacen\App_Almacen.vbproj", "{33E90632-079E-4FF3-A176-308800D7549D}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "InventarioMP", "InventarioMP\InventarioMP.vbproj", "{3642031A-349E-4714-B9AB-B6D34662ED94}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{33E90632-079E-4FF3-A176-308800D7549D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33E90632-079E-4FF3-A176-308800D7549D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33E90632-079E-4FF3-A176-308800D7549D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3642031A-349E-4714-B9AB-B6D34662ED94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3642031A-349E-4714-B9AB-B6D34662ED94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3642031A-349E-4714-B9AB-B6D34662ED94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3642031A-349E-4714-B9AB-B6D34662ED94}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
