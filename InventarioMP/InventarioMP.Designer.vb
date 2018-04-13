@@ -46,8 +46,6 @@ Partial Class InventarioMP
         Me.ObservacionesCBX = New System.Windows.Forms.TextBox()
         Me.RestaurarBTN = New System.Windows.Forms.Button()
         Me.FiltroBTN = New System.Windows.Forms.Button()
-        Me.BusquedaCBX = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn43 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.ActualizarEntradas = New System.Windows.Forms.Button()
         Me.GBEntrada = New System.Windows.Forms.GroupBox()
@@ -71,9 +69,6 @@ Partial Class InventarioMP
         Me.FiltrarEntrada = New System.Windows.Forms.Button()
         Me.RestEntradaBTN = New System.Windows.Forms.Button()
         Me.FiltroEntradaBTN = New System.Windows.Forms.Button()
-        Me.ENTRADASDataGridView = New System.Windows.Forms.DataGridView()
-        Me.FOLIO_SALIDA = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn18 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.ActualizarSalidas = New System.Windows.Forms.Button()
         Me.GBSalida = New System.Windows.Forms.GroupBox()
@@ -89,21 +84,13 @@ Partial Class InventarioMP
         Me.FiltrarSalida = New System.Windows.Forms.Button()
         Me.RestSalidaBTN = New System.Windows.Forms.Button()
         Me.FiltroSalidaBTN = New System.Windows.Forms.Button()
-        Me.SalidaDGV = New System.Windows.Forms.DataGridView()
-        Me.ESTATUS = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PI = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SOLICITANTE = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.LOTE = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabControl1.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         Me.FiltroMpGroup.SuspendLayout()
-        CType(Me.BusquedaCBX, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage1.SuspendLayout()
         Me.GBEntrada.SuspendLayout()
-        CType(Me.ENTRADASDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
         Me.GBSalida.SuspendLayout()
-        CType(Me.SalidaDGV, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -123,7 +110,6 @@ Partial Class InventarioMP
         Me.TabPage3.Controls.Add(Me.FiltroMpGroup)
         Me.TabPage3.Controls.Add(Me.RestaurarBTN)
         Me.TabPage3.Controls.Add(Me.FiltroBTN)
-        Me.TabPage3.Controls.Add(Me.BusquedaCBX)
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
@@ -353,33 +339,12 @@ Partial Class InventarioMP
         Me.FiltroBTN.Text = "Filtrar"
         Me.FiltroBTN.UseVisualStyleBackColor = True
         '
-        'BusquedaCBX
-        '
-        Me.BusquedaCBX.AllowUserToAddRows = False
-        Me.BusquedaCBX.AllowUserToDeleteRows = False
-        Me.BusquedaCBX.AllowUserToOrderColumns = True
-        Me.BusquedaCBX.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.BusquedaCBX.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn43})
-        Me.BusquedaCBX.Location = New System.Drawing.Point(6, 35)
-        Me.BusquedaCBX.Name = "BusquedaCBX"
-        Me.BusquedaCBX.ReadOnly = True
-        Me.BusquedaCBX.Size = New System.Drawing.Size(1143, 586)
-        Me.BusquedaCBX.TabIndex = 0
-        '
-        'DataGridViewTextBoxColumn43
-        '
-        Me.DataGridViewTextBoxColumn43.DataPropertyName = "LOTE"
-        Me.DataGridViewTextBoxColumn43.HeaderText = "LOTE"
-        Me.DataGridViewTextBoxColumn43.Name = "DataGridViewTextBoxColumn43"
-        Me.DataGridViewTextBoxColumn43.ReadOnly = True
-        '
         'TabPage1
         '
         Me.TabPage1.Controls.Add(Me.ActualizarEntradas)
         Me.TabPage1.Controls.Add(Me.GBEntrada)
         Me.TabPage1.Controls.Add(Me.RestEntradaBTN)
         Me.TabPage1.Controls.Add(Me.FiltroEntradaBTN)
-        Me.TabPage1.Controls.Add(Me.ENTRADASDataGridView)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
@@ -622,42 +587,12 @@ Partial Class InventarioMP
         Me.FiltroEntradaBTN.Text = "Filtrar"
         Me.FiltroEntradaBTN.UseVisualStyleBackColor = True
         '
-        'ENTRADASDataGridView
-        '
-        Me.ENTRADASDataGridView.AllowUserToAddRows = False
-        Me.ENTRADASDataGridView.AllowUserToDeleteRows = False
-        Me.ENTRADASDataGridView.AllowUserToOrderColumns = True
-        Me.ENTRADASDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.ENTRADASDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.FOLIO_SALIDA, Me.DataGridViewTextBoxColumn18})
-        Me.ENTRADASDataGridView.Location = New System.Drawing.Point(3, 35)
-        Me.ENTRADASDataGridView.Name = "ENTRADASDataGridView"
-        Me.ENTRADASDataGridView.ReadOnly = True
-        Me.ENTRADASDataGridView.Size = New System.Drawing.Size(1143, 586)
-        Me.ENTRADASDataGridView.TabIndex = 0
-        '
-        'FOLIO_SALIDA
-        '
-        Me.FOLIO_SALIDA.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.FOLIO_SALIDA.DataPropertyName = "FOLIO_SALIDA"
-        Me.FOLIO_SALIDA.HeaderText = "Salida"
-        Me.FOLIO_SALIDA.Name = "FOLIO_SALIDA"
-        Me.FOLIO_SALIDA.ReadOnly = True
-        Me.FOLIO_SALIDA.Width = 61
-        '
-        'DataGridViewTextBoxColumn18
-        '
-        Me.DataGridViewTextBoxColumn18.DataPropertyName = "LOTE"
-        Me.DataGridViewTextBoxColumn18.HeaderText = "Lote"
-        Me.DataGridViewTextBoxColumn18.Name = "DataGridViewTextBoxColumn18"
-        Me.DataGridViewTextBoxColumn18.ReadOnly = True
-        '
         'TabPage2
         '
         Me.TabPage2.Controls.Add(Me.ActualizarSalidas)
         Me.TabPage2.Controls.Add(Me.GBSalida)
         Me.TabPage2.Controls.Add(Me.RestSalidaBTN)
         Me.TabPage2.Controls.Add(Me.FiltroSalidaBTN)
-        Me.TabPage2.Controls.Add(Me.SalidaDGV)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
@@ -800,55 +735,6 @@ Partial Class InventarioMP
         Me.FiltroSalidaBTN.Text = "Filtrar"
         Me.FiltroSalidaBTN.UseVisualStyleBackColor = True
         '
-        'SalidaDGV
-        '
-        Me.SalidaDGV.AllowUserToAddRows = False
-        Me.SalidaDGV.AllowUserToDeleteRows = False
-        Me.SalidaDGV.AllowUserToOrderColumns = True
-        Me.SalidaDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.SalidaDGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ESTATUS, Me.PI, Me.SOLICITANTE, Me.LOTE})
-        Me.SalidaDGV.Location = New System.Drawing.Point(6, 35)
-        Me.SalidaDGV.Name = "SalidaDGV"
-        Me.SalidaDGV.ReadOnly = True
-        Me.SalidaDGV.Size = New System.Drawing.Size(1143, 586)
-        Me.SalidaDGV.TabIndex = 0
-        '
-        'ESTATUS
-        '
-        Me.ESTATUS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.ESTATUS.DataPropertyName = "ESTATUS"
-        Me.ESTATUS.HeaderText = "Estatus"
-        Me.ESTATUS.Name = "ESTATUS"
-        Me.ESTATUS.ReadOnly = True
-        Me.ESTATUS.Width = 67
-        '
-        'PI
-        '
-        Me.PI.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.PI.DataPropertyName = "PI"
-        Me.PI.HeaderText = "PI"
-        Me.PI.Name = "PI"
-        Me.PI.ReadOnly = True
-        Me.PI.Width = 42
-        '
-        'SOLICITANTE
-        '
-        Me.SOLICITANTE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.SOLICITANTE.DataPropertyName = "SOLICITANTE"
-        Me.SOLICITANTE.HeaderText = "Solicitante"
-        Me.SOLICITANTE.Name = "SOLICITANTE"
-        Me.SOLICITANTE.ReadOnly = True
-        Me.SOLICITANTE.Width = 81
-        '
-        'LOTE
-        '
-        Me.LOTE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.LOTE.DataPropertyName = "LOTE"
-        Me.LOTE.HeaderText = "Lote"
-        Me.LOTE.Name = "LOTE"
-        Me.LOTE.ReadOnly = True
-        Me.LOTE.Width = 53
-        '
         'InventarioMP
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -862,15 +748,12 @@ Partial Class InventarioMP
         Me.TabPage3.ResumeLayout(False)
         Me.FiltroMpGroup.ResumeLayout(False)
         Me.FiltroMpGroup.PerformLayout()
-        CType(Me.BusquedaCBX, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage1.ResumeLayout(False)
         Me.GBEntrada.ResumeLayout(False)
         Me.GBEntrada.PerformLayout()
-        CType(Me.ENTRADASDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
         Me.GBSalida.ResumeLayout(False)
         Me.GBSalida.PerformLayout()
-        CType(Me.SalidaDGV, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -898,8 +781,6 @@ Partial Class InventarioMP
     Friend WithEvents ObservacionesCBX As TextBox
     Friend WithEvents RestaurarBTN As Button
     Friend WithEvents FiltroBTN As Button
-    Friend WithEvents BusquedaCBX As DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn43 As DataGridViewTextBoxColumn
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents ActualizarEntradas As Button
     Friend WithEvents GBEntrada As GroupBox
@@ -923,9 +804,6 @@ Partial Class InventarioMP
     Friend WithEvents FiltrarEntrada As Button
     Friend WithEvents RestEntradaBTN As Button
     Friend WithEvents FiltroEntradaBTN As Button
-    Friend WithEvents ENTRADASDataGridView As DataGridView
-    Friend WithEvents FOLIO_SALIDA As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn18 As DataGridViewTextBoxColumn
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents ActualizarSalidas As Button
     Friend WithEvents GBSalida As GroupBox
@@ -941,9 +819,4 @@ Partial Class InventarioMP
     Friend WithEvents FiltrarSalida As Button
     Friend WithEvents RestSalidaBTN As Button
     Friend WithEvents FiltroSalidaBTN As Button
-    Friend WithEvents SalidaDGV As DataGridView
-    Friend WithEvents ESTATUS As DataGridViewTextBoxColumn
-    Friend WithEvents PI As DataGridViewTextBoxColumn
-    Friend WithEvents SOLICITANTE As DataGridViewTextBoxColumn
-    Friend WithEvents LOTE As DataGridViewTextBoxColumn
 End Class
