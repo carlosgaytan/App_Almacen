@@ -3,6 +3,10 @@
 Public Class Principal
     Dim EntradaFilt, NoClienteFilt, ClienteFilt, EspesorFilt, MaterialFilt, RackFilt, NivelFilt, ObservFilt, FechaFilt, FacturaFilt, OCFILT, CalidadFILT, LargoFilt, AnchoFilt, PesoFilt, SalidaEntradaFilt, NoClienteEntradaFilt, ClienteEntradaFilt, EspesorEntradaFilt, MaterialEntradaFilt, RackEntradaFilt, NivelEntradaFilt, ObservEntradaFilt, FacturaEntradaFilt, OCEntradaFILT, CalidadEntradaFILT, LargoEntradaFilt, AnchoEntradaFilt, PesoEntradaFilt
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        AcercaDe.Show()
+    End Sub
+
     Dim EntradaSalidaFilt, OFFILT, PIFILT, SolicitanteFilt, LoteFilt, AutorizaFilt, ObservSalidasFilt
 
     Function OcultarFiltro()
@@ -73,7 +77,7 @@ Public Class Principal
     Private Sub Principal_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
 
         'Confirmación de cierre
-        If MessageBox.Show("¿Seguro que desea salir", "Salida", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.No Then
+        If MessageBox.Show("¿Seguro que desea salir?", "Salida", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.No Then
             e.Cancel = True
         End If
 

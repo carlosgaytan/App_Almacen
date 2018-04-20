@@ -39,6 +39,8 @@ Partial Public Class MPClienteDataSet
     
     Private relationENTRADAS_ENTRADAS1 As Global.System.Data.DataRelation
     
+    Private relationENTRADASSALIDAS2 As Global.System.Data.DataRelation
+    
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -275,6 +277,7 @@ Partial Public Class MPClienteDataSet
         Me.relationENTRADASSALIDAS = Me.Relations("ENTRADASSALIDAS")
         Me.relationENTRADASSALIDAS1 = Me.Relations("ENTRADASSALIDAS1")
         Me.relationENTRADAS_ENTRADAS1 = Me.Relations("ENTRADAS_ENTRADAS1")
+        Me.relationENTRADASSALIDAS2 = Me.Relations("ENTRADASSALIDAS2")
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -299,6 +302,8 @@ Partial Public Class MPClienteDataSet
         Me.Relations.Add(Me.relationENTRADASSALIDAS1)
         Me.relationENTRADAS_ENTRADAS1 = New Global.System.Data.DataRelation("ENTRADAS_ENTRADAS1", New Global.System.Data.DataColumn() {Me.tableENTRADAS.FOLIO_ENTRADAColumn}, New Global.System.Data.DataColumn() {Me.tableENTRADAS1.FOLIO_ENTRADAColumn}, false)
         Me.Relations.Add(Me.relationENTRADAS_ENTRADAS1)
+        Me.relationENTRADASSALIDAS2 = New Global.System.Data.DataRelation("ENTRADASSALIDAS2", New Global.System.Data.DataColumn() {Me.tableENTRADAS1.FOLIO_ENTRADAColumn}, New Global.System.Data.DataColumn() {Me.tableSALIDAS.FOLIO_ENTRADAColumn}, false)
+        Me.Relations.Add(Me.relationENTRADASSALIDAS2)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3383,6 +3388,17 @@ Partial Public Class MPClienteDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property ENTRADAS1Row() As ENTRADAS1Row
+            Get
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("ENTRADASSALIDAS2")),ENTRADAS1Row)
+            End Get
+            Set
+                Me.SetParentRow(value, Me.Table.ParentRelations("ENTRADASSALIDAS2"))
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsFOLIO_ENTRADANull() As Boolean
             Return Me.IsNull(Me.tableSALIDAS.FOLIO_ENTRADAColumn)
         End Function
@@ -4727,6 +4743,16 @@ Partial Public Class MPClienteDataSet
         Public Sub SetLOTE_MATERIALNull()
             Me(Me.tableENTRADAS1.LOTE_MATERIALColumn) = Global.System.Convert.DBNull
         End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function GetSALIDASRows() As SALIDASRow()
+            If (Me.Table.ChildRelations("ENTRADASSALIDAS2") Is Nothing) Then
+                Return New SALIDASRow(-1) {}
+            Else
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("ENTRADASSALIDAS2")),SALIDASRow())
+            End If
+        End Function
     End Class
     
     '''<summary>
@@ -5113,7 +5139,7 @@ Namespace MPClienteDataSetTableAdapters
                 "ERTIFICADO_CALIDAD, LARGO, ANCHO, ESPESOR, MATERIAL, RACK, NIVEL, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"            "& _ 
                 "             OBSERVACIONES_ENTRADA, LOTE_DIA, LOTE_MES, [LOTE_AÑO], LOTE_CLIENTE"& _ 
                 ", LOTE_MATERIAL, LOTE_FOLIO, PESO_KG, FOLIO_SALIDA, LOTE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            ENTRAD"& _ 
-                "AS"
+                "AS"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY FOLIO_ENTRADA"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(1).Connection = Me.Connection
@@ -5727,7 +5753,8 @@ Namespace MPClienteDataSetTableAdapters
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        FOLIO_SALIDA, FOLIO_ENTRADA, FECHA_SALIDA, AUTORIZACION, OBSERVACIO"& _ 
-                "NES_SALIDA, [OF], PI, SOLICITANTE, LOTE, ESTATUS"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            SALIDAS"
+                "NES_SALIDA, [OF], PI, SOLICITANTE, LOTE, ESTATUS"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            SALIDAS"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER"& _ 
+                " BY FOLIO_SALIDA"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -6184,7 +6211,7 @@ Namespace MPClienteDataSetTableAdapters
                 "LIDAD, LARGO, ANCHO, ESPESOR, MATERIAL, PESO_KG, RACK, NIVEL, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                "& _ 
                 "         OBSERVACIONES_ENTRADA, LOTE_DIA, LOTE_MES, [LOTE_AÑO], LOTE_CLIENTE, LO"& _ 
                 "TE_MATERIAL, LOTE_FOLIO, FOLIO_SALIDA, LOTE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            ENTRADAS"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE    "& _ 
-                "    (FOLIO_SALIDA = '-')"
+                "    (FOLIO_SALIDA = '-')"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY FOLIO_ENTRADA"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -7361,21 +7388,21 @@ Namespace MPClienteDataSetTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._sALIDASTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.SALIDAS.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._sALIDASTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
             If (Not (Me._eNTRADAS1TableAdapter) Is Nothing) Then
                 Dim updatedRows() As Global.System.Data.DataRow = dataSet.ENTRADAS1.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
                     result = (result + Me._eNTRADAS1TableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._sALIDASTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.SALIDAS.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._sALIDASTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -7405,19 +7432,19 @@ Namespace MPClienteDataSetTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
-            If (Not (Me._sALIDASTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.SALIDAS.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._sALIDASTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
             If (Not (Me._eNTRADAS1TableAdapter) Is Nothing) Then
                 Dim addedRows() As Global.System.Data.DataRow = dataSet.ENTRADAS1.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
                     result = (result + Me._eNTRADAS1TableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._sALIDASTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.SALIDAS.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._sALIDASTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -7431,19 +7458,19 @@ Namespace MPClienteDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Function UpdateDeletedRows(ByVal dataSet As MPClienteDataSet, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._eNTRADAS1TableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.ENTRADAS1.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._eNTRADAS1TableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
             If (Not (Me._sALIDASTableAdapter) Is Nothing) Then
                 Dim deletedRows() As Global.System.Data.DataRow = dataSet.SALIDAS.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
                     result = (result + Me._sALIDASTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._eNTRADAS1TableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.ENTRADAS1.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._eNTRADAS1TableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If

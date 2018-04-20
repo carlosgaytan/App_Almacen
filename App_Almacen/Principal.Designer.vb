@@ -127,6 +127,16 @@ Partial Class Principal
         Me.RestSalidaBTN = New System.Windows.Forms.Button()
         Me.FiltroSalidaBTN = New System.Windows.Forms.Button()
         Me.SalidaDGV = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn24 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn25 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ESTATUS = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn26 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn27 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PI = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SOLICITANTE = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.LOTE = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn28 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn29 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SALIDASBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.EntradasFSW = New System.IO.FileSystemWatcher()
@@ -140,16 +150,7 @@ Partial Class Principal
         Me.ClientesBTN = New System.Windows.Forms.Button()
         Me.ModEntradasBTN = New System.Windows.Forms.Button()
         Me.ModSalidasBTN = New System.Windows.Forms.Button()
-        Me.DataGridViewTextBoxColumn24 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn25 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ESTATUS = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn26 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn27 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PI = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SOLICITANTE = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.LOTE = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn28 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn29 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         Me.FiltroMpGroup.SuspendLayout()
@@ -1191,83 +1192,6 @@ Partial Class Principal
         Me.SalidaDGV.Size = New System.Drawing.Size(1026, 469)
         Me.SalidaDGV.TabIndex = 0
         '
-        'SALIDASBindingSource
-        '
-        Me.SALIDASBindingSource.DataMember = "SALIDAS"
-        Me.SALIDASBindingSource.DataSource = Me.MPClienteDataSet
-        '
-        'Timer1
-        '
-        Me.Timer1.Enabled = True
-        '
-        'EntradasFSW
-        '
-        Me.EntradasFSW.EnableRaisingEvents = True
-        Me.EntradasFSW.NotifyFilter = System.IO.NotifyFilters.LastWrite
-        Me.EntradasFSW.Path = "S:\BASE DE DATOS\Almacén"
-        Me.EntradasFSW.SynchronizingObject = Me
-        '
-        'ENTRADASTableAdapter
-        '
-        Me.ENTRADASTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.ENTRADASTableAdapter = Me.ENTRADASTableAdapter
-        Me.TableAdapterManager.InventarioMPTableAdapter = Nothing
-        Me.TableAdapterManager.SALIDASTableAdapter = Nothing
-        Me.TableAdapterManager.UpdateOrder = App_Almacen.MPClienteDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
-        'SALIDASTableAdapter
-        '
-        Me.SALIDASTableAdapter.ClearBeforeFill = True
-        '
-        'InventarioMPTableAdapter
-        '
-        Me.InventarioMPTableAdapter.ClearBeforeFill = True
-        '
-        'CLIENTESTableAdapter
-        '
-        Me.CLIENTESTableAdapter.ClearBeforeFill = True
-        '
-        'ENTRADASSALIDASBindingSource
-        '
-        Me.ENTRADASSALIDASBindingSource.DataMember = "ENTRADASSALIDAS"
-        Me.ENTRADASSALIDASBindingSource.DataSource = Me.ENTRADASBindingSource
-        '
-        'ENTRADASSALIDASBindingSource1
-        '
-        Me.ENTRADASSALIDASBindingSource1.DataMember = "ENTRADASSALIDAS"
-        Me.ENTRADASSALIDASBindingSource1.DataSource = Me.ENTRADASBindingSource
-        '
-        'ClientesBTN
-        '
-        Me.ClientesBTN.Location = New System.Drawing.Point(12, 40)
-        Me.ClientesBTN.Name = "ClientesBTN"
-        Me.ClientesBTN.Size = New System.Drawing.Size(75, 39)
-        Me.ClientesBTN.TabIndex = 6
-        Me.ClientesBTN.Text = "Alta Clientes"
-        Me.ClientesBTN.UseVisualStyleBackColor = True
-        '
-        'ModEntradasBTN
-        '
-        Me.ModEntradasBTN.Location = New System.Drawing.Point(12, 175)
-        Me.ModEntradasBTN.Name = "ModEntradasBTN"
-        Me.ModEntradasBTN.Size = New System.Drawing.Size(75, 39)
-        Me.ModEntradasBTN.TabIndex = 7
-        Me.ModEntradasBTN.Text = "Modificar Entradas"
-        Me.ModEntradasBTN.UseVisualStyleBackColor = True
-        '
-        'ModSalidasBTN
-        '
-        Me.ModSalidasBTN.Location = New System.Drawing.Point(12, 220)
-        Me.ModSalidasBTN.Name = "ModSalidasBTN"
-        Me.ModSalidasBTN.Size = New System.Drawing.Size(75, 39)
-        Me.ModSalidasBTN.TabIndex = 8
-        Me.ModSalidasBTN.Text = "Modificar Salidas"
-        Me.ModSalidasBTN.UseVisualStyleBackColor = True
-        '
         'DataGridViewTextBoxColumn24
         '
         Me.DataGridViewTextBoxColumn24.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
@@ -1358,11 +1282,100 @@ Partial Class Principal
         Me.DataGridViewTextBoxColumn29.ReadOnly = True
         Me.DataGridViewTextBoxColumn29.Width = 103
         '
+        'SALIDASBindingSource
+        '
+        Me.SALIDASBindingSource.DataMember = "SALIDAS"
+        Me.SALIDASBindingSource.DataSource = Me.MPClienteDataSet
+        '
+        'Timer1
+        '
+        Me.Timer1.Enabled = True
+        '
+        'EntradasFSW
+        '
+        Me.EntradasFSW.EnableRaisingEvents = True
+        Me.EntradasFSW.NotifyFilter = System.IO.NotifyFilters.LastWrite
+        Me.EntradasFSW.Path = "S:\BASE DE DATOS\Almacén"
+        Me.EntradasFSW.SynchronizingObject = Me
+        '
+        'ENTRADASTableAdapter
+        '
+        Me.ENTRADASTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.ENTRADAS1TableAdapter = Nothing
+        Me.TableAdapterManager.ENTRADASTableAdapter = Me.ENTRADASTableAdapter
+        Me.TableAdapterManager.InventarioMPTableAdapter = Nothing
+        Me.TableAdapterManager.SALIDASTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = App_Almacen.MPClienteDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'SALIDASTableAdapter
+        '
+        Me.SALIDASTableAdapter.ClearBeforeFill = True
+        '
+        'InventarioMPTableAdapter
+        '
+        Me.InventarioMPTableAdapter.ClearBeforeFill = True
+        '
+        'CLIENTESTableAdapter
+        '
+        Me.CLIENTESTableAdapter.ClearBeforeFill = True
+        '
+        'ENTRADASSALIDASBindingSource
+        '
+        Me.ENTRADASSALIDASBindingSource.DataMember = "ENTRADASSALIDAS"
+        Me.ENTRADASSALIDASBindingSource.DataSource = Me.ENTRADASBindingSource
+        '
+        'ENTRADASSALIDASBindingSource1
+        '
+        Me.ENTRADASSALIDASBindingSource1.DataMember = "ENTRADASSALIDAS"
+        Me.ENTRADASSALIDASBindingSource1.DataSource = Me.ENTRADASBindingSource
+        '
+        'ClientesBTN
+        '
+        Me.ClientesBTN.Location = New System.Drawing.Point(12, 40)
+        Me.ClientesBTN.Name = "ClientesBTN"
+        Me.ClientesBTN.Size = New System.Drawing.Size(75, 39)
+        Me.ClientesBTN.TabIndex = 6
+        Me.ClientesBTN.Text = "Alta Clientes"
+        Me.ClientesBTN.UseVisualStyleBackColor = True
+        '
+        'ModEntradasBTN
+        '
+        Me.ModEntradasBTN.Location = New System.Drawing.Point(12, 175)
+        Me.ModEntradasBTN.Name = "ModEntradasBTN"
+        Me.ModEntradasBTN.Size = New System.Drawing.Size(75, 39)
+        Me.ModEntradasBTN.TabIndex = 7
+        Me.ModEntradasBTN.Text = "Modificar Entradas"
+        Me.ModEntradasBTN.UseVisualStyleBackColor = True
+        '
+        'ModSalidasBTN
+        '
+        Me.ModSalidasBTN.Location = New System.Drawing.Point(12, 220)
+        Me.ModSalidasBTN.Name = "ModSalidasBTN"
+        Me.ModSalidasBTN.Size = New System.Drawing.Size(75, 39)
+        Me.ModSalidasBTN.TabIndex = 8
+        Me.ModSalidasBTN.Text = "Modificar Salidas"
+        Me.ModSalidasBTN.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.BackgroundImage = CType(resources.GetObject("Button1.BackgroundImage"), System.Drawing.Image)
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button1.Location = New System.Drawing.Point(12, 523)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(22, 22)
+        Me.Button1.TabIndex = 9
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1151, 557)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.ModSalidasBTN)
         Me.Controls.Add(Me.ModEntradasBTN)
         Me.Controls.Add(Me.ClientesBTN)
@@ -1528,4 +1541,5 @@ Partial Class Principal
     Friend WithEvents LOTE As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn28 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn29 As DataGridViewTextBoxColumn
+    Friend WithEvents Button1 As Button
 End Class

@@ -1,6 +1,49 @@
 ﻿Public Class Modificar_Entradas
     Dim ESP, PES, MULT, DENSIDAD
 
+    Private Sub diaTXT_TextChanged(sender As Object, e As EventArgs) Handles diaTXT.TextChanged, mesTXT.TextChanged, yearTXT.TextChanged, ClienteTXT.TextChanged, Material.TextChanged, ConsecTXT.TextChanged
+        LOTELBL.Text = diaTXT.Text & mesTXT.Text & yearTXT.Text & ClienteTXT.Text & Material.Text & ConsecTXT.Text
+    End Sub
+
+    Private Sub CancelarBTN_Click(sender As Object, e As EventArgs) Handles CancelarBTN.Click
+
+        If SalidaLBL.Text <> "C" And SalidaLBL.Text <> "-" Then
+            MessageBox.Show("La entrada cuenta con folio de Salida, cancelar primero el folio de Salida: " & SalidaLBL.Text, "¡Advertencia!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        ElseIf SalidaLBL.Text = "C" Then
+            MessageBox.Show("Entrada cancelada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Else
+            If MessageBox.Show("¿Desea cancelar la Entrada?", "¡Advertencia!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
+                ClienteCBX.Text = "CANCELADA"
+                OCTXT.Text = ""
+                FacturaTXT.Text = ""
+                CertificadoTXT.Text = ""
+                LargoTXT.Text = ""
+                AnchoTXT.Text = ""
+                EspesorTXT.Text = ""
+                MaterialTXT.Text = ""
+                RackTXT.Text = ""
+                NivelTXT.Text = ""
+                diaTXT.Text = ""
+                mesTXT.Text = ""
+                yearTXT.Text = ""
+                ClienteTXT.Text = ""
+                Material.Text = ""
+                ConsecTXT.Text = ""
+                LOTELBL.Text = ""
+                ObservTXT.Text = "Entrada cancelada"
+                SalidaLBL.Text = "C"
+                'Actualiza registro
+                Me.Validate()
+                Me.ENTRADASBindingSource.EndEdit()
+                Me.TableAdapterManager.UpdateAll(Me.MPClienteDataSet)
+                INFOADICIONAL.ACTUALIZARENTRADAS = 1
+                INFOADICIONAL.ACTUALIZARINVENTARIOMP = 1
+                MessageBox.Show("Entrada Cancelada", "Aviso")
+
+            End If
+        End If
+    End Sub
+
     Private Sub Modificar_Entradas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: esta línea de código carga datos en la tabla 'Clientes._CLIENTES' Puede moverla o quitarla según sea necesario.
         Me.CLIENTESTableAdapter.CLIENTEFill(Me.Clientes._CLIENTES)

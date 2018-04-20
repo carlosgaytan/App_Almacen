@@ -51,7 +51,8 @@
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        FOLIO_ENTRADA, FECHA, CLIENTE, SOLICITANTE, FACTURA_REMISION, OC, CERTIFICADO_CALIDAD, LARGO, ANCHO, ESPESOR, MATERIAL, RACK, NIVEL, 
                          OBSERVACIONES_ENTRADA, LOTE_DIA, LOTE_MES, [LOTE_AÑO], LOTE_CLIENTE, LOTE_MATERIAL, LOTE_FOLIO, PESO_KG, FOLIO_SALIDA, LOTE
-FROM            ENTRADAS</CommandText>
+FROM            ENTRADAS
+ORDER BY FOLIO_ENTRADA</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -157,7 +158,8 @@ FROM            ENTRADAS</CommandText>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        FOLIO_SALIDA, FOLIO_ENTRADA, FECHA_SALIDA, AUTORIZACION, OBSERVACIONES_SALIDA, [OF], PI, SOLICITANTE, LOTE, ESTATUS
-FROM            SALIDAS</CommandText>
+FROM            SALIDAS
+ORDER BY FOLIO_SALIDA</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -240,7 +242,8 @@ FROM            SALIDAS</CommandText>
                     <CommandText>SELECT        FOLIO_ENTRADA, FECHA, CLIENTE, FACTURA_REMISION, OC, CERTIFICADO_CALIDAD, LARGO, ANCHO, ESPESOR, MATERIAL, PESO_KG, RACK, NIVEL, 
                          OBSERVACIONES_ENTRADA, LOTE_DIA, LOTE_MES, [LOTE_AÑO], LOTE_CLIENTE, LOTE_MATERIAL, LOTE_FOLIO, FOLIO_SALIDA, LOTE
 FROM            ENTRADAS
-WHERE        (FOLIO_SALIDA = '-')</CommandText>
+WHERE        (FOLIO_SALIDA = '-')
+ORDER BY FOLIO_ENTRADA</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -419,7 +422,7 @@ WHERE        (FOLIO_ENTRADA = ?)</CommandText>
   <xs:element name="MPClienteDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="MPClienteDataSet" msprop:Generator_UserDSName="MPClienteDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="ENTRADAS" msprop:Generator_TableClassName="ENTRADASDataTable" msprop:Generator_TableVarName="tableENTRADAS" msprop:Generator_TablePropName="ENTRADAS" msprop:Generator_RowDeletingName="ENTRADASRowDeleting" msprop:Generator_RowChangingName="ENTRADASRowChanging" msprop:Generator_RowEvHandlerName="ENTRADASRowChangeEventHandler" msprop:Generator_RowDeletedName="ENTRADASRowDeleted" msprop:Generator_UserTableName="ENTRADAS" msprop:Generator_RowChangedName="ENTRADASRowChanged" msprop:Generator_RowEvArgName="ENTRADASRowChangeEvent" msprop:Generator_RowClassName="ENTRADASRow">
+        <xs:element name="ENTRADAS" msprop:Generator_TableClassName="ENTRADASDataTable" msprop:Generator_TableVarName="tableENTRADAS" msprop:Generator_RowChangedName="ENTRADASRowChanged" msprop:Generator_TablePropName="ENTRADAS" msprop:Generator_RowDeletingName="ENTRADASRowDeleting" msprop:Generator_RowChangingName="ENTRADASRowChanging" msprop:Generator_RowEvHandlerName="ENTRADASRowChangeEventHandler" msprop:Generator_RowDeletedName="ENTRADASRowDeleted" msprop:Generator_RowClassName="ENTRADASRow" msprop:Generator_UserTableName="ENTRADAS" msprop:Generator_RowEvArgName="ENTRADASRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="FOLIO_ENTRADA" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnFOLIO_ENTRADA" msprop:Generator_ColumnPropNameInRow="FOLIO_ENTRADA" msprop:Generator_ColumnPropNameInTable="FOLIO_ENTRADAColumn" msprop:Generator_UserColumnName="FOLIO_ENTRADA" type="xs:int" />
@@ -580,7 +583,7 @@ WHERE        (FOLIO_ENTRADA = ?)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SALIDAS" msprop:Generator_TableClassName="SALIDASDataTable" msprop:Generator_TableVarName="tableSALIDAS" msprop:Generator_TablePropName="SALIDAS" msprop:Generator_RowDeletingName="SALIDASRowDeleting" msprop:Generator_RowChangingName="SALIDASRowChanging" msprop:Generator_RowEvHandlerName="SALIDASRowChangeEventHandler" msprop:Generator_RowDeletedName="SALIDASRowDeleted" msprop:Generator_UserTableName="SALIDAS" msprop:Generator_RowChangedName="SALIDASRowChanged" msprop:Generator_RowEvArgName="SALIDASRowChangeEvent" msprop:Generator_RowClassName="SALIDASRow">
+        <xs:element name="SALIDAS" msprop:Generator_TableClassName="SALIDASDataTable" msprop:Generator_TableVarName="tableSALIDAS" msprop:Generator_RowChangedName="SALIDASRowChanged" msprop:Generator_TablePropName="SALIDAS" msprop:Generator_RowDeletingName="SALIDASRowDeleting" msprop:Generator_RowChangingName="SALIDASRowChanging" msprop:Generator_RowEvHandlerName="SALIDASRowChangeEventHandler" msprop:Generator_RowDeletedName="SALIDASRowDeleted" msprop:Generator_RowClassName="SALIDASRow" msprop:Generator_UserTableName="SALIDAS" msprop:Generator_RowEvArgName="SALIDASRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="FOLIO_SALIDA" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnFOLIO_SALIDA" msprop:Generator_ColumnPropNameInRow="FOLIO_SALIDA" msprop:Generator_ColumnPropNameInTable="FOLIO_SALIDAColumn" msprop:Generator_UserColumnName="FOLIO_SALIDA" type="xs:int" />
@@ -644,7 +647,7 @@ WHERE        (FOLIO_ENTRADA = ?)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="IventariosMP" msprop:Generator_TableClassName="IventariosMPDataTable" msprop:Generator_TableVarName="tableIventariosMP" msprop:Generator_TablePropName="IventariosMP" msprop:Generator_RowDeletingName="IventariosMPRowDeleting" msprop:Generator_RowChangingName="IventariosMPRowChanging" msprop:Generator_RowEvHandlerName="IventariosMPRowChangeEventHandler" msprop:Generator_RowDeletedName="IventariosMPRowDeleted" msprop:Generator_UserTableName="IventariosMP" msprop:Generator_RowChangedName="IventariosMPRowChanged" msprop:Generator_RowEvArgName="IventariosMPRowChangeEvent" msprop:Generator_RowClassName="IventariosMPRow">
+        <xs:element name="IventariosMP" msprop:Generator_TableClassName="IventariosMPDataTable" msprop:Generator_TableVarName="tableIventariosMP" msprop:Generator_RowChangedName="IventariosMPRowChanged" msprop:Generator_TablePropName="IventariosMP" msprop:Generator_RowDeletingName="IventariosMPRowDeleting" msprop:Generator_RowChangingName="IventariosMPRowChanging" msprop:Generator_RowEvHandlerName="IventariosMPRowChangeEventHandler" msprop:Generator_RowDeletedName="IventariosMPRowDeleted" msprop:Generator_RowClassName="IventariosMPRow" msprop:Generator_UserTableName="IventariosMP" msprop:Generator_RowEvArgName="IventariosMPRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="FOLIO_ENTRADA" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnFOLIO_ENTRADA" msprop:Generator_ColumnPropNameInRow="FOLIO_ENTRADA" msprop:Generator_ColumnPropNameInTable="FOLIO_ENTRADAColumn" msprop:Generator_UserColumnName="FOLIO_ENTRADA" type="xs:int" />
@@ -798,7 +801,7 @@ WHERE        (FOLIO_ENTRADA = ?)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ENTRADAS1" msprop:Generator_TableClassName="ENTRADAS1DataTable" msprop:Generator_TableVarName="tableENTRADAS1" msprop:Generator_RowChangedName="ENTRADAS1RowChanged" msprop:Generator_TablePropName="ENTRADAS1" msprop:Generator_RowDeletingName="ENTRADAS1RowDeleting" msprop:Generator_RowChangingName="ENTRADAS1RowChanging" msprop:Generator_RowEvHandlerName="ENTRADAS1RowChangeEventHandler" msprop:Generator_RowDeletedName="ENTRADAS1RowDeleted" msprop:Generator_RowClassName="ENTRADAS1Row" msprop:Generator_UserTableName="ENTRADAS1" msprop:Generator_RowEvArgName="ENTRADAS1RowChangeEvent">
+        <xs:element name="ENTRADAS1" msprop:Generator_TableClassName="ENTRADAS1DataTable" msprop:Generator_TableVarName="tableENTRADAS1" msprop:Generator_TablePropName="ENTRADAS1" msprop:Generator_RowDeletingName="ENTRADAS1RowDeleting" msprop:Generator_RowChangingName="ENTRADAS1RowChanging" msprop:Generator_RowEvHandlerName="ENTRADAS1RowChangeEventHandler" msprop:Generator_RowDeletedName="ENTRADAS1RowDeleted" msprop:Generator_UserTableName="ENTRADAS1" msprop:Generator_RowChangedName="ENTRADAS1RowChanged" msprop:Generator_RowEvArgName="ENTRADAS1RowChangeEvent" msprop:Generator_RowClassName="ENTRADAS1Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="FOLIO_ENTRADA" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnFOLIO_ENTRADA" msprop:Generator_ColumnPropNameInRow="FOLIO_ENTRADA" msprop:Generator_ColumnPropNameInTable="FOLIO_ENTRADAColumn" msprop:Generator_UserColumnName="FOLIO_ENTRADA" type="xs:int" />
@@ -980,9 +983,10 @@ WHERE        (FOLIO_ENTRADA = ?)</CommandText>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="ENTRADASSALIDAS" msdata:parent="ENTRADAS" msdata:child="SALIDAS" msdata:parentkey="FOLIO_ENTRADA" msdata:childkey="FOLIO_ENTRADA" msprop:Generator_UserChildTable="SALIDAS" msprop:Generator_ChildPropName="GetSALIDASRows" msprop:Generator_UserRelationName="ENTRADASSALIDAS" msprop:Generator_RelationVarName="relationENTRADASSALIDAS" msprop:Generator_UserParentTable="ENTRADAS" msprop:Generator_ParentPropName="ENTRADASRow" />
-      <msdata:Relationship name="ENTRADASSALIDAS1" msdata:parent="IventariosMP" msdata:child="SALIDAS" msdata:parentkey="FOLIO_ENTRADA" msdata:childkey="FOLIO_ENTRADA" msprop:Generator_UserChildTable="SALIDAS" msprop:Generator_ChildPropName="GetSALIDASRows" msprop:Generator_UserRelationName="ENTRADASSALIDAS1" msprop:Generator_ParentPropName="IventariosMPRow" msprop:Generator_RelationVarName="relationENTRADASSALIDAS1" msprop:Generator_UserParentTable="IventariosMP" />
-      <msdata:Relationship name="ENTRADAS_ENTRADAS1" msdata:parent="ENTRADAS" msdata:child="ENTRADAS1" msdata:parentkey="FOLIO_ENTRADA" msdata:childkey="FOLIO_ENTRADA" msprop:Generator_UserChildTable="ENTRADAS1" msprop:Generator_ChildPropName="GetENTRADAS1Rows" msprop:Generator_UserRelationName="ENTRADAS_ENTRADAS1" msprop:Generator_ParentPropName="ENTRADASRow" msprop:Generator_RelationVarName="relationENTRADAS_ENTRADAS1" msprop:Generator_UserParentTable="ENTRADAS" />
+      <msdata:Relationship name="ENTRADASSALIDAS" msdata:parent="ENTRADAS" msdata:child="SALIDAS" msdata:parentkey="FOLIO_ENTRADA" msdata:childkey="FOLIO_ENTRADA" msprop:Generator_UserChildTable="SALIDAS" msprop:Generator_ChildPropName="GetSALIDASRows" msprop:Generator_UserRelationName="ENTRADASSALIDAS" msprop:Generator_ParentPropName="ENTRADASRow" msprop:Generator_RelationVarName="relationENTRADASSALIDAS" msprop:Generator_UserParentTable="ENTRADAS" />
+      <msdata:Relationship name="ENTRADASSALIDAS1" msdata:parent="IventariosMP" msdata:child="SALIDAS" msdata:parentkey="FOLIO_ENTRADA" msdata:childkey="FOLIO_ENTRADA" msprop:Generator_UserChildTable="SALIDAS" msprop:Generator_ChildPropName="GetSALIDASRows" msprop:Generator_UserRelationName="ENTRADASSALIDAS1" msprop:Generator_RelationVarName="relationENTRADASSALIDAS1" msprop:Generator_UserParentTable="IventariosMP" msprop:Generator_ParentPropName="IventariosMPRow" />
+      <msdata:Relationship name="ENTRADAS_ENTRADAS1" msdata:parent="ENTRADAS" msdata:child="ENTRADAS1" msdata:parentkey="FOLIO_ENTRADA" msdata:childkey="FOLIO_ENTRADA" msprop:Generator_UserChildTable="ENTRADAS1" msprop:Generator_ChildPropName="GetENTRADAS1Rows" msprop:Generator_UserRelationName="ENTRADAS_ENTRADAS1" msprop:Generator_RelationVarName="relationENTRADAS_ENTRADAS1" msprop:Generator_UserParentTable="ENTRADAS" msprop:Generator_ParentPropName="ENTRADASRow" />
+      <msdata:Relationship name="ENTRADASSALIDAS2" msdata:parent="ENTRADAS1" msdata:child="SALIDAS" msdata:parentkey="FOLIO_ENTRADA" msdata:childkey="FOLIO_ENTRADA" msprop:Generator_UserChildTable="SALIDAS" msprop:Generator_ChildPropName="GetSALIDASRows" msprop:Generator_UserRelationName="ENTRADASSALIDAS2" msprop:Generator_RelationVarName="relationENTRADASSALIDAS2" msprop:Generator_UserParentTable="ENTRADAS1" msprop:Generator_ParentPropName="ENTRADAS1Row" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

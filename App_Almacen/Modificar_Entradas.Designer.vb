@@ -45,6 +45,7 @@ Partial Class Modificar_Entradas
         Me.GuardarBTN = New System.Windows.Forms.Button()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.ObservTXT = New System.Windows.Forms.TextBox()
+        Me.LOTELBL = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.NivelTXT = New System.Windows.Forms.ComboBox()
         Me.Label12 = New System.Windows.Forms.Label()
@@ -74,6 +75,7 @@ Partial Class Modificar_Entradas
         Me.AnchoTXT = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
+        Me.CancelarBTN = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.FolioCBX = New System.Windows.Forms.ComboBox()
         Me.ENTRADASTableAdapter = New App_Almacen.MPClienteDataSetTableAdapters.ENTRADASTableAdapter()
@@ -84,6 +86,7 @@ Partial Class Modificar_Entradas
         Me.BuscaMatTableAdapter = New App_Almacen.MATERIALESTableAdapters.BuscaMatTableAdapter()
         Me.TableAdapterManager1 = New App_Almacen.MATERIALESTableAdapters.TableAdapterManager()
         Me.CLIENTESTableAdapter = New App_Almacen.ClientesTableAdapters.CLIENTESTableAdapter()
+        Me.SalidaLBL = New System.Windows.Forms.Label()
         CType(Me.ENTRADASBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MPClienteDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ENTRADAS1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -104,7 +107,7 @@ Partial Class Modificar_Entradas
         '
         Me.Label19.AutoSize = True
         Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.Location = New System.Drawing.Point(37, 234)
+        Me.Label19.Location = New System.Drawing.Point(36, 244)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(106, 26)
         Me.Label19.TabIndex = 39
@@ -115,7 +118,7 @@ Partial Class Modificar_Entradas
         Me.PesoLBL.AutoSize = True
         Me.PesoLBL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "PESO_KG", True))
         Me.PesoLBL.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PesoLBL.Location = New System.Drawing.Point(53, 266)
+        Me.PesoLBL.Location = New System.Drawing.Point(52, 276)
         Me.PesoLBL.Name = "PesoLBL"
         Me.PesoLBL.Size = New System.Drawing.Size(89, 26)
         Me.PesoLBL.TabIndex = 38
@@ -151,7 +154,7 @@ Partial Class Modificar_Entradas
         Me.GroupBox5.Controls.Add(Me.Material)
         Me.GroupBox5.Controls.Add(Me.ClienteTXT)
         Me.GroupBox5.Controls.Add(Me.Label14)
-        Me.GroupBox5.Location = New System.Drawing.Point(178, 233)
+        Me.GroupBox5.Location = New System.Drawing.Point(177, 243)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Size = New System.Drawing.Size(353, 58)
         Me.GroupBox5.TabIndex = 37
@@ -268,7 +271,7 @@ Partial Class Modificar_Entradas
         '
         'GuardarBTN
         '
-        Me.GuardarBTN.Location = New System.Drawing.Point(441, 438)
+        Me.GuardarBTN.Location = New System.Drawing.Point(440, 448)
         Me.GuardarBTN.Name = "GuardarBTN"
         Me.GuardarBTN.Size = New System.Drawing.Size(90, 35)
         Me.GuardarBTN.TabIndex = 36
@@ -278,7 +281,9 @@ Partial Class Modificar_Entradas
         'GroupBox4
         '
         Me.GroupBox4.Controls.Add(Me.ObservTXT)
-        Me.GroupBox4.Location = New System.Drawing.Point(12, 297)
+        Me.GroupBox4.Controls.Add(Me.LOTELBL)
+        Me.GroupBox4.Controls.Add(Me.SalidaLBL)
+        Me.GroupBox4.Location = New System.Drawing.Point(11, 307)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(519, 135)
         Me.GroupBox4.TabIndex = 35
@@ -294,13 +299,23 @@ Partial Class Modificar_Entradas
         Me.ObservTXT.Size = New System.Drawing.Size(507, 110)
         Me.ObservTXT.TabIndex = 0
         '
+        'LOTELBL
+        '
+        Me.LOTELBL.AutoSize = True
+        Me.LOTELBL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "LOTE", True))
+        Me.LOTELBL.Location = New System.Drawing.Point(255, 55)
+        Me.LOTELBL.Name = "LOTELBL"
+        Me.LOTELBL.Size = New System.Drawing.Size(39, 13)
+        Me.LOTELBL.TabIndex = 41
+        Me.LOTELBL.Text = "Label2"
+        '
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.NivelTXT)
         Me.GroupBox3.Controls.Add(Me.Label12)
         Me.GroupBox3.Controls.Add(Me.Label11)
         Me.GroupBox3.Controls.Add(Me.RackTXT)
-        Me.GroupBox3.Location = New System.Drawing.Point(238, 169)
+        Me.GroupBox3.Location = New System.Drawing.Point(237, 179)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(293, 58)
         Me.GroupBox3.TabIndex = 34
@@ -359,7 +374,7 @@ Partial Class Modificar_Entradas
         Me.GroupBox2.Controls.Add(Me.Label6)
         Me.GroupBox2.Controls.Add(Me.FacturaTXT)
         Me.GroupBox2.Controls.Add(Me.Label4)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 68)
+        Me.GroupBox2.Location = New System.Drawing.Point(11, 78)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(220, 159)
         Me.GroupBox2.TabIndex = 33
@@ -461,7 +476,7 @@ Partial Class Modificar_Entradas
         Me.GroupBox1.Controls.Add(Me.AnchoTXT)
         Me.GroupBox1.Controls.Add(Me.Label8)
         Me.GroupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.GroupBox1.Location = New System.Drawing.Point(238, 68)
+        Me.GroupBox1.Location = New System.Drawing.Point(237, 78)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(293, 100)
         Me.GroupBox1.TabIndex = 32
@@ -566,19 +581,29 @@ Partial Class Modificar_Entradas
         '
         'GroupBox6
         '
+        Me.GroupBox6.Controls.Add(Me.CancelarBTN)
         Me.GroupBox6.Controls.Add(Me.Label1)
         Me.GroupBox6.Controls.Add(Me.FolioCBX)
         Me.GroupBox6.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Size = New System.Drawing.Size(172, 50)
+        Me.GroupBox6.Size = New System.Drawing.Size(305, 60)
         Me.GroupBox6.TabIndex = 40
         Me.GroupBox6.TabStop = False
         Me.GroupBox6.Text = "Buscar Folio"
         '
+        'CancelarBTN
+        '
+        Me.CancelarBTN.Location = New System.Drawing.Point(224, 12)
+        Me.CancelarBTN.Name = "CancelarBTN"
+        Me.CancelarBTN.Size = New System.Drawing.Size(75, 42)
+        Me.CancelarBTN.TabIndex = 41
+        Me.CancelarBTN.Text = "Cancelar Entrada"
+        Me.CancelarBTN.UseVisualStyleBackColor = True
+        '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(6, 22)
+        Me.Label1.Location = New System.Drawing.Point(6, 27)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(32, 13)
         Me.Label1.TabIndex = 13
@@ -589,7 +614,7 @@ Partial Class Modificar_Entradas
         Me.FolioCBX.DataSource = Me.ENTRADASBindingSource
         Me.FolioCBX.DisplayMember = "FOLIO_ENTRADA"
         Me.FolioCBX.FormattingEnabled = True
-        Me.FolioCBX.Location = New System.Drawing.Point(44, 19)
+        Me.FolioCBX.Location = New System.Drawing.Point(44, 24)
         Me.FolioCBX.Name = "FolioCBX"
         Me.FolioCBX.Size = New System.Drawing.Size(121, 21)
         Me.FolioCBX.TabIndex = 41
@@ -635,11 +660,21 @@ Partial Class Modificar_Entradas
         '
         Me.CLIENTESTableAdapter.ClearBeforeFill = True
         '
+        'SalidaLBL
+        '
+        Me.SalidaLBL.AutoSize = True
+        Me.SalidaLBL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ENTRADASBindingSource, "FOLIO_SALIDA", True))
+        Me.SalidaLBL.Location = New System.Drawing.Point(293, 68)
+        Me.SalidaLBL.Name = "SalidaLBL"
+        Me.SalidaLBL.Size = New System.Drawing.Size(39, 13)
+        Me.SalidaLBL.TabIndex = 41
+        Me.SalidaLBL.Text = "Label2"
+        '
         'Modificar_Entradas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(551, 479)
+        Me.ClientSize = New System.Drawing.Size(540, 495)
         Me.Controls.Add(Me.GroupBox6)
         Me.Controls.Add(Me.Label19)
         Me.Controls.Add(Me.PesoLBL)
@@ -738,4 +773,7 @@ Partial Class Modificar_Entradas
     Friend WithEvents CLIENTESBindingSource As BindingSource
     Friend WithEvents CLIENTESTableAdapter As ClientesTableAdapters.CLIENTESTableAdapter
     Friend WithEvents Button1 As Button
+    Friend WithEvents LOTELBL As Label
+    Friend WithEvents CancelarBTN As Button
+    Friend WithEvents SalidaLBL As Label
 End Class
