@@ -80,6 +80,10 @@ Partial Class Registro_Salidas
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.ComenSalidasTXT = New System.Windows.Forms.TextBox()
         Me.SalidaEntrada = New System.Windows.Forms.Label()
+        Me.MaqTXT = New System.Windows.Forms.TextBox()
+        Me.valeTXT = New System.Windows.Forms.TextBox()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.Label22 = New System.Windows.Forms.Label()
         CType(Me.MPClienteDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SALIDASBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ENTRADASBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -111,6 +115,7 @@ Partial Class Registro_Salidas
         Me.TableAdapterManager.ENTRADAS1TableAdapter = Nothing
         Me.TableAdapterManager.ENTRADASTableAdapter = Me.ENTRADASTableAdapter
         Me.TableAdapterManager.InventarioMPTableAdapter = Nothing
+        Me.TableAdapterManager.REPORTETableAdapter = Nothing
         Me.TableAdapterManager.SALIDASTableAdapter = Me.SALIDASTableAdapter
         Me.TableAdapterManager.UpdateOrder = App_Almacen.MPClienteDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
@@ -500,31 +505,35 @@ Partial Class Registro_Salidas
         '
         'GroupBox5
         '
+        Me.GroupBox5.Controls.Add(Me.MaqTXT)
         Me.GroupBox5.Controls.Add(Me.AutorizaTXT)
+        Me.GroupBox5.Controls.Add(Me.valeTXT)
         Me.GroupBox5.Controls.Add(Me.SolicitanteTXT)
         Me.GroupBox5.Controls.Add(Me.Label19)
+        Me.GroupBox5.Controls.Add(Me.Label21)
         Me.GroupBox5.Controls.Add(Me.Label20)
         Me.GroupBox5.Controls.Add(Me.piTXT)
+        Me.GroupBox5.Controls.Add(Me.Label22)
         Me.GroupBox5.Controls.Add(Me.ofTXT)
         Me.GroupBox5.Controls.Add(Me.Label17)
         Me.GroupBox5.Controls.Add(Me.Label9)
         Me.GroupBox5.Location = New System.Drawing.Point(12, 215)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(295, 138)
+        Me.GroupBox5.Size = New System.Drawing.Size(295, 176)
         Me.GroupBox5.TabIndex = 10
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Datos Salida"
         '
         'AutorizaTXT
         '
-        Me.AutorizaTXT.Location = New System.Drawing.Point(88, 96)
+        Me.AutorizaTXT.Location = New System.Drawing.Point(88, 148)
         Me.AutorizaTXT.Name = "AutorizaTXT"
         Me.AutorizaTXT.Size = New System.Drawing.Size(198, 20)
         Me.AutorizaTXT.TabIndex = 27
         '
         'SolicitanteTXT
         '
-        Me.SolicitanteTXT.Location = New System.Drawing.Point(88, 70)
+        Me.SolicitanteTXT.Location = New System.Drawing.Point(88, 122)
         Me.SolicitanteTXT.Name = "SolicitanteTXT"
         Me.SolicitanteTXT.Size = New System.Drawing.Size(198, 20)
         Me.SolicitanteTXT.TabIndex = 26
@@ -533,7 +542,7 @@ Partial Class Registro_Salidas
         '
         Me.Label19.AutoSize = True
         Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.Location = New System.Drawing.Point(6, 99)
+        Me.Label19.Location = New System.Drawing.Point(6, 151)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(57, 13)
         Me.Label19.TabIndex = 25
@@ -543,7 +552,7 @@ Partial Class Registro_Salidas
         '
         Me.Label20.AutoSize = True
         Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.Location = New System.Drawing.Point(6, 73)
+        Me.Label20.Location = New System.Drawing.Point(6, 125)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(71, 13)
         Me.Label20.TabIndex = 24
@@ -551,14 +560,14 @@ Partial Class Registro_Salidas
         '
         'piTXT
         '
-        Me.piTXT.Location = New System.Drawing.Point(145, 44)
+        Me.piTXT.Location = New System.Drawing.Point(145, 96)
         Me.piTXT.Name = "piTXT"
         Me.piTXT.Size = New System.Drawing.Size(100, 20)
         Me.piTXT.TabIndex = 23
         '
         'ofTXT
         '
-        Me.ofTXT.Location = New System.Drawing.Point(145, 18)
+        Me.ofTXT.Location = New System.Drawing.Point(145, 70)
         Me.ofTXT.Name = "ofTXT"
         Me.ofTXT.Size = New System.Drawing.Size(100, 20)
         Me.ofTXT.TabIndex = 22
@@ -567,7 +576,7 @@ Partial Class Registro_Salidas
         '
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(6, 47)
+        Me.Label17.Location = New System.Drawing.Point(6, 99)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(94, 13)
         Me.Label17.TabIndex = 21
@@ -577,7 +586,7 @@ Partial Class Registro_Salidas
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(6, 21)
+        Me.Label9.Location = New System.Drawing.Point(6, 73)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(133, 13)
         Me.Label9.TabIndex = 20
@@ -585,7 +594,7 @@ Partial Class Registro_Salidas
         '
         'LimpiarBTN
         '
-        Me.LimpiarBTN.Location = New System.Drawing.Point(649, 278)
+        Me.LimpiarBTN.Location = New System.Drawing.Point(649, 319)
         Me.LimpiarBTN.Name = "LimpiarBTN"
         Me.LimpiarBTN.Size = New System.Drawing.Size(75, 23)
         Me.LimpiarBTN.TabIndex = 11
@@ -594,7 +603,7 @@ Partial Class Registro_Salidas
         '
         'GuardarBTN
         '
-        Me.GuardarBTN.Location = New System.Drawing.Point(649, 307)
+        Me.GuardarBTN.Location = New System.Drawing.Point(649, 348)
         Me.GuardarBTN.Name = "GuardarBTN"
         Me.GuardarBTN.Size = New System.Drawing.Size(75, 39)
         Me.GuardarBTN.TabIndex = 12
@@ -611,7 +620,7 @@ Partial Class Registro_Salidas
         Me.GroupBox6.Controls.Add(Me.SalidaEntrada)
         Me.GroupBox6.Location = New System.Drawing.Point(313, 218)
         Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Size = New System.Drawing.Size(322, 135)
+        Me.GroupBox6.Size = New System.Drawing.Size(322, 173)
         Me.GroupBox6.TabIndex = 13
         Me.GroupBox6.TabStop = False
         Me.GroupBox6.Text = "Comentarios Salida"
@@ -621,7 +630,7 @@ Partial Class Registro_Salidas
         Me.ComenSalidasTXT.Location = New System.Drawing.Point(6, 15)
         Me.ComenSalidasTXT.Multiline = True
         Me.ComenSalidasTXT.Name = "ComenSalidasTXT"
-        Me.ComenSalidasTXT.Size = New System.Drawing.Size(310, 114)
+        Me.ComenSalidasTXT.Size = New System.Drawing.Size(310, 152)
         Me.ComenSalidasTXT.TabIndex = 0
         '
         'SalidaEntrada
@@ -634,11 +643,45 @@ Partial Class Registro_Salidas
         Me.SalidaEntrada.TabIndex = 14
         Me.SalidaEntrada.Text = "Label21"
         '
+        'MaqTXT
+        '
+        Me.MaqTXT.Location = New System.Drawing.Point(145, 44)
+        Me.MaqTXT.Name = "MaqTXT"
+        Me.MaqTXT.Size = New System.Drawing.Size(100, 20)
+        Me.MaqTXT.TabIndex = 31
+        '
+        'valeTXT
+        '
+        Me.valeTXT.Location = New System.Drawing.Point(145, 18)
+        Me.valeTXT.Name = "valeTXT"
+        Me.valeTXT.Size = New System.Drawing.Size(100, 20)
+        Me.valeTXT.TabIndex = 30
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label21.Location = New System.Drawing.Point(6, 47)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(59, 13)
+        Me.Label21.TabIndex = 29
+        Me.Label21.Text = "Máquina:"
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label22.Location = New System.Drawing.Point(6, 21)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(85, 13)
+        Me.Label22.TabIndex = 28
+        Me.Label22.Text = "Folio de Vale:"
+        '
         'Registro_Salidas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(736, 365)
+        Me.ClientSize = New System.Drawing.Size(736, 399)
         Me.Controls.Add(Me.GroupBox6)
         Me.Controls.Add(Me.GuardarBTN)
         Me.Controls.Add(Me.LimpiarBTN)
@@ -731,4 +774,8 @@ Partial Class Registro_Salidas
     Friend WithEvents ComenSalidasTXT As TextBox
     Friend WithEvents SalidaEntrada As Label
     Friend WithEvents LoteLBL As Label
+    Friend WithEvents MaqTXT As TextBox
+    Friend WithEvents valeTXT As TextBox
+    Friend WithEvents Label21 As Label
+    Friend WithEvents Label22 As Label
 End Class

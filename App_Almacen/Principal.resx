@@ -147,7 +147,13 @@
   <metadata name="ESTATUS.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="FOLIO_VALE.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="PI.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="MAQUINA.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="SOLICITANTE.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -169,7 +175,7 @@
   <data name="Button1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAVXSURBVFhH7ZZ/TJR1HMdPVFD54d3Jgbk0AdEywV9bqZMs
+        YQUAAAAJcEhZcwAADsEAAA7BAbiRa+0AAAVXSURBVFhH7ZZ/TJR1HMdPVFD54d3Jgbk0AdEywV9bqZMs
         UZc/EmFuWZNZmqQLNYMt8MRDs2gprEvUDBkBYlhqwuZmkYWjnfIjUAQOEH8QhuCJIIKIgu++7+s51+M9
         KM7WX763157vfT7vz/vzPM8fd6d6qqd6HA3Wn/bSGEqjNJtKj4trkdZQ2kV4lmpR9Ej2/07qmOIZ6o0l
         Jp94MxZnWRBbdAvxZ27jUG23FZ5ZY48eejkjjT+BDGWO6g1Fe/121iAy7wYyL3bh2F/d+Lm+G1l/dlk/

@@ -34,6 +34,8 @@
         RegistroSalida.AUTORIZACION = AutorizaTXT.Text
         RegistroSalida.LOTE = LoteLBL.Text
         RegistroSalida.OBSERVACIONES_SALIDA = ComenSalidasTXT.Text
+        RegistroSalida.FOLIO_VALE = valeTXT.Text
+        RegistroSalida.MAQUINA = MaqTXT.Text
 
         'Insertar la fila en la tabla apropiada del DataSet
         MPClienteDataSet.SALIDAS.AddSALIDASRow(RegistroSalida)
@@ -77,6 +79,8 @@
             SolicitanteTXT.Clear()
             AutorizaTXT.Clear()
             ComenSalidasTXT.Clear()
+            valeTXT.Clear()
+            MaqTXT.Clear()
         End If
 
     End Sub
